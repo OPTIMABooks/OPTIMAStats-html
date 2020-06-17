@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:25-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>According to the problem, \(n = 200\text{,}\) \(p = 0.13\text{,}\) \(q = 1-0.13 = 0.87\text{,}\) and we want \(P(X \lt 20)\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Using the binomial probability formula, this means we need</p>
+<div class="displaymath">
+\begin{align*}
+P(X=0) \amp + P(X=1) + P(X=2) + P(X=3) + P(X=4)\\
+\amp + P(X=5) + P(X=6) + P(X=7) + P(X=8)\\
+\amp + P(X=9) + P(X=11) + P(X=12) + P(X=13)\\
+\amp + P(X=14) + P(X=15) + P(X=16) + P(X=17)\\
+\amp + P(X=18) + P(X=19)\text{.}
+\end{align*}
+</div>
+<p>In the interest of sanity, we used a computer (spreadsheet programs can perform these computations easily) to get \(P(X \lt 20) \approx 0.0817\text{.}\)</p>
+</li>
+<li>
+<p>We first check that a normal approximation is appropriate.</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 200(0.13) = 26 \quad \text{ and } \quad n\times q = 200(0.87) = 17\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Both of these are much bigger than 5, so we expect a good approximation. Next the mean and standard deviation for the normal approximation must be computed.</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = n\times p = 200(0.13) = 26\\
+\sigma \amp = \sqrt{n\times p\times q} = \sqrt{200(0.13)(0.87)} \approx 4.7560\text{.}
+\end{align*}
+</div>
+<p>Applying the continuity correction, we see that we need the shaded region shown below, which does not include \(X=20\text{.}\)</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_approximating_examp_how-good-large.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.41<span class="period">.</span></span><span class="space"> </span>Normal Approximation</figcaption></figure><p>This produces the following computation.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \lt 20) \amp = P(Y \lt 19.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} \lt \frac{19.5 - 26}{4.7560}\right)\\
+\amp = P(Z \lt -1.37)\\
+\amp = 0.0853\text{.}
+\end{align*}
+</div>
+<p>This approximation is accurate to about 4 one-thousandths. Much better than the 1 one- hundredth we saw in the previous example.</p>
+</li>
+</ol>
+</div></body>
+</html>

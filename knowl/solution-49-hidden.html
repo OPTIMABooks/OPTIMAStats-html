@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:06-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>There are two ways to approach this problem, depending on which types of measures we want to use.</p>
+<ol class="decimal">
+<li>
+<p>We could use the IQR to determine if a value is an outlier. In this method, we will find the first and third quartiles and then take anything that is more than \(1.5 \times \text{IQR}\) away from these values to be an outlier.</p>
+<p>Arranging the data in order gives:</p>
+<div class="displaymath">
+\begin{equation*}
+4, 9, 10, 10, 12, 13.
+\end{equation*}
+</div>
+<p data-braille="continuation">So the quartiles are \(Q_1 = 9\) and \(Q_3 = 12\text{.}\) Thus, the IQR is \(12-9 = 3\) and our fences are at</p>
+<div class="displaymath">
+\begin{equation*}
+9 - 1.5(3) = 4.5 \qquad \text{and} \qquad 12 + 1.5(3) = 16.5.
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, 4 is an outlier on the low side.</p>
+</li>
+<li>
+<p>Using the mean and standard deviation gives us another way to check for outliers.  Computing these gives:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{58}{6} \approx 9.7
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\scriptstyle s = \sqrt{\frac{(4-9.7)^2 + (10-9.7)^2 + (12-9.7)^2 + (13-9.7)^2 + (9-9.7)^2 + (10-9.7)^2}{5}} \approx 3.1.
+\end{equation*}
+</div>
+<p data-braille="continuation">So outliers will be less than \(\overline{x} - 3s = 9.7 - 3(3.1) = 0.4\) or bigger than \(\overline{x} + 3s = 9.7 + 3(3.1) = 19\text{.}\) Therefore, there are no outliers using this method.</p>
+</li>
+</ol>
+</div></body>
+</html>

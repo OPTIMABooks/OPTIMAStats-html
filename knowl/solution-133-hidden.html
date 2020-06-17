@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:08-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>First note that this is a binomial process with \(n=10\) fish. The true proportion of contaminated fish is \(p = 0.20\text{,}\) so \(q = 0.80\text{.}\) We wish to know the probability that the biologist finds at least 30% of his 10 fish contaminated. That means, we want the probability that \(X\) is at least 3.</p>
+<p>We could compute this directly by finding \(P(X=3)\text{,}\) \(P(X=4)\text{,}\) \(P(X=5)\text{,}\) \(P(X=6)\text{,}\) \(P(X=7)\text{,}\) \(P(X=8)\text{,}\) \(P(X=9)\text{,}\) and \(P(X=10)\text{.}\) However, this is a lot of work! The complement of “at least 3” is “less than 3”. That would mean \(X\) could be 0, 1, or 2. This includes only three probabilities to compute, which is a lot less work.  So we will use the complement rule as follows.</p>
+<div class="displaymath">
+\begin{align*}
+P(X\geq 3) \amp = 1 - P(X \lt 3)\\
+\amp = 1 - ( P(X=0) + P(X=1) + P(X=2) )\\
+\amp = 1 - ( C(10,0)(0.2)^0(0.8)^{10}+ C(10,1)(0.2)^1(0.8)^9+ C(10,2) (0.2)^2(0.8)^8)\\
+\amp\approx 1 - ( 1(1)(0.1074) + 10(0.2)(0.1342) + 45(0.04)(0.1678) )\\
+\amp\approx 1 - ( 0.1074 + 0.2684 + 0.3020 )\\
+\amp= 1 - 0.6778\\
+\amp= 0.3222\text{.}
+\end{align*}
+</div>
+</div></body>
+</html>

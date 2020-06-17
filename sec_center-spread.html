@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:03-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Describing Data Numerically: Measures of Center and Spread</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_graphs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_descriptive.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_relative-standing.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_graphs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_descriptive.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_relative-standing.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread" class="active">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_center-spread"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Describing Data Numerically: Measures of Center and Spread</span>
+</h2>
+<a href="sec_center-spread.html" class="permalink">¶</a><section class="introduction" id="sec_center-spread_intro"><h6 class="heading">Introduction.<span></span>
+</h6>
+<p id="p-550">While describing data sets using graphs gives a good overview, it does not give us the detail that we need to do more advanced analysis. Graphs are meant to give 	  a picture of the data, but in order to make decisions based on a set of data, we need to have numerical summaries.</p>
+<p id="p-551">In this section, we will look at several types of numerical summaries, or measures, which we can compute from a set of quantitative data. These measures include both:</p>
+<ol class="decimal">
+<li id="li-240">
+<h6 class="heading"><span class="title">Measures of Center.</span></h6>
+<p id="p-552">A measure of center gives a single number that represents the "typical" value in the set of data. One very familiar measure of center is the average. When you say that the average score on an exam is 80%, you are claiming that the typical student scored 80%. This is not, however, the only way to measure the center of a data set, as we shall see in this section.</p>
+</li>
+<li id="li-241">
+<h6 class="heading"><span class="title">Measures of Spread.</span></h6>
+<p id="p-553">Also called a measure of variation, this number or set of numbers indicates how spread out the data is. For example, if three students take an exam and all score 80%, the average would be 80%, but there is no variation between the scores. But if three students scored 60%, 80%, and 100%, the average would still be 80%, but now there is a large amount of variation between their scores–they are much more spread out.</p>
+</li>
+</ol>
+<p id="p-554">Each of these values can be computed for data drawn from a sample (a small number of values from a larger population), or for a census of an entire population. We give them different names, however, depending on the source.</p>
+<article class="definition definition-like" id="def_statistic"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-555">A measurement describing some characteristic of a sample is called a <dfn class="terminology">statistic</dfn>.</p></article><article class="definition definition-like" id="def_parameter"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-556">A measurement describing some characteristic of a population is called a <dfn class="terminology">parameter</dfn>.</p></article><p id="p-557">The measures of center that we will look at often come with a related measure of variation or spread, so we will examine these together where appropriate.</p></section><article class="objectives goal-like" id="sec_center-spread_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-11"><p id="p-558">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-242">
+<p id="p-559">describe the following terms:</p>
+<ul class="circle cols2">
+<li id="li-243"><p id="p-560">interquartile range</p></li>
+<li id="li-244"><p id="p-561">mean</p></li>
+<li id="li-245"><p id="p-562">median</p></li>
+<li id="li-246"><p id="p-563">midrange</p></li>
+<li id="li-247"><p id="p-564">mode</p></li>
+<li id="li-248"><p id="p-565">outlier</p></li>
+<li id="li-249"><p id="p-566">parameter</p></li>
+<li id="li-250"><p id="p-567">quartile</p></li>
+<li id="li-251"><p id="p-568">range</p></li>
+<li id="li-252"><p id="p-569">standard deviation</p></li>
+<li id="li-253"><p id="p-570">statistic</p></li>
+<li id="li-254"><p id="p-571">variance</p></li>
+</ul>
+</li>
+<li id="li-255">
+<p id="p-572">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-256"><p id="p-573">Compute the mode</p></li>
+<li id="li-257"><p id="p-574">Compute the midrange and the range</p></li>
+<li id="li-258"><p id="p-575">Compute the median, 1st and 3rd quartiles, and interquartile range</p></li>
+<li id="li-259"><p id="p-576">Compute the mean and standard deviation</p></li>
+<li id="li-260"><p id="p-577">Select an appropriate measure of center for a given dataset</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_center-spread_mode"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">The Mode</span>
+</h3>
+<a href="sec_center-spread.html#sec_center-spread_mode" class="permalink">¶</a><p id="p-578">We have already seen the term <dfn class="terminology">mode</dfn> used in the context of a graph. Recall that the <a class="xref" data-knowl="./knowl/def_histogram-mode.html" title="Definition 1.2.76">mode of a histogram or bar graph</a> is the class or category that has the tallest bar. That is, it is the class or category that appears the most in the data set. This seems to be a reasonable way to describe a “typical” element of a data set and leads to the following definition.</p>
+<article class="definition definition-like" id="def_mode"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-579">The <dfn class="terminology">mode</dfn> of a set of values is the value that appears most often. If more than one value is tied for the most appearances, each one is a mode. If no value appears more than once, there is no mode.</p></article><p id="p-580">The <dfn class="terminology">mode</dfn> is unique among our measures of center as it is the only one that applies to both <a class="xref" data-knowl="./knowl/def_quantitative-variable.html" title="Definition 1.1.13">quantitative variables</a> and <a class="xref" data-knowl="./knowl/def_qualitative-variable.html" title="Definition 1.1.12">qualitative variables</a>. Consider the following examples.</p>
+<article class="example example-like" id="examp_center-spread_mode-qualitative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_mode-qualitative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Mode of a Qualitative Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_mode-qualitative"><article class="example example-like"><p id="p-581">A breakout presentation at a business convention attracts 16 participants. The job title of each of these participants is as follows. Find the mode of this set of data.</p>
+<figure class="table figure-like" id="examp_center-spread_mode-qualitative_data"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines">owner</td>
+<td class="l m b0 r0 l0 t0 lines">H.R. director</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">owner</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines">H.R. director</td>
+<td class="l m b0 r0 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">manager</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">owner</td>
+<td class="l m b0 r0 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">H.R. director</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines">owner</td>
+<td class="l m b0 r0 l0 t0 lines">owner</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">manager</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.5<span class="period">.</span></span><span class="space"> </span>Job Titles</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like">
+<p id="p-582">The mode is the most commonly appearing value. One way to find that is to construct a <a class="xref" data-knowl="./knowl/def_frequency-table.html" title="Definition 1.2.3">frequency table</a>.  Doing so for this data produces the following table, from which we can see that the mode is “manager”.</p>
+<figure class="table figure-like" id="examp_center-spread_mode_frequency-table"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Value</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">Frequency</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">manager</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">8</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">H.R. director</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">owner</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">5</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.6<span class="period">.</span></span><span class="space"> </span>Frequency Table</figcaption></figure>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_center-spread_mode-quantitative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_mode-quantitative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Mode of a Quantitative Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_mode-quantitative"><article class="example example-like"><p id="p-583">A survey of twelve grocery store shoppers asked how many times a month these shoppers visit their favorite grocery store. Find the mode of the resulting data, shown below.</p>
+<figure class="table figure-like" id="examp_center-spread_mode-quantitative_data"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">8</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.8<span class="period">.</span></span><span class="space"> </span>Number of Visits Per Month</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">
+<p id="p-584">Again, the best starting point is to construct a quick frequency table.</p>
+<figure class="table figure-like" id="examp_center-spread_mode-quantitative_freqency-table"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Value</td>
+<td class="l m b2 r0 l0 t0 lines">1</td>
+<td class="l m b2 r0 l0 t0 lines">2</td>
+<td class="l m b2 r0 l0 t0 lines">3</td>
+<td class="l m b2 r0 l0 t0 lines">4</td>
+<td class="l m b2 r0 l0 t0 lines">5</td>
+<td class="l m b2 r0 l0 t0 lines">6</td>
+<td class="l m b2 r0 l0 t0 lines">7</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">8</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Frequency</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">1</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.9<span class="period">.</span></span><span class="space"> </span>Frequency Table</figcaption></figure><p id="p-585">Notice that in this data set, both the 5 and the 3 appear three times. Every other value appears two or fewer times. This makes this set of data bimodal with modes 3 and 5.</p>
+</div></div>
+</div></article></div>
+<p id="p-586">While the mode is an easy way to measure the center, and is in fact the only way we have to measure the center of a set of qualitative data, it is usually not the best choice for measuring the center of a set of quantitative data. To see why this may be so, consider the next example.</p>
+<article class="example example-like" id="examp_center-spread_mode_bad-example"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_mode_bad-example"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_mode_bad-example"><article class="example example-like"><p id="p-587">Find the mode of the following sets of numbers.</p>
+<ol class="lower-alpha">
+<li id="li-261"><p id="p-588">\(\lbrace 1, 2, 5, 7, 12, 15, 19, 22, 50 \rbrace\)</p></li>
+<li id="li-262"><p id="p-589">\(\lbrace 1, 1, 20, 23, 26, 24, 29, 30, 27, 32, 19\rbrace\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
+<p id="p-590">The modes of these sets of numbers are as follows:</p>
+<ol class="lower-alpha">
+<li id="li-263"><p id="p-591">This data set contains no repeated values. Therefore, according to <a class="xref" data-knowl="./knowl/def_mode.html" title="Definition 1.3.3">the definition</a>, there is no mode for this set.</p></li>
+<li id="li-264"><p id="p-592">This data contains only one repeated value, the 1. So the mode is 1. However, 1 is definitely not the “typical” value in the set since all other values are between 19 and 32.</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-593">In summary, you should use the mode to measure the center of any qualitative set of data, or as a quick, but not definitive, measure of center for quantitative data. But be careful! The mode may not exist, there may be multiple modes, and if there is a single mode it may be very different from the “typical” values in the data set.</p>
+<figure class="figure figure-like" id="video_center-spread_mode-1"><video id="video-26" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.11<span class="period">.</span></span><span class="space"> </span>Finding the Mode I</figcaption></figure><figure class="figure figure-like" id="video_center-spread_mode-2"><video id="video-27" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.12<span class="period">.</span></span><span class="space"> </span>Finding the Mode II</figcaption></figure><article class="exercise exercise-like" id="ckpt_center-spread_mode-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_mode-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Mode I.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_mode-1"><article class="exercise exercise-like"><p id="p-594">The following colors of cars were observed in the parking lot of the local grocery store.</p>
+<figure class="table figure-like" id="table-19"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">blue</td>
+<td class="l m b0 r0 l0 t0 lines">green</td>
+<td class="l m b0 r0 l0 t0 lines">black</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">white</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">white</td>
+<td class="l m b0 r0 l0 t0 lines">green</td>
+<td class="l m b0 r0 l0 t0 lines">blue</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">yellow</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">white</td>
+<td class="l m b0 r0 l0 t0 lines">white</td>
+<td class="l m b0 r0 l0 t0 lines">blue</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">black</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">black</td>
+<td class="l m b0 r0 l0 t0 lines">green</td>
+<td class="l m b0 r0 l0 t0 lines">red</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">green</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.14<span class="period">.</span></span><span class="space"> </span>Car Colors</figcaption></figure><p id="p-595">Question: Which color(s) is/are the mode(s) for this set of data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-33" id="answer-33"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-33"><div class="answer solution-like"><p id="p-596">green and white</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_mode-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_mode-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Mode II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_mode-2"><article class="exercise exercise-like"><p id="p-597">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is/are the mode(s) for this set of data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-34" id="answer-34"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-34"><div class="answer solution-like"><p id="p-598">4, 6, 9, and 3 are all modes</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_mode-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_mode-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Mode II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_mode-3"><article class="exercise exercise-like"><p id="p-599">The following pets were found in 10 randomly selected homes.</p>
+<figure class="table figure-like" id="table-20"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">cat</td>
+<td class="l m b0 r0 l0 t0 lines">fish</td>
+<td class="l m b0 r0 l0 t0 lines">bird</td>
+<td class="l m b0 r0 l0 t0 lines">hamster</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">ferret</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">dog</td>
+<td class="l m b0 r0 l0 t0 lines">rabbit</td>
+<td class="l m b0 r0 l0 t0 lines">rat</td>
+<td class="l m b0 r0 l0 t0 lines">gerbil</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">pig</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.17<span class="period">.</span></span><span class="space"> </span>Pets</figcaption></figure><p id="p-600">Question: What is/are the mode(s) for this data set?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-35" id="answer-35"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-35"><div class="answer solution-like"><p id="p-601">there is no mode</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_center-spread_midrange-range"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Midrange and Range</span>
+</h3>
+<a href="sec_center-spread.html#sec_center-spread_midrange-range" class="permalink">¶</a><p id="p-602">When we think of the “typical” value in a set of data, we may also think of the word <dfn class="terminology">middle</dfn>. Our next measure of center is exactly that—the middle of the data set.</p>
+<article class="definition definition-like" id="def_midrange"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.18</span><span class="period">.</span>
+</h6>
+<p id="p-603">The <dfn class="terminology">midrange</dfn> of a set of data is the value in the exact center of the data. To compute the midrange, use the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{midrange} = \frac{\text{maximum} + \text{minimum}}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">where <dfn class="terminology">maximum</dfn> is the maximum value in the data set and <dfn class="terminology">minimum</dfn> is the minimum value.</p></article><p id="p-604">Notice that the midrange does involve some computation using numerical values, so it can only be used with <a class="xref" data-knowl="./knowl/def_quantitative-variable.html" title="Definition 1.1.13">quantitative variables</a>, where such computations make sense. To measure how spread out the data is from the midrange, we use the <dfn class="terminology">range</dfn>.</p>
+<article class="definition definition-like" id="def_range"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.19</span><span class="period">.</span>
+</h6>
+<p id="p-605">The <dfn class="terminology">range</dfn> of a set of data is the difference between the highest and lowest values in the data set. That is:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{range} = \text{maximum} - \text{minimum}.
+\end{equation*}
+</div></article><p id="p-606">Let's try out these new definitions with an example.</p>
+<article class="example example-like" id="examp_center-spread_midrange-range_computation"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_midrange-range_computation"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_midrange-range_computation"><article class="example example-like"><p id="p-607">A certain pond has been well stocked with fish for the upcoming fishing season. In order to keep a fish from this pond, it must be at least 13 inches long. To try to determine if the fish in the pond are long enough to allow fishing, a fish and game warden randomly catches and releases 20 different fish, finding the following lengths, in inches. Find the range and midrange of this data.</p>
+<figure class="table figure-like" id="examp_center-spread_midrange-range_computation_data"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">13.2</td>
+<td class="l m b0 r0 l0 t0 lines">10.8</td>
+<td class="l m b0 r0 l0 t0 lines">14.6</td>
+<td class="l m b0 r0 l0 t0 lines">17.2</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">17</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">18.3</td>
+<td class="l m b0 r0 l0 t0 lines">6.5</td>
+<td class="l m b0 r0 l0 t0 lines">13.4</td>
+<td class="l m b0 r0 l0 t0 lines">16.7</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">11.3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12.3</td>
+<td class="l m b0 r0 l0 t0 lines">9.8</td>
+<td class="l m b0 r0 l0 t0 lines">9.4</td>
+<td class="l m b0 r0 l0 t0 lines">11.6</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">12.1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8.7</td>
+<td class="l m b0 r0 l0 t0 lines">12.6</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">14.3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">13.1</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.21<span class="period">.</span></span><span class="space"> </span>Fish Lengths in Inches</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-608">To find the midrange and range we need to identify the maximum and minimum values in the data set. The largest value is 18.3 and the smallest is 6.5, Thus we compute the midrange using:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{midrange} = \frac{18.3+6.5}{2} = 12.4
+\end{equation*}
+</div>
+<p data-braille="continuation">and we get the range using:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{range} = 18.3 - 6.5 = 11.8.
+\end{equation*}
+</div>
+<p data-braille="continuation">It looks like the pond is not yet ready to open for fishing. The typical fish, as measured by the midrange, is only 12.4 inches long and could not be kept.</p>
+</div></div>
+</div></article></div>
+<p id="p-609">The midrange and range are useful tools for measuring the center and spread of a set of data, but there are several problems with them. The biggest problem is that both the midrange and range are extremely sensitive to <dfn class="terminology">outliers</dfn>.</p>
+<article class="definition definition-like" id="def_outlier"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.22</span><span class="period">.</span>
+</h6>
+<p id="p-610">An <dfn class="terminology">outlier</dfn> in a data set is a value that is either much larger than the rest of the data or much smaller than the rest of the data.</p></article><p id="p-611">To see how an outlier can affect the midrange and range, let's take another look at the fish-length data from the previous example.</p>
+<article class="example example-like" id="examp_center-spread_midrange-range_computation-outlier"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_midrange-range_computation-outlier"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">The Effect of Outliers on the Midrange and Range.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_midrange-range_computation-outlier"><article class="example example-like"><p id="p-612">The game warden believes that the 6.5 inch fish he caught in the <a class="xref" data-knowl="./knowl/examp_center-spread_midrange-range_computation_data.html" title="Table 1.3.21: Fish Lengths in Inches">sample above</a> is an outlier. He decides to redo the computation without that fish. Find the new midrange and range.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<p id="p-613">Without the 6.5 inch outlier, the new minimum is 8.7. This gives the following values:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{midrange} = \frac{18.3+8.7}{2} = 13.5
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\text{range} = 18.3 - 8.7 = 9.6.
+\end{equation*}
+</div>
+<p data-braille="continuation">With this new computation, it looks like the fish are in fact large enough to be caught—the typical fish length, as measured by the midrange, is 13.5 inches.</p>
+</div></div>
+</div></article></div>
+<p id="p-614">Notice what a big difference the single 6.5 inch fish made! This is what we mean when we say that the midrange is sensitive to outliers. Another problem with the range and midrange is that they only use the extreme maximum and minimum values of the data set. Ideally, we would want every value in the set of data to have some part in computing the “typical” value and the “spread” of the data.  For this reason, we will keep exploring different measures of center and spread.</p>
+<figure class="figure figure-like" id="video_center-spread_midrange-range-1"><video id="video-28" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.24<span class="period">.</span></span><span class="space"> </span>Finding the Midrange and Range I</figcaption></figure><figure class="figure figure-like" id="video_center-spread_midrange-range-2"><video id="video-29" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.25<span class="period">.</span></span><span class="space"> </span>Finding the Midrange and Range II</figcaption></figure><article class="exercise exercise-like" id="ckpt_center-spread_midrange-range-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_midrange-range-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.26</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Midrange and Range I.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_midrange-range-1"><article class="exercise exercise-like"><p id="p-615">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the midrange for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-36" id="answer-36"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-36"><div class="answer solution-like"><p id="p-616">5</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_midrange-range-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_midrange-range-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.27</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Midrange and Range II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_midrange-range-2"><article class="exercise exercise-like"><p id="p-617">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1\rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the range for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-37" id="answer-37"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-37"><div class="answer solution-like"><p id="p-618">8</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_midrange-range-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_midrange-range-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.28</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Midrange and Range III.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_midrange-range-3"><article class="exercise exercise-like"><p id="p-619">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15 \rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the range for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-38" id="answer-38"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-38"><div class="answer solution-like"><p id="p-620">393</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_midrange-range-4"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_midrange-range-4"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.29</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Midrange and Range IV.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_midrange-range-4"><article class="exercise exercise-like"><p id="p-621">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15\rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the midrange for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-39" id="answer-39"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-39"><div class="answer solution-like"><p id="p-622">203.5</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_center-spread_median-quartile"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">Median and Quartiles</span>
+</h3>
+<a href="sec_center-spread.html#sec_center-spread_median-quartile" class="permalink">¶</a><p id="p-623">To reinforce why we need a measure of center that is resistant to outliers, consider the following example.</p>
+<article class="example example-like" id="examp_center-spread_median-quartile_outlier"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_median-quartile_outlier"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.30</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_median-quartile_outlier"><article class="example example-like"><p id="p-624">The most expensive house in a certain market is a $2,500,000.00 mansion. The least expensive house is an $8,000.00 mobile home. Do you think that the midrange is an accurate measure of the “typical” home value in this market?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">
+<p id="p-625">To answer this question, let's first compute the midrange. This is:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{midrange} = \frac{2500000 + 8000}{2} = 1254000.
+\end{equation*}
+</div>
+<p data-braille="continuation">Do you think that the typical house really costs one and a quarter million dollars? Probably not! The midrange <em class="emphasis">is not an appropriate measure of center</em> for this data.</p>
+</div></div>
+</div></article></div>
+<p id="p-626">Once again, the outliers in this data set are affecting the midrange. To solve that problem, we introduce a new measure of center that is both resistant to outliers (meaning that they do not affect it very much) and considers more than just the two extreme values in the data set.</p>
+<article class="definition definition-like" id="def_median"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.31</span><span class="period">.</span>
+</h6>
+<p id="p-627">The <dfn class="terminology">median</dfn> of a data set is the middle number, or average of the two middle numbers, in the set of data once it has been arranged in increasing order.</p></article><p id="p-628">You may have heard of the median before. It is often used as a measure of center in data sets where we expect outliers, such as housing prices. Another common set of data in which the median is used is household income. The phrase “median household income” may sound familiar.  For those of us working in Washington State with Bill Gates, it is a good thing that the median is used to measure typical incomes! Let's practice computing the median.</p>
+<article class="example example-like" id="examp_center-spread_median-quartile_median"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_median-quartile_median"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.32</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Median.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_median-quartile_median"><article class="example example-like"><p id="p-629">Find the median of each set of data below.</p>
+<ol class="lower-alpha">
+<li id="li-265"><p id="p-630">\(\lbrace 14, 17, 10, 9, 16, 19, 12, 10, 15, 13 \rbrace\)</p></li>
+<li id="li-266"><p id="p-631">\(\lbrace 100, 215, 164, 117, 1000, 205, 178 \rbrace\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like">
+<p id="p-632">There are two steps to computing the median, and it is important that we do step one first. That first step is to arrange the data in order. The second step is to locate the middle value. Let's try this on both of the data sets above.</p>
+<ol class="lower-alpha">
+<li id="li-267">
+<p id="p-633">Our first step is to re-arrange this set of numbers in order, from smallest to largest:</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 9, 10, 10, 12, 13, 14, 15, 16, 17, 19\rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Then we find the middle number. Since there are an even number of values (ten of them), the exact middle lies half way between the two center values (5th and 6th) which are 13 and 14. So the median is \(\frac{13+14}{2} = 13.5\text{.}\)</p>
+</li>
+<li id="li-268">
+<p id="p-634">Again, we start by ordering the data:</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 100, 117, 164, 178, 205, 215, 1000 \rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">As there are an odd number of values in this data set (seven of them), the median is the single value in the exact center (the 4th value), which is 178.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-635">Notice that the 1000 in the second data set is a definite outlier. However, in computing the median, the actual value does not matter. The only thing that matters is its relationship to the rest of the data. This 1000 could be replaced by a more reasonable 220 and the median would not change. Bill Gates could make only $200,000 a year, and the median household income in Washington State would not change! This is what it means to be <em class="emphasis">resistant to outliers</em>.</p>
+<p id="p-636">To measure the variation in a set of data, we can use a slight twist on the median. Notice that the median divides the set of data into two pieces. If we take each of those pieces and divide them in half, we are dividing the data into quarters. We can then look at the range between the first quarter of the data and the third quarter of the data. This gives us a measurement similar to the range. But since we are only looking at the middle half of the data, we will not be affected by any outliers at the extremes.</p>
+<article class="definition definition-like" id="def_quartiles"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.33</span><span class="period">.</span>
+</h6>
+<p id="p-637">Any quantitative data set can be divided up into quarters using five <dfn class="terminology">quartiles</dfn>. These quartiles are:</p>
+<ul class="disc">
+<li id="li-269"><p id="p-638">the <dfn class="terminology">zeroth quartile</dfn> (\(Q_0\)), which is the minimum value in the data set.</p></li>
+<li id="li-270"><p id="p-639">the <dfn class="terminology">first quartile</dfn> (\(Q_1\)), which divides the bottom quarter of the data from the rest of the data.</p></li>
+<li id="li-271"><p id="p-640">the <dfn class="terminology">second quartile</dfn> (\(Q_2\)), which divides the bottom half of the data from the top half. This is more commonly called the median.</p></li>
+<li id="li-272"><p id="p-641">the <dfn class="terminology">third quartile</dfn> (\(Q_3\)), which divides the bottom three-quarters of the data from the top quarter.</p></li>
+<li id="li-273"><p id="p-642">the <dfn class="terminology">fourth quartile</dfn> (\(Q_4\)), is the maximum value in the data set.</p></li>
+</ul></article><p id="p-643">The range between \(Q_1\) and \(Q_3\) is of particular interest and, as mentioned above, it has a special name.</p>
+<article class="definition definition-like" id="def_iqr"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.34</span><span class="period">.</span>
+</h6>
+<p id="p-644">The <dfn class="terminology">Interquartile Range</dfn> or <dfn class="terminology">IQR</dfn> is the difference between the 3rd and 1st quartiles. That is,</p>
+<div class="displaymath">
+\begin{equation*}
+\text{IQR} = Q_3 - Q_1.
+\end{equation*}
+</div></article><p id="p-645">To see how this works, let's revisit the fish-length example.</p>
+<article class="example example-like" id="examp_center-spread_median-quartile_iqr"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_median-quartile_iqr"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_median-quartile_iqr"><article class="example example-like"><p id="p-646">A certain pond has been well stocked with fish for the upcoming fishing season. In order to keep a fish from this pond, it must be at least 13 inches long. To try to determine if the fish in the pond are long enough to allow fishing, a fish and game warden randomly catches and releases 20 different fish, finding the lengths from <a class="xref" data-knowl="./knowl/examp_center-spread_midrange-range_computation.html" title="Example 1.3.20">Example 1.3.20</a>. Find the median and IQR for this data.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like">
+<p id="p-647">We first arrange the <a class="xref" data-knowl="./knowl/examp_center-spread_midrange-range_computation_data.html" title="Table 1.3.21: Fish Lengths in Inches">data</a> in order.  One way to make this process quicker is to cut and paste the data into a spreadsheet program and ask it to sort the values for you. This results in:</p>
+<div class="displaymath">
+\begin{equation*}
+\scriptstyle 6.5, 8.7, 9.4, 9.8, 10.8, 11.3, 11.6, 12.1, 12.3, 12.6, 13, 13.1, 13.2, 13.4, 14.3, 14.6, 16.7, 17, 17.2, 18.3
+\end{equation*}
+</div>
+<p data-braille="continuation">Since there are 20 values in the data set, the median will be the average of the 10th and 11th values. That is:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{median} = \frac{12.6+13}{2} = 12.8.
+\end{equation*}
+</div>
+<p data-braille="continuation">According to the median, the fish are not quite long enough!</p>
+<p id="p-648">To compute the IQR we must find \(Q_1\) and \(Q_3\text{.}\)  We find \(Q_1\) by computing the median of the first half of the data set. Those first ten numbers are:</p>
+<div class="displaymath">
+\begin{equation*}
+6.5, 8.7, 9.4, 9.8, 10.8, 11.3, 11.6, 12.1, 12.3, 12.6.
+\end{equation*}
+</div>
+<p data-braille="continuation">The median of this data, and thus the first quartile, is:</p>
+<div class="displaymath">
+\begin{equation*}
+Q_1 = \frac{10.8+11.3}{2} = 11.05.
+\end{equation*}
+</div>
+<p id="p-649">We can find \(Q_3\) in the same way, but working with the top half of the data.</p>
+<div class="displaymath">
+\begin{equation*}
+13, 13.1, 13.2, 13.4, 14.3, 14.6, 16.7, 17, 17.2, 18.3.
+\end{equation*}
+</div>
+<p data-braille="continuation">The median of the top half of the data is:</p>
+<div class="displaymath">
+\begin{equation*}
+Q_3 = \frac{14.3+14.6}{2} = 14.5.
+\end{equation*}
+</div>
+<p id="p-650">Therefore, the IQR is \(IQR = 14.5-11.05 = 3.45\text{.}\) This means that the middle half of the fish fall into a range of 3.45 inches.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_center-spread_median-quartile-1"><video id="video-30" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.36<span class="period">.</span></span><span class="space"> </span>Finding Medians, Quartiles, and IQR I</figcaption></figure><figure class="figure figure-like" id="video_center-spread_median-quartile-2"><video id="video-31" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.37<span class="period">.</span></span><span class="space"> </span>Finding Medians, Quartiles, and IQR II</figcaption></figure><article class="exercise exercise-like" id="ckpt_center-spread_median-quartile-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_median-quartile-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.38</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_median-quartile-1"><article class="exercise exercise-like"><p id="p-651">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15\rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the median for this set of data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-40" id="answer-40"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-40"><div class="answer solution-like"><p id="p-652">26</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_median-quartile-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_median-quartile-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.39</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_median-quartile-2"><article class="exercise exercise-like"><p id="p-653">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15\rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the first quartile for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-41" id="answer-41"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><p id="p-654">17</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_median-quartile-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_median-quartile-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.40</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_median-quartile-3"><article class="exercise exercise-like"><p id="p-655">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the median for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-42" id="answer-42"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><p id="p-656">5</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_median-quartile-4"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_median-quartile-4"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.41</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_median-quartile-4"><article class="exercise exercise-like"><p id="p-657">Consider the following set of data.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1\rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">Question: What is the third quartile for this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-43" id="answer-43"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><p id="p-658">7</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_center-spread_mean-stdev"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.4</span> <span class="title">Mean and Standard Deviation</span>
+</h3>
+<a href="sec_center-spread.html#sec_center-spread_mean-stdev" class="permalink">¶</a><p id="p-659">While the median is a good measure of center to use in the case where we know a set of data contains outliers, it does have one major disadvantage. Namely, it does not take the value of every data point into consideration. In many instances, we want each value in the data set to have weight in determining the “typical” value. To achieve this goal, we turn back to an already familiar measure of center, commonly called the <dfn class="terminology">average</dfn>.  We will, however, use a more precise name for this measure.</p>
+<article class="definition definition-like" id="def_mean"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.42</span><span class="period">.</span>
+</h6>
+<p id="p-660">The <dfn class="terminology">arithmetic mean</dfn>, which we will call simply the <dfn class="terminology">mean</dfn>, is a measure of center found by taking the sum of all values in the data set and dividing by the number of values in the data set. Symbolically,</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-661">
+\begin{equation*}
+\text{Population:}\quad\mu = \frac{\sum x_i}{n}
+\end{equation*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-662">
+\begin{equation*}
+\text{Sample:}\quad\overline{x} = \frac{\sum x_i}{n}
+\end{equation*}
+</div></div>
+</div></div>
+<p id="p-663">Where the \(x_i\) represent the values in the data set, \(n\) is the number of values in the data set, and the Greek letter \(\sum\) stands for summation.</p></article><p id="p-664">Notice that there is a different symbol used for the mean depending on whether it is the mean of an entire population, or just the mean of a sample. For a population, the Greek letter \(\mu\) (pronounced “myoo”) is used for the mean. For a sample, we use \(\overline{x}\) (read “x bar”) to represent the mean. Keep this distinction in mind, as it can be a clue as to what type of data you are dealing with on a homework or exam problem.</p>
+<p id="p-665">Another thing to note is that the name <dfn class="terminology">arithmetic mean</dfn> is important. First, we don't call this the <dfn class="terminology">average</dfn>, even though most people think of it as the average. The reason is simply that the word average means “typical” and we have seen several ways to measure the “typical” value in a data set. Next, we specify that this is the <em class="emphasis">arithmetic</em> mean because there are actually different types of means. We could, for example, use the <dfn class="terminology">geometric mean</dfn>, which is given by the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt[n]{x_1 \times x_2 \times \cdots \times x_n}
+\end{equation*}
+</div>
+<p id="p-666">For many data sets the geometric mean and arithmetic mean are very close. But you wouldn't want to have your homework average computed using the geometric mean. To understand why not, think about what would happen if only one of your assignments was not turned in! In this text we will always use the arithmetic mean.  For that reason, we can simplify things by stating up front that we mean the <dfn class="terminology">arithmetic mean</dfn> when we say <dfn class="terminology">mean</dfn>.</p>
+<p id="p-667">The measure of spread most commonly used with the mean is called the <dfn class="terminology">variance</dfn>. This can be thought of as the average (or mean) distance that each data point lies away from the mean. If we compute the average, however, we would get zero because of the +/- signs. So we square these differences, resulting in the following definition.</p>
+<article class="definition definition-like" id="def_variance"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.43</span><span class="period">.</span>
+</h6>
+<p id="p-668">The <dfn class="terminology">variance</dfn> measures the average square of the distance of a value from the mean in a set of data. Symbolically,</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-669">
+\begin{equation*}
+\text{Population:}\quad\sigma^2 = \frac{\sum (x_i - \mu)^2}{n}
+\end{equation*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-670">
+\begin{equation*}
+\text{Sample:}\quad s^2 = \frac{\sum (x_i -\overline{x})^2}{n-1}
+\end{equation*}
+</div></div>
+</div></div></article><p id="p-671">Again we use a different symbol to represent the variance of a population, the Greek letter \(\sigma^2\) (pronounced “sig-muh squared”), and a sample, the Latin letter \(s^2\) (pronounced “s squared”). But the variance of a population also differs in a more substantial way from that of a sample. Notice that in a population, we divide the sum of the differences squared by \(n\text{,}\) the number of values in the population. But in a sample, we divide by \(n-1\text{.}\) This is an important distinction to remember. The reason for it is, unfortunately, beyond the scope of the course, but involves the fact that in a sample there is less variation than in the entire population.</p>
+<p id="p-672">One problem with using the variance as a measure of spread is that the units are different from the units of the data set. For example, if we say that the mean number of children in a US household is 2.2 with a variance of 0.4, then the mean is in “children”.  That is, there are an average of 2.2 children in US households. The variance, however, has units “square children.” What does it mean to say that the number of children varies by 0.4 square children? To remedy that, we often take the square root of the variance to get a measure of spread that is in the same units as the mean.</p>
+<article class="definition definition-like" id="def_stddev"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.44</span><span class="period">.</span>
+</h6>
+<p id="p-673">The <dfn class="terminology">standard deviation</dfn> of a set of data is the square root of the variance. Symbolically,</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-674">
+\begin{equation*}
+\text{Population:}\quad\sigma = \sqrt{\frac{\sum(x_i - \mu)^2}{n}}
+\end{equation*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="displaymath" id="p-675">
+\begin{equation*}
+\text{Sample:}\quad s = \sqrt{\frac{\sum (x_i - \overline{x})^2}{n-1}}
+\end{equation*}
+</div></div>
+</div></div></article><p id="p-676">Let's test out these new formulas on an example.</p>
+<article class="example example-like" id="examp_center-spread_mean-stdev_computation"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_mean-stdev_computation"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.45</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Mean and Standard Deviation.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_mean-stdev_computation"><article class="example example-like"><p id="p-677">Find the mean and standard deviation of sample data \(\lbrace 4, 6, 3, 8, 4\rbrace\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-678">We will do this in three steps.</p>
+<ol class="decimal">
+<li id="li-274">
+<p id="p-679">We first compute the mean as follows.</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{4 + 6 + 3 + 8 + 4}{5} = \frac{25}{5} = 5.
+\end{equation*}
+</div>
+</li>
+<li id="li-275">
+<p id="p-680">Next, we compute the variance.  Using a table can make this computation easier.</p>
+<figure class="table figure-like" id="table-22"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x_i\)</td>
+<td class="c m b2 r2 l0 t0 lines">\((x_i - \overline{x})\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\((x_i - \overline{x})^2\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r2 l0 t0 lines">\((4 - 5) = -1\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((-1)^2 = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r2 l0 t0 lines">\((6 - 5) = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((1)^2 = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r2 l0 t0 lines">\((3 - 5) = -2\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((-2)^2 = 4\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r2 l0 t0 lines">\((8 - 5) = 3\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((3)^2 = 9\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">\(4\)</td>
+<td class="l m b2 r2 l0 t0 lines">\((4 - 5) = -1\)</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">\((-1)^2 = 1\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines" colspan="2">\(s^2 =\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{16}{5-1} = 4\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.46<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</li>
+<li id="li-276"><p id="p-681">Finally, the standard deviation is \(s = \sqrt{4} = 2\text{.}\)</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-682">The number for this example turned out very nice. This is not always the case. Usually the standard deviation will involve decimals. In general, you should not round your answers during any intermediate steps, and then round your standard deviation to one decimal more than the number of decimals in the original data set. One quick way to estimate the standard deviation is based on the range of the data.</p>
+<article class="principle theorem-like" id="def_stddev-estimate"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">1.3.47</span><span class="period">.</span>
+</h6>
+<p id="p-683">To <dfn class="terminology">estimate the standard deviation</dfn> of a population, use the following general rule:</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \approx \frac{\text{range}}{4}.
+\end{equation*}
+</div></article><p id="p-684">In the above example, our estimate of \(\frac{8-3}{4} = 1.25\) is not terribly good, but this can be a quick and easy way to approximate the standard deviation if all you have are the minimum and maximum values of your population data.</p>
+<figure class="figure figure-like" id="video_center-spread_mean-stdev-1"><video id="video-32" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.48<span class="period">.</span></span><span class="space"> </span>Finding Means and Standard Deviations I</figcaption></figure><figure class="figure figure-like" id="video_center-spread_mean-stdev-2"><video id="video-33" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.49<span class="period">.</span></span><span class="space"> </span>Finding Means and Standard Deviations II</figcaption></figure><article class="exercise exercise-like" id="ckpt_center-spread_mean-stdev-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_mean-stdev-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.50</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_mean-stdev-1"><article class="exercise exercise-like"><p id="p-685">A population of long tailed cats has the following tail-lengths, in inches.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 22, 19, 28, 23, 31\rbrace
+\end{equation*}
+</div>
+<p id="p-686">Question: Find the standard deviation for this population data. Round your final answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-44" id="answer-44"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><p id="p-687">4.3</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_mean-stdev-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_mean-stdev-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.51</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_mean-stdev-2"><article class="exercise exercise-like"><p id="p-688">A sample of newly manufactured widgets showed the following number of manufacturing defaults.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 2, 3, 0, 1, 0\rbrace
+\end{equation*}
+</div>
+<p id="p-689">Question: Find the standard deviation for this sample data. Round your final answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-45" id="answer-45"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><p id="p-690">1.3</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_mean-stdev-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_mean-stdev-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.52</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_mean-stdev-3"><article class="exercise exercise-like"><p id="p-691">A sample of driving speeds from five randomly selected cars yielded the following values, in miles per hour.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 68, 45, 71, 32, 55\rbrace
+\end{equation*}
+</div>
+<p id="p-692">Question: Find the standard deviation for this sample data. Round your final answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-46" id="answer-46"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><p id="p-693">16.2</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_center-spread_appropriate"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.5</span> <span class="title">Selecting Appropriate Summaries</span>
+</h3>
+<a href="sec_center-spread.html#sec_center-spread_appropriate" class="permalink">¶</a><p id="p-694">We have now seen four different sets of numerical summaries:</p>
+<ul class="disc">
+<li id="li-277"><p id="p-695">the <a class="xref" data-knowl="./knowl/def_mode.html" title="Definition 1.3.3">mode</a>,</p></li>
+<li id="li-278"><p id="p-696">the <a class="xref" data-knowl="./knowl/def_midrange.html" title="Definition 1.3.18">midrange</a> and <a class="xref" data-knowl="./knowl/def_range.html" title="Definition 1.3.19">range</a>,</p></li>
+<li id="li-279"><p id="p-697">the <a class="xref" data-knowl="./knowl/def_median.html" title="Definition 1.3.31">median</a> and <a class="xref" data-knowl="./knowl/def_iqr.html" title="Definition 1.3.34">IQR</a>, and</p></li>
+<li id="li-280"><p id="p-698">the <a class="xref" data-knowl="./knowl/def_mean.html" title="Definition 1.3.42">mean</a> and <a class="xref" data-knowl="./knowl/def_stddev.html" title="Definition 1.3.44">standard deviation,</a>.</p></li>
+</ul>
+<p id="p-699">But how do we know when to use a particular measure of center? To better answer this question, let's review the strengths and weaknesses of each of these numerical summaries in tabular format.</p>
+<figure class="table figure-like" id="table-23"><table>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">Qualitative</td>
+<td class="c m b0 r0 l0 t0 lines">Quantitative</td>
+<td class="c m b0 r0 l0 t0 lines">Sensitive</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Considers</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">Data</td>
+<td class="c m b2 r0 l0 t0 lines">Data</td>
+<td class="c m b2 r0 l0 t0 lines">to Outliers</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">every Value</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">Mode</dfn></td>
+<td class="c m b0 r0 l0 t0 lines">sometimes</td>
+<td class="c m b0 r0 l0 t0 lines">sometimes</td>
+<td class="c m b0 r0 l0 t0 lines">no</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">no</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">
+<dfn class="terminology">Midrange</dfn> and <dfn class="terminology">Range</dfn>
+</td>
+<td class="c m b0 r0 l0 t0 lines">no</td>
+<td class="c m b0 r0 l0 t0 lines">yes</td>
+<td class="c m b0 r0 l0 t0 lines">yes</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">no</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">
+<dfn class="terminology">Median</dfn> and <dfn class="terminology">IQR</dfn>
+</td>
+<td class="c m b0 r0 l0 t0 lines">no</td>
+<td class="c m b0 r0 l0 t0 lines">yes</td>
+<td class="c m b0 r0 l0 t0 lines">no</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">no</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">
+<dfn class="terminology">Mean</dfn> and <dfn class="terminology">Standard Deviation</dfn>
+</td>
+<td class="c m b0 r0 l0 t0 lines">no</td>
+<td class="c m b0 r0 l0 t0 lines">yes</td>
+<td class="c m b0 r0 l0 t0 lines">somewhat</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">yes</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.53<span class="period">.</span></span><span class="space"> </span>Comparison of Measures of Center and Spread</figcaption></figure><p id="p-700">As we can see, each method has its own strengths and weaknesses. Based on these, we can summarize when to use which measures of center and spread, as outlined in the observation below.</p>
+<article class="observation remark-like" id="fig_center-spread_appropriate"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.3.54</span><span class="period">.</span>
+</h6>
+<ul id="p-701" class="disc">
+<li id="li-281">
+<h6 class="heading"><span class="title">Mode.</span></h6>
+<p id="p-702">Use the mode when dealing with qualitative data, or for a quick measure of center for small sets of quantitative data. The mode may not exist, and should not be used in general for larger sets of quantitative data.</p>
+</li>
+<li id="li-282">
+<h6 class="heading"><span class="title">Midrange and Range.</span></h6>
+<p id="p-703">The midrange and range may be used for a quick estimate of center and variation, but should not be used if there are any indications of outliers.</p>
+</li>
+<li id="li-283">
+<h6 class="heading"><span class="title">Median and Inter-Quartile Range.</span></h6>
+<p id="p-704">Use the median and inter-quartile range if there are indications of strong outliers in your data. Data sets which with strong outliers would include income or housing price data.</p>
+</li>
+<li id="li-284">
+<h6 class="heading"><span class="title">Mean and Standard Deviation.</span></h6>
+<p id="p-705">The mean and standard deviation are the best all-purpose measures of center and variation for quantitative data. Unless your data set has strong outliers, these are the summary values you should use.</p>
+</li>
+</ul></article><article class="example example-like" id="examp_center-spread_appropriate_identify"><a data-knowl="" class="id-ref original" data-refid="hk-examp_center-spread_appropriate_identify"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.55</span><span class="period">.</span><span class="space"> </span><span class="title">Picking Appropriate Measures.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_center-spread_appropriate_identify"><article class="example example-like"><p id="p-706">Determine which measure of center would be best in each of the following data sets.</p>
+<ol class="lower-alpha">
+<li id="li-285"><p id="p-707">The salaries of all employee's at IBM.</p></li>
+<li id="li-286"><p id="p-708">A quick assessment of how well a group of athletes did in a 100-meter dash.</p></li>
+<li id="li-287"><p id="p-709">Determine the typical hair color in a group of teenagers.</p></li>
+<li id="li-288"><p id="p-710">Finding the typical height of a pine tree in a given acre of forest.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like"><ol id="p-711" class="lower-alpha">
+<li id="li-289"><p id="p-712">Salaries of all employees at a large firm such as IBM are likely to include outliers, such as the CEO's salary. For this reason, the median is probably the best measure of center.</p></li>
+<li id="li-290"><p id="p-713">The midrange may be best. This set of data should not include many outliers, and the values will be small and relatively close together. This makes the midrange an acceptable way to quickly measure the center.</p></li>
+<li id="li-291"><p id="p-714">Hair color is a qualitative variable, so our only choice is to use the mode.</p></li>
+<li id="li-292"><p id="p-715">Pine tree heights on an acre of forest land should not have large outliers, and there are likely to be quite a few trees. Since there is no reason to use any of the other measures of center, the mean would be best here.</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-716">Often it is helpful to compute several summaries. One useful comparison relates the mean and median together. When the mean is larger than the median, the data will have a histogram that is <a class="xref" data-knowl="./knowl/def_histogram-symmetry.html" title="Definition 1.2.77">skewed right</a>. When the mean is smaller, the histogram will be <a class="xref" data-knowl="./knowl/def_histogram-symmetry.html" title="Definition 1.2.77">skewed left</a>.  Finally, if the mean and median are equal, the histogram will be exactly <a class="xref" data-knowl="./knowl/def_histogram-symmetry.html" title="Definition 1.2.77">symmetric</a>.</p>
+<figure class="figure figure-like" id="video_center-spread_appropriate-1"><video id="video-34" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-13.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.56<span class="period">.</span></span><span class="space"> </span>Using Appropriate Measures I</figcaption></figure><figure class="figure figure-like" id="video_center-spread_appropriate-2"><video id="video-35" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-14.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.57<span class="period">.</span></span><span class="space"> </span>Using Appropriate Measures II</figcaption></figure><article class="exercise exercise-like" id="ckpt_center-spread_appropriate-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_appropriate-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.58</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_appropriate-1"><article class="exercise exercise-like"><p id="p-717">A teacher wishes to summarize the score of a “typical” student on the most recent exam. The teacher is aware that one very gifted student received a perfect score, but that all other students struggled on the exam.</p>
+<p id="p-718">Question: Which measure of center should the teacher use to summarize the score of a typical student?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-47" id="answer-47"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><p id="p-719">median</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_appropriate-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_appropriate-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.59</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_appropriate-2"><article class="exercise exercise-like"><p id="p-720">A basketball coach wishes to summarize the height of a group of students at basketball camp. Most of the students are in the same height range, with no unusually short or tall students whose heights would be considered outliers.</p>
+<p id="p-721">Question: Which measure of center should the coach use?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-48" id="answer-48"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><p id="p-722">mean</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_center-spread_appropriate-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_center-spread_appropriate-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.60</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_center-spread_appropriate-3"><article class="exercise exercise-like"><p id="p-723">A travel agent wishes to summarize the most common hotel choice in Walla Walla. She collects data from her most recent 250 clients, recording the hotel in which each client stayed.</p>
+<p id="p-724">Question: What measure of center should the travel agent use to summarize this data?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-49" id="answer-49"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><p id="p-725">mode</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

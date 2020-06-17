@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:09-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Randomness and Simulation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap_probability.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_counting.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap_probability.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_counting.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation" class="active">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_simulation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Randomness and Simulation</span>
+</h2>
+<a href="sec_simulation.html" class="permalink">¶</a><section class="introduction" id="sec_simulation_intro"><p id="p-864">We begin our study of randomness and probability by exploring the concept of randomness.  What does it mean for a process to be random?  Why does it matter?  We'll attempt to answer these questions in the first few parts of this section.</p>
+<p id="p-865">Once we've identified sources of randomness, we will focus on how we can utilize them to simulate a process.  We'll discuss the key steps in conducting a simulation and look at several examples.  We will finish the section by reviewing several limitations of simulations.</p></section><article class="objectives goal-like" id="sec_simulation_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-16"><p id="p-866">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-352">
+<p id="p-867">describe the following terms:</p>
+<ul class="circle cols2">
+<li id="li-353"><p id="p-868">component</p></li>
+<li id="li-354"><p id="p-869">deterministic process</p></li>
+<li id="li-355"><p id="p-870">outcome</p></li>
+<li id="li-356"><p id="p-871">pseudo-random</p></li>
+<li id="li-357"><p id="p-872">random number table</p></li>
+<li id="li-358"><p id="p-873">random process</p></li>
+<li id="li-359"><p id="p-874">response variable</p></li>
+<li id="li-360"><p id="p-875">simulation</p></li>
+<li id="li-361"><p id="p-876">trial</p></li>
+</ul>
+</li>
+<li id="li-362">
+<p id="p-877">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-363"><p id="p-878">Identify random, pseudo-random, and non-random processes</p></li>
+<li id="li-364"><p id="p-879">Describe a simulation using appropriate vocabulary</p></li>
+<li id="li-365"><p id="p-880">Set-up a simulation using appropriate assumptions</p></li>
+<li id="li-366"><p id="p-881">Conduct a simulation using random number tables</p></li>
+<li id="li-367"><p id="p-882">Identify the limitations of a simulation</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_simulation_pseudo-random"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Random vs. Pseudo-random Numbers</span>
+</h3>
+<a href="sec_simulation.html#sec_simulation_pseudo-random" class="permalink">¶</a><p id="p-883">We have already seen the terms “random sample” in this course, and we will see it a lot more as we continue. It is important, therefore, that we understand what randomness means.</p>
+<article class="example example-like" id="examp_simulation_identify-random"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_identify-random"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Random Processes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_identify-random"><article class="example example-like"><p id="p-884">Which of the following processes is random?</p>
+<ol class="lower-alpha">
+<li id="li-368"><p id="p-885">a person thinks of a number between one and ten</p></li>
+<li id="li-369"><p id="p-886">a student randomly fills in bubbles on a standardized test sheet</p></li>
+<li id="li-370"><p id="p-887">a computer program randomly assigns the winning lottery numbers</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like"><p id="p-888">Surprisingly, the answer is none of these are truly random processes.</p></div></div>
+</div></article></div>
+<p id="p-889">To be truly random, a process must have no predictability—show no preference towards one or more outcomes. A person choosing a number is likely to have a “favorite” number or to be influenced by something he just saw or heard. A student filling in bubbles is likely to make a design, or even to “try to be random” and evenly spread out the bubbles, which is not in fact random. Even a computer program comes up with “random numbers” using a predictable algorithm. The computer program is an example of the following.</p>
+<article class="definition definition-like" id="def_pseudo-random"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-890">A <dfn class="terminology">pseudo-random process</dfn> is one that appears to be random, but which, when repeated with the same initial inputs, will always produce the same results.</p></article><p id="p-891">Where then can we get a reliable source of random information? This can actually be a philosophical question. Is anything in the universe truly random, or is everything <dfn class="terminology">deterministic</dfn>—meaning if we know the initial conditions, we can predict exactly what will happen. In this class, we assume that physical phenomena that we observe are, if not random, so complex that they might as well be random. We can gather random numbers then from sources such as:</p>
+<ul class="disc">
+<li id="li-371"><p id="p-892">the time between the decay of radioactive material, or</p></li>
+<li id="li-372"><p id="p-893">time between the observation of cosmic rays, or</p></li>
+<li id="li-373"><p id="p-894">wind gust speeds and direction.</p></li>
+</ul>
+<p data-braille="continuation">None of these are terribly practical for us, so instead we use either a pseudo-random number generator on a computer, or a random number table which records digits based on processes similar to those mentioned above.</p>
+<article class="definition definition-like" id="def_random-number-table"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-895">A <dfn class="terminology">random number table</dfn> is a list of digits recorded based on some random process. For example,</p>
+<pre class="code-block tex2jax_ignore">2217726304387410092537086270581997622725849795907032825001108963
+3217535822643800292254644943760642389043766557204107354186024508
+8906427308645681412198226653885873285801699027843110380420067664
+8740522639824530519902027044464984322000946238678577902639002954
+8887003319933147508331265192321413908608671496383528968974910533
+4943760642389043766557204107354186024508432200094623867858226440
+</pre></article><p id="p-896">To use a random number table to help us generate a string of random numbers, we first “randomly” select a starting point in the table, and then use the digits that follow.</p>
+<article class="example example-like" id="examp_simulation_using-table"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_using-table"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Using a Random Number Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_using-table"><article class="example example-like"><p id="p-897">You wish to randomly pick a sample of 6 people from a group of 100 people. Use the random number table provided above to do this.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like">
+<p id="p-898">We will assign each person in our group of 100 a two-digit number from 00 to 99. This means we will take groups of two digits from the table above, skipping over any repeating numbers since we don't want to pick the same “person” twice.</p>
+<p id="p-899">In order to select our six pairs of digits, we must first pick a starting point.  We'll do this by rolling a six-sided die (since there are six rows in the table).  Let's say this comes up with the number 3.  Then we will start at the beginning of the third row in the table.  The first six pairs of two-digit numbers from that row are \(89, 06, 42, 73, 08,\) and \(65\text{.}\)</p>
+<p id="p-900">Each of these numbers represents one of our people, and there are no repeats.  So the six people we will use in our sample are those assigned numbers 89, 6, 42, 73, 8, and 64.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_simulation_pseudo-random-1"><video id="video-42" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.5<span class="period">.</span></span><span class="space"> </span>Using Random Number Tables I</figcaption></figure><figure class="figure figure-like" id="video_simulation_pseudo-random-2"><video id="video-43" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.6<span class="period">.</span></span><span class="space"> </span>Using Random Number Tables II</figcaption></figure><article class="exercise exercise-like" id="ckpt_simulation_pseudo-random-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_pseudo-random-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_pseudo-random-1"><article class="exercise exercise-like"><p id="p-901">You wish to collect a sample of 10 individuals from a population of 100. To do this, you assign numbers 0-99 to these individuals, and then use the random number table below, starting with the first entry and taking two digits at a time to select your sample.</p>
+<pre class="code-block tex2jax_ignore">52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+</pre>
+<p id="p-902">Question: What are the numbers of the individuals will be included in your sample?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-58" id="answer-58"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-58"><div class="answer solution-like"><p id="p-903">Person number 52, 55, 71, 34, 40, 30, 79, 3, 18, and 58.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_pseudo-random-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_pseudo-random-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_pseudo-random-2"><article class="exercise exercise-like"><p id="p-904">You wish to collect a sample of 10 individuals from a population of 100. To do this, you assign numbers 0-99 to these individuals, and then use the random number table below, starting with the first entry in the second row, and taking two digits at a time to select your sample.</p>
+<pre class="code-block tex2jax_ignore">52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+</pre>
+<p id="p-905">Question: Which of the following individuals will not be included in your sample?</p>
+<ol class="decimal cols2">
+<li id="li-374"><p id="p-906">Person number 22</p></li>
+<li id="li-375"><p id="p-907">Person number 35</p></li>
+<li id="li-376"><p id="p-908">Person number 46</p></li>
+<li id="li-377"><p id="p-909">Person number 69</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-59" id="answer-59"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-59"><div class="answer solution-like"><p id="p-910">Person number 46</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_pseudo-random-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_pseudo-random-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_pseudo-random-3"><article class="exercise exercise-like"><p id="p-911">You wish to collect a sample of 10 individuals from a population of 100. To do this, you assign numbers 0-99 to these individuals, and then use the random number table below, starting with the first entry in the third row and taking two digits at a time to select your sample.</p>
+<pre class="code-block tex2jax_ignore">52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+</pre>
+<p id="p-912">Question: Which individuals are included in your sample?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-60" id="answer-60"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-60"><div class="answer solution-like"><p id="p-913">Person number 16, 64, 52, 11, 77, 60, 69, 71, 55, and 24.</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_simulation_random"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">Random Processes</span>
+</h3>
+<a href="sec_simulation.html#sec_simulation_random" class="permalink">¶</a><p id="p-914">In statistics, we use random processes in many different ways. For example, we may wish to use randomness to:</p>
+<ul class="disc">
+<li id="li-378"><p id="p-915">eliminate human biases -- such as in selecting individuals for a sample,</p></li>
+<li id="li-379"><p id="p-916">model the real world -- such as flipping a coin, rolling a die, or other more complicated random processes, or</p></li>
+<li id="li-380"><p id="p-917">predict how likely a given event is to happen based on the models above.</p></li>
+</ul>
+<p id="p-918">One of our goals in this lesson is to better understand how we can model the real world using <dfn class="terminology">random processes</dfn> so that we can make predictions and better understand our samples. To model the real world, we must first understand the process we are trying to model.</p>
+<article class="definition definition-like" id="def_random-process"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-919">A <dfn class="terminology">random process</dfn> is one in which, even if the initial conditions are known, the final result can not be predicted.</p></article><p id="p-920">If a process is not random, then the outcome can be predicted or determined based on the initial conditions, or starting points of the process. Such a process is called <dfn class="terminology">deterministic</dfn>.</p>
+<article class="definition definition-like" id="def_deterministic-process"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-921">In a <dfn class="terminology">deterministic process</dfn> the outcome of the process is completely determined by the initial conditions. That is, the final result will always be the same if the same starting point is used.</p></article><p id="p-922">To see the difference between these two types of processes, consider the following examples.</p>
+<article class="example example-like" id="examp_simulation_random-or-deterministic-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_random-or-deterministic-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Processes I.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_random-or-deterministic-1"><article class="example example-like"><p id="p-923">An otherwise empty lake is stocked with 500 catfish, 750 bass, and 1000 trout. A fisherman decides to catch fish and throw them back until he has caught one of each type of fish. Is this a random or deterministic process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like"><p id="p-924">This is a <em class="emphasis">random process</em> because the answer to the question will vary randomly. In order to model this, we would either need to either find such a pond and fish (probably impractical), come up with a way to count all of the possibilities (see <a href="sec_counting.html" class="internal" title="Section 2.2: Basic Counting Rules">Section 2.2</a>) or simulate the process using random numbers.</p></div></div>
+</div></article></div>
+<article class="example example-like" id="examp_simulation_random-or-deterministic-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_random-or-deterministic-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Processes II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_random-or-deterministic-2"><article class="example example-like"><p id="p-925">A lamp is connected to five different light switches, each in a different room. The lamp turns on if an even number of the light switches are in the up position and off if an odd number are in the up position. We observe the state of the light (off or on). Is this a random process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like"><p id="p-926">This is not a random process, it is <em class="emphasis">deterministic</em>. Based on the state of the light switches we can say for certain whether the lamp will be off or on.</p></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_simulation_random-1"><video id="video-44" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.14<span class="period">.</span></span><span class="space"> </span>Deterministic and Random Processes I</figcaption></figure><figure class="figure figure-like" id="video_simulation_random-2"><video id="video-45" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.15<span class="period">.</span></span><span class="space"> </span>Deterministic and Random Processes II</figcaption></figure><article class="exercise exercise-like" id="ckpt_simulation_random-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_random-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.16</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_random-1"><article class="exercise exercise-like"><p id="p-927">The following describes three different processes.</p>
+<ol class="lower-alpha">
+<li id="li-381"><p id="p-928">Shuffling a deck of 52 playing cards four times, and then drawing the top card.</p></li>
+<li id="li-382"><p id="p-929">Pushing four specific buttons on your calculator, in a specified order, and then pressing the “=” key.</p></li>
+<li id="li-383"><p id="p-930">Spinning the “wheel-of-fortune” from the TV game show.</p></li>
+</ol>
+<p id="p-931">Question: Identify each of these processes as random or deterministic.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-61" id="answer-61"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><p id="p-932">drawing a card and spinning the wheel are random, pushing the calculator keys is deterministic</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_random-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_random-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.17</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_random-2"><article class="exercise exercise-like"><p id="p-933">The following describes three different processes.</p>
+<ol class="lower-alpha">
+<li id="li-384"><p id="p-934">Typing a specified list of commands into a computer program.</p></li>
+<li id="li-385"><p id="p-935">Drawing 4 names from a hat containing 100 names and noting whose name is drawn.</p></li>
+<li id="li-386"><p id="p-936">Drawing 4 names from a hat containing 4 names and noting whose name is drawn.</p></li>
+</ol>
+<p id="p-937">Question: Identify each of these processes as random or deterministic.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-62" id="answer-62"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><p id="p-938">drawing names from the 100 name hat is random, the others are deterministic</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_random-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_random-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.18</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_random-3"><article class="exercise exercise-like"><p id="p-939">The following describes three different processes.</p>
+<ol class="lower-alpha">
+<li id="li-387"><p id="p-940">Typing your PIN number into the ATM after inserting your bank card.</p></li>
+<li id="li-388"><p id="p-941">Rolling a pair of dice weighted so that the "1" always comes up and noting the sum of the numbers that appear.</p></li>
+<li id="li-389"><p id="p-942">Rolling a pair of fair dice noting the sum of the numbers that appear.</p></li>
+</ol>
+<p id="p-943">Question: Identify each of these processes as random or deterministic.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-63" id="answer-63"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><p id="p-944">using your ATM card and rolling the weighted dice are deterministic.</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_simulation_simulation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Simulation</span>
+</h3>
+<a href="sec_simulation.html#sec_simulation_simulation" class="permalink">¶</a><p id="p-945">Our <a class="xref" data-knowl="./knowl/examp_simulation_random-or-deterministic-1.html" title="Example 2.1.12: Identifying Processes I">fishing example</a> from the last page illustrates an important point. Many times it is not practical to replicate a particular random process. We don't have a lake in our back yard that we can stock with these fish to perform this exact experiment. Instead, we need to try to construct a model for the process which we can then use as a <dfn class="terminology">simulation</dfn>.</p>
+<article class="definition definition-like" id="def_simulation"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.19</span><span class="period">.</span>
+</h6>
+<p id="p-946">A <dfn class="terminology">simulation</dfn> is a sequence of random outcomes that models a random process.</p></article><p id="p-947">As we construct simulations for this and other examples, keep the following cautions in mind.</p>
+<ul class="disc">
+<li id="li-390"><p id="p-948">A simulation is a model of the real process and therefore is not perfect.</p></li>
+<li id="li-391"><p id="p-949">A simulation is meant to be easier to perform than the actual random process.</p></li>
+<li id="li-392"><p id="p-950">A simulation needs to correctly model the process, so we should be careful of any underlying assumptions.</p></li>
+</ul>
+<p id="p-951">In order to describe the simulations that we will create and carry out, it is important to have a well-understood vocabulary. Some of these terms have already been used, but we clarify their exact definitions below.</p>
+<article class="definition definition-like" id="def_simulation-terms"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.20</span><span class="period">.</span>
+</h6>
+<p id="p-952">The following terms are often used in describing simulations.</p>
+<ul class="disc">
+<li id="li-393">
+<h6 class="heading"><span class="title">Component.</span></h6>
+<p id="p-953">A component is the most basic action in the process being simulated.</p>
+</li>
+<li id="li-394">
+<h6 class="heading"><span class="title">Outcome.</span></h6>
+<p id="p-954">The outcomes of a process are the possible results of a single component.</p>
+</li>
+<li id="li-395">
+<h6 class="heading"><span class="title">Trial.</span></h6>
+<p id="p-955">A trial is one series of components which completes the process.</p>
+</li>
+<li id="li-396">
+<h6 class="heading"><span class="title">Response Variable.</span></h6>
+<p id="p-956">The response variable is the final result for which we are looking.</p>
+</li>
+</ul></article><p id="p-957">To better understand these terms, let's apply them to the fishing example from earlier.</p>
+<article class="example example-like" id="examp_simulation_identify-parts"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_identify-parts"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Parts of a Random Process.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_identify-parts"><article class="example example-like"><p id="p-958">Identify the components, outcomes, trials, and response variables in the fishing experiment seen in <a class="xref" data-knowl="./knowl/examp_simulation_random-or-deterministic-1.html" title="Example 2.1.12: Identifying Processes I">Example 2.1.12</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<p id="p-959">These are as follows.</p>
+<ul class="disc">
+<li id="li-397"><p id="p-960">A <dfn class="terminology">component</dfn> is catching a single fish. This is the most basic action in our process.</p></li>
+<li id="li-398"><p id="p-961">The <dfn class="terminology">outcomes</dfn> are the various fish that could be caught - catfish, bass, and trout.</p></li>
+<li id="li-399"><p id="p-962">A <dfn class="terminology">trial</dfn> is catching a series of fish until we get one of each type.</p></li>
+<li id="li-400"><p id="p-963">The <dfn class="terminology">response variable</dfn> is the number of fish we had to catch in our trial.</p></li>
+</ul>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_simulation_identify-parts-1"><video id="video-46" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.22<span class="period">.</span></span><span class="space"> </span>Identifying Parts of a Random Process I</figcaption></figure><figure class="figure figure-like" id="video_simulation_identify-parts-2"><video id="video-47" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.23<span class="period">.</span></span><span class="space"> </span>Identifying Parts of a Random Process II</figcaption></figure><article class="exercise exercise-like" id="ckpt_simulation_simulation-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_simulation-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.24</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_simulation-1"><article class="exercise exercise-like"><p id="p-964">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 individuals from upper management were “randomly” selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+<p id="p-965">Question: What are the components of such a simulation?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-64" id="answer-64"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><p id="p-966">The selection of one employee to receive a parking space.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_simulation-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_simulation-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_simulation-2"><article class="exercise exercise-like"><p id="p-967">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 individuals from upper management were “randomly” selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+<p id="p-968">Question: What are the trials of such a simulation?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-65" id="answer-65"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-65"><div class="answer solution-like"><p id="p-969">The selection of 23 employees to receive parking spaces.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_simulation-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_simulation-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_simulation-3"><article class="exercise exercise-like"><p id="p-970">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 individuals from upper management were “randomly” selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+<p id="p-971">Question: What are the outcomes of such a simulation?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-66" id="answer-66"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-66"><div class="answer solution-like"><p id="p-972">Picking any one of the 74 employees who participated in the lottery.</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_simulation_conducting"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.4</span> <span class="title">Conducting Simulations</span>
+</h3>
+<a href="sec_simulation.html#sec_simulation_conducting" class="permalink">¶</a><p id="p-973">In order to actually carry out a simulation, we will combine the analysis of the random process we saw on the last page with the use of a randomness that we saw earlier in this lesson. The first thing we must do is identify any assumptions we make about the random process.</p>
+<article class="example example-like" id="examp_simualtion_conducting_assumptions"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simualtion_conducting_assumptions"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.27</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Assumptions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simualtion_conducting_assumptions"><article class="example example-like"><p id="p-974">List any assumptions that must be made to simulate the fishing process seen in <a class="xref" data-knowl="./knowl/examp_simulation_random-or-deterministic-1.html" title="Example 2.1.12: Identifying Processes I">Example 2.1.12</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
+<p id="p-975">There are many assumptions that are made in simulating this example. Here are a few of the more important ones.</p>
+<ul class="disc">
+<li id="li-401"><p id="p-976">Each species of fish has the same chance of being caught--that is, no one fish is more likely to take a hook than another.</p></li>
+<li id="li-402"><p id="p-977">The number of fish does not change from those that we are given--no fish have died, been added, etc.</p></li>
+<li id="li-403"><p id="p-978">The fisherman is fishing in a spot that is visited equally by all three types of fish--he hasn't found a place where trout will not go, for example.</p></li>
+<li id="li-404"><p id="p-979">And others...</p></li>
+</ul>
+</div></div>
+</div></article></div>
+<p id="p-980">All of these assumptions are important as they will dictate how we design our model. Remember that the goal in simulating is to model the process in a simpler and more easily studied form. The steps we must follow to set up such a simulation are listed below.</p>
+<article class="algorithm theorem-like" id="def_simulation-steps"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">2.1.28</span><span class="period">.</span>
+</h6>
+<p id="p-981">To conduct a simulation, follow these steps.</p>
+<ol class="decimal">
+<li id="li-405"><p id="p-982">Identify the components.</p></li>
+<li id="li-406"><p id="p-983">Explain how the outcome of these components will be modeled.</p></li>
+<li id="li-407"><p id="p-984">Explain how we will simulate a trial.</p></li>
+<li id="li-408"><p id="p-985">Identify the response variable.</p></li>
+<li id="li-409"><p id="p-986">Run several trials using a source of randomness, such as a random number table.</p></li>
+<li id="li-410"><p id="p-987">Analyze the response variable.</p></li>
+</ol></article><p id="p-988">We have already seen how to identify the components, outcomes, and trials. Let's finish our fishing example by actually conducting the simulation.</p>
+<article class="example example-like" id="examp_simulation_conducting"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_conducting"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.29</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Simulation.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_conducting"><article class="example example-like"><p id="p-989">Simulate 10 trials of the fishing process seen in <a class="xref" data-knowl="./knowl/examp_simulation_random-or-deterministic-1.html" title="Example 2.1.12: Identifying Processes I">Example 2.1.12</a> using the following random number table.</p>
+<pre class="code-block tex2jax_ignore">2217726304387410092537086270581997622725849795907032825001108963
+3217535822643800292254644943760642389043766557204107354186024508
+8906427308645681412198226653885873285801699027843110380420067664
+8740522639824530519902027044464984322000946238678577902639002954
+8887003319933147508331265192321413908608671496383528968974910533
+4943760642389043766557204107354186024508432200094623867858226440
+</pre>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
+<p id="p-990">We will follow the steps outlined above.</p>
+<ol class="decimal">
+<li id="li-411"><p id="p-991">We have already noted that the component in this process is catching a single fish.</p></li>
+<li id="li-412">
+<p id="p-992">Our simulation must model the three types of fish that make up the outcomes. We need to do this in such a way that the fish types and the modeled outcomes are in the same proportion. Recall that there were 500 catfish, 750 bass, and 1000 trout, for a total of 2250 fish. This gives:</p>
+<ul class="disc">
+<li id="li-413"><p id="p-993">\(\frac{500}{2250} = \frac{2}{9}\) — we use digits 0, 1 from 0-9 to represent catfish</p></li>
+<li id="li-414"><p id="p-994">\(\frac{750}{2250} = \frac{3}{9}\) — we use digits 2, 3, 4 from 0-9 to represent bass</p></li>
+<li id="li-415"><p id="p-995">\(\frac{1000}{2250} = \frac{4}{9}\) — we use digits 5, 6, 7, and 8 for trout</p></li>
+</ul>
+<p data-braille="continuation">Note that the digit 9 will not be used.</p>
+</li>
+<li id="li-416"><p id="p-996">To simulate a trial, we will select a starting point and record digits (representing fish) until we have recorded one of each “type of fish.”</p></li>
+<li id="li-417"><p id="p-997">The response variable will be the number of “fish” recorded (so number of digits).</p></li>
+<li id="li-418">
+<p id="p-998">The results of 10 trials starting as indicated are shown below.  The <em class="emphasis">*</em> symbol in the outcomes represents the unassigned digit “9.”</p>
+<figure class="table figure-like" id="examp_simulation_conducting_table"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">Starting Point</td>
+<td class="c m b2 r2 l0 t0 lines">Outcomes</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Response Var.</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 1, column 1</td>
+<td class="l m b0 r2 l0 t0 lines">2217726304 \(\Rightarrow\) bbct</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 2, column 11</td>
+<td class="l m b0 r2 l0 t0 lines">6438002922 \(\Rightarrow\) tbbtc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">5 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 3, column 21</td>
+<td class="l m b0 r2 l0 t0 lines">982266538858732 \(\Rightarrow\) *tbbtttbtttttbc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">14 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 4, column 31</td>
+<td class="l m b0 r2 l0 t0 lines">4984322000 \(\Rightarrow\) b*tbbbbc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 5, column 41</td>
+<td class="l m b0 r2 l0 t0 lines">6714963835 \(\Rightarrow\) ttcb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 6, column 51</td>
+<td class="l m b0 r2 l0 t0 lines">23867858226440 \(\Rightarrow\) bbttttttbbtbbc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">14 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 1, column 21</td>
+<td class="l m b0 r2 l0 t0 lines">3708627058 \(\Rightarrow\) btc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 2, column 31</td>
+<td class="l m b0 r2 l0 t0 lines">0642389043 \(\Rightarrow\) ctb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 3, column 41</td>
+<td class="l m b0 r2 l0 t0 lines">6990278431 \(\Rightarrow\) t**ccttb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">6 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 4, column 51</td>
+<td class="l m b0 r2 l0 t0 lines">7790263900 \(\Rightarrow\) tt*cb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4 fish caught</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.1.30<span class="period">.</span></span><span class="space"> </span>Ten Simulation Trials for Fishing Example</figcaption></figure>
+</li>
+<li id="li-419">
+<p id="p-999">The response variable had values 4, 5, 14, 7, 4, 14, 3, 3, 6, 4 giving a mean value of:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{4+5+14+7+4+14+3+3+6+4}{10} = 6.4 \text{ fish}.
+\end{equation*}
+</div>
+<p data-braille="continuation">It appears that the number of fish we would need to catch before having one of each sort is around 6. Note, however, that the 14's may be outliers.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_simulation_conducting-1"><video id="video-48" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.31<span class="period">.</span></span><span class="space"> </span>Conducting Simulations I</figcaption></figure><figure class="figure figure-like" id="video_simulation_conducting-2"><video id="video-49" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.32<span class="period">.</span></span><span class="space"> </span>Conducting Simulations II</figcaption></figure><article class="exercise exercise-like" id="ckpt_simulation_conducting-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_conducting-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.33</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_conducting-1"><article class="exercise exercise-like"><p id="p-1000">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 of the upper management team were "randomly" selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+<p id="p-1001">You decide to conduct the simulation using the following random number table, assigning numbers 00-16 to the upper management individuals and 17-73 to the remaining employees. Numbers 74-99 are skipped, as are repeated numbers.</p>
+<pre class="code-block tex2jax_ignore">52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+</pre>
+<p id="p-1002">Question: How many upper-management employees received a parking spot on your first trial if you start with the first entry of row one?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-67" id="answer-67"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-67"><div class="answer solution-like"><p id="p-1003">4</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_conducting-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_conducting-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.34</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_conducting-2"><article class="exercise exercise-like"><p id="p-1004">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 of the upper management team were "randomly" selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+<p id="p-1005">You decide to conduct the simulation using the following random number table, assigning numbers 00-16 to the upper management individuals and 17-73 to the remaining employees. Numbers 74-99 are skipped, as are repeated numbers.</p>
+<pre class="code-block tex2jax_ignore">52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+</pre>
+<p id="p-1006">Question: How many upper-management employees received a parking spot on your first trial if you start with the first entry of row two?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-68" id="answer-68"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><p id="p-1007">7</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_conduction-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_conduction-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_conduction-3"><article class="exercise exercise-like"><p id="p-1008">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 of the upper management team were "randomly" selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+<p id="p-1009">You decide to conduct the simulation using the following random number table, assigning numbers 00-16 to the upper management individuals and 17-73 to the remaining employees. Numbers 74-99 are skipped, as are repeated numbers.</p>
+<pre class="code-block tex2jax_ignore">52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+</pre>
+<p id="p-1010">Question: How many upper-management employees received a parking spot on your first trial if you start with the “38” that begins the sixth block in row 1?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-69" id="answer-69"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><p id="p-1011">3</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_simulation_cautions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.5</span> <span class="title">Cautions Regarding Simulation</span>
+</h3>
+<a href="sec_simulation.html#sec_simulation_cautions" class="permalink">¶</a><p id="p-1012">In the simulation we conducted above, there seems to be a lot of variation. Consider a further analysis of this data in the following example.</p>
+<article class="example example-like" id="examp_simulation_cautions"><a data-knowl="" class="id-ref original" data-refid="hk-examp_simulation_cautions"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.36</span><span class="period">.</span><span class="space"> </span><span class="title">Analyzing Simulation Results.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_simulation_cautions"><article class="example example-like"><p id="p-1013">Recall that the numbers of fish we had to catch in the <a class="xref" data-knowl="./knowl/examp_simulation_conducting_table.html" title="Table 2.1.30: Ten Simulation Trials for Fishing Example">ten simulated trials</a> before having one of each kind were \(4, 5, 14, 7, 4, 14, 3, 3, 6, \text{ and } 4\text{.}\) Use the mean and standard deviation to further analyze this data.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like">
+<p id="p-1014">We saw in <a class="xref" data-knowl="./knowl/examp_simulation_conducting.html" title="Example 2.1.29: Conducting a Simulation">Example 2.1.29</a> that the mean was \(\overline{x} = 6.4\) fish.  Using a calculator or spreadsheet program, we find that the standard deviation in this sample is  \(s = 4.2\) fish.</p>
+<p id="p-1015">The standard deviation is almost as large as the mean, so there is a lot of variation in the number of fish needed to complete a trial. The 14's are not outliers, but they do have a z-score of \(z = \frac{14-6.4}{4.2} \approx 1.81\) which is relatively large.</p>
+</div></div>
+</div></article></div>
+<p id="p-1016">If we decide that our standard deviation of 4.2 is too large, and we want a more “precise” mean, meaning we want to see better results from the simulation, what can we do?  There are several ways to improve a simulation.</p>
+<ul class="disc">
+<li id="li-420"><p id="p-1017">Ensure that the underlying assumptions are accurate.</p></li>
+<li id="li-421"><p id="p-1018">Improve the randomness of the simulation.</p></li>
+<li id="li-422"><p id="p-1019">Raise the number of trials—usually at least 20 should be conducted.</p></li>
+</ul>
+<p id="p-1020">Our underlying assumptions seem to be reasonable, and we did use a random number table to generate randomness. However, we only did 10 trials. for a better simulation, we should do at least 20 trials. Running trials by hand can be very time consuming. Using a spreadsheet program we could get our results much more quickly.</p>
+<p id="p-1021">Be very cautious when conducting and reporting on simulations.  The following guidelines should be followed.</p>
+<article class="principle theorem-like" id="def_simulation-cautions"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">2.1.37</span><span class="period">.</span><span class="space"> </span><span class="title">Cautions Regarding Simulations.</span>
+</h6>
+<ul id="p-1022" class="disc">
+<li id="li-423">
+<h6 class="heading"><span class="title">Don't Overstate Your Case.</span></h6>
+<p id="p-1023">A simulation is in some sense always wrong. We didn't actually fish in a lake stocked as the example stated. Add to that the fact that a random process will always turn out differently each time we do it, and you need to be cautious about claiming that “we must catch 6.4 fish” in order to complete the process.</p>
+</li>
+<li id="li-424">
+<h6 class="heading"><span class="title">Model Outcomes Correctly.</span></h6>
+<p id="p-1024">We must keep outcomes in the correct proportion to our random digits. Drop digits as necessary to ensure that these proportions are correct. If you have more than 10 outcomes to model, you can use two digits at a time.</p>
+</li>
+<li id="li-425">
+<h6 class="heading"><span class="title">Run Enough Trials.</span></h6>
+<p id="p-1025">The purpose of a simulation is to make a long and possibly expensive process short and cheap. So use a large number of trials!</p>
+</li>
+</ul></article><figure class="figure figure-like" id="video_simulation_cautions-1"><video id="video-50" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.38<span class="period">.</span></span><span class="space"> </span>Simulation Cautions I</figcaption></figure><figure class="figure figure-like" id="video_simulation_cautions-2"><video id="video-51" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.39<span class="period">.</span></span><span class="space"> </span>Simulation Cautions II</figcaption></figure><article class="exercise exercise-like" id="ckpt_simulation_cautions-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_cautions-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.40</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_cautions-1"><article class="exercise exercise-like"><p id="p-1026">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were “randomly” selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management employees numbers 00-16, the other employees numbers 17-73, and skip numbers 74-99. You then simulate a 10 trials using a random number table and find that on average 15.2 of the 17 upper management employees were selected. You therefore conclude that the lottery must be fair.</p>
+<p id="p-1027">Question: What, if any, mistake did you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-70" id="answer-70"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><p id="p-1028">Overstated your Case</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_cautions-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_cautions-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.41</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_cautions-2"><article class="exercise exercise-like"><p id="p-1029">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were “randomly” selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management employees numbers 00-16, the other employees numbers 17-73, and skip numbers 74-99. You then simulate 100 trials using a random number table and find that an average of 5.4 upper management employees were selected. You therefore conclude that it is unlikely this was a fair lottery.</p>
+<p id="p-1030">Question: What, if any, mistake did you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-71" id="answer-71"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-71"><div class="answer solution-like"><p id="p-1031">Made No Mistakes--Your Conclusion is Sound</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_simulation_cautions-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_simulation_cautions-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.42</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_simulation_cautions-3"><article class="exercise exercise-like"><p id="p-1032">Seventy-four employees at a firm with limited free parking participate in a “parking lottery” to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were “randomly” selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management the even digits (0,2,4,6,8) and the other employees the odd digits (1,3,5,7,9). You then simulate 100 trials using a random number table and find that 8.2 of the 17 upper management employees were selected. You therefore conclude that all 17 being selected is not very likely if the lottery is indeed fair.</p>
+<p id="p-1033">Question: What, if any, mistake did you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-72" id="answer-72"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-72"><div class="answer solution-like"><p id="p-1034">Didn't Model Outcomes Correctly</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

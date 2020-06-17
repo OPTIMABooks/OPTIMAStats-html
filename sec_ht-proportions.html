@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:23:03-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hypothesis Tests for a Proportion</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_ht-means.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_testing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ht-differences.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_ht-means.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_testing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ht-differences.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions" class="active">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ht-proportions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Hypothesis Tests for a Proportion</span>
+</h2>
+<a href="sec_ht-proportions.html" class="permalink">¶</a><section class="introduction" id="sec_ht-proportions_intro"><h6 class="heading">Testing Claims About a Proportion.<span></span>
+</h6>
+<p id="p-3277">The second type of hypothesis test that we will study is the test for a population proportion. The following situations will provide the examples for this section.</p>
+<ul class="disc">
+<li id="li-1199"><p id="p-3278">A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical.</p></li>
+<li id="li-1200"><p id="p-3279">A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires.</p></li>
+<li id="li-1201"><p id="p-3280">A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boyscout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law.</p></li>
+</ul></section><article class="objectives goal-like" id="sec_ht-proportions_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-51"><p id="p-3281">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1202">
+<p id="p-3282">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1203"><p id="p-3283">Hypotheses for a Single Population Proportion</p></li>
+<li id="li-1204"><p id="p-3284">Test Statistic for a Single Population Proportion</p></li>
+</ul>
+</li>
+<li id="li-1205">
+<p id="p-3285">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1206"><p id="p-3286">Formulate null and alternative hypotheses for tests of a single proportion.</p></li>
+<li id="li-1207"><p id="p-3287">Compute the test statistic for a single proportion.</p></li>
+<li id="li-1208"><p id="p-3288">Use this test statistic to conduct a traditional hypothesis test.</p></li>
+<li id="li-1209"><p id="p-3289">Use this test statistic to conduct a p-value hypothesis test.</p></li>
+<li id="li-1210"><p id="p-3290">Understand and identify type I and type II errors.</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_ht-proportions_hypotheses"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Formulating Hypotheses</span>
+</h3>
+<a href="sec_ht-proportions.html#sec_ht-proportions_hypotheses" class="permalink">¶</a><p id="p-3291">We start once more by identifying the null and alternative hypothesis. When testing a claim about a single population proportion, the three basic types of null/alternative hypothesis combinations are as follows.</p>
+<article class="principle theorem-like" id="thm_hypotheses-proportions"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Hypotheses for a Single Population Proportion.</span>
+</h6>
+<p id="p-3292">To test a claim about a single population mean, we use one of the following sets of hypotheses, where \(p_0\) is a given value.</p>
+<ul class="disc cols3">
+<li id="li-1211">
+<h6 class="heading"><span class="title">Left-Tailed.</span></h6>
+<div class="displaymath" id="p-3293">
+\begin{align*}
+H_0\amp:\ p \geq p_0\\
+H_A\amp:\ p \lt p_0
+\end{align*}
+</div>
+</li>
+<li id="li-1212">
+<h6 class="heading"><span class="title">Two-Tailed.</span></h6>
+<div class="displaymath" id="p-3294">
+\begin{align*}
+H_0\amp:\ p = p_0\\
+H_A\amp:\ p \not= p_0
+\end{align*}
+</div>
+</li>
+<li id="li-1213">
+<h6 class="heading"><span class="title">Right-Tailed.</span></h6>
+<div class="displaymath" id="p-3295">
+\begin{align*}
+H_0\amp:\ p \leq p_0\\
+H_A\amp:\ p \gt p_0
+\end{align*}
+</div>
+</li>
+</ul></article><p id="p-3296">Let's look at each of the three examples from the introduction and see if we can determine which of these sets of hypotheses should be used.</p>
+<article class="example example-like" id="examp_ht-proportions_hypotheses-left-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_hypotheses-left-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Left-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_hypotheses-left-1"><article class="example example-like"><p id="p-3297">A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Find the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-218" id="solution-218"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-218"><div class="solution solution-like">
+<p id="p-3298">The physician's claim is that the proportion of 80% is too big. This does not involve inequality, and should therefore be the alternative hypothesis. This gives us a left-tailed test with the following hypotheses.</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.80\\
+H_A\amp:\ p \lt 0.80
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_hypotheses-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_hypotheses-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Two-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_hypotheses-two"><article class="example example-like"><p id="p-3299">A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Find the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-219" id="solution-219"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-219"><div class="solution solution-like">
+<p id="p-3300">The official's claim is that the proportion of cars on the road with under-inflated tires is exactly 50%. This involves equality, and is therefore the null hypothesis. The following are the hypotheses for this two-tailed test.</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p = 0.50\\
+H_A\amp:\ p \not= 0.50
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_hypotheses-left-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_hypotheses-left-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">STating Hypotheses for another Left-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_hypotheses-left-2"><article class="example example-like"><p id="p-3301">A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boyscout troupes fifteen years in the past and find that 11 of these former boy-scouts have had trouble with the law. Find the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-220" id="solution-220"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-220"><div class="solution solution-like">
+<p id="p-3302">Finally, the scout leader claims that the proportion is less than 0.10. This is an alternative hypothesis since it does not involve equality. Therefore, we get a left-tailed test with hypotheses:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.10\\
+H_A\amp:\ p \lt 0.10
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-proportions_hypotheses-1"><video id="video-209" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.5<span class="period">.</span></span><span class="space"> </span>Hypotheses for a Single Proportion I</figcaption></figure><figure class="figure figure-like" id="video_ht-proportions_hypotheses-2"><video id="video-210" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.6<span class="period">.</span></span><span class="space"> </span>Hypotheses for a Single Proportion II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-proportions_hypotheses-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_hypotheses-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_hypotheses-1"><article class="exercise exercise-like"><p id="p-3303">A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test.</p>
+<p id="p-3304">Question: what should your null hypothesis be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-264" id="answer-264"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-264"><div class="answer solution-like"><p id="p-3305">\(p = 0.5\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-proportions_hypotheses-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_hypotheses-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_hypotheses-2"><article class="exercise exercise-like"><p id="p-3306">A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+<p id="p-3307">Question: what is the null hypothesis in this hypothesis test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-265" id="answer-265"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-265"><div class="answer solution-like"><p id="p-3308">\(p \leq 0.50\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-proportions_test-stat"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Computing the Test Statistic</span>
+</h3>
+<a href="sec_ht-proportions.html#sec_ht-proportions_test-stat" class="permalink">¶</a><p id="p-3309">When testing a claim about a population proportion, the test statistic measures how unusual the observed sample is if the null hypothesis is true. The test statistic is really just a z-score for the sample proportion based on the assumption \(p\) is as indicated in the null hypothesis. Below we remind you of this formula in the context of a hypothesis test.</p>
+<article class="theorem theorem-like" id="thm_test-statistic-proportion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Test Statistic for a Single Sample Proportion.</span>
+</h6>
+<p id="p-3310">The test statistic for a sample proportion \(\hat p\) used to test the assumption of the null hypothesis that \(p = p_0\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{\hat p - p_0}{\sqrt{\frac{p_0q_0}{n}}}\text{.}
+\end{equation*}
+</div></article><p id="p-3311">When computing a test statistic, the null hypothesis must give us one value for \(p\text{.}\) In the case of a two-tailed test, the null hypothesis that \(p = p_0\) does just that. In a left- or right-tailed test, we use the “worst-case” value of \(p_0\) from the null hypothesis. That is, even if we have:</p>
+<ul class="disc cols2">
+<li id="li-1214"><p id="p-3312">\(H_0:\ p \geq p_0\text{,}\) or</p></li>
+<li id="li-1215"><p id="p-3313">\(H_0:\ p \leq p_0\)</p></li>
+</ul>
+<p data-braille="continuation">we will use \(p = p_0\) in computing our test statistic. Examples of this can be found as we continue working on the problems from the beginning of this section.</p>
+<article class="example example-like" id="examp_ht-proportions_test-stat-left-1-"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_test-stat-left-1-"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Coimputing the Test Statistic for a Left-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_test-stat-left-1-"><article class="example example-like"><p id="p-3314">A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-221" id="solution-221"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-221"><div class="solution solution-like">
+<p id="p-3315">Recall that the null and alternative hypothesis were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.80\\
+H_A\amp:\ p \lt 0.80
+\end{align*}
+</div>
+<p id="p-3316">Using the assumption that \(p = 0.80\) from the null hypothesis, we compute the test statistic for our sample as follows.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.7739 - 0.80}{\sqrt{\frac{(0.80)(0.20)}{115}}} \approx -0.70\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_test-stat-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_test-stat-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Test Statistic for a Two-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_test-stat-two"><article class="example example-like"><p id="p-3317">A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-222" id="solution-222"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-222"><div class="solution solution-like">
+<p id="p-3318">In a previous example, we found the null and alternative hypotheses to be:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p = 0.50\\
+H_A\amp:\ p \not= 0.50
+\end{align*}
+</div>
+<p id="p-3319">Under the assumption that \(p = 0.50\text{,}\) we compute the test statistic for this sample as follows.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.465- 0.50}{\sqrt{\frac{(0.5)(0.5)}{600}}} \approx - 1.71\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_test-stat-left-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_test-stat-left-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Test Statistic for another Left-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_test-stat-left-2"><article class="example example-like"><p id="p-3320">A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boy-scout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law. Find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-223" id="solution-223"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-223"><div class="solution solution-like">
+<p id="p-3321">Previously, we found the following hypotheses for this situation.</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.10\\
+H_A\amp:\ p \lt 0.10
+\end{align*}
+</div>
+<p id="p-3322">Under the null hypothesis assumption that \(p = 0.10\text{,}\) the test statistic is as shown below.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.1375 - 0.1000}{\sqrt{\frac{(0.1)(0.9)}{80}}} \approx 1.12\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-proportions_test-stat-1"><video id="video-211" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.13<span class="period">.</span></span><span class="space"> </span>Test Statistics for a Single Proportion I</figcaption></figure><figure class="figure figure-like" id="video_ht-proportions_test-stat-2"><video id="video-212" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.14<span class="period">.</span></span><span class="space"> </span>Test Statistics for a Single Proportion II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-proportions_test-stat-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_test-stat-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_test-stat-1"><article class="exercise exercise-like"><p id="p-3323">A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test.</p>
+<p id="p-3324">Question: what is the test statistic for this hypothesis test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-266" id="answer-266"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-266"><div class="answer solution-like"><p id="p-3325">2.01</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-proportions_test-stat-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_test-stat-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.16</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_test-stat-2"><article class="exercise exercise-like"><p id="p-3326">A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+<p id="p-3327">Question: what is the test statistic for this hypothesis test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-267" id="answer-267"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-267"><div class="answer solution-like"><p id="p-3328">0.72</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-proportions_traditional"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">The Traditional Test</span>
+</h3>
+<a href="sec_ht-proportions.html#sec_ht-proportions_traditional" class="permalink">¶</a><p id="p-3329">To conduct a traditional hypothesis test and draw conclusions, we must complete the following steps.</p>
+<ol class="decimal">
+<li id="li-1216"><p id="p-3330">State the null and alternative hypotheses (done).</p></li>
+<li id="li-1217"><p id="p-3331">Compute the test statistic (done).</p></li>
+<li id="li-1218"><p id="p-3332">Find the rejection region and their critical values.</p></li>
+<li id="li-1219"><p id="p-3333">Compare the test statistic with the critical values to reach your conclusion.</p></li>
+</ol>
+<p id="p-3334">We have already completed steps one and two. Thus, we have only to finish steps 3 and 4 to conduct a traditional hypothesis test in each of our examples.</p>
+<article class="example example-like" id="examp_ht-proportions_traditional-left-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_traditional-left-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Left-Tailed Traditional Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_traditional-left-1"><article class="example example-like"><p id="p-3335">A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Conduct a traditional hypothesis test at the \(\alpha = 0.05\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-224" id="solution-224"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-224"><div class="solution solution-like">
+<p id="p-3336">Recall that the null and alternative hypothesis were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.80\\
+H_A\amp:\ p \lt 0.80
+\end{align*}
+</div>
+<p id="p-3337">We computed the test statistic as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.7739 - 0.80}{\sqrt{\frac{(0.8)(0.2)}{115}}} \approx -0.70\text{.}
+\end{equation*}
+</div>
+<p id="p-3338">Now we must identify the rejection region and the critical value. Since the alternative hypothesis involves \(\lt\text{,}\) this is a left-tailed test with the entire significance level of \(\alpha = 0.05\) in that left tail. This gives a critical value \(z_\alpha = -1.645\) as shown below.</p>
+<figure class="figure figure-like" id="fig_ht-proportions_examp_traditional-left-1"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-proportions_examp_traditional-left-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.18<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-proportions_traditional-left-1.html" title="Example 5.3.17: Conducting a Left-Tailed Traditional Hypothesis Test">Example 5.3.17</a></figcaption></figure><p id="p-3339">Because our test statistic of \(-0.70\) is not less than the critical value \(-1.645\text{,}\) it is not in the rejection region. We therefore fail to reject the null hypothesis. There is no <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">statistically significant</a> evidence that the pharmaceutical company is inflating the claims about this drug's effectiveness.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_traditional-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_traditional-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.19</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Two-Tailed Traditional Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_traditional-two"><article class="example example-like"><p id="p-3340">A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Use a traditional hypothesis test at the \(\alpha = 0.10\) significance level to test the government officials claim.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-225" id="solution-225"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-225"><div class="solution solution-like">
+<p id="p-3341">The hypotheses for this test were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p = 0.50\\
+H_A\amp:\ p \not= 0.50
+\end{align*}
+</div>
+<p id="p-3342">And we found that the test statistic was:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.465- 0.50}{\sqrt{\frac{(0.5)(0.5)}{600}}} \approx - 1.71\text{.}
+\end{equation*}
+</div>
+<p id="p-3343">The rejection region in this two-tailed test is show below, separated from the body of the standard normal distribution by the critical values \(-1.645\) and \(+1.645\text{.}\)</p>
+<figure class="figure figure-like" id="fig_ht-proportions_examp_traditional-two"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-proportions_examp_traditional-two.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.20<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-proportions_traditional-two.html" title="Example 5.3.19: Conducting a Two-Tailed Traditional Hypothesis Test">Example 5.3.19</a></figcaption></figure><p id="p-3344">Since our test statistic of \(z_\text{test} = -1.71\) is in one of these rejection regions, we must reject the null hypothesis. There is evidence <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">tending towards significance</a> that the true proportion of cars on the road with under-inflated tires is different from 0.50.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_traditional-left-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_traditional-left-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.21</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting Another Left-Tailed Traditional Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_traditional-left-2"><article class="example example-like"><p id="p-3345">A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boy-scout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law. Conduct a traditional hypothesis test to test this claim at the \(\alpha = 0.10\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-226" id="solution-226"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-226"><div class="solution solution-like">
+<p id="p-3346">Recall that the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.10\\
+H_A\amp:\ p \lt 0.10
+\end{align*}
+</div>
+<p id="p-3347">The test statistic under the null hypothesis above is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.1375 - 0.1000}{\sqrt{\frac{(0.1)(0.9}{80}}} \approx 1.12\text{.}
+\end{equation*}
+</div>
+<p id="p-3348">Because the alternative hypothesis involves \(\lt\text{,}\) this is a left-tailed test with the entire \(\alpha = 0.10\) in the left tail. The corresponding critical value is -1.28 as shown below.</p>
+<figure class="figure figure-like" id="fig_ht-proportions_examp_traditional-left-2"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-proportions_examp_traditional-left-2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.22<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-proportions_traditional-left-2.html" title="Example 5.3.21: Conducting Another Left-Tailed Traditional Hypothesis Test">Example 5.3.21</a></figcaption></figure><p id="p-3349">Our test statistic of 1.12 is clearly not in the rejection region. Therefore we fail to reject the null hypothesis. There is not even <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">evidence tending towards significance</a> that fewer than 10% of boyscout members have trouble with the law before their 20th birthday. For more examples of conducting a traditional hypothesis test, see the following videos.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-proportions_traditional-1"><video id="video-213" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.23<span class="period">.</span></span><span class="space"> </span>Traditional Hypothesis Tests I</figcaption></figure><figure class="figure figure-like" id="video_ht-proportions_traditional-2"><video id="video-214" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.24<span class="period">.</span></span><span class="space"> </span>Traditional Hypothesis Tests II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-proportions_traditional-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_traditional-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_traditional-1"><article class="exercise exercise-like"><p id="p-3350">A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test.</p>
+<p id="p-3351">Question: what decision do you make at the \(\alpha = 0.05\) significance level? Use a traditional test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-268" id="answer-268"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-268"><div class="answer solution-like"><p id="p-3352">Reject the Null Hypothesis</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-proportions_traditional-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_traditional-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_traditional-2"><article class="exercise exercise-like"><p id="p-3353">A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+<p id="p-3354">Question: what decision do you make at the \(\alpha = 0.10\) significance level? Use a traditional test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-269" id="answer-269"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-269"><div class="answer solution-like"><p id="p-3355">Fail to Reject the Null Hypothesis</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-proportions_p-value"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">The p-Value Test</span>
+</h3>
+<a href="sec_ht-proportions.html#sec_ht-proportions_p-value" class="permalink">¶</a><p id="p-3356">To conduct a p-value test, recall that we must change the last two steps of the hypothesis testing process. This altered process is as follows.</p>
+<ol class="decimal">
+<li id="li-1220"><p id="p-3357">State the null and alternative hypotheses (done).</p></li>
+<li id="li-1221"><p id="p-3358">Compute the test statistic (done).</p></li>
+<li id="li-1222"><p id="p-3359">Find the p-value for this test statistic.</p></li>
+<li id="li-1223"><p id="p-3360">Compare the p-value with the significance level to reach your conclusion.</p></li>
+</ol>
+<p id="p-3361">Using <a class="xref" data-knowl="./knowl/examp_ht-proportions_traditional-left-1.html" title="Example 5.3.17: Conducting a Left-Tailed Traditional Hypothesis Test">Example 5.3.17</a>, <a class="xref" data-knowl="./knowl/examp_ht-proportions_hypotheses-two.html" title="Example 5.3.3: Stating Hypotheses for a Two-Tailed Test">Example 5.3.3</a>, and <a class="xref" data-knowl="./knowl/examp_ht-proportions_traditional-left-2.html" title="Example 5.3.21: Conducting Another Left-Tailed Traditional Hypothesis Test">Example 5.3.21</a>, we will repeat the hypothesis tests using the p-value approach.</p>
+<article class="example example-like" id="examp_ht-proportions_p-value-left-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_p-value-left-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.27</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Left-Tailed p-Value Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_p-value-left-1"><article class="example example-like"><p id="p-3362">A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Conduct a p-value hypothesis test at the \(\alpha = 0.05\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-227" id="solution-227"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-227"><div class="solution solution-like">
+<p id="p-3363">Recall that the null and alternative hypothesis were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.80\\
+H_A\amp:\ p \lt 0.80
+\end{align*}
+</div>
+<p id="p-3364">We computed the test statistic as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.7739 - 0.80}{\sqrt{\frac{(0.8)(0.2)}{115}}} \approx -0.70\text{.}
+\end{equation*}
+</div>
+<p id="p-3365">The p-value for our test statistic in this left-tailed test (because the alternative uses \(\lt\)) is the probability of getting a test statistic further into that left tail than -0.70.</p>
+<figure class="figure figure-like" id="fig_ht-proportions_examp_p-value-left-1"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-proportions_examp_p-value-left-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.28<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-proportions_p-value-left-1.html" title="Example 5.3.27: Conducting a Left-Tailed p-Value Hypothesis Test">Example 5.3.27</a></figcaption></figure><p id="p-3366">As depicted above, this is</p>
+<div class="displaymath">
+\begin{equation*}
+P(Z \lt -0.70) = 0.2420\text{.}
+\end{equation*}
+</div>
+<p id="p-3367">Clearly our p-value is greater than the significance level of \(\alpha = 0.05\) (and in fact would be greater than any commonly used significance level). We therefore fail to reject the null hypothesis. There is no evidence (<a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">statistically significant</a> or otherwise) that the pharmaceutical company is inflating the claims about this drug's effectiveness.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_p-value-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_p-value-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.29</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Two-Tailed p-Value Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_p-value-two"><article class="example example-like"><p id="p-3368">A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Use a p-value hypothesis test at the \(\alpha = 0.10\) significance level to test the government officials claim.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-228" id="solution-228"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-228"><div class="solution solution-like">
+<p id="p-3369">The hypotheses for this test were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p = 0.50\\
+H_A\amp:\ p \not= 0.50
+\end{align*}
+</div>
+<p id="p-3370">And we found that the test statistic was:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.465- 0.50}{\sqrt{\frac{(0.5)(0.5)}{600}}} \approx - 1.71\text{.}
+\end{equation*}
+</div>
+<p id="p-3371">Since this is a two-tailed test, the p-value of our test statistic will be twice the probability of being further into the left tail (since the test statistic is negative).</p>
+<figure class="figure figure-like" id="fig_ht-proportions_examp_p-value-two"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-proportions_examp_p-value-two.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.30<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-proportions_p-value-two.html" title="Example 5.3.29: Conducting a Two-Tailed p-Value Hypothesis Test">Example 5.3.29</a></figcaption></figure><p id="p-3372">As shown above, this gives</p>
+<div class="displaymath">
+\begin{equation*}
+2 \times P(Z \lt -1.71) = 2(0.0436) = 0.0872\text{.}
+\end{equation*}
+</div>
+<p id="p-3373">Because this p-value is less than the significance level we reject the null hypothesis. There is <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">evidence tending towards significance</a> that the true proportion of cars on the road with under-inflated tires is different from 0.50.</p>
+</div></div>
+</div></article></div>
+<p id="p-3374">Note that in the problem above, while we wound up rejecting the null hypothesis at the 0.10 significance level, we would not have rejected it at the 0.05 or 0.01 significance level. In fact, the p-value of 0.0854 tells us that if we decide to reject the null hypothesis, there is an 8.54% chance that we are wrong. Typically that is too big of a chance to take.</p>
+<article class="example example-like" id="examp_ht-proportions_p-value-left-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_p-value-left-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.31</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting Another Left-Tailed p-Value Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_p-value-left-2"><article class="example example-like"><p id="p-3375">A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boyscout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law. Conduct a p-value hypothesis test of this claim at the \(\alpha = 0.01\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-229" id="solution-229"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-229"><div class="solution solution-like">
+<p id="p-3376">Recall that the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p \geq 0.10\\
+H_A\amp:\ p \lt 0.10
+\end{align*}
+</div>
+<p id="p-3377">The test statistic under the null hypothesis above is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{0.1375 - 0.1000}{\sqrt{\frac{(0.1)(0.9)}{80}}} \approx 1.12\text{.}
+\end{equation*}
+</div>
+<p id="p-3378">Now this is a left-tailed test because the alternative hypothesis involves \(\lt\text{.}\) Therefore, the p-value of our test statistic is the probability of being further into the left tail than 1.12. Note, however, that 1.12 is on the right of the mean of 0 as shown below.  All this means is that not only is there no evidence tosupport the claim, but the evidence seems to point to the opposite being true—that is to more than 10% being in trouble with the law.</p>
+<figure class="figure figure-like" id="fig_ht-proportions_examp_p-value-left-2"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-proportions_examp_p-value-left-2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.32<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-proportions_p-value-left-2.html" title="Example 5.3.31: Conducting Another Left-Tailed p-Value Hypothesis Test">Example 5.3.31</a></figcaption></figure><p id="p-3379">Finishing this test, the p-value is \(P(Z \lt 1.12) = 0.8686\text{.}\) This is clearly much larger than the significance level of \(\alpha = 0.01\text{.}\) We therefore fail to reject the null hypothesis. There is not even <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">evidence tending towards significance</a> that fewer than 10% of boyscout members have trouble with the law before their 20th birthday.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-proportions_p-value-1"><video id="video-215" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.33<span class="period">.</span></span><span class="space"> </span>p-Value Hypothesis Tests I</figcaption></figure><figure class="figure figure-like" id="video_ht-proportions_p-value-2"><video id="video-216" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.34<span class="period">.</span></span><span class="space"> </span>p-Value Hypothesis Tests II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-proportions_p-value-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_p-value-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_p-value-1"><article class="exercise exercise-like"><p id="p-3380">A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him  attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test, testing the following claims:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp: p \leq 0.5\\
+H_1\amp: p &gt; 0.5
+\end{align*}
+</div>
+<p id="p-3381">Question: what is the p-value of the test statistic for this hypothesis test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-270" id="answer-270"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-270"><div class="answer solution-like"><p id="p-3382">0.0222</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-proportions_p-value-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_p-value-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_p-value-2"><article class="exercise exercise-like"><p id="p-3383">A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+<p id="p-3384">Question: what is the p-value of the test statistic for this problem?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-271" id="answer-271"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-271"><div class="answer solution-like"><p id="p-3385">0.2358</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-proportions_errors"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.5</span> <span class="title">Type I and Type II Errors</span>
+</h3>
+<a href="sec_ht-proportions.html#sec_ht-proportions_errors" class="permalink">¶</a><p id="p-3386">Recall that part of the hypothesis testing process is the possibility of making errors. These errors come in two types, as outlined below.</p>
+<ul class="disc">
+<li id="li-1224">
+<h6 class="heading"><span class="title">Type I Error.</span></h6>
+<p id="p-3387">This is the error of rejecting a null hypothesis even though it is true.</p>
+</li>
+<li id="li-1225">
+<h6 class="heading"><span class="title">Type II Error.</span></h6>
+<p id="p-3388">This is the error of failing to reject the null hypothesis even though it is in fact wrong.</p>
+</li>
+</ul>
+<p id="p-3389">Let's look back at two of our examples of hypothesis tests for proportions and see what these errors might look like in those cases.</p>
+<article class="example example-like" id="examp_ht-proportions_errors-type-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_errors-type-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.37</span><span class="period">.</span><span class="space"> </span><span class="title">Detecting a Type II Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_errors-type-2"><article class="example example-like"><p id="p-3390">A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. If you conduct a hypothesis test at the \(\alpha = 0.05\) significance level using this sample, and in actuality the drug is only effective in 75% of patients, what error will be made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-230" id="solution-230"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-230"><div class="solution solution-like"><p id="p-3391">In both the <a class="xref" data-knowl="./knowl/examp_ht-proportions_traditional-left-1.html" title="Example 5.3.17: Conducting a Left-Tailed Traditional Hypothesis Test">traditional</a> and <a class="xref" data-knowl="./knowl/examp_ht-proportions_p-value-left-1.html" title="Example 5.3.27: Conducting a Left-Tailed p-Value Hypothesis Test">p-value</a> test we failed to reject the null hypothesis. If, however, the drug only works in 75% of individuals, then the null hypothesis is false. Failing to reject a false null hypothesis is a <dfn class="terminology">type II error</dfn>.</p></div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-proportions_errors-type-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-proportions_errors-type-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.38</span><span class="period">.</span><span class="space"> </span><span class="title">Detecting a Type I Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-proportions_errors-type-1"><article class="example example-like"><p id="p-3392">A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas  mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. If a hypothesis test is conducted at the \(\alpha = 0.10\) significance level to test the government officials claim, and the true proportion of cars with under-inflated tires actually is 0.50, what type of error has been made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-231" id="solution-231"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-231"><div class="solution solution-like"><p id="p-3393">For <a class="xref" data-knowl="./knowl/examp_ht-proportions_p-value-two.html" title="Example 5.3.29: Conducting a Two-Tailed p-Value Hypothesis Test">this example</a>, we rejected the null hypothesis. If in fact it is true that \(p = 0.50\text{,}\) then we made a <dfn class="terminology">type I error</dfn> by rejecting a true null hypothesis.</p></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-proportions_errors-1"><video id="video-217" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.39<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors I</figcaption></figure><figure class="figure figure-like" id="video_ht-proportions_errors-2"><video id="video-218" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.40<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-proportions_errors-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_errors-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.41</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_errors-1"><article class="exercise exercise-like"><p id="p-3394">A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test and conclude that the man does have skill in predicting coin flips.</p>
+<p id="p-3395">Question: if in fact the probability the “psychic” can predict a coin flip is 0.5. What type of error have you made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-272" id="answer-272"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-272"><div class="answer solution-like"><p id="p-3396">Type I Error</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-proportions_errors-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-proportions_errors-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.3.42</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-proportions_errors-2"><article class="exercise exercise-like"><p id="p-3397">A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position. Based on this sample, you find no evidence that the majority of voters support his position. However, in actuality, 51% support the politicians position.</p>
+<p id="p-3398">Question: what type of error did you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-273" id="answer-273"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-273"><div class="answer solution-like"><p id="p-3399">Type II Error</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

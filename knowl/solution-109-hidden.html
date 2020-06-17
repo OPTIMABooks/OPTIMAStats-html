@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:50-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We wish to find \(P(\text{1st }W\,|\,\text{2nd }R)\text{.}\) Unfortunately, our tree diagram is “backwards” for this computation. The probabilities on the branches are the probability of a particular color on the 2nd marble given that we got a certain color on the first. So, we must resort to the conditional probability formula.</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{1st }W\,|\,\text{2nd }R) = \frac{P(\text{1st }W\cap\text{2nd }R)}{P(\text{2nd }R)}\text{.}
+\end{equation*}
+</div>
+<p>The numerator of this fraction can be found by multiplying along a single branch in the tree—\(\frac{1}{6} \times \frac{2}{5} = \frac{2}{30}\text{.}\) To get the denominator, we need to add together the probabilities for all possible ways the last marble can be red. This is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{2nd }R) = \left(\frac{3}{6}\times\frac{2}{5}\right) + \left(\frac{2}{6}\times\frac{1}{5}\right) + \left(\frac{1}{6}\times\frac{2}{5}\right) = \frac{1}{3}\text{.}
+\end{equation*}
+</div>
+<p>Therefore, the desired conditional probability is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{1st }W\,|\,\text{2nd }R) = \frac{2/30}{1/3} = \frac{1}{5} = 0.20\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>

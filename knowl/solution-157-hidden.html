@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:30-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Since the population has a normal distribution, we can use the central limit theorem. However, we do not need it for the first question as we are selecting an individual from a normally distributed population. Let's let \​(W\) be the weight of an individual, and \(\overline W\) the weight of the sample of 10. From the central limit theorem, both \(W\) and \(\overline W\) will have the same mean, but the standard deviation for \(\overline W\) will be</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_{\overline W} = \frac{\sigma_W}{\sqrt{n}} = \frac{4.5}{\sqrt{10}} \approx 1.423\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We sketch both the normal distribution for \(W\) (blue) and the one for \(\overline W\) (red) in the same picture to see how they compare.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_sampling_examp_means_two-regions.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.22<span class="period">.</span></span><span class="space"> </span>Distributions for \(W\) and \(\overline W\)</figcaption></figure><ol class="lower-alpha">
+<li>
+<p>We want to find \(P(W \gt 22)\text{.}\) Note that this is not a binomial approximation, so we do not apply a continuity correction! Instead, we compute the z-score for 22 and compute as shown.</p>
+<div class="displaymath">
+\begin{align*}
+P(W \gt 22) \amp = P\left(\frac{W-\mu}{\sigma} \gt \frac{22-19.4}{4.5}\right)\\
+\amp = P(Z \gt 0.58)\\
+\amp = 1 - P(Z \lt 0.58)\\
+\amp = 1 - 0.7190\\
+\amp = 0.2810
+\end{align*}
+</div>
+<p data-braille="continuation">This is a fairly likely occurrence.</p>
+</li>
+<li>
+<p>Now we need to find \​(P(\overline{W} \gt 22)\). The variable \​(\overline{W}\).  We do a very similar computation to the one shown above, but we use the standard deviation for the sampling distribution when computing the z-score.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline W \gt 22) \amp = P\left(\frac{\overline{W} - \mu}{\sigma/\sqrt{n}} \gt \frac{22-19.4}{4.5/\sqrt{10}}\right)\\
+\amp = P(Z \gt 1.83)\\
+\amp = 1 - P(Z \lt 1.83)\\
+\amp = 1 - 0.9664\\
+\amp = 0.0336
+\end{align*}
+</div>
+<p data-braille="continuation">This is a much less likely occurrence.</p>
+</li>
+</ol>
+</div></body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:26:37-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We stated before that the our hypothesis are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p_R = p_D = p_I = \frac{1}{3}\\
+H_A\amp:\ \text{At least one is different}
+\end{align*}
+</div>
+<p>We computed then constructed a goodness-of-fit table to compute the test statistic and found the following.</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r2 l0 t0 lines">Expected</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Republican</td>
+<td class="c m b0 r2 l0 t0 lines">179</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(183-166.67)^2}{166.67} \approx 1.6000\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Democrats</td>
+<td class="c m b0 r2 l0 t0 lines">146</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(142-166.67)^2}{166.67} \approx 3.6516\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Independents</td>
+<td class="c m b2 r2 l0 t0 lines">175</td>
+<td class="c m b2 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(175-166.67)^2}{166.67} \approx 0.4163\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">500</td>
+<td class="c m b0 r2 l0 t0 lines">500.01</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{\text{test}} = 5.6679\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.58<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p>We need the critical value for the \(\alpha=0.10\) significance level in a \(\chi^2\) distribution with \(df = 3 - 1 = 2\) degrees of freedom.  Looking this up in the \(\chi^2\)-distribution table, we find \(\chi^2_{0.10} = 4.605\) and sketch the picture below.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_goodness-of-fit_examp_test-relative.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.59<span class="period">.</span></span><span class="space"> </span>Comparing \(\chi^2\) Values</figcaption></figure><p>Because the test statistic is larger than the critical value (and thus further into the right tail) we must reject the null hypothesis. The three parties do not appear to have equal proportions.</p>
+</div></body>
+</html>

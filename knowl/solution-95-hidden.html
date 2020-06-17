@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:38-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:10% 0%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:flex-start;">
+<p id="p-1440">Our first Venn Diagram shows the information given in the problem statement. There are several things to note:</p>
+<ul class="disc">
+<li id="li-583"><p id="p-1441">The probability of the entire box is one, as mentioned above.</p></li>
+<li id="li-584"><p id="p-1442">The probabilities of \(R\) and \(W\) (rain and wind) are each split between two regions, as indicated by the arrows.</p></li>
+<li id="li-585"><p id="p-1443">The probability of \(W \cap \overline{R}\) is written into the appropriate region.</p></li>
+</ul>
+</div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_probability_examp_venn_two-set-i"><img src="images/image_probability_examp_venn_two-set-i.svg" style="width: 100%; height: auto;" alt="A Venn Diagram with two circles, one for R and one for W.  The probability in W that is not also in R is 0.39.  The probability of 0.64 is divided between the part of W that is also in R and the part that is not.  The probability of 0.35 is divided between the part of R that is not in W and the part that is."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.37<span class="period">.</span></span><span class="space"> </span>Initial Venn diagram</figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:10% 0%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:flex-start;">
+<p id="p-1444">Now we are ready to do some computations to figure out the missing pieces in the Venn diagrams, starting with the intersection of \(R\) and \(W\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+P(R\cap W) \amp = P(W) - P(R\cap \overline(W)\\
+\amp = 0.64 - 0.39\\
+\amp = 0.25
+\end{align*}
+</div>
+<p data-braille="continuation">Next, we move on to find the union of \(R\) and \(W\) since we are after the complement of this union (not windy or rainy).</p>
+<div class="displaymath">
+\begin{align*}
+P(R\cup W) \amp = P(R) + P(W) - P(R\cap W)\\
+\amp = 0.35 + 0.64 - 0.25\\
+\amp = 0.74.
+\end{align*}
+</div>
+</div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_probability_examp_venn_two-set-ii"><img src="images/image_probability_examp_venn_two-set-ii.svg" style="width: 100%; height: auto;" alt="A Venn Diagram with circles for R and W.  The probability in the region included in both R and W is 0.25.  The probability in the region in R but not W is 0.10.  The probability in the region in W but not R is 0.39."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.38<span class="period">.</span></span><span class="space"> </span>Final Venn diagram</figcaption></figure></div>
+</div></div>
+<p>Finally, using the complement rule, the probability we are looking for is found below.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline{R\cup W}) \amp = 1 - P(R\cup W)\\
+\amp = 1 - 0.74\\
+\amp  = 0.26.
+\end{align*}
+</div>
+<p>Note that in the final Venn diagram the sum of all numbers in the box is 1.</p>
+</div></body>
+</html>

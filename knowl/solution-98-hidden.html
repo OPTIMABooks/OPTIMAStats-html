@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:40-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Notice that nothing is said about the order in which cards are drawn for the first three events.  So we will use <a class="xref" data-knowl="./knowl/thm_counting-rule_combination.html" title="Theorem 2.2.62">combinations</a> to count both the sample space and the number of outcomes in these events.  The common sample space is found by couting the number of ways to select 4 of the 10 cards if order doesn't matter: \(C(10,4) = \frac{10 \times 9\times 8\times 7}{4\times 3\times 2\times 1} = 210\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>If none of the cards are aces, then all four are selected from the remaining 8 non-ace cards. This can be done in \(C(8,4) = 70\) ways. So, \(P(\text{no aces}) = \frac{70}{210} = \frac{1}{3}\text{.}\)</p></li>
+<li>
+<p>We first split the cards into black and red. There are two black aces and two black queens making 4 total black cards. There are two red kings, two red queens, and two red jacks making 6 red cards. Next we must pick 2 of the 4 black cards and 2 of the 6 red cards. This is a multi-step process, so using the multiplication rule:</p>
+<div class="displaymath">
+\begin{align*}
+n(\text{2 black and 2 red}) \amp = n(\text{2 black}) \times n(\text{2 red})\\
+\amp = C(4,2) \times C(6,2)\\
+\amp = 6 \times 15\\
+\amp = 90.
+\end{align*}
+</div>
+<p data-braille="continuation">Thus, \(P(\text{ 2 black and 2 red }) = \frac{90}{210} = \frac{3}{7}\text{.}\)</p>
+</li>
+<li>
+<p>“At least one queen” means we could have one queen, two queens, three queens, or all four queens. If we try to count this directly, we must count these four separate cases and then use the addition rule to add them together. Instead, let's take a short-cut. The opposite of “at least one queen” is “no queens”. If we can find the probability of no queens, then we can use the complement rule to find the probability of at least one queen. If we don't allow the queens to be chosen, there are only 6 cards available. We can pick our entire hand from these 6 cards in \(C(6,4) = 15\) ways. So, \(P(\text{no queens}) = \frac{15}{210} = \frac{1}{14}\text{.}\) Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{at least one queen}) = 1 - P(\text{no queens}) = 1-\frac{1}{14} = \frac{13}{14}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Our last event is different from the other three because the order in which we pick our cards matters.  We should therefore use a <a class="xref" data-knowl="./knowl/thm_counting-rule_permutation.html" title="Theorem 2.2.52">permutation</a> or the <a class="xref" data-knowl="./knowl/thm_counting-rule_multiplication.html" title="Theorem 2.2.28">multiplication rule</a> instead of a combination. Keeping in mind that there is only one of each suite's queen in the deck, we compute</p>
+<div class="displaymath">
+\begin{align*}
+P(\text{Queen of Hearts, Diamons, Clubs, then Spades}) \amp = \frac{1\times 1\times 1\times 1}{P(10,4)}\\
+\amp = \frac{1}{10\times 9\times 8\times 7}\\
+\amp  = \frac{1}{5040}.
+\end{align*}
+</div>
+</li>
+</ol>
+</div></body>
+</html>

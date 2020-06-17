@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:42-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sampling Distributions and the Central Limit Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_approximating.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="part-2.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_approximating.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="part-2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling" class="active">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_sampling"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Sampling Distributions and the Central Limit Theorem</span>
+</h2>
+<a href="sec_sampling.html" class="permalink">¶</a><section class="introduction" id="sec_sampling_intro"><h6 class="heading">What Are Sampling Distributions?<span></span>
+</h6>
+<p id="p-2373">Starting with our next section, we are going to be looking at how to make inferences (i.e. estimations or decisions) about a population based on what we observe in a sample. It is therefore important that we understand how sampling works, and in particular, how the sample mean and sample proportions work.  Recall that the <a class="xref" data-knowl="./knowl/def_mean.html" title="Definition 1.3.42">mean of s sample</a> containing values \(x_1, x_2, \ldots, x_n\) is computed as follows.</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{x_1+x_2+\cdots+ x_n}{n}
+\end{equation*}
+</div>
+<p id="p-2374">This formula should look familiar from <a href="sec_center-spread.html#sec_center-spread_mean-stdev" class="internal" title="Subsection 1.3.4: Mean and Standard Deviation">Subsection 1.3.4</a>. We restate it here, however, to consider a question. If we select a sample of \(n\) values and look at their average over and over again, will we see more or less variation between these averages than we would if we look at the individual values in the population? We shall see that there is in fact less variation between the means of different samples than between individual values. This is because it is a lot harder to get a group of \(n\) individuals who all vary in the same way from the population average than it is to get a single individual who varies from the population average.</p>
+<p id="p-2375">Besides taking the average of some variable in a sample, we may also wish to examine the proportion of individuals in a sample who have some characteristic. This is similar to the binomial processes we studied in <a href="sec_binomial.html" class="internal" title="Section 3.2: Families of Discrete Distributions: Uniform and Binomial">Section 3.2</a>. The only real difference is that instead of looking at \(x\text{,}\) the number of successes, we look at \(\frac{x}{n}\text{,}\) the proportion of successes.</p>
+<article class="definition definition-like" id="def_sample-proportion"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span>
+</h6>
+<p id="p-2376">If a sample of size \(n\) is drawn from a population and \(x\) of those \(n\) individuals have some characteristic, then the sample proportion with that characteristic is:</p>
+<div class="displaymath">
+\begin{equation*}
+\hat p = \frac{x}{n}\text{.}
+\end{equation*}
+</div></article><p id="p-2377">In this section, we will try to develop our understanding of how these sample statistics, \(\overline x\) and \(\hat p\) work. In particular, we will introduce an extremely important theorem called the <dfn class="terminology">central limit theorem</dfn>.</p></section><article class="objectives goal-like" id="sec_approximating_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-33"><p id="p-2378">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-922">
+<p id="p-2379">describe the following terms:</p>
+<ul class="circle">
+<li id="li-923"><p id="p-2380">central limit theorem</p></li>
+<li id="li-924"><p id="p-2381">criteria for applying the central limit theorem</p></li>
+<li id="li-925"><p id="p-2382">sample mean</p></li>
+<li id="li-926"><p id="p-2383">sample proportion</p></li>
+<li id="li-927"><p id="p-2384">sampling distribution for a mean</p></li>
+<li id="li-928"><p id="p-2385">sampling distribution for a proportion</p></li>
+</ul>
+</li>
+<li id="li-929">
+<p id="p-2386">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-930"><p id="p-2387">Understand the concept of a distribution of sample means</p></li>
+<li id="li-931"><p id="p-2388">Understand the central limit theorem</p></li>
+<li id="li-932"><p id="p-2389">Use the sampling distribution of the mean to determine the likelihood of a given sample mean or range of sample means</p></li>
+<li id="li-933"><p id="p-2390">Use the sampling distribution for a proportion</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_sampling_mean-dist"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Sample Means</span>
+</h3>
+<a href="sec_sampling.html#sec_sampling_mean-dist" class="permalink">¶</a><p id="p-2391">To better understand how means of samples behave, let's take a look at a sampling example.</p>
+<article class="example example-like" id="examp_sampling_mean-dist_distribution"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_mean-dist_distribution"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Sampling Distribution of the Mean.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_mean-dist_distribution"><article class="example example-like"><p id="p-2392">You wish to draw samples of size three from a finite population of values \(\lbrace 0, 3, 6, 9, 12 \rbrace\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-934"><p id="p-2393">What are the possible samples of size three and what are their sample means?</p></li>
+<li id="li-935"><p id="p-2394">If \(\overline{X}\) is a random variable whose value is the mean of the sample, give the probability distribution for \(\overline{X}\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-154" id="solution-154"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-154"><div class="solution solution-like"><ol id="p-2395" class="lower-alpha">
+<li id="li-936">
+<p id="p-2396">Our first task is to list all possible samples of size three and compute their means. We know that there are \(C(5,3) = 10\) of them, and they are:</p>
+<figure class="table figure-like" id="table_sampling_examp_mean-dist_distribution-samples"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">Sample</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Sample Mean (\(\overline x\))</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 0, 3, 6 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(3\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 0, 3, 9 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(4\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 0, 3, 12 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(5\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 0, 6, 9 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(5\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 0, 6, 12 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(6\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 0, 9, 12 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(7\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 3, 6, 9 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(6\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 3, 6, 12 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(7\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 3, 9, 12 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(8\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\lbrace 6, 9, 12 \rbrace\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(9\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.5.3<span class="period">.</span></span><span class="space"> </span>Samples and their Means</figcaption></figure>
+</li>
+<li id="li-937">
+<p id="p-2397">Our final task is to construct a probability distribution for \(\overline X\text{,}\) the sample means. This is done by counting the number of samples that have each value and dividing by the total of \(10\) possible samples.  While we are at this, we'll also find the expected value of \(\overline X\text{.}\)</p>
+<figure class="table figure-like" id="table_sampling_examp_mean-dist_distribution-dist"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(\overline x\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(P\left(\overline X = \overline x\right)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\overline x \times P\left(\overline X = \overline x\right)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{10}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3}{10}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{10}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{4}{10}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{2}{10}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{10}{10}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{2}{10}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{12}{10}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(7\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{2}{10}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{14}{10}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{10}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{8}{10}\)</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(9\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(\frac{1}{10}\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{9}{10}\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines" colspan="2">\(E(\overline{X}) =\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(6\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.5.4<span class="period">.</span></span><span class="space"> </span>Distribution of Sample Means</figcaption></figure>
+</li>
+</ol></div></div>
+</div></article></div>
+<p id="p-2398">Note that several interesting things have happened. First, when we take the mean of all of our possible samples, we see repetition. That is, more than one sample produces the values \(5\text{,}\) \(6\text{,}\) and \(7\) as a mean. Consider the graphs below of the individual values from the population, which is uniform, versus the sample means, which is starting to look more mound shaped.</p>
+<figure class="figure figure-like" id="fig_sampling_mean-dist_comparison"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_sampling_mean-dist_comparision-a"><img src="images/image_sampling_mean-dist_comparison-a.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Individual Values</figcaption></figure></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_sampling_mean-dist_comparision-b"><img src="images/image_sampling_mean-dist_comparison-b.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Sample Means</figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.5<span class="period">.</span></span><span class="space"> </span>Distributions Based on \(\lbrace 0, 3, 6, 9, 12\rbrace\)</figcaption></figure><p id="p-2399">Also notice that the distribution of sample means has less variation than the distribution of individual values from the population. Another interesting thing that has happened is that the expected value of \(\overline X\) is \(6\text{,}\) which is exactly the population mean. That is, when we take the mean of the sample means, the average of the averages, we get the same thing as the mean of the entire population.</p>
+<p id="p-2400">These two factors combined will play an important role on the next page, where we introduce one of the most important theorems in statistics.</p>
+<figure class="figure figure-like" id="video_sampling_mean-dist-1"><video id="video-132" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.6<span class="period">.</span></span><span class="space"> </span>Distribution of Sample Means I</figcaption></figure><figure class="figure figure-like" id="video_sampling_mean-dist-2"><video id="video-133" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.7<span class="period">.</span></span><span class="space"> </span>Distribution of Sample Means II</figcaption></figure><article class="exercise exercise-like" id="ckpt_sampling_mean-dist-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_mean-dist-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_mean-dist-1"><article class="exercise exercise-like"><p id="p-2401">Samples of size three are drawn from the finite population \(\lbrace 1, 3, 5, 7, 9 \rbrace\) without replacement.</p>
+<p id="p-2402">Question: what is the mean of the sampling distribution for this sample?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-187" id="answer-187"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-187"><div class="answer solution-like"><p id="p-2403">5</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_mean-dist-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_mean-dist-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_mean-dist-2"><article class="exercise exercise-like"><p id="p-2404">A sample of size three is drawn from the population \(\lbrace 5, 10, 15, 20, 25, 30 \rbrace\) without replacement.</p>
+<p id="p-2405">Question: which of the following is NOT a valid sample?</p>
+<ol class="lower-alpha">
+<li id="li-938"><p id="p-2406">\(\lbrace 5, 25, 15 \rbrace\)</p></li>
+<li id="li-939"><p id="p-2407">\(\lbrace 10, 30, 25 \rbrace\)</p></li>
+<li id="li-940"><p id="p-2408">\(\lbrace 5, 15, 15 \rbrace\)</p></li>
+<li id="li-941"><p id="p-2409">\(\lbrace 25, 15, 20 \rbrace\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-188" id="answer-188"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-188"><div class="answer solution-like"><p id="p-2410">(c)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_mean-dist-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_mean-dist-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_mean-dist-3"><article class="exercise exercise-like"><p id="p-2411">If a population is uniformly distributed, then the distribution of sample means for a sample of any size \(n\) will also be uniformly distributed.</p>
+<p id="p-2412">Question: is the above statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-189" id="answer-189"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-189"><div class="answer solution-like"><p id="p-2413">False</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_sampling_theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.2</span> <span class="title">The Central Limit Theorem</span>
+</h3>
+<a href="sec_sampling.html#sec_sampling_theorem" class="permalink">¶</a><p id="p-2414">Making inferences about populations based on samples relies heavily on an understanding of how these samples behave. We must know what we can expect to see in samples that are drawn from a population with a uniform distribution, a normal distribution, or some other distribution. In the  previous subsection, we saw an example in which a sample drawn from a uniform distribution had sample means that had a more mound-shaped distribution. This is a particular instance of the next theorem.</p>
+<article class="theorem theorem-like" id="thm_central-limit"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Central Limit Theorem.</span>
+</h6>
+<p id="p-2415">The distribution of the sample mean of a random sample of \(n\) values can be approximated by the normal distribution with mean and standard deviation shown below, where \(\mu\) and \(\sigma\) are the mean and standard deviation of the population.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:30%;">
+<div class="sbspanel" style="width:45.4545454545455%;justify-content:center;"><div class="displaymath" id="p-2416">
+\begin{equation*}
+\mu_{\overline{x}} = \mu
+\end{equation*}
+</div></div>
+<div class="sbspanel" style="width:45.4545454545455%;justify-content:center;"><div class="displaymath" id="p-2417">
+\begin{equation*}
+\overline{x} = \frac{\sigma}{\sqrt{n}}
+\end{equation*}
+</div></div>
+</div></div>
+<p id="p-2418">The larger the value of \(n\text{,}\) the better this approximation becomes.</p></article><p id="p-2419">According to the <dfn class="terminology">central limit theorem</dfn>, if we take samples and look at their means, they will have approximately a normal distribution, and the bigger the sample we take, the better the sample means will match a normal distribution. How big does \(n\) need to be? That depends on the way the individual population values are distributed.</p>
+<article class="principle theorem-like" id="thm_central-limit-criteria"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">3.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Criteria for Applying the Central Limit Theorem.</span>
+</h6>
+<p id="p-2420">We may use the normal distribution given by the central limit theorem to approximate probabilities for means of samples of size \(n\) when:</p>
+<ul class="disc">
+<li id="li-942"><p id="p-2421">the population itself has a normal distribution, or</p></li>
+<li id="li-943"><p id="p-2422">the population has any distribution and \(n\) is at least 30.</p></li>
+</ul></article><p id="p-2423">Let's apply this to several examples.</p>
+<article class="example example-like" id="examp_sampling_criteria-not-normal"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_criteria-not-normal"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if We Can Apply the Central Limit Theorem I.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_criteria-not-normal"><article class="example example-like"><p id="p-2424">A population of church mice has tail lengths that are uniformly distributed between 1.5 and 3 inches long. In which of the following situations could you use a normal distribution to compute the likelihood of getting a sample of \(n\) church mice that has a mean tail length of at least 2 inches?</p>
+<ol class="lower-alpha">
+<li id="li-944"><p id="p-2425">You sample \(n = 5\) church mice</p></li>
+<li id="li-945"><p id="p-2426">You sample \(n = 100\) church mice</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-155" id="solution-155"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-155"><div class="solution solution-like">
+<p id="p-2427">The answer to this question relies on the central limit theorem. Note that the distribution of individual church mouse tails is not normal, but uniform.</p>
+<ol class="lower-alpha">
+<li id="li-946"><p id="p-2428">We can not use a normal distribution because the population distribution is not normal, and \(n\) is less than 30.</p></li>
+<li id="li-947"><p id="p-2429">We can use a normal distribution. The sample size of \(n=100\) is big enough (at leat 30) that even though the population distribution is uniform, the distribution of sample means will be very close to a normal distribution.</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_sampling_criteria-normal"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_criteria-normal"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.14</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if We Can Apply the Central Limit Theorem II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_criteria-normal"><article class="example example-like"><p id="p-2430">At a certain golf club, the members have handicaps that have a normal distribution with a mean of \(\mu = 9.6\) and standard deviation of \(\sigma = 1.85\text{.}\) A sample of these golfers is selected for a tournament. In which of the following instances can we use a normal distribution to compute the probability that the average handicap for the selected golfers will be less than 10?</p>
+<ol class="lower-alpha">
+<li id="li-948"><p id="p-2431">The club selects \(n = 10\) members for the tournament</p></li>
+<li id="li-949"><p id="p-2432">The club selects \(n = 60\) members for the tournament</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-156" id="solution-156"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-156"><div class="solution solution-like">
+<p id="p-2433">Again, we must use the central limit theorem. In this case, however, the underlying distribution for the population is already normal.</p>
+<ol class="lower-alpha">
+<li id="li-950"><p id="p-2434">Since the population distribution is normal, the distribution for \(\overline x\) is also normal, no matter what \(n\) is.</p></li>
+<li id="li-951"><p id="p-2435">See the answer above—we can again use a normal distribution for \(\overline x\text{.}\)</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_sampling_theorem-1"><video id="video-134" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.15<span class="period">.</span></span><span class="space"> </span>Central Limit Theorem I</figcaption></figure><figure class="figure figure-like" id="video_sampling_theorem-2"><video id="video-135" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.16<span class="period">.</span></span><span class="space"> </span>Central Limit Theorem II</figcaption></figure><article class="exercise exercise-like" id="ckpt_sampling_theorem-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_theorem-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.17</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_theorem-1"><article class="exercise exercise-like"><p id="p-2436">According to the central limit theorem, the distribution of the sample means for samples of size \(n\) is always normal.</p>
+<p id="p-2437">Question: is the following statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-190" id="answer-190"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-190"><div class="answer solution-like"><p id="p-2438">False</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_theorem-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_theorem-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.18</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_theorem-2"><article class="exercise exercise-like"><p id="p-2439">Samples of size \(45\) are drawn from a population of values and the mean of the samples are exampled.</p>
+<p id="p-2440">Question: can we use a normal distribution to approximate the distribution of these sample means?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-191" id="answer-191"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-191"><div class="answer solution-like"><p id="p-2441">Yes</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_theorem-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_theorem-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.19</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_theorem-3"><article class="exercise exercise-like"><p id="p-2442">The population of penny dates is skewed to the right. Samples of 20 pennies are drawn and the average of these sets of 20 dates are noted.</p>
+<p id="p-2443">Question: can we approximate the distribution of sample means with a normal distribution?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-192" id="answer-192"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-192"><div class="answer solution-like"><p id="p-2444">No</p></div></div>
+</div></article></div></section><section class="subsection" id="sampling_means"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.3</span> <span class="title">Sampling Distribution of the Mean</span>
+</h3>
+<a href="sec_sampling.html#sampling_means" class="permalink">¶</a><p id="p-2445">In those cases where the central limit theorem applies, it gives us a powerful tool for dealing with sample means. It not only tells us that these sample means will have a normal distribution, it also provides the mean and standard deviation of that normal distribution.</p>
+<article class="theorem theorem-like" id="thm_mean-sampling-dist"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.20</span><span class="period">.</span><span class="space"> </span><span class="title">Sampling Distribution for a Mean.</span>
+</h6>
+<p id="p-2446">The sampling distribution for a mean of a sample of size \(n\text{,}\) where the central limit theorem applies, is a normal distribution with mean and standard deviation</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:30%;">
+<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-2447">
+\begin{equation*}
+\mu_{\overline{x}} = \mu
+\end{equation*}
+</div></div>
+<div class="sbspanel" style="width:50%;justify-content:center;"><div class="displaymath" id="p-2448">
+\begin{equation*}
+\sigma_{\overline{x}} = \frac{\sigma}{\sqrt{n}}
+\end{equation*}
+</div></div>
+</div></div>
+<p id="p-2449">where \(\mu\) and \(\sigma\) are the mean and standard deviation of the population from which the sample is drawn.</p></article><p id="p-2450">In the next several examples, we will be asked to find probabilities for sample means. It is important to remember that we must differentiate between the probability of an individual being in a certain range, and the probability of the mean of a sample being in that range. These probabilities will be different, and we must use the appropriate normal distribution for each one.</p>
+<article class="example example-like" id="examp_sampling_means_two-ranges"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_means_two-ranges"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.21</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Sampling Distribution for a Mean.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_means_two-ranges"><article class="example example-like"><p id="p-2451">The postal service has determined that the weight of a certain size shipping container will be normally distributed with a mean of \(\mu = 19.4\) ounces and a standard deviation of \(\sigma = 4.5\) ounces.</p>
+<ol class="lower-alpha">
+<li id="li-952"><p id="p-2452">What is the probability that a randomly selected container will weigh more than 22 ounces?</p></li>
+<li id="li-953"><p id="p-2453">What is the probability that a sample of 10 such containers will have an average weight of more than 22 ounces?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-157" id="solution-157"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-157"><div class="solution solution-like">
+<p id="p-2454">Since the population has a normal distribution, we can use the central limit theorem. However, we do not need it for the first question as we are selecting an individual from a normally distributed population. Let's let \​(W\) be the weight of an individual, and \(\overline W\) the weight of the sample of 10. From the central limit theorem, both \(W\) and \(\overline W\) will have the same mean, but the standard deviation for \(\overline W\) will be</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_{\overline W} = \frac{\sigma_W}{\sqrt{n}} = \frac{4.5}{\sqrt{10}} \approx 1.423\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We sketch both the normal distribution for \(W\) (blue) and the one for \(\overline W\) (red) in the same picture to see how they compare.</p>
+<figure class="figure figure-like" id="fig_sampling_examp_means_two-regions"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_sampling_examp_means_two-regions.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.22<span class="period">.</span></span><span class="space"> </span>Distributions for \(W\) and \(\overline W\)</figcaption></figure><ol id="p-2455" class="lower-alpha">
+<li id="li-954">
+<p id="p-2456">We want to find \(P(W \gt 22)\text{.}\) Note that this is not a binomial approximation, so we do not apply a continuity correction! Instead, we compute the z-score for 22 and compute as shown.</p>
+<div class="displaymath">
+\begin{align*}
+P(W \gt 22) \amp = P\left(\frac{W-\mu}{\sigma} \gt \frac{22-19.4}{4.5}\right)\\
+\amp = P(Z \gt 0.58)\\
+\amp = 1 - P(Z \lt 0.58)\\
+\amp = 1 - 0.7190\\
+\amp = 0.2810
+\end{align*}
+</div>
+<p data-braille="continuation">This is a fairly likely occurrence.</p>
+</li>
+<li id="li-955">
+<p id="p-2457">Now we need to find \​(P(\overline{W} \gt 22)\). The variable \​(\overline{W}\).  We do a very similar computation to the one shown above, but we use the standard deviation for the sampling distribution when computing the z-score.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline W \gt 22) \amp = P\left(\frac{\overline{W} - \mu}{\sigma/\sqrt{n}} \gt \frac{22-19.4}{4.5/\sqrt{10}}\right)\\
+\amp = P(Z \gt 1.83)\\
+\amp = 1 - P(Z \lt 1.83)\\
+\amp = 1 - 0.9664\\
+\amp = 0.0336
+\end{align*}
+</div>
+<p data-braille="continuation">This is a much less likely occurrence.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2458">In the example above, note how much less likely it is to get a sample, even a small one of size 10, that varies too much from the mean. To see how sample size affects the sampling distribution, consider the following example.</p>
+<article class="example example-like" id="examp_sampling_means_two-sizes"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_means_two-sizes"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.23</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing Probabilities for Different Sample Sizes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_means_two-sizes"><article class="example example-like"><p id="p-2459">The time it takes an adult to complete a certain standardized test follows am unknown distribution with mean \(\mu = 82.5\) minutes and standard deviation \(\sigma = 13.1\) minutes.</p>
+<ol class="lower-alpha">
+<li id="li-956"><p id="p-2460">Suppose that a sample of 50 adults are given the test. Find the probability that the average time they take to complete the test is at least 85 minutes.</p></li>
+<li id="li-957"><p id="p-2461">If a second sample of 100 adults is selected, what is the probability that their average completion time is at least 85 minutes?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-158" id="solution-158"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-158"><div class="solution solution-like">
+<p id="p-2462">Since the standard deviation for our sampling distribution depends on the sample size, the two parts of this example will have different distributions.</p>
+<ol class="lower-alpha">
+<li id="li-958">
+<p id="p-2463">The average time it takes a sample of 50 adults to complete this test will have a normal distribution (because \(n \gt 30\)) with mean 82.5 and standard deviation</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{13.1}{\sqrt{50}} \approx 1.853\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The probability their mean score is at least 85 can be computed as shown.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline{X} \geq 85) \amp = P\left(\frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \geq \frac{85-82.5}{1.853}\right)\\
+\amp = P(Z \geq 1.35)\\
+\amp = 1 - P(Z \lt 1.35)\\
+\amp = 1 - 0.9115\\
+\amp = 0.0885
+\end{align*}
+</div>
+<p data-braille="continuation">This is not likely, but not unusual either.</p>
+</li>
+<li id="li-959">
+<p id="p-2464">For a sample of 100 adults, the mean is still 82.5, but the standard deviation is now</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{13.1}{\sqrt{100}} = 1.31\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The probability computation therefore looks a little different.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline{X} \geq 85) \amp = P\left(\frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \geq \frac{85-82.5}{1.31}\right)\\
+\amp = P(Z \geq 1.91)\\
+\amp = 1 - P(Z \lt 1.91)\\
+\amp = 1 - 0.9719\\
+\amp = 0.0281
+\end{align*}
+</div>
+<p data-braille="continuation">So the probability that the group of 100 averages more than 85 minutes is about a fourth as likely as for the group of 50.</p>
+</li>
+</ol>
+<p id="p-2465">The graph below shows the two sampling distributions that we used in this example.  Notice how much smaller the shaded area under the red curve (where \(n=100\)) is as compared to the blue (where \(n=50\))</p>
+<figure class="figure figure-like" id="fig_sampling_examp_means_two-sizes"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_sampling_examp_means_two-sizes.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.24<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for \(\overline X\) when \(n=50\) and \(n=100\)</figcaption></figure>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_sampling_means-1"><video id="video-136" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.25<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for the Mean I</figcaption></figure><figure class="figure figure-like" id="video_sampling_means-2"><video id="video-137" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.26<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for the Mean II</figcaption></figure><article class="exercise exercise-like" id="ckpt_sampling_means-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_means-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.27</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_means-1"><article class="exercise exercise-like"><p id="p-2466">The loudness of a cat&amp;s meow has a normal distribution with a mean of 50 decibels and a standard deviation of 9 decibels. A sample of 10 cats are collected and the average loudness of their meows is measured.</p>
+<p id="p-2467">Question: what is the probability that the average loudness of these 10 cats' meows is at least 56 decibels?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-193" id="answer-193"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-193"><div class="answer solution-like"><p id="p-2468">0.0174</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_means-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_means-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.28</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_means-2"><article class="exercise exercise-like"><p id="p-2469">The distribution of penny dates is skewed to the left with a mean of 2001 and standard deviation 2.4 years. A sample of 49 pennies is drawn and the average date of the pennies is noted.</p>
+<p id="p-2470">Question: what is the probability that the mean date for this sample is less than 2000?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-194" id="answer-194"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-194"><div class="answer solution-like"><p id="p-2471">0.0018</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_means-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_means-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.29</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_means-3"><article class="exercise exercise-like"><p id="p-2472">The distribution of gas mileage in a certain fleet of automobiles is normal with a mean of 23.6 mpg and a standard deviation of 4.1 mpg. A sample of 5 cars is selected at random from this fleet and their gas mileage is tested.</p>
+<p id="p-2473">Question: what is the probability that the average gas mileage in this sample is more than 25 mpg?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-195" id="answer-195"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-195"><div class="answer solution-like"><p id="p-2474">0.2236</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_sampling_proportions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.4</span> <span class="title">Sample Distribution of a Proportion</span>
+</h3>
+<a href="sec_sampling.html#sec_sampling_proportions" class="permalink">¶</a><p id="p-2475">At the beginning of this section, we introduced the idea of a <a class="xref" data-knowl="./knowl/def_sample-proportion.html" title="Definition 3.5.1">sample proportion</a>. To help solidify this concept, the next example shows how we might compute such a proportion.</p>
+<article class="example example-like" id="examp_sampling_proportions-compute"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_proportions-compute"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.30</span><span class="period">.</span><span class="space"> </span><span class="title">Computing a Sample Proportion.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_proportions-compute"><article class="example example-like"><p id="p-2476">In a sample of 200 butterflies, 75 were yellow monarchs. What is the proportion of yellow Monarch butterflies in this sample?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-159" id="solution-159"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-159"><div class="solution solution-like">
+<p id="p-2477">The sample proportion is the number of individuals who have the desired characteristic, which we call \(x\text{,}\) divided by the sample size, which is \(n\text{.}\) In this case,</p>
+<div class="displaymath">
+\begin{equation*}
+\hat p = \frac{x}{n} = \frac{75}{200} = 0.375\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-2478">Note that we use \(\hat p\) for a proportion in a sample instead of \(p\text{.}\) The variable \(p\) was used in binomial probabilities where it stood for the probability of a success. Thought of another way, \(p\) is the proportion of individuals in the population with the desired characteristic. So \(p\) and \(\hat p\) really measure the likelihood of the same characteristic. It is just that one does it for the population and the other for a sample.</p>
+<p id="p-2479">To understand how sample proportions will be distributed—and thus how we can compute their probabilities—we need to think back to <a href="sec_approximating.html" class="internal" title="Section 3.4: Normal Approximation to the Binomial Distribution">Section 3.4</a>. There we saw how to approximate binomial probabilities using a normal distribution. As long as the criteria for approximation was met, we could use a normal distribution to figure out \(P(X=x)\text{,}\) the probability of \(x\) successes in \(n\) trials.</p>
+<p id="p-2480">How does this relate to proportions? A proportion in a sample is simply a ratio of the \(x\) successes to the \(n\) trials in a binomial process. Thus, the distribution of sample proportions will have a mean which is the mean of a binomial distribution divided by \(n\text{.}\) It will have a standard deviation which is the standard deviation of the binomial distribution divided by \(n\text{.}\) These formulas are summarized below.</p>
+<article class="theorem theorem-like" id="thm_proportion-sampling-dist"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.31</span><span class="period">.</span><span class="space"> </span><span class="title">Sampling Distribution for a Proportion.</span>
+</h6>
+<p id="p-2481">If \(p\) is the proportion of individuals in a population with a given characteristic and a sample of size \(n\) is drawn from that population, then the proportion of individuals in the sample with that characteristic, \(\hat p\text{,}\) will have a normal distribution with the following mean and standard deviation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:20%;">
+<div class="sbspanel" style="width:42.8571428571429%;justify-content:center;"><div class="displaymath" id="p-2482">
+\begin{equation*}
+\mu_{\hat p} = \frac{np}{n} = p
+\end{equation*}
+</div></div>
+<div class="sbspanel" style="width:42.8571428571429%;justify-content:center;"><div class="displaymath" id="p-2483">
+\begin{equation*}
+\sigma_{\hat p} = \frac{\sqrt{npq}}{n} = \sqrt{\frac{pq}{n}}
+\end{equation*}
+</div></div>
+</div></div>
+<p id="p-2484">This approximation is appropriate as long as both \(n\times p\) and \(n\times q\) are greater than 5.</p></article><p id="p-2485">Note that we are not restricted to a sample size of 30 or more, as we are when using the central limit theorem for sample means. Instead, we must check to make sure that the <a class="xref" data-knowl="./knowl/def_binomial-approx-criteria.html" title="Principle 3.4.8: Criteria for Approximation">criteria for approximating</a> a binomial distribution with a normal distribution are met.  Namely, we need to verify that \(n\times p\) and \(n\times q\) are both greater than 5. Consider the following example.</p>
+<article class="example example-like" id="examp_sampling_proportions_appropriate"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_proportions_appropriate"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.32</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities for a Sample Proportion.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_proportions_appropriate"><article class="example example-like"><p id="p-2486">Only 2% of the world's population has naturally blond hair. Suppose that you were drawing a sample from the world population, and you wished to use a normal distribution to compute probabilities for the sample proportion, \(\hat p\text{,}\) of people with blond hair. How large a sample should you take?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-160" id="solution-160"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-160"><div class="solution solution-like">
+<p id="p-2487">In order to use a normal distribution to compute probabilities for \(\hat p\) we need to ensure that \(n\times p\) and \(n\times q\) are both greater than 5. Note that the \(p\) in this formula is the proportion of people in the population with blond hair, not the proportion in our sample. We therefore need to have</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p \gt 5 \Rightarrow n(0.02) \gt 5 \Rightarrow n \gt \frac{5}{0.02} \Rightarrow n \gt 250\text{.}
+\end{equation*}
+</div>
+<p id="p-2488">Since \(q = .98\) is much larger than \(p\text{,}\) we do not need to check \(n\times q\text{.}\) We therefore must sample at least 251 individuals to apply the sampling distribution formulas above.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_sampling_proportion-1"><video id="video-138" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.33<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for a Proportion I</figcaption></figure><figure class="figure figure-like" id="video_sampling_proportion-2"><video id="video-139" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.34<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for a Proportion I</figcaption></figure><article class="exercise exercise-like" id="ckpt_sampling_proportion-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_proportion-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_proportion-1"><article class="exercise exercise-like"><p id="p-2489">Thirteen percent of the people in a certain population like pickled beets. A sample of 80 individuals is drawn from the population and the proportion of the sample that like pickled beets is measured.</p>
+<p id="p-2490">Question: can the sampling distribution for \(\hat p\) be used to approximate probabilities?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-196" id="answer-196"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-196"><div class="answer solution-like"><p id="p-2491">Yes</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_proportion-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_proportion-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_proportion-2"><article class="exercise exercise-like"><p id="p-2492">Suppose that 8 percent of fish in a certain lake are trout. A fisherman catches 40 fish over the course of a long weekend, and notes the proportion of those fish which are trout.</p>
+<p id="p-2493">Question: can a normal distribution be used to approximate probabilities for the sample proportion \(\hat p\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-197" id="answer-197"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-197"><div class="answer solution-like"><p id="p-2494">No</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_proportion-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_proportion-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.37</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_proportion-3"><article class="exercise exercise-like"><p id="p-2495">Suppose that 32% of individuals in a certain large city have been mugged. A sample of \(n\) individuals is to be collected and the sample proportion \(\hat p\) will be analyzed using a normal distribution.</p>
+<p id="p-2496">Question: what is the smallest sample size n for which the sampling distribution of \(\hat p\) can be approximated by a normal distribution?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-198" id="answer-198"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-198"><div class="answer solution-like"><p id="p-2497">16</p></div></div>
+</div></article></div>
+<p id="p-2498">With this information in mind, we are ready to look at examples involving sample proportions. Several of these can be found below.</p>
+<article class="example example-like" id="examp_sampling_proportions_less-than"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_proportions_less-than"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.38</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities for a Sample Proportion I.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_proportions_less-than"><article class="example example-like"><p id="p-2499">As seen in <a class="xref" data-knowl="./knowl/examp_sampling_proportions_appropriate.html" title="Example 3.5.32: Computing Probabilities for a Sample Proportion">Example 3.5.32</a>, only 2% of the world's population are naturally blond. Suppose that you take a sample of 500 individuals from the world population. What is the probability that you will find less than 1.5% of your sample has blond hair?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-161" id="solution-161"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-161"><div class="solution solution-like">
+<p id="p-2500">First note that \(n\times p = 500(0.02) = 10\) and \(n\times q = 500(0.98) = 490\) are both bigger than 5. We can therefore use the sampling distribution for a sample proportion. The mean and standard deviation are shown below.</p>
+<div class="displaymath">
+\begin{align*}
+\mu_{\hat p} \amp = p = 0.02\\
+\sigma_{\hat p} \amp = \sqrt{\frac{pq}{n}} = \sqrt{\frac{(0.02)(0.98)}{500}} \approx 0.00626
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore, we can compute the probability that less than 1.5% of our sample has blond hair as follows.</p>
+<div class="displaymath">
+\begin{align*}
+P(\hat P \lt 0.015) \amp = P\left(\frac{\hat P - p}{\sqrt{\frac{pq}{n}}} \lt \frac{0.015 - 0.02}{0.00626}\right)\\
+\amp = P(Z \lt -0.80)\\
+\amp = 0.2119
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_sampling_proportions_greater-than"><a data-knowl="" class="id-ref original" data-refid="hk-examp_sampling_proportions_greater-than"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.39</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities for a Sample Proportion II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_sampling_proportions_greater-than"><article class="example example-like"><p id="p-2501">A certain ballot measure needs 60% approval to pass. Suppose that there is actually 58% support for the ballot measure amongst registered voters. A polling organization wishes to determine if the ballot measure is likely to pass. To do this, they randomly select a sample of 900 registered voters. If they predict the measure will pass when \(\hat p \geq 0.60\text{,}\) what is the probability that they will mistakenly predict passage of the ballot measure?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-162" id="solution-162"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-162"><div class="solution solution-like">
+<p id="p-2502">Checking that we can apply the normal distribution, we compute \(n\times p = 900(0.58) = 522\) and \(n\times q = 900(0.42) = 378\text{,}\) both of which are greater than 5. Now the mean and standard deviation for our normal distribution of \(\hat p\) are:</p>
+<div class="displaymath">
+\begin{align*}
+\mu_{\hat p} \amp = 0.58\\
+\sigma_{\hat p} \amp = \sqrt{\frac{(0.58)(0.42)}{900}} \approx 0.01645
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore, the probability that they mistaken predict passage of the ballot measure is:</p>
+<div class="displaymath">
+\begin{align*}
+P(\hat P \geq 0.60) \amp = P\left(\frac{\hat P - p}{\sqrt{\frac{pq}{n}}} \geq \frac{0.60 - 0.58}{0.01645}\right)\\
+\amp = P(Z \geq 1.22)\\
+\amp = 1 - P(Z \lt 1.22)\\
+\amp = 1 - 0.8888\\
+\amp = 0.1112
+\end{align*}
+</div>
+<p data-braille="continuation">So, there is approximately an 11% chance the polling organizaiton will get it wrong.</p>
+</div></div>
+</div></article></div>
+<p id="p-2503">The failure rate of 11% is not very good if one wants to develop a reputation for being reliable. How could the polling organization lower the likelihood that they make a wrong prediction? As we shall see in the next chapter, one method is to recognize that there is the possibility of an “error” in sampling. Therefore, the pollsters should not predict a win based on a sample proportion of 0.60. Another method is to lower the variation between samples by raising the sample size. If \(n\) gets bigger, \(\sigma_{\hat p}\) gets smaller, and the probability of being wrong will go down.</p>
+<figure class="figure figure-like" id="video_sampling_proportion-3"><video id="video-140" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.40<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for a Proportion III</figcaption></figure><figure class="figure figure-like" id="video_sampling_proportion-4"><video id="video-141" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.41<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for a Proportion IV</figcaption></figure><article class="exercise exercise-like" id="ckpt_sampling_proportion-4"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_proportion-4"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.42</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_proportion-4"><article class="exercise exercise-like"><p id="p-2504">Twelve percent of frogs in a certain swamp region are, for one reason or another, unable to croak. A sample of 100 frogs is collected and the proportion, \(\hat p\text{,}\) of frogs that can not croak is measured.</p>
+<p id="p-2505">Question: what is the probability that at least 10% of the frogs in the sample can not croak?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-199" id="answer-199"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-199"><div class="answer solution-like"><p id="p-2506">0.7324</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_proportion-5"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_proportion-5"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.43</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_proportion-5"><article class="exercise exercise-like"><p id="p-2507">In a recent survey of American households, 83% were found to have multiple television sets. Suppose that a sample of 2000 American households are called and the proportion that have multiple television sets is noted.</p>
+<p id="p-2508">Question: what is \(P(\hat P \lt 0.84)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-200" id="answer-200"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-200"><div class="answer solution-like"><p id="p-2509">0.8830</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_sampling_proportion-6"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_sampling_proportion-6"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.5.44</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_sampling_proportion-6"><article class="exercise exercise-like"><p id="p-2510">Thirty percent of a certain population have characteristic \(X\text{.}\) A sample of 1500 individuals is selected from this population, and the proportion of those with characteristic \(X\) is noted.</p>
+<p id="p-2511">Question: what is \(P(\hat P \gt 0.33)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-201" id="answer-201"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-201"><div class="answer solution-like"><p id="p-2512">0.0055</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:39-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Normal Approximation to the Binomial Distribution</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_normal.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_sampling.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_normal.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_sampling.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating" class="active">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_approximating"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Normal Approximation to the Binomial Distribution</span>
+</h2>
+<a href="sec_approximating.html" class="permalink">¶</a><section class="introduction" id="sec_approximating_intro"><h6 class="heading">Approximating the Binomial Distribution.<span></span>
+</h6>
+<p id="p-2231">In this section we will see how the normal distribution can be used to approximate probabilities from the binomial distribution. It may seem strange that we would want to approximate binomial probabilities. After all, we can compute their exact value using the <a class="xref" data-knowl="./knowl/thm_binomial-probability.html" title="Theorem 3.2.34: Binomial Probability Formula">binomial probability formula</a>.</p>
+<div class="displaymath">
+\begin{equation*}
+P(X=x) = C(n,x)p^xq^{n-x}\text{.}
+\end{equation*}
+</div>
+<p id="p-2232">To see why an approximation may be useful, consider the following example.</p>
+<article class="example example-like" id="examp_approximating_why"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_why"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Recognizing a Complex Binomial Probability Computation.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_why"><article class="example example-like"><p id="p-2233">A recent study has determined that 32.2% of Americans are obese. A research group wishing to study this phenomena samples \(12,000\) individuals in a large metropolitan area. Describe how to find the probability that no more than \(3750\) of these individuals are obese, but do not perform the actual computation.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-146" id="solution-146"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-146"><div class="solution solution-like">
+<p id="p-2234">In order to find this probability using the binomial probability formula above, we need to find the sum:</p>
+<div class="displaymath">
+\begin{equation*}
+P(X\leq 3750) = P(X=0) + P(X=1) + \cdots + P(X=1199) + P(X=3750)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This involves 3751 instances of the binomial probability formula, and would take a lot of time.</p>
+</div></div>
+</div></article></div>
+<p id="p-2235">If it were possible, we would certainly be interested in being able to approximate the sum above if it can save us from performing 1201 separate computations.  Even using a computer, this process would be time consuming.  In this section we will learn when we can use the normal distribution to approximate the binomial distribution, as well as how to carry out that approximation.</p></section><article class="objectives goal-like" id="sec_approximating_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-31"><p id="p-2236">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-876">
+<p id="p-2237">describe the following terms:</p>
+<ul class="circle">
+<li id="li-877"><p id="p-2238">continuity correction</p></li>
+<li id="li-878"><p id="p-2239">criteria for approximation</p></li>
+<li id="li-879"><p id="p-2240">normal approximation to the binomial distribution</p></li>
+</ul>
+</li>
+<li id="li-880">
+<p id="p-2241">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-881"><p id="p-2242">Determine if it is appropriate to use the normal approximation</p></li>
+<li id="li-882"><p id="p-2243">Correctly apply the continuity correction</p></li>
+<li id="li-883"><p id="p-2244">Use the normal distribution to approximate binomial probabilities</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_approximating_visual"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Visualizing the Binomial Distribution</span>
+</h3>
+<a href="sec_approximating.html#sec_approximating_visual" class="permalink">¶</a><p id="p-2245">Before we even start talking about how we can approximate binomial probabilities using the normal distribution, let's think a little about why we can. Below are three probability histograms for a binomial random variable \(X\) resulting from \(n = 10\) trials. The first shows the distribution of \(X\) when \(p = 0.1\text{,}\) the middle when \(p = 0.5\text{,}\) and the right when \(p = 0.9\text{.}\)</p>
+<figure class="figure figure-like" id="fig_approximating_visual_small-n"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_approximating_visual_small-n-small-p"><img src="images/image_approximating_visual_small-n-small-p.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(a)</span><span class="space"> </span>\(p=0.1\)</figcaption></figure></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_approximating_visual_small-n-middle-p"><img src="images/image_approximating_visual_small-n-middle-p.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(b)</span><span class="space"> </span>\(p=0.5\)</figcaption></figure></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_approximating_visual_small-n-large-p"><img src="images/image_approximating_visual_small-n-large-p.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(c)</span><span class="space"> </span>\(p=0.9\)</figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.2<span class="period">.</span></span><span class="space"> </span>Visualizing Binomial Distributions with \(n=10\)</figcaption></figure><p id="p-2246">Which of these distributions would we call mound–shaped? The one in the middle appears to be the most mound-shaped of the three. The other two are skewed either to the right or to the left. Note that the one in the middle has a probability of \(0.5\text{.}\) The binomial distribution looks the most like the normal distribution when \(p = 0.5\text{.}\) However, as \(n\) increases, the value of \(p\) becomes less important. Consider the distributions below with the same values of \(p\text{,}\) but with \(n = 80\text{.}\)</p>
+<figure class="figure figure-like" id="fig_approximating_visual_large-n"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_approximating_visual_large-n-small-p"><img src="images/image_approximating_visual_large-n-small-p.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(a)</span><span class="space"> </span>\(p=0.1\)</figcaption></figure></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_approximating_visual_large-n-middle-p"><img src="images/image_approximating_visual_large-n-middle-p.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(b)</span><span class="space"> </span>\(p=0.5\)</figcaption></figure></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_approximating_visual_large-n-large-p"><img src="images/image_approximating_visual_large-n-large-p.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="codenumber">(c)</span><span class="space"> </span>\(p=0.9\)</figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.3<span class="period">.</span></span><span class="space"> </span>Visualizing Binomial Distributions with \(n=80\)</figcaption></figure><p id="p-2247">Notice that with the larger value of \(n\text{,}\) all three of these probability histograms look pretty mound shaped. Also notice that as \(n\) increases, the number of bars increases as well, and the distribution of probabilities starts to look less stair-stepped, and more like a smooth curve. Try playing with this yourself by performing the following steps.</p>
+<ol class="decimal">
+<li id="li-884"><p id="p-2248">Open the <a class="external" href="https://www.stat.berkeley.edu/~stark/Java/Html/BinHist.htm" target="_blank">interactive binomial distribution page</a>.</p></li>
+<li id="li-885"><p id="p-2249">Change the value of \(p\) (in the bottom right-hand corner) to several different percents to see what happens (for example, try 25, 50, and 75).</p></li>
+<li id="li-886"><p id="p-2250">Change the value of \(n\) (in the bottom left-hand corner) to several different numbers to see what happens (for example, try \(n=10\text{,}\) \(30\text{,}\) \(50\text{,}\) and so on).</p></li>
+<li id="li-887"><p id="p-2251">Try different combinations of \(n\) and \(p\) and notice how mound-shaped or skewed the distribution looks.</p></li>
+<li id="li-888"><p id="p-2252">Finally, click the “Show Normal Curve” button to see how the normal curve “fits” on top of the binomial probability histogram.</p></li>
+</ol>
+<p data-braille="continuation">Hopefully you have noticed that the larger \(n\) is and the closer \(p\) is to \(0.5\text{,}\) the less “gap” there is between the normal curve and the bars. That is, the less of the bar sticks up above, or does not reach up to the normal curve. The smaller this “gap” is, the better our approximation will be.</p>
+<figure class="figure figure-like" id="video_approximating_visual-1"><video id="video-122" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.4<span class="period">.</span></span><span class="space"> </span>Normal Distribution Shape</figcaption></figure><article class="exercise exercise-like" id="ckpt_approximating_visual-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_visual-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_visual-1"><article class="exercise exercise-like"><p id="p-2253">Let \(X\) be a binomial random variable with \(n\) trials and a probability of success \(p\text{.}\)</p>
+<p id="p-2254">Question: which values for \(n\) and \(p\) will produce the most mound-shaped probability histogram?n</p>
+<ol class="lower-alpha cols2">
+<li id="li-889"><p id="p-2255">\(n=500, p=0.5\)</p></li>
+<li id="li-890"><p id="p-2256">\(n=10, p=0.5\)</p></li>
+<li id="li-891"><p id="p-2257">\(n=100, p=0.2\)</p></li>
+<li id="li-892"><p id="p-2258">\(n=50, p=0.85\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-172" id="answer-172"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-172"><div class="answer solution-like"><p id="p-2259">(a)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_visual-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_visual-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_visual-2"><article class="exercise exercise-like"><p id="p-2260">The shape of a binomial distribution histogram depends not only on the value of \(p\text{,}\) but also on the size of \(n\text{.}\) In fact, as the size of \(n\) increases, the distribution looks less “stair-stepped” and more like a smooth probability density curve.</p>
+<p id="p-2261">Question: is the above statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-173" id="answer-173"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-173"><div class="answer solution-like"><p id="p-2262">true</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_visual-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_visual-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_visual-3"><article class="exercise exercise-like"><p id="p-2263">Let \(X\) be a binomial random variable with \(n\) trials, probability of success \(p\text{,}\) and a probability of failure \(q = 1-p\text{.}\)</p>
+<p id="p-2264">Question: which of the following will make the probability histogram for \(X\) more mound–shaped?</p>
+<ol class="lower-alpha cols2">
+<li id="li-893"><p id="p-2265">Making \(n\) larger</p></li>
+<li id="li-894"><p id="p-2266">Making \(n\) smaller</p></li>
+<li id="li-895"><p id="p-2267">Making \(p\) closer to \(1\)</p></li>
+<li id="li-896"><p id="p-2268">Making \(p\) closer to \(0\)</p></li>
+<li id="li-897"><p id="p-2269">Making \(q\) closer to \(0.5\)</p></li>
+<li id="li-898"><p id="p-2270">Making \(q\) closer to \(1\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-174" id="answer-174"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-174"><div class="answer solution-like"><p id="p-2271">(a) and (e)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_approximating_when"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">When can We Approximate?</span>
+</h3>
+<a href="sec_approximating.html#sec_approximating_when" class="permalink">¶</a><p id="p-2272">If then the binomial distribution can have so many different shapes depending on the parameters \(n\) and \(p\text{,}\) when is is enough like the mound–shaped normal distribution to allow us to use the normal distribution to approximate probabilities?</p>
+<article class="principle theorem-like" id="def_binomial-approx-criteria"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Criteria for Approximation.</span>
+</h6>
+<p id="p-2273">A normal distribution can be used to approximate binomial probabilities as long as both \(n\times p\) and \(n\times q\) are greater than \(5\text{.}\)</p></article><p id="p-2274">Of course the larger \(n\times p\) and \(n\times q\) get, the better the approximation will be. However, the criteria above tells us when an approximation will be “good enough” for us to use. Notice that this criteria has nothing to do with the specific probability that we want to compute. It doesn't matter if we are looking for the probability that \(X\) is greater than a number, less than a number, or between two numbers. What matters is how large \(n\times p\) and \(n\times q\) are. This is because, as we saw on the last page, these two parameters control the shape of the binomial probability histogram, and this histogram is what either matches a normal distribution well or does not match well.</p>
+<article class="example example-like" id="examp_approximating_can-we"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_can-we"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if We Can Approximate.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_can-we"><article class="example example-like"><p id="p-2275">A binomial random variable \(X\) is the result of \(50\) trials in which the probability of a success is \(0.93\text{.}\) We wish to approximate the probability that \(X\) is at least \(30\text{.}\) Can we do this using a normal distribution?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like">
+<p id="p-2276">To answer this we check both \(n\times p\) and \(n\times q\text{.}\)</p>
+<ul class="disc">
+<li id="li-899"><p id="p-2277">\(n\times p = 50(0.93) = 46.5\) which is greater than \(5\text{,}\) so we are okay here.</p></li>
+<li id="li-900"><p id="p-2278">However, \(n\times q = 50(1-0.93) = 50(0.07) = 3.5\text{,}\) which is not greater than \(5\text{.}\) Therefore, we can not use a normal distribution to approximate this binomial probability.</p></li>
+</ul>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_approximating_how-many-trials"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_how-many-trials"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Determining a Minimum Number of Trials to Approximate.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_how-many-trials"><article class="example example-like"><p id="p-2279">A factory has determined that its manufacturing process produces bad widgets 0.5% of the time. Suppose that they wish to take a sample of \(n\) widgets to run quality control tests. How many widgets must they sample before they can use a normal approximation to get probabilities?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like">
+<p id="p-2280">We must ensure that \(n\times p\) and \(n\times q\) are both greater than \(5\text{.}\)</p>
+<ul class="disc">
+<li id="li-901">
+<p id="p-2281">To get \(n\times p &gt; 5\text{,}\) we solve</p>
+<div class="displaymath">
+\begin{equation*}
+n(0.005) &gt; 5 \Rightarrow n &gt; 1000\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-902">
+<p id="p-2282">To get \(n\times q &gt; 5\text{,}\) we solve</p>
+<div class="displaymath">
+\begin{equation*}
+n(0.995) &gt; 5 \Rightarrow n &gt; 5.02\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Taking the larger of these two, the factory must sample at least 1001 widgets to be able to use the normal approximation to compute probabilities.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_approximating_when-1"><video id="video-123" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.11<span class="period">.</span></span><span class="space"> </span>Criteria for Approximation I</figcaption></figure><figure class="figure figure-like" id="video_approximating_when-2"><video id="video-124" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.12<span class="period">.</span></span><span class="space"> </span>Criteria for Approximation II</figcaption></figure><article class="exercise exercise-like" id="ckpt_approximating_when-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_when-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_when-1"><article class="exercise exercise-like"><p id="p-2283">A binomial random variable \(X\) comes from a process with \(n=20\) trials in which the probability of a success is \(p=0.15\text{.}\)</p>
+<p id="p-2284">Question: can we use a normal distribution to approximate probabilities for \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-175" id="answer-175"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-175"><div class="answer solution-like"><p id="p-2285">No</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_when-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_when-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_when-2"><article class="exercise exercise-like"><p id="p-2286">A binomial random variable \(X\) comes from a process with \(n=20\) trials in which the probability of a success is \(p=0.8\text{.}\)</p>
+<p id="p-2287">Question: can we use a normal distribution to approximate probabilities for \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-176" id="answer-176"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-176"><div class="answer solution-like"><p id="p-2288">No</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_when-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_when-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_when-3"><article class="exercise exercise-like"><p id="p-2289">A binomial random variable \(X\) comes from a process with \(20\) trials in which the probability of a success is \(p=0.60\text{.}\)</p>
+<p id="p-2290">Question: can we use a normal distribution to approximate probabilities for \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-177" id="answer-177"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-177"><div class="answer solution-like"><p id="p-2291">Yes</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_approximating_correction"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Continuity Correction</span>
+</h3>
+<a href="sec_approximating.html#sec_approximating_correction" class="permalink">¶</a><p id="p-2292">There is one final issue to address before we are ready to start approximating binomial probabilities with the normal distribution. This issue has to do with the fact that we are using a continuous probability density curve to approximate a discrete random variable. To see why this may be a problem, consider the following picture. Suppose that the binomial random variable \(X\) (shown by the bar) is being approximated using a normal random variable \(Y\) (shown by the curve).</p>
+<figure class="figure figure-like" id="fig_approximating_correction"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_approximating_correction.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.16<span class="period">.</span></span><span class="space"> </span>Continuity Correction</figcaption></figure><p id="p-2293">In the normal distribution, the probability \(P(Y=10)\) is exactly zero because it is a single line. In the binomial distribution, however, the entire green bar represents \(P(X=10)\text{.}\) If we wish to use the normal distribution to find \(P(X=10)\) in the binomial distribution, we need to translate this bar into a range of \(Y\) values. That range will extend from the bottom end of the bar, which is at \(10 - 0.5\text{,}\) to the top end of the bar at \(10 + 0.5\text{.}\) Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(X=10) \approx P(9.5 \lt Y \lt 10.5)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">When we change a whole number into a range like this we are correcting for the fact that we use a continuous random variable in place of a discrete random variable.</p>
+<article class="definition definition-like" id="def_continuity-correction"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.17</span><span class="period">.</span>
+</h6>
+<p id="p-2294">When we add or subtract \(0.5\) to a whole number as we approximate a binomial probability using a normal probability distribution, we are using a <dfn class="terminology">continuity correction</dfn>.</p></article><p id="p-2295">In the following examples, we will apply the continuity correction to translate a probability statement for a discrete random variable \(X\) into an approximately equivalent statement for a continuous random variable \(Y\text{.}\)</p>
+<article class="example example-like" id="examp_approximating_continuity-correction"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_continuity-correction"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Applying a Continuity Correction.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_continuity-correction"><article class="example example-like"><p id="p-2296">A binomial random variable \(X\) is to be approximated by a normal random variable \(Y\text{.}\) Convert each of the probability statements about a value or range of values for \(X\) into a statement about an approximately equivalent range of values for \(Y\text{.}\)</p>
+<ol class="lower-alpha cols3">
+<li id="li-903"><p id="p-2297">\(P(X \gt 26)\)</p></li>
+<li id="li-904"><p id="p-2298">\(P(X \leq 60)\)</p></li>
+<li id="li-905"><p id="p-2299">\(P(19 \leq X \lt 24)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-149" id="solution-149"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like">
+<p id="p-2300">To help us make the translation, we will draw example pictures for each one of these ranges.  We will indicate the associated area under the normal curve using diagonal blue lines.</p>
+<ol class="lower-alpha">
+<li id="li-906">
+<h6 class="heading"><span class="title">\(P(X \gt 26)\).</span></h6> <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:57.8947368421053%;justify-content:center;"><p id="p-2301">We need to take the bar for 26 in the binomial distribution, and shade everything above that bar but not including the bar itself. So using the top of the bar, which is 26.5, we translate this into \(P(Y &gt; 26.5)\text{.}\)</p></div>
+<div class="sbspanel" style="width:36.8421052631579%;justify-content:center;"><figure class="figure figure-like" id="fig_approximating_examp_continuity-correction-a"><img src="images/image_approximating_examp_continuity-correction-a.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+</li>
+<li id="li-907">
+<h6 class="heading"><span class="title">\(P(X \leq 60)\).</span></h6> <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:57.8947368421053%;justify-content:center;"><p id="p-2302">In this example, we want to shade everything less than and including the bar for 60. Since we want to include that bar and everything below, we use the range \(P(Y \lt 60.5)\text{.}\)</p></div>
+<div class="sbspanel" style="width:36.8421052631579%;justify-content:center;"><figure class="figure figure-like" id="fig_approximating_examp_continuity-correction-b"><img src="images/image_approximating_examp_continuity-correction-b.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+</li>
+<li id="li-908">
+<h6 class="heading"><span class="title">\(P(19 \leq X \lt 24)\).</span></h6> <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:57.8947368421053%;justify-content:center;"><p id="p-2303">For the lower limit, we want to include the 19 bar, so we subtract 0.5 and start with 18.5. For the upper limit we do not want to include the bar for 24, so we only go up to 24 - 0.5, or 23.5. This makes the range \(P(18.5 \lt Y \lt 23.5)\text{.}\)</p></div>
+<div class="sbspanel" style="width:36.8421052631579%;justify-content:center;"><figure class="figure figure-like" id="fig_approximating_examp_continuity-correction-c"><img src="images/image_approximating_examp_continuity-correction-c.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2304">One caution on using the continuity correction. It should only be used when we are approximating a binomial distribution with a normal distribution. If we start with a normal distribution, then the variable is already continuous, and no correction is needed.</p>
+<figure class="figure figure-like" id="video_approximating_correction-1"><video id="video-125" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.22<span class="period">.</span></span><span class="space"> </span>Continuity Correction I</figcaption></figure><figure class="figure figure-like" id="video_approximating_correction-2"><video id="video-126" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.23<span class="period">.</span></span><span class="space"> </span>Continuity Correction II</figcaption></figure><article class="exercise exercise-like" id="ckpt_approximating_correction-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_correction-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.24</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_correction-1"><article class="exercise exercise-like"><p id="p-2305">A binomial random variable \(X\) is to be approximated by a normal random variable \(Y\) in order to find \(P(12 \lt X \leq 17)\text{.}\)</p>
+<p id="p-2306">Question: which of the following is the correct range for \(Y\text{?}\)</p>
+<ol class="lower-alpha cols2">
+<li id="li-909"><p id="p-2307">\(P(11.5 \lt Y \lt 16.5)\)</p></li>
+<li id="li-910"><p id="p-2308">\(P(11.5 \lt Y \lt 17.5)\)</p></li>
+<li id="li-911"><p id="p-2309">\(P(12 \lt Y \lt 17)\)</p></li>
+<li id="li-912"><p id="p-2310">\(P(12.5 \lt Y \lt 16.5)\)</p></li>
+<li id="li-913"><p id="p-2311">\(P(12.5 \lt Y \lt 17.5)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-178" id="answer-178"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-178"><div class="answer solution-like"><p id="p-2312">(e)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_correction-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_correction-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_correction-2"><article class="exercise exercise-like"><p id="p-2313">A normal random variable \(Y\) is to be used to approximate \(P(X &gt; 45)\) for a binomial random variable \(X\text{.}\)</p>
+<p id="p-2314">Question: what is the approximately equivalent probability statement for \(Y\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-179" id="answer-179"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-179"><div class="answer solution-like"><p id="p-2315">\(P(Y&gt;45.5)\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_correction-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_correction-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_correction-3"><article class="exercise exercise-like"><p id="p-2316">When using a normal distribution to find \(P(a \lt X \lt b)\text{,}\) we should always use a continuity correction.</p>
+<p id="p-2317">Question: is this statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-180" id="answer-180"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-180"><div class="answer solution-like"><p id="p-2318">False</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_approximating_computation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.4</span> <span class="title">Normal Approximations</span>
+</h3>
+<a href="sec_approximating.html#sec_approximating_computation" class="permalink">¶</a><p id="p-2319">tools in place to use a normal distribution to approximate probabilities for a binomial distribution. Recall that a binomial random variable has mean and standard deviation as shown below.</p>
+<article class="theorem theorem-like" id="def_normal-approximation"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.27</span><span class="period">.</span><span class="space"> </span><span class="title">Normal Approximation to the Binomial Distribution.</span>
+</h6>
+<p id="p-2320">If \(X\) is a binomial random variable for a binomial process involving \(n\) trials in which the probability of a success in each trial is \(p\text{,}\) then probabilities for \(X\) can be approximated by a normal distribution with mean and standard deviation as shown below provided that \(n\times p\) and \(n\times q\) are both greater than \(5\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Mean: } \mu = n\times p \qquad \text{Standard Deviation: } \sigma = \sqrt{n\times p\times q}\text{.}
+\end{equation*}
+</div></article><p id="p-2321">So when we use a normal distribution to approximate a binomial probability, the mean of that normal distribution will be \(\mu = n\times p\) and the standard deviation will be \(\sigma = \sqrt{n\times p\times q}\text{.}\) Putting this together with the criteria for approximation and the continuity correction, we can solve examples such as the following.</p>
+<article class="example example-like" id="examp_approximating_computation-at-least"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_computation-at-least"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.28</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating a Binomial Probability Involving “At Least”.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_computation-at-least"><article class="example example-like"><p id="p-2322">A binomial process involves \(400\) trials in which the probability of a success is \(p = 0.35\text{.}\) What is the probability that there are at least \(168\) successes in this process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-150" id="solution-150"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like">
+<p id="p-2323">We first must be sure that we can use a normal approximation. To assess this, we check \(n\times p\) and \(n\times q\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 400(0.35) = 140 \quad \text{ and } \quad n\times q = 400(0.65) = 260\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since both of these are greater than \(5\text{,}\) we can continue with a normal approximation.</p>
+<p id="p-2324">Next, we need to compute the mean and standard deviation to use for the normal distribution. We have actually already found the mean above, but we repeat this computation together with that of the standard deviation below.</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = n\times p = 400(0.35) = 140\\
+\sigma \amp = \sqrt{n\times p\times q} = \sqrt{400(0.35)(0.65)} \approx 9.54
+\end{align*}
+</div>
+<p id="p-2325">Our final task is to use the normal distribution given by this mean and standard deviation to find \(P(X \geq 168)\text{.}\) We draw a picture to help us visualize the appropriate continuity correction, zooming in on the right tail of the distribution since 168 is above the mean of 140.</p>
+<figure class="figure figure-like" id="fig_approximating_examp_computation-at-least"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_approximating_examp_computation-at-least.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.29<span class="period">.</span></span><span class="space"> </span>Continuity Correction</figcaption></figure><p id="p-2326">The picture and the z-score formula help us make the following computation.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \geq 168) \amp = P(Y &gt; 167.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} &gt; \frac{167.5 - 140}{9.54}\right)\\
+\amp = P(Z &gt; 2.88)\\
+\amp = 1 - P(Z\lt 2.88)\\
+\amp = 1 - 0.9980\\
+\amp = 0.0020\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-2327">Observe that in this question, we are actually using three different distributions. There is the binomial distribution for which we are actually wanting to find probabilities, represented by the variable \(X\text{.}\) Then there is the normal distribution we use to approximate it, represented by the variable \(Y\text{.}\) Finally, there is the standard normal distribution to which we convert in order to use the standard normal distribution table, represented by the variable \(Z\text{.}\) Our next example picks up where <a class="xref" data-knowl="./knowl/examp_approximating_why.html" title="Example 3.4.1: Recognizing a Complex Binomial Probability Computation">Example 3.4.1</a> left off.</p>
+<article class="example example-like" id="examp_approximating_computation-no-more-than"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_computation-no-more-than"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.30</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating a Binomial Probability Involving “No More Than”.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_computation-no-more-than"><article class="example example-like"><p id="p-2328">A recent study has determined that 32.2% of Americans are obese. A research group wishing to study this phenomena samples \(12,000\) individuals in a large metropolitan area. What is the probability that no more than \(3750\) of these individuals are obese?  Use a normal approximation.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-151" id="solution-151"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like">
+<p id="p-2329">Checking our criteria for approximating yields</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 12000(.322) = 3864 \quad \text{ and } \quad n\times q = 12000(0.678) = 8136\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since both of these are greater than \(5\text{,}\) we may approximate this probability using a normal distribution.</p>
+<p id="p-2330">That normal distribution will have a mean and standard deviation of</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = 12000(0.322) = 3864\\
+\sigma \amp = \sqrt{12000(0.322)(0.678)} = 51.1839\text{.}
+\end{align*}
+</div>
+<p id="p-2331">We note that “no more than 3750” means we want \(X\) to be less than or equal to 3750.  So we draw the picture shown below to help us correctly apply the continuity correction, this time zooming in on the left tail since 3750 is less than the mean of 3864.</p>
+<figure class="figure figure-like" id="fig_approximating_examp_computation-no-more-than"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_approximating_examp_computation-no-more-than.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.31<span class="period">.</span></span><span class="space"> </span>Continuity Correction</figcaption></figure><p id="p-2332">This gives us the following probability computation</p>
+<div class="displaymath">
+\begin{align*}
+P(X \leq 3750) \amp = P(Y \lt 3750.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} \lt \frac{3750.5-3864}{51.1839}\right)\\
+\amp = P(Z \lt -2.22)\\
+\amp = 0.0132\text{.}
+\end{align*}
+</div>
+<p id="p-2333">Therefore, the probability of no more than \(3750\) obese individuals is approximately \(0.0132\text{.}\)</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_approximating_computation-1"><video id="video-127" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.32<span class="period">.</span></span><span class="space"> </span>Normal Approximation I</figcaption></figure><figure class="figure figure-like" id="video_approximating_computation-2"><video id="video-128" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.33<span class="period">.</span></span><span class="space"> </span>Normal Approximation II</figcaption></figure><figure class="figure figure-like" id="video_approximating_computation-3"><video id="video-129" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.34<span class="period">.</span></span><span class="space"> </span>Normal Approximation II</figcaption></figure><article class="exercise exercise-like" id="ckpt_approximating_computation-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_computation-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_computation-1"><article class="exercise exercise-like"><p id="p-2334">At a certain large hotel knows that about 7% of guests who make reservations on any given night will, for one reason or another, not show up to claim their room. Because of that, the hotel, which has 250 rooms, books a total of 260 reservations. Suppose that each of these 260 reservations can be treated as an independent Bernoulli trial.</p>
+<p id="p-2335">Question: what is the probability that the hotel will be over-booked? Use a normal approximation to this binomial probability and give all four decimals of the probability from the standard normal distribution table.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-181" id="answer-181"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-181"><div class="answer solution-like"><p id="p-2336">0.0174</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_computation-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_computation-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_computation-2"><article class="exercise exercise-like"><p id="p-2337">A binomial distribution has 500 trials and a probability of success \(p = 0.74\text{.}\) You wish to find \(P(X \lt 350)\text{.}\)</p>
+<p id="p-2338">Question: what is the probability approximated by a normal distribution?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-182" id="answer-182"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-182"><div class="answer solution-like"><p id="p-2339">0.0183</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_computation-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_computation-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.37</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_computation-3"><article class="exercise exercise-like"><p id="p-2340">A farmer knows that about 19% of his cherry crop will need to be used for juice, jams, or other products because the cherries will have split and be bruised. A large bin contains approximate 12,000 cherries. Suppose that inspecting each cherry can be thought of as an independent Bernoulli trial.</p>
+<p id="p-2341">Question: what is the probability that a large bin contains more than 2400 bad cherries? Use a normal approximation to get this probability.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-183" id="answer-183"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-183"><div class="answer solution-like"><p id="p-2342">0.0026</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_approximating_how-good"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.5</span> <span class="title">How Good are These Approximations?</span>
+</h3>
+<a href="sec_approximating.html#sec_approximating_how-good" class="permalink">¶</a><p id="p-2343">We have made a point of identifying the probabilities we get from a normal distribution as approximations for the probabilities from a binomial distribution. Any time we are approximating, the question naturally arises, how good is that approximation? In the next several examples we will look at both the normal approximation and, with the help of a computer, the binomial probability to see how good these approximations really are.</p>
+<article class="example example-like" id="examp_approximating_how-good-small"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_how-good-small"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.38</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating with Few Trials.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_how-good-small"><article class="example example-like"><p id="p-2344">A baseball player gets a hit 63% of the time that he is at bat. Suppose that in a certain double header this player is at bat 14 times, and that these at-bats can be treated as a binomial process. Find the probability that he gets at least 10 hits using:</p>
+<ol class="lower-alpha">
+<li id="li-914"><p id="p-2345">the binomial probability formula, and</p></li>
+<li id="li-915"><p id="p-2346">a normal approximation.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-152" id="solution-152"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like">
+<p id="p-2347">From the problem statement, \(n = 14\text{,}\) \(p = 0.63\text{,}\) and \(q = 1-p=0.37\text{.}\) We want to compute \(P(X \geq 10)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-916">
+<p id="p-2348">Using the <a class="xref" data-knowl="./knowl/thm_binomial-probability.html" title="Theorem 3.2.34: Binomial Probability Formula">binomial formula 3.2.34</a> yields:</p>
+<div class="displaymath">
+\begin{align*}
+P(X \geq 10) \amp= P(X=10) + P(X=11) + P(X=12)\\
+\amp\quad + P(X=13) + P(X=14)\\
+\amp= C(14,10)(.63)^{10}(.37)^4 + C(14,11)(.63)^{11}(.37)^3\\
+\amp\quad + C(14,12)(.63)^{12}(.37)^2+ C(14,13)(.63)^{13}(.37)^1\\
+\amp\quad + C(14,14)(.63)^{14}(.37)^0\\
+\amp\approx 0.1848 + 0.1144 + 0.0487 + 0.0128 + 0.0016\\
+\amp= 0.3622\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-917">
+<p id="p-2349">Now using a normal approximation, we first check \(n\times p\) and \(n\times q\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 14(0.63) = 8.82 \quad \text{ and } \quad n\times q = 14(0.37) = 5.18\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that both of these are very close to 5. This means we can just barely use a normal approximation. Next, the mean and standard deviation are</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = n\times p = 8.82\\
+\sigma \amp = \sqrt{n\times p\times q} = \sqrt{14(0.63)(0.37)} \approx 1.8065\text{.}
+\end{align*}
+</div>
+<p id="p-2350">We wish to know \(P(X \geq 10)\text{.}\)  This region, along with the continuity correction, is illustrated below.</p>
+<figure class="figure figure-like" id="fig_approximating_examp_how-good-small"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_approximating_examp_how-good-small.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.39<span class="period">.</span></span><span class="space"> </span>Normal Approximation</figcaption></figure><p id="p-2351">Completing the computation, we get the following probability.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \geq 10) \amp = P(Y &gt; 9.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} \gt \frac{9.5 - 8.82}{1.8065}\right)\\
+\amp = P(Z \gt 0.38)\\
+\amp = 1 - P(Z \lt 0.38)\\
+\amp = 1 - 0.6480\\
+\amp = 0.3520\text{.}
+\end{align*}
+</div>
+<p id="p-2352">The approximation of \(0.3520\) is close to the actual probability of \(0.3622\text{,}\) but we are about one one-hundredth off.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2353">Notice that in this case, \(n\times p\) and \(n\times q\) were very close to 5. Therefore, the approximation was acceptable, but not great. In the next example, let's look at what happens when \(n\times p\) and \(n\times q\) are much larger than 5.</p>
+<article class="example example-like" id="examp_approximating_how-good-large"><a data-knowl="" class="id-ref original" data-refid="hk-examp_approximating_how-good-large"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.40</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating with Many Trials.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_approximating_how-good-large"><article class="example example-like"><p id="p-2354">Suppose that 13% of people are left-handed. In a school of 200 students, what is the probability that fewer than 20 students are left-handed? Find this probability using both:</p>
+<ol class="lower-alpha">
+<li id="li-918"><p id="p-2355">the binomial probability formula, and</p></li>
+<li id="li-919"><p id="p-2356">a normal approximation.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-153" id="solution-153"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-153"><div class="solution solution-like">
+<p id="p-2357">According to the problem, \(n = 200\text{,}\) \(p = 0.13\text{,}\) \(q = 1-0.13 = 0.87\text{,}\) and we want \(P(X \lt 20)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-920">
+<p id="p-2358">Using the binomial probability formula, this means we need</p>
+<div class="displaymath">
+\begin{align*}
+P(X=0) \amp + P(X=1) + P(X=2) + P(X=3) + P(X=4)\\
+\amp + P(X=5) + P(X=6) + P(X=7) + P(X=8)\\
+\amp + P(X=9) + P(X=11) + P(X=12) + P(X=13)\\
+\amp + P(X=14) + P(X=15) + P(X=16) + P(X=17)\\
+\amp + P(X=18) + P(X=19)\text{.}
+\end{align*}
+</div>
+<p id="p-2359">In the interest of sanity, we used a computer (spreadsheet programs can perform these computations easily) to get \(P(X \lt 20) \approx 0.0817\text{.}\)</p>
+</li>
+<li id="li-921">
+<p id="p-2360">We first check that a normal approximation is appropriate.</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 200(0.13) = 26 \quad \text{ and } \quad n\times q = 200(0.87) = 17\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Both of these are much bigger than 5, so we expect a good approximation. Next the mean and standard deviation for the normal approximation must be computed.</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = n\times p = 200(0.13) = 26\\
+\sigma \amp = \sqrt{n\times p\times q} = \sqrt{200(0.13)(0.87)} \approx 4.7560\text{.}
+\end{align*}
+</div>
+<p id="p-2361">Applying the continuity correction, we see that we need the shaded region shown below, which does not include \(X=20\text{.}\)</p>
+<figure class="figure figure-like" id="fig_approximating_examp_how-good-large"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_approximating_examp_how-good-large.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.41<span class="period">.</span></span><span class="space"> </span>Normal Approximation</figcaption></figure><p id="p-2362">This produces the following computation.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \lt 20) \amp = P(Y \lt 19.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} \lt \frac{19.5 - 26}{4.7560}\right)\\
+\amp = P(Z \lt -1.37)\\
+\amp = 0.0853\text{.}
+\end{align*}
+</div>
+<p id="p-2363">This approximation is accurate to about 4 one-thousandths. Much better than the 1 one- hundredth we saw in the previous example.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_approximating_how-good-1"><video id="video-130" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.42<span class="period">.</span></span><span class="space"> </span>How Good are the Approximations I</figcaption></figure><figure class="figure figure-like" id="video_approximating_how-good-2"><video id="video-131" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.43<span class="period">.</span></span><span class="space"> </span>How Good are the Approximations II</figcaption></figure><article class="exercise exercise-like" id="ckpt_approximating_how-good-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_how-good-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.44</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_how-good-1"><article class="exercise exercise-like"><p id="p-2364">The normal approximation to the binomial distribution is always accurate to at least four decimals places.</p>
+<p id="p-2365">Question: is the above statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-184" id="answer-184"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-184"><div class="answer solution-like"><p id="p-2366">False</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_how-good-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_how-good-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.45</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_how-good-2"><article class="exercise exercise-like"><p id="p-2367">A normal approximation to a binomial probability will be especially good when \(n\times p\) and \(n\times q\) are very close to 5.</p>
+<p id="p-2368">Question: is the above statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-185" id="answer-185"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-185"><div class="answer solution-like"><p id="p-2369">False</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_approximating_how-good-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_approximating_how-good-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.4.46</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_approximating_how-good-3"><article class="exercise exercise-like"><p id="p-2370">If it is just as easy to use the binomial probability formula to compute a binomial probability as it would be to use a normal approximation, then we should use the binomial probability formula.</p>
+<p id="p-2371">Question: is the above statement true or false?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-186" id="answer-186"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-186"><div class="answer solution-like"><p id="p-2372">True</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

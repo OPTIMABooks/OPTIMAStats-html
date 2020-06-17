@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:36-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Normal Distribution</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_binomial.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_approximating.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_binomial.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_approximating.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal" class="active">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_normal"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">The Normal Distribution</span>
+</h2>
+<a href="sec_normal.html" class="permalink">¶</a><section class="introduction" id="sec_normal_intro"><h6 class="heading">Continuous Distributions.<span></span>
+</h6>
+<p id="p-2055">The random variables and probability distributions we have looked at thus far have all been <a class="xref" data-knowl="./knowl/def_discrete.html" title="Definition 1.1.14">discrete</a>. In this section, we introduce <a class="xref" data-knowl="./knowl/def_continuous.html" title="Definition 1.1.15">continuous</a> random variables. Recall that a continuous variable can take on any possible value in a range of values. That is, there are infinitely many values that the variable could have, and there are no gaps between those values.</p>
+<p id="p-2056">The way that probability works with continuous random variables can be strange. The probability of any particular value of the variable is always going to be 0. To get non-zero probabilities, we must look at a range of possible values for the variable. To better understand this concept, suppose that a random variable \(X\) is defined to be the height, in feet, of a randomly selected person in the city of Seattle. What is \(P(X=6)\text{?}\) In other words, what is the chance that a randomly selected person will be exactly 6 feet tall?</p>
+<p id="p-2057">If you are being picky, you will have to say the probability is zero. This is because nobody is exactly 6 feet tall. You can't be exactly six feet tall down to the atom. Instead, you can say that you are within less than \(\frac{1}{32}\)nd of an inch of 6 feet tall, or in some similar tiny range around the exact 6 foot height.</p>
+<p id="p-2058">We will start our exploration of continuous random variables and probability distributions by looking at the <dfn class="terminology">continuous uniform distribution</dfn>, or just the uniform distribution. Most of our time in this section will, however, be spent introducing the <dfn class="terminology">normal distribution</dfn>. The normal distribution is probably the most important distribution you will see in this text, and is certainly one of the most common in every day life.</p></section><article class="objectives goal-like" id="sec_normal_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-29"><p id="p-2059">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-812">
+<p id="p-2060">describe the following terms:</p>
+<ul class="circle">
+<li id="li-813"><p id="p-2061">normal distribution</p></li>
+<li id="li-814"><p id="p-2062">probability density curve</p></li>
+<li id="li-815"><p id="p-2063">standard normal distribution</p></li>
+<li id="li-816"><p id="p-2064">uniform distribution</p></li>
+</ul>
+</li>
+<li id="li-817">
+<p id="p-2065">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-818"><p id="p-2066">Understand the area principle for continuous probability curves</p></li>
+<li id="li-819"><p id="p-2067">Identify and find probabilities in a uniform distribution</p></li>
+<li id="li-820"><p id="p-2068">Graph normal distribution curves and regions under those curves</p></li>
+<li id="li-821"><p id="p-2069">Use z-scores to convert to the standard normal distribution</p></li>
+<li id="li-822"><p id="p-2070">Use the normal distribution table to look up probabilities for a given range of z-scores</p></li>
+<li id="li-823"><p id="p-2071">Use the normal distribution table in reverse to look up z-scores for a given probability</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_normal_uniform"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Uniform Distribution</span>
+</h3>
+<a href="sec_normal.html#sec_normal_uniform" class="permalink">¶</a><p id="p-2072">When dealing with discrete distributions and histograms, we were reminded of the special role that the area principle plays in probability graphs. That is, the area of a given bar in those graphs was exactly equal to the probability of the outcome associated with that bar. This principal holds true with continuous probability distributions as well. In the case of a continuous variable, however, we no longer have a histogram, but instead a smooth (and continuous for those of you who have seen Calculus) curve called a <dfn class="terminology">density curve</dfn>.</p>
+<article class="definition definition-like" id="def_density-curve"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-2073">The <dfn class="terminology">probability density</dfn> curve for a random variable \(X\) is a graph in which the possible values of \(X\) are listed as a continuous range on the horizontal axis, and the area in a range of \(X\) values and below the curve corresponds to the probability that \(X\) takes on one of those values.</p></article><p id="p-2074">There are certain things that all probability density curves have in common.</p>
+<article class="principle theorem-like" id="def_density-curve-properties"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Probability Density Curves.</span>
+</h6>
+<p id="p-2075">Any probability density curve for a continuous random variable \(X\) will have the following properties.</p>
+<ul class="disc">
+<li id="li-824"><p id="p-2076">The density curve is represented by a smooth curve</p></li>
+<li id="li-825"><p id="p-2077">The total area under the curve is 1</p></li>
+<li id="li-826"><p id="p-2078">\(P(a \lt X \lt b)\) is the area between the vertical lines \(X=a\) and \(X=b\) and below the curve.</p></li>
+<li id="li-827"><p id="p-2079">\(P(X=a) = 0\) for any single value \(a\text{.}\)</p></li>
+</ul></article><p id="p-2080">To better understand this connection between area and probability, we will briefly examine one of the simplest probability distributions for a continuous random variable.</p>
+<article class="definition definition-like" id="def_continuous-uniform"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-2081">A continuous random variable \(X\) has a <dfn class="terminology">uniform distribution</dfn>, and is called a <dfn class="terminology">uniform random variable</dfn>, if the probability of \(X\) is spread evenly within the range of possible values of \(X\text{.}\)</p></article><p id="p-2082">Graphs are an excellent tool for helping us understand continuous probability distributions. In the example below, and in those that follow, we will always start with a graph of the distribution and mark the regions containing the outcomes in which we are interested.</p>
+<article class="example example-like" id="examp_normal_uniform"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_uniform"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Probabilities in a Uniform Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_uniform"><article class="example example-like"><p id="p-2083">A random variable \(X\) has a uniform distribution with possible values between 5 and 10. Sketch a graph of the probability density curve, and use this graph to find the probability that:</p>
+<ol class="lower-alpha">
+<li id="li-828"><p id="p-2084">X is between 7 and 8</p></li>
+<li id="li-829"><p id="p-2085">X is greater than 8.5</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-136" id="solution-136"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-136"><div class="solution solution-like">
+<p id="p-2086">We start by drawing a graph of the density curve for \(X\text{.}\) Because the distribution is uniform, this means the curve will be a horizontal line above the range of possible values of \(X\text{,}\) which is from 5 to 10. Since the area under the curve must equal the probability and the probability that \(X\) is between 5 and 10 is 1 (this is the sample space because all possible values of \(X\) are between 5 and 10), we must make the height \(h\) the number for which \(h \times (10-5) = 1\text{.}\) That means, \(h \times 5 = 1\text{,}\) so \(h = \frac{1}{5}\text{.}\) This yields the first graph.</p>
+<figure class="figure figure-like" id="fig_normal_examp_uniform-1"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_normal_examp_uniform-1.svg" style="width: 100%; height: auto;" alt="A horizontal line at a height of one-fifth that extends from above X=5 to above X=10."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Uniform density curve for \(X\)</figcaption></figure><p id="p-2087">Now let's look at how this graph can help us to find the probability that \(X\) has a value in the ranges listed above. For each of the ranges of values of \(X\) given, we shade in the area under the graph and then find that area using \(\text{width } \times \text{ height}\) (since this is a rectangular region).</p>
+<ol class="lower-alpha">
+<li id="li-830"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
+<p id="p-2088">The probability of \(X\) between 7 and 8 is found by taking the width of the range \((8 - 7) = 1\) and multiplying by the height, which is \(\frac{1}{5}\text{.}\) This gives a probability of</p>
+<div class="displaymath">
+\begin{equation*}
+P(7 \leq X \leq 8) = 1 \times \frac{1}{5} = \frac{1}{5}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_norm_examp_uniform-2"><img src="images/image_normal_examp_uniform-2.svg" style="width: 100%; height: auto;" alt="A horizontal line at a height of one-fifth that extends from above X=5 to above X=10.  The area below the line between X=7 and X=8 has been shaded in."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>\(P(7 \leq X \leq 8)\)</figcaption></figure></div>
+</div></div></li>
+<li id="li-831"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
+<p id="p-2089">The probability that \(X\) is more than 8.5 is the area in the shaded region shown. That has a width of \((10 - 8.5) = 1.5 = \frac{3}{2}\) and a height of \(\frac{1}{5}\text{.}\) Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(X \geq 8.5) = \frac{3}{2} \times \frac{1}{5} = \frac{3}{10}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_norm_examp_uniform-3"><img src="images/image_normal_examp_uniform-3.svg" style="width: 100%; height: auto;" alt="A horizontal line at a height of one-fifth that extends from above X=5 to above X=10.  The area below the line between X=8.5 and X=10 has been shaded in."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>\(P(X \geq 8.5)\)</figcaption></figure></div>
+</div></div></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2090">Note that in the above example, it did not matter if we were looking for \(P(X &gt; 8.5)\) or \(P(X \geq 8.5)\) because the only difference is whether the single point, \(X=8.5\text{,}\) is included. Remember than in a continuous random variable, the probability that \(X=8.5\) is zero.  So,</p>
+<div class="displaymath">
+\begin{equation*}
+P(X\geq 8.5) = P(X=8.5) + P(X&gt;8.5) = 0 + P(X&gt;8.5) = P(X&gt;8.5)\text{.}
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="video_normal_uniform-1"><video id="video-112" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Uniform Distributions I</figcaption></figure><figure class="figure figure-like" id="video_normal_uniform-2"><video id="video-113" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Uniform Distributions II</figcaption></figure><article class="exercise exercise-like" id="ckpt_normal_uniform-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_uniform-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_uniform-1"><article class="exercise exercise-like"><p id="p-2091">A random variable \(X\) has a uniform distribution with values ranging from 2 to 5.</p>
+<p id="p-2092">Question: what is \(P(X \gt 2.5)\text{?}\) Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-157" id="answer-157"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-157"><div class="answer solution-like"><p id="p-2093">0.8333</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_uniform-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_uniform-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_uniform-2"><article class="exercise exercise-like"><p id="p-2094">A random variable \(X\) has a uniform distribution with values ranging from 2 to 5.</p>
+<p id="p-2095">Question: what is \(P(2.5 \lt X \leq 4)\text{?}\) Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-158" id="answer-158"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-158"><div class="answer solution-like"><p id="p-2096">0.5000</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_uniform-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_uniform-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_uniform-3"><article class="exercise exercise-like"><p id="p-2097">A random variable \(X\) has a uniform distribution where the height of the probability density curve is \(\frac{1}{5}\) and the smallest possible value of \(X\) is 4.</p>
+<p id="p-2098">Question: if the values of \(X\) are all in one contiguous range, what is the maximum possible value of \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-159" id="answer-159"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-159"><div class="answer solution-like"><p id="p-2099">9</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_normal_normal"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">From Mound-Shaped to Normal</span>
+</h3>
+<a href="sec_normal.html#sec_normal_normal" class="permalink">¶</a><p id="p-2100">Several times in this book we have referred to a “mound-shaped” distribution, going so far as to give this <a class="xref" data-knowl="./knowl/def_histogram-mound-shaped.html" title="Definition 1.2.80">a definintion</a> in chapter 1. We now give the continuous distribution with this shape its more formal name.</p>
+<article class="definition definition-like" id="def_normal-dist"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.13</span><span class="period">.</span>
+</h6>
+<p id="p-2101">A random variable \(X\) has a <dfn class="terminology">normal distribution</dfn> if the probability density curve of \(X\) is mound-shaped with a single peak at the mean.</p></article><p id="p-2102">Notice that we said that the random variable has <em class="emphasis">a</em> normal distribution, not <em class="emphasis">the</em> normal distribution. This is because there is an entire family of normal distributions.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><p id="p-2103">The shape of a normal distribution is controlled by two things: the mean of \(X\) (which gives the center) and the standard deviation (which gives how spread out the graph is). The picture to the right shows several different normal distributions with their associated mean and standard deviation. To help you visualize how these two parameters affect the normal density curve, play with the following interactive normal distribution, changing the values of \(\mu\) and \(\sigma\) to affect its shape.</p></div>
+<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_normal_normal-distributions"><img src="images/image_normal_normal-distributions.svg" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.14<span class="period">.</span></span><span class="space"> </span>Normal Distributions</figcaption></figure></div>
+</div></div>
+<p id="p-2104">So what are the properties common to every normal distribution? These are summarized below.</p>
+<article class="theorem theorem-like" id="thm_normal-dist-properties"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Normal Distributions.</span>
+</h6>
+<p id="p-2105">If \(X\) is a random variable with a normal distribution, then the probability density curve for \(X\) has the following properties.</p>
+<ul class="disc">
+<li id="li-832"><p id="p-2106">The total area under the curve is 1</p></li>
+<li id="li-833"><p id="p-2107">The curve is mound-shaped, meaning that it has a single peak at the mean and is symmetric about the mean</p></li>
+<li id="li-834"><p id="p-2108">\(P(X \lt \mu) = P(X \gt \mu) = 0.5\)</p></li>
+</ul></article><p id="p-2109">Let's take a look at an example which compares two different normal distributions drawn from two similar populations, or random variables.</p>
+<article class="example example-like" id="examp_two-normal-distributions"><a data-knowl="" class="id-ref original" data-refid="hk-examp_two-normal-distributions"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing Populations from Different Normal Distributions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_two-normal-distributions"><article class="example example-like"><p id="p-2110">The blue curve below represents the distribution of womens' heights, which we will call \(X\text{.}\) The red curve represents the distribution of mens' heights, which we will call \(Y\text{.}\) What, if anything, can you tell from these distributions?</p>
+<figure class="figure figure-like" id="fig_normal_two-distributions"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_normal_two-distributions.svg" style="width: 100%; height: auto;" alt="Two mound-shaped curves, one representing women's temperatures with a tallest point at 63.6.  The other, representing men's temperatures, with a peak at 69.  The one representing men's temperatures is a little shorter and wider than the one representing women's teperatures."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.17<span class="period">.</span></span><span class="space"> </span>Two Normal Distributions</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-137" id="solution-137"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-137"><div class="solution solution-like">
+<p id="p-2111">Based on the distributions above, there are two observations that can be made:</p>
+<ul class="disc">
+<li id="li-835"><p id="p-2112">It is clear that the average woman is shorter than the average man. Note that  he peak for women is at \(\mu_X = 63.6\) inches while for men it is at \(\mu_Y = 69.0\) inches. Graphically, this is represented by the fact that the peak of the blue curve is to the left of the peak of the red curve.</p></li>
+<li id="li-836"><p id="p-2113">The variability in womens' heights is less than that in mens' heights. This can be seen either by observing that for women \(\sigma_X = 2.5\) is less than \(\sigma_Y = 2.8\) for men. Graphically, notice that the blue graph is taller and does not spread as wide as the red graph.</p></li>
+</ul>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_normal_normal-1"><video id="video-114" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.18<span class="period">.</span></span><span class="space"> </span>Normal Distributions I</figcaption></figure><figure class="figure figure-like" id="video_normal_normal-2"><video id="video-115" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.19<span class="period">.</span></span><span class="space"> </span>Normal Distributions II</figcaption></figure><article class="exercise exercise-like" id="ckpt_normal_normal-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_normal-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_normal-1"><article class="exercise exercise-like"><p id="p-2114">A random variable \(Y\) has a normal distribution with \(E(Y) = 4\) and standard deviation \(2.5\text{.}\) Another random variable \(W\) has \(E(W) = 6\) and standard deviation \(1.5\text{.}\)</p>
+<p id="p-2115">Question: Determine if each of the following statements is True or False.</p>
+<ol class="lower-alpha">
+<li id="li-837"><p id="p-2116">The “peak” of the probability density curve for \(Y\) is at 4.</p></li>
+<li id="li-838"><p id="p-2117">The “peak” of the probability density curve for \(Y\) is at 2.5.</p></li>
+<li id="li-839"><p id="p-2118">The probability density curve for \(W\) is more spread out than the one for \(Y\text{.}\)</p></li>
+<li id="li-840"><p id="p-2119">The probability density curve for \(Y\) is shorter than the one for \(W\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-160" id="answer-160"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-160"><div class="answer solution-like"><p id="p-2120">(a) and (d) are true</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_normal-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_normal-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_normal-2"><article class="exercise exercise-like"><p id="p-2121">Below are several properties of a probability density curve.</p>
+<ol class="lower-alpha">
+<li id="li-841"><p id="p-2122">The curve is flat, like a rectangle</p></li>
+<li id="li-842"><p id="p-2123">The curve has a single peak at the mean</p></li>
+<li id="li-843"><p id="p-2124">The curve has stair-steps and is not smooth</p></li>
+<li id="li-844"><p id="p-2125">The curve is symmetric</p></li>
+<li id="li-845"><p id="p-2126">\(P(X \gt \mu) = 0.50\)</p></li>
+<li id="li-846"><p id="p-2127">\(P(X \lt \mu) = 1\)</p></li>
+</ol>
+<p id="p-2128">Question: which of these are properties of the normal probability distribution's curve?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-161" id="answer-161"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-161"><div class="answer solution-like"><p id="p-2129">(b), (d), and (e) are properties of a normal density curve.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_normal-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_normal-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.22</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_normal-3"><article class="exercise exercise-like"><p id="p-2130">Consider the graph of a normal distribution below and several statements about that distribution.</p>
+<figure class="figure figure-like" id="fig_normal_ckpt_normal-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_normal_ckpt_normal-3.svg" style="width: 100%; height: auto;" alt="A mound-shaped, symmetric distribution with its peak at 400."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.23<span class="period">.</span></span><span class="space"> </span>A Normal Distribution</figcaption></figure><ol id="p-2131" class="lower-alpha">
+<li id="li-847"><p id="p-2132">The standard deviation is \(\sigma = 400\text{.}\)</p></li>
+<li id="li-848"><p id="p-2133">The variance is \(\sigma^2 = 400\text{.}\)</p></li>
+<li id="li-849"><p id="p-2134">the mean is \(\mu = 400\text{.}\)</p></li>
+<li id="li-850"><p id="p-2135">The area under the curve and above 400 is one</p></li>
+</ol>
+<p id="p-2136">Question: which of the statements above must be true?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-162" id="answer-162"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-162"><div class="answer solution-like"><p id="p-2137">only (c)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_normal_standard"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.3</span> <span class="title">Standard Normal Distribution</span>
+</h3>
+<a href="sec_normal.html#sec_normal_standard" class="permalink">¶</a><p id="p-2138">Now that we know what a normal distribution looks like, it should be easy to use the picture to find probabilities. After all, the probability that \(X\) is between two numbers \(a\) and \(b\)is simply the area in  that range. Consider the following example.</p>
+<article class="example example-like" id="examp_normal_area-sketch"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_area-sketch"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.24</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching Probablity in a Normal Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_area-sketch"><article class="example example-like"><p id="p-2139">Use a sketch of the normal distribution for a man's height as seen in <a class="xref" data-knowl="./knowl/examp_two-normal-distributions.html" title="Example 3.3.16: Comparing Populations from Different Normal Distributions">Example 3.3.16</a> to identify the area corresponding to the probability that a randomly selected man will be between 65 and 70 inches tall.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-138" id="solution-138"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-138"><div class="solution solution-like">
+<p id="p-2140">Using the normal distribution from the last example, we have shaded the appropriate area. This area is the probability we are looking for.</p>
+<figure class="figure figure-like" id="fig_normal_examp_area-sketch"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_normal_examp_area-sketch.svg" style="width: 100%; height: auto;" alt="A normal distribution curve with its peak at 69.  The area under the curve between 65 and 70 has been shaded in."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.25<span class="period">.</span></span><span class="space"> </span>Probability Between \(Y=65\) and \(Y=70\)</figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-2141">The problem with the above strategy is that the blue region, whose area is the probability we need to find, is not a simple region. That is, it is not a rectangle like was the case in the uniform distribution. It is not even a triangle, circle, or other object that we can easily find the area of. In fact, if we want to find the exact area of this region, we would need to make use of the following formula, in which \(\mu\) is the mean and \(\sigma\) is the standard deviation of the variable \(X\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{equation*}
+</div>
+<p id="p-2142">This formula gives the height of the curve at a particular value of \(x\text{.}\)  To actually use this formula to find the area above, we would need to use calculus, which is beyond the scope of this course. We therefore take another approach. We instead use tables for a single normal distribution, and convert all other normal distributions to that one <dfn class="terminology">standard normal distribution</dfn>.</p>
+<article class="definition definition-like" id="def_standard-normal-dist"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.26</span><span class="period">.</span>
+</h6>
+<p id="p-2143">The <dfn class="terminology">standard normal distribution</dfn> is the normal distribution with mean \(\mu = 0\) and standard deviation \(\sigma = 1\text{.}\) We use the random variable \(Z\) to represent values taken from the standard normal distribution.</p></article><p id="p-2144">We have actually already used the standard normal distribution to some extent. Values of a standard normal random variable \(Z\) are called <a class="xref" data-knowl="./knowl/def_z-score.html" title="Definition 1.4.13">z-scores</a>. These same z-scores were used in <a href="sec_relative-standing.html" class="internal" title="Section 1.4: Describing Data Numerically: Measures of Relative Standing">Section 1.4</a> to help measure relative standing—that is, where a value lies relative to the mean and standard deviation of a data set. The standard normal distribution has the same properties as any other normal distribution, with these additional properties added to that list.</p>
+<article class="theorem theorem-like" id="thm_standard-normal-properties"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.27</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of the Standard Normal Distribution.</span>
+</h6>
+<p id="p-2145">The standard normal distribution has values \(Z\) such that:</p>
+<ul class="disc">
+<li id="li-851"><p id="p-2146">\(Z\) is the number of standard deviations away from the mean</p></li>
+<li id="li-852"><p id="p-2147">negative z-scores are to the left of the mean</p></li>
+<li id="li-853"><p id="p-2148">positive z-scores are to the right of the mean</p></li>
+</ul></article><p id="p-2149">The advantage to having a standard normal distribution is that the areas which were hard to compute in <a class="xref" data-knowl="./knowl/examp_normal_area-sketch.html" title="Example 3.3.24: Sketching Probablity in a Normal Distribution">Example 3.3.24</a> can be computed ahead of time for this single normal distribution and compiled into a table. We can then look up probabilities in that table for regions in the standard normal distribution table. This table is called the standard normal table, and will be useful in many of the problems which follow. The example below shows a reproduction of this table along with an explanation of how to use it.</p>
+<article class="example example-like" id="examp_normal_table-positive"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_table-positive"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.28</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Standard Normal Table with Positive z-Scores.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_table-positive"><article class="example example-like"><p id="p-2150">Below is a reproduction of the positive half of the standard normal distribution table.</p>
+<figure class="figure figure-like" id="fig_examp_normal_table-positive"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/normal_examp_table-positive.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.29<span class="period">.</span></span><span class="space"> </span>Standard Normal Table</figcaption></figure><p id="p-2151">Use it to find the following probabilities.</p>
+<ol class="lower-alpha cols2">
+<li id="li-854"><p id="p-2152">\(P(Z \lt 1.10)\)</p></li>
+<li id="li-855"><p id="p-2153">\(P(Z \gt 1.24)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-139" id="solution-139"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-139"><div class="solution solution-like">
+<p id="p-2154">The tables give us the probability of the shaded area in the picture. The left-most column gives the first two digits of the z-score, and the column headers give the second decimal place.</p>
+<ol class="lower-alpha">
+<li id="li-856">
+<h6 class="heading"><span class="title">\(P(Z \lt 1.10)\).</span></h6>
+<p id="p-2155">This is the probability that \(Z\) is less than 1.10. To find this we need to look up 1.10 in the table. We go to the 1.10 in the left-most column and then go over to the 0.00 column. The blue lines show these entries. The entry in the blue box is then the probability that \(Z \lt 1.10\text{.}\) So, our answer is \(0.8643\text{.}\)</p>
+</li>
+<li id="li-857">
+<h6 class="heading"><span class="title">\(P(Z \gt 1.24)\).</span></h6>
+<p id="p-2156">This is the probability that \(Z\) is greater than 1.24. We must find this in two steps. First, we find \(P(Z \lt 1.24)\) using the table. The red lines show how this is done, by going to the 1.20 entry in the left-most column, and then over to the 0.04 entry in the column headings. The boxed entry, \(0.8925\text{,}\) is \(P(Z \lt 1.24)\text{.}\) But we want \(P(Z \gt 1.24)\text{.}\) This is the complement, so using the complement rule,</p>
+<div class="displaymath">
+\begin{equation*}
+P(Z \gt 1.24) = 1 - P(Z \lt 1.24) = 1 - 0.8925 = 0.1075\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2157">The standard normal distribution table contains two parts. The part used above is used for looking up probabilities associated with positive z-scores. In the next example we see how to use the negative part of this table.</p>
+<article class="example example-like" id="examp_normal_table-negative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_table-negative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.30</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Standard Normal Table with Negative z-Scores.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_table-negative"><article class="example example-like"><p id="p-2158">Below is a reproduction of the negative side of the standard normal distribution table.</p>
+<figure class="figure figure-like" id="fig_examp_normal_table-negative"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/normal_examp_table-negative.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.31<span class="period">.</span></span><span class="space"> </span>Standard Normal Table</figcaption></figure><p id="p-2159">Use it to find the following probabilities.</p>
+<ol class="lower-alpha cols2">
+<li id="li-858"><p id="p-2160">\(P(Z \lt -1.82)\)</p></li>
+<li id="li-859"><p id="p-2161">\(P(Z \gt -1.68)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-140" id="solution-140"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-140"><div class="solution solution-like"><ol id="p-2162" class="lower-alpha">
+<li id="li-860">
+<h6 class="heading"><span class="title">\(P(Z \lt -1.82)\).</span></h6>
+<p id="p-2163">The probability that \(Z\) is less than -1.82 can be found by looking up -1.8 row, and then going over to the 0.02 column. The red lines in the table above show this computation. The boxed probability gives \(P(Z \lt -1.82) = 0.0344\text{.}\)</p>
+</li>
+<li id="li-861">
+<h6 class="heading"><span class="title">\(P(Z \gt -1.68)\).</span></h6>
+<p id="p-2164">The blue lines in the table above show how the probability 0.0465 is found. Note, however, that this is the probability that \(Z \lt -1.68\text{.}\) To get the probability that \(Z\) is greater than -1.68, we again use the complement rule to get:</p>
+<div class="displaymath">
+\begin{equation*}
+P(Z \gt -1.68) = 1 - P(Z \lt - 1.68) = 1 - 0.0465 = 0.9535\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<p id="p-2165">Finally, there are times when we wish to find the probability that \(Z\) is between two values. In those cases, we look up the probabilities of being below the two endpoints of our range and then subtract to find the probability in the middle.  It is usually a good idea to sketch a picture to help us keep track of the various areas involved in a problem like the one shown below.</p>
+<article class="example example-like" id="examp_normal_table-range"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_table-range"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.32</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Standard Normal Table to Find Probability in a Range.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_table-range"><article class="example example-like"><p id="p-2166">Use the two tables above to find \(P(-1.82 \lt Z \lt 1.24)\text{.}\)  Sketch a picture of the area that corresponds to this probability.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-141" id="solution-141"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-141"><div class="solution solution-like">
+<p id="p-2167">We begin by sketching the standard normal distribution and the area corresponding to the probability we want.</p>
+<figure class="figure figure-like" id="fig_normal_examp_table-range"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_normal_examp_table-range.svg" style="width: 100%; height: auto;" alt="A normal distribution curve with its peak at 0.  The area under the curve between -1.82 and 1.24 has been shaded in."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.33<span class="period">.</span></span><span class="space"> </span>Finding Probablity in a Range</figcaption></figure><p id="p-2168">Now, according to the positive standard normal distribution table, \(P(Z \lt 1.24) = 0.8925\text{.}\) That means that the area under the curve from \(z=1.24\) all the way to the left is \(0.8925\text{.}\)  From the negative standard normal distribution table, \(P(Z \lt -1.82) = 0.0344\text{.}\) So the area from \(z=-1.82\) all the way to the left is \(0.0344\text{.}\)  Subtracting these leaves us with the area of the shaded region as shown below.</p>
+<div class="displaymath">
+\begin{equation*}
+P(-1.82 \lt Z \lt 1.24) = 0.8925 - 0.0344 = 0.8581\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_normal_standard-1"><video id="video-116" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.34<span class="period">.</span></span><span class="space"> </span>Standard Normal Distribution I</figcaption></figure><figure class="figure figure-like" id="video_normal_standard-2"><video id="video-117" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.35<span class="period">.</span></span><span class="space"> </span>Standard Normal Distribution II</figcaption></figure><article class="exercise exercise-like" id="ckpt_normal_standard-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_standard-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_standard-1"><article class="exercise exercise-like"><p id="p-2169">Using the standard normal distribution table, answer the following question.</p>
+<p id="p-2170">Question: what is \(P(Z \gt 2.41)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-163" id="answer-163"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-163"><div class="answer solution-like"><p id="p-2171">0.0080</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_standard-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_standard-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.37</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_standard-2"><article class="exercise exercise-like"><p id="p-2172">Use the standard normal distribution table to find the following probability.</p>
+<p id="p-2173">Question: what is \(P(Z \lt -0.89)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-164" id="answer-164"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-164"><div class="answer solution-like"><p id="p-2174">0.1867</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_standard-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_standard-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.38</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_standard-3"><article class="exercise exercise-like"><p id="p-2175">Use the standard normal distribution table to answer the following question.</p>
+<p id="p-2176">Question: what is \(P(0.16 \lt Z \lt 2.55)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-165" id="answer-165"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-165"><div class="answer solution-like"><p id="p-2177">0.4310</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_normal_non-standard"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.4</span> <span class="title">Other Normal Distributions</span>
+</h3>
+<a href="sec_normal.html#sec_normal_non-standard" class="permalink">¶</a><p id="p-2178">As we saw earlier, there are many different normal distributions. Our goal now is to learn how all of those can be modeled using the standard normal distribution table. To do this, we make use of <a class="xref" data-knowl="./knowl/def_z-score.html" title="Definition 1.4.13">z-scores</a>. We incorporate this definition into the following principle for converting from any normal dikstribution to the standard normal distribution.</p>
+<article class="principle theorem-like" id="thm_convert-to-standard-normal"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">3.3.39</span><span class="period">.</span><span class="space"> </span><span class="title">Converting to the Standard Normal Distribution.</span>
+</h6>
+<p id="p-2179">To convert a random variable \(X\) from a normal distribution with mean \(\mu\) and standard deviation \(\sigma\) to a random variable \(Z\) with the standard normal distribution, use:</p>
+<div class="displaymath">
+\begin{equation*}
+z = \frac{x - \mu}{\sigma}\text{.}
+\end{equation*}
+</div></article><p id="p-2180">By using z-scores, which measure how many standard deviations above or below the mean an \(x\)-value lies, we can convert any normal distribution to the standard normal distribution, and then use the standard normal distribution table to look up probabilities. Note that because our table uses two-digit z-scores, we should always round z-scores to two digits. On the other hand, probabilities in this table are four digits.  This can be helpful in differentiating between z-scores and probabilities.</p>
+<article class="example example-like" id="examp_normal_to-standard-normal"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_to-standard-normal"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.40</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Probabilities by Converting to a Standard Normal Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_to-standard-normal"><article class="example example-like"><p id="p-2181">A random variable \(X\) has a normal distribution with mean \(\mu = 37.5\) and standard deviation \(\sigma = 4.32\text{.}\) Use z-scores and the standard normal distribution table to find the following probabilities.</p>
+<ol class="lower-alpha cols3">
+<li id="li-862"><p id="p-2182">\(P(X \lt 40.1)\)</p></li>
+<li id="li-863"><p id="p-2183">\(P(X \gt 29.7)\)</p></li>
+<li id="li-864"><p id="p-2184">\(P(12.5 \lt X \lt 43.2)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like"><ol id="p-2185" class="lower-alpha">
+<li id="li-865">
+<h6 class="heading"><span class="title">\(P(X \lt 40.1)\).</span></h6>
+<p id="p-2186">We use the z-score formula to convert our range involving \(X\) into one involving \(Z\) and then use the standard normal distribution table to look up that probability.</p>
+<div class="displaymath">
+\begin{equation*}
+P(X \lt 40.1) = P\left(\frac{X-\mu}{\sigma} \lt \frac{40.1-37.5}{4.32}\right) = P(Z \lt 0.60) = 0.7257\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-866">
+<h6 class="heading"><span class="title">\(P(X \gt 29.7)\).</span></h6>
+<p id="p-2187">Since this range is in the right tail of the distribution, we make use of the complelemtn rule before we convert to a standard normal distribution.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \gt 29.7) \amp = 1 - P(X \lt 29.7)\\
+\amp = 1 - P\left(\frac{X-\mu}{\sigma} \lt \frac{29.7 - 37.5}{4.32}\right)\\
+\amp = 1 - P(Z \lt -1.81)\\
+\amp = 1 - 0.0351\\
+\amp = 0.9649\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-867">
+<h6 class="heading"><span class="title">\(P(12.5 \lt X \lt 43.2)\).</span></h6>
+<p id="p-2188">For this problem we need z-scores for both the bottom and top of the range of values.</p>
+<div class="displaymath">
+\begin{align*}
+P(12.5 \lt X \lt 43.2) \amp = P\left(\frac{12.5 - 37.5}{4.32} \lt \frac{X-\mu}{\sigma} \lt \frac{43.2 - 37.5}{4.32}\right)\\
+\amp = P(-5.79 \lt Z \lt 1.32)\\
+\amp = 0.9066 - 0.0001\\
+\amp = 0.9065\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">We didn't find the z-score -5.79 in the table. But the note at the bottom says that for z-scores less than -3.49, we should use a probability of 0.0001.</p>
+</li>
+</ol></div></div>
+</div></article></div>
+<p id="p-2189">Note that in the table no z-scores above 3.49 or below -3.49 can be found. Earlier in the text, we said that z-scores above 3 or below -3 should be considered unusual, and the associated values are outliers. This is because the probability of being this far away from the mean is so small. So small, in fact, that it does not appear in the table.</p>
+<article class="example example-like" id="examp_normal_story-problem"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_story-problem"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.41</span><span class="period">.</span><span class="space"> </span><span class="title">Solving a Normal Distribution Application Problem.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_story-problem"><article class="example example-like"><p id="p-2190">A certain computer manufacturer has determined that the time it takes their computers to have their first hardware failure follows a normal distribution with a mean of 31.3 months and a standard deviation of 8.5 months. The manufacturer is considering offering either a 2-year or 3-year warranty. What proportion of the computers would require service under each of these plans?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like">
+<p id="p-2191">If the manufacturer offers the 2-year warranty, then only computers that go bad within the first 24 months will be eligible for service. Therefore, we want to know what the probability is that \(X \lt 25\) (within the first 24 months). This has a probability of</p>
+<div class="displaymath">
+\begin{align*}
+P(X \lt 25) \amp = P\left(\frac{X-\mu}{\sigma} \lt \frac{25 - 31.3}{8.5}\right)\\
+\amp = P(Z \lt -0.74)\\
+\amp = 0.2296\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">So 22.96%, or approximately 23% of their computers will require service.</p>
+<p id="p-2192">On the other hand, if they offer a 3-year warranty, then computers that go bad within the first 36 months will receive warranty service. The probability of this is</p>
+<div class="displaymath">
+\begin{align*}
+P(X \lt 37) \amp = P\left(\frac{X-\mu}{\sigma} \lt \frac{37 - 31.3}{8.5}\right)\\
+\amp = P(Z \lt 0.67)\\
+\amp = 0.7486\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">In this case, 74.86%, or almost 75% of the computers will require warranty service.</p>
+<p id="p-2193">The company should probably stick with the 2-year plan.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_normal_non-standard-1"><video id="video-118" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.42<span class="period">.</span></span><span class="space"> </span>Normal Distribution Applications I</figcaption></figure><figure class="figure figure-like" id="video_normal_non-standard-2"><video id="video-119" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.43<span class="period">.</span></span><span class="space"> </span>Normal Distribution Applications II</figcaption></figure><article class="exercise exercise-like" id="ckpt_normal_non-standard-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_non-standard-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.44</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_non-standard-1"><article class="exercise exercise-like"><p id="p-2194">A population of sand crabs has weights which follow a normal distribution with mean \(\mu = 2.3\) ounces and standard deviation \(\sigma = 0.55\) ounces.</p>
+<p id="p-2195">Question: what percentage of crabs in this population weigh between 1 and 3 ounces? Use the probabilities from the standard normal distribution table to help find your answer and state your answer as a percent (i.e. 50.0 for 50%).</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-166" id="answer-166"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-166"><div class="answer solution-like"><p id="p-2196">88.89%</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_non-standard-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_non-standard-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.45</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_non-standard-2"><article class="exercise exercise-like"><p id="p-2197">A population of sand crabs has weights which follow a normal distribution with mean \(\mu = 2.3\) ounces and standard deviation \(\sigma = 0.55\) ounces.</p>
+<p id="p-2198">Question: if you randomly select a crab from this population, what is the probability that it weighs more than 3.5 ounces? Use the probabilities from the standard normal distribution table to help find your answer.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-167" id="answer-167"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-167"><div class="answer solution-like"><p id="p-2199">0.0146</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_non-standard-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_non-standard-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.46</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_non-standard-3"><article class="exercise exercise-like"><p id="p-2200">A population of sand crabs has weights which follow a normal distribution with mean \(\mu = 2.3\) ounces and standard deviation \(\sigma = 0.55\) ounces.</p>
+<p id="p-2201">Question: what is the probability that a randomly selected crab from this population weighs less than a half an ounce? Use the standard normal distribution table to help you in finding this probability.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-168" id="answer-168"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-168"><div class="answer solution-like"><p id="p-2202">0.0005</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_normal_reverse"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.5</span> <span class="title">Reverse Look-up</span>
+</h3>
+<a href="sec_normal.html#sec_normal_reverse" class="permalink">¶</a><p id="p-2203">So far we have used the standard normal distribution table to look up probabilities based on a given z-score. We can, however, also use this table in reverse. Consider the following example.</p>
+<article class="example example-like" id="examp_normal_reverse"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_reverse"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.47</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Standard Normal Distribution Table in Reverse.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_reverse"><article class="example example-like"><p id="p-2204">Use the standard normal distribution table to find the z-score that separates:</p>
+<ol class="lower-alpha">
+<li id="li-868"><p id="p-2205">The bottom 80% of data from the top 20% of data in a normal distribution.</p></li>
+<li id="li-869"><p id="p-2206">The middle 68% of data from the rest of the data in a normal distribution.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-144" id="solution-144"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-144"><div class="solution solution-like">
+<p id="p-2207">Since we are using the table in reverse, we will look in the body of the table for the given probability, and find the z-scores in the row and column headings.</p>
+<ol class="lower-alpha">
+<li id="li-870">
+<p id="p-2208">The bottom 80% of data in a normal distribution would have probability 0.8000, as shown in the picture below.</p>
+<figure class="figure figure-like" id="fig_normal_examp_reverse-a"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_normal_examp_reverse-a.svg" style="width: 100%; height: auto;" alt="A normal distribution centered at 0 with area equal to 0.80 shaded from the left tail up to some unknown z value above the mean."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.48<span class="period">.</span></span><span class="space"> </span>The Bottom 80%</figcaption></figure><p id="p-2209">We look in the body of the table to find the probability closest to 0.8000. This is 0.7995 going with the z-score of 0.84.</p>
+</li>
+<li id="li-871">
+<p id="p-2210">The second problem may look familiar from the empirical rule. Since 68% of the data is in this middle range, that leaves \(1 - 0.68 = 0.32\text{,}\) or 32% of the data in the two tails. Since the distribution is symmetric, the left and right tails will contain the same proportion, which is \(0.32 \div 2 = 0.16\text{.}\)  This is shown in the following picture.</p>
+<figure class="figure figure-like" id="fig_normal_examp_reverse-b"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_normal_examp_reverse-b.svg" style="width: 100%; height: auto;" alt="A normal distribution centered at 0 with area equal to 0.68 shaded from some unknown negative z value below the mean to the positive z value above the mean so that 0.16 is in the unshaded regions in both the left and right tails."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.49<span class="period">.</span></span><span class="space"> </span>Visualizing the Given Probability</figcaption></figure><ul id="p-2211" class="disc">
+<li id="li-872"><p id="p-2212">Looking up 0.1600 in the table we find 0.1611 goes with z = -0.99 and 0.1587 goes with z=-1.00. So the z-score is very close to -1.00 for the bottom of this range of values.</p></li>
+<li id="li-873"><p id="p-2213">If there is 0.16 in the right tail, then we need to look up 1 - 0.16 = 0.84 in the table. the closest probability in the table is 0.8413. This goes with the z-score of 1.00.</p></li>
+</ul>
+<p data-braille="continuation">Therefore, the middle 68% lies within the range of 1 standard deviation above and 1 standard deviation below the mean.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2214">At first, this may not seem terribly useful. However, it can be a very useful tool in real-world problems. We will use this reverse look-up technique extensively in inferential statistics in the second part of this text. We can also use it in applied problems such as the following.</p>
+<article class="example example-like" id="examp_normal_reverse-application"><a data-knowl="" class="id-ref original" data-refid="hk-examp_normal_reverse-application"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.50</span><span class="period">.</span><span class="space"> </span><span class="title">Solving an Application Problem Using the Standard Normal Distribution Table in Reverse.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_normal_reverse-application"><article class="example example-like"><p id="p-2215">A mathematics professor at a large university gives an exam to 186 students. She decides that she will give A's on the final exam to those who scored in the top 10% of the class, and B's to those who scored in the top 25%. If the final exam scores had a normal distribution with mean \(\mu = 65.3\) and standard deviation \(\sigma = 11.6\text{,}\) What was the lowest score on the exam that earned an A, and what was the lowest score for a B?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-145" id="solution-145"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-145"><div class="solution solution-like">
+<p id="p-2216">We will first determine the z-scores that separate the A's and B's from the rest of the grades, and then turn those z-scores into exam scores.  The image below will serve as our guide.</p>
+<figure class="figure figure-like" id="fig_normal_examp_reverse-application"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_normal_examp_reverse-application.svg" style="width: 100%; height: auto;" alt="A normal distribution centered at 0 with area equal to 0.90 shaded from the left tail up to some unknown z values for A's and area equal to 0.75 shaded from the left tail up to some unknown z value for B's."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.51<span class="period">.</span></span><span class="space"> </span>Grade Ranges</figcaption></figure><ul id="p-2217" class="disc">
+<li id="li-874"><p id="p-2218">The top 10% of the class will get A's, meaning the bottom 90% will not. Therefore, we are looking for the z-score that separates the bottom 90% from the top 10%. Looking for 0.9000 in the table, the closest we find is 0.8997, which goes with a z-score of \(z_A=1.28\text{.}\)</p></li>
+<li id="li-875"><p id="p-2219">The top 25% will be separated by the z-score which has probability 0.7500 in the table. The closest probability is 0.7486. The associated z-score is \(z_B=0.67\text{.}\)</p></li>
+</ul>
+<p data-braille="continuation">Now we need to turn these z-scores back into exam scores. That means we need to use the z-score formula in reverse. This yields, for A's, the following.</p>
+<div class="displaymath">
+\begin{equation*}
+1.28 = \frac{x - 65.3}{11.6} \Rightarrow 1.28(11.6) = x - 65.3 \Rightarrow 14.848 + 65.3 = x \Rightarrow x = 80.14\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">It appears that those with a score of 80.14 or better will get A's. In practical terms, this probably means you need to score 80.5 or 81 to get an A, depending on if the professor gives half points.</p>
+<p id="p-2220">For B's, we repeat the above using the z-score 0.67.</p>
+<div class="displaymath">
+\begin{equation*}
+0.67 = \frac{x - 65.3}{11.6} \Rightarrow 0.67(11.6) = x - 65.3 \Rightarrow 7.772 + 65.3 = x \Rightarrow x = 73.072\text{.}
+\end{equation*}
+</div>
+<p id="p-2221">So a student needs to score between 73.072 and 80.14 to get a B.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_normal_reverse-1"><video id="video-120" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.52<span class="period">.</span></span><span class="space"> </span>Reverse Look-ups I</figcaption></figure><figure class="figure figure-like" id="video_normal_reverse-2"><video id="video-121" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.53<span class="period">.</span></span><span class="space"> </span>Reverse Look-ups II</figcaption></figure><article class="exercise exercise-like" id="ckpt_normal_reverse-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_reverse-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.54</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_reverse-1"><article class="exercise exercise-like"><p id="p-2222">A population of sand crabs has weights which follow a normal distribution with mean \(\mu = 2.3\) ounces and standard deviation \(\sigma = 0.55\) ounces.</p>
+<p id="p-2223">Question: eighty-five percent of crabs in this population weigh at least how much? Give two decimal places of accuracy. (Hint: you need the z-score that divides the top 85% from the bottom 15%. Use the number closest to .1500 in the table.)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-169" id="answer-169"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-169"><div class="answer solution-like"><p id="p-2224">1.73</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_reverse-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_reverse-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.55</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_reverse-2"><article class="exercise exercise-like"><p id="p-2225">Scores on an exam have a normal distribution with mean 43.2 and standard deviation 8.95. The professor decides that the bottom 20% of the class will receive an F on the exam.</p>
+<p id="p-2226">Question: what score is required to avoid getting an F? That is, what score separates the bottom 20% of the class from the top 80%. Round your answer to the nearest whole point.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-170" id="answer-170"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-170"><div class="answer solution-like"><p id="p-2227">36</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_normal_reverse-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_normal_reverse-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.56</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_normal_reverse-3"><article class="exercise exercise-like"><p id="p-2228">A McDonald's worker has determined that the time it takes to fill a customer's order follows a normal distribution with a mean of 2.1 minutes and standard deviation of 0.72 minutes.</p>
+<p id="p-2229">Question: those unlucky customers who fall into the top 3% of wait times must wait at least how long? State your answer in minutes and round it to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-171" id="answer-171"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-171"><div class="answer solution-like"><p id="p-2230">3.45 mintes</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:30-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Since the standard deviation for our sampling distribution depends on the sample size, the two parts of this example will have different distributions.</p>
+<ol class="lower-alpha">
+<li>
+<p>The average time it takes a sample of 50 adults to complete this test will have a normal distribution (because \(n \gt 30\)) with mean 82.5 and standard deviation</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{13.1}{\sqrt{50}} \approx 1.853\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The probability their mean score is at least 85 can be computed as shown.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline{X} \geq 85) \amp = P\left(\frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \geq \frac{85-82.5}{1.853}\right)\\
+\amp = P(Z \geq 1.35)\\
+\amp = 1 - P(Z \lt 1.35)\\
+\amp = 1 - 0.9115\\
+\amp = 0.0885
+\end{align*}
+</div>
+<p data-braille="continuation">This is not likely, but not unusual either.</p>
+</li>
+<li>
+<p>For a sample of 100 adults, the mean is still 82.5, but the standard deviation is now</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{13.1}{\sqrt{100}} = 1.31\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The probability computation therefore looks a little different.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline{X} \geq 85) \amp = P\left(\frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \geq \frac{85-82.5}{1.31}\right)\\
+\amp = P(Z \geq 1.91)\\
+\amp = 1 - P(Z \lt 1.91)\\
+\amp = 1 - 0.9719\\
+\amp = 0.0281
+\end{align*}
+</div>
+<p data-braille="continuation">So the probability that the group of 100 averages more than 85 minutes is about a fourth as likely as for the group of 50.</p>
+</li>
+</ol>
+<p>The graph below shows the two sampling distributions that we used in this example.  Notice how much smaller the shaded area under the red curve (where \(n=100\)) is as compared to the blue (where \(n=50\))</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_sampling_examp_means_two-sizes.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.24<span class="period">.</span></span><span class="space"> </span>Sampling Distribution for \(\overline X\) when \(n=50\) and \(n=100\)</figcaption></figure>
+</div></body>
+</html>

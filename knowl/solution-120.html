@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:57-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.1.45.1</span><span class="period">.</span>
+</h6>
+<p>Your first step is to construct a probability distribution by listing all of the values of \(Y\) and determining their probabilities.</p>
+<ul class="disc">
+<li><p>If we draw two red balls, then \(Y = 0 + 0 - 2 = -2\text{.}\)</p></li>
+<li><p>If we draw one red and one white, then \(Y = 0 + 5 - 2 = 3\text{.}\)</p></li>
+<li><p>If we draw two white, then \(Y = 5 + 5 - 2 = 8\text{.}\)</p></li>
+<li><p>If we draw a red and a gold, then \(Y = 0 + 50 - 2 = 48\text{.}\)</p></li>
+<li><p>And finally, a white and a gold gives \(Y = 5 + 50 - 2 = 53\text{.}\)</p></li>
+</ul>
+<p data-braille="continuation">We can then use combinations to compute the probability of each of these values.  For example, the probability of winning $3 by drawing a red and a white ball is</p>
+<div class="displaymath">
+\begin{equation*}
+P(Y=3) = \frac{C(95,1)\times C(4,1)}{C(100,2)}
+\end{equation*}
+</div>
+<p data-braille="continuation">because we draw 1 of the 95 red balls and 1 of the 4 white balls in an experiment which involves drawing 2 out of 100 possible balls.  The entire probability distirbution is shown below.</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(y\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(Y=y)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(95,2)}{C(100,2)} = \frac{4465}{4950} \approx 0.9020\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(95,1)\times C(4,1)}{C(100,2)} = \frac{95\times 4}{4950} \approx 0.0768\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(4,2)}{C(100,2)} = \frac{6}{4950} \approx 0.0012\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(48\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(95,1)\times C(1,1)}{C(100,2)} = \frac{95\times 1}{4950} \approx 0.0192\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(53\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(4,1)\times C(1,1)}{C(100,2)} = \frac{4 \times 1}{4950} \approx 0.0008\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.46<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(Y\text{.}\)</figcaption></figure><p>Now to compute the expected value, we must multiply each value of \(Y\) by its probability and then add those together.  One easy way to keep track of this is to add a third column to our probability distribution table, into which we place these products.  The sum of that third column will be our expected value.</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(y\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(P(Y=y)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(y \times P(Y=y)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-2\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.9020\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(-2(0.9020) = -1.8040\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.0768\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(3(0.0768) = 0.2303\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.0012\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(8(0.0012) = 0.0097\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(48\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.0192\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(48(0.0192) = 0.9212\)</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(53\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(0.0008\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(53(0.0008) = 0.0428\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines" colspan="2">\(E(X) = \)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-$0.60</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.47<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(Y\text{.}\)</figcaption></figure><p>Since the expected value of \(Y\) is negative, the average outcome will result in the player losing money on the game.  That menas that, in the long run, the charity will still make money.</p>
+</div>
+<span class="incontext"><a href="sec_random-vars.html#solution-120">in-context</a></span>
+</body>
+</html>

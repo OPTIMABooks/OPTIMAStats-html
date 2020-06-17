@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:20-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Probability and Probability Rules</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_counting.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_conditional.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_counting.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_conditional.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability" class="active">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_probability"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Probability and Probability Rules</span>
+</h2>
+<a href="sec_probability.html" class="permalink">¶</a><section class="introduction" id="sec_probability_intro"><h6 class="heading">Theoretical Probability.<span></span>
+</h6>
+<p id="p-1297">With a list of counting rules and simulation techniques, we are now ready to formally introduce the notion of <dfn class="terminology">probability</dfn>. Probability is something that we use in many different ways in every-day life. Consider the following examples.</p>
+<ul class="disc">
+<li id="li-525"><p id="p-1298">A weather forecaster predicts that there is a 20% chance of rain tomorrow.</p></li>
+<li id="li-526"><p id="p-1299">A news cast predicts that the probability a ballot measure will pass is 60%.</p></li>
+<li id="li-527"><p id="p-1300">The lottery introduces a new scratch ticket in which the odds of winning are 1 in 200.</p></li>
+</ul>
+<p data-braille="continuation">In each of these cases, we are measuring how likely a certain event is to take place. This is probability.</p>
+<p id="p-1301">Probabilities can be computed in several different ways. The simulations that we saw in <a href="sec_simulation.html" class="internal" title="Section 2.1: Randomness and Simulation">Section 2.1</a> lead to the following type of probability computation.</p>
+<article class="definition definition-like" id="def_experimental-probability"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-1302">The <dfn class="terminology">experimental probability</dfn>, also called the <dfn class="terminology">relative frequency probability</dfn>, of a certain event \(A\) happening in an experiment is found by simulating the experiment and taking the ratio of the number of trials resulting in \(A\) to the total number of trials. That is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A) = \frac{\text{number of times }A\text{ occurred}}{\text{number of trials}}\text{.}
+\end{equation*}
+</div></article><p id="p-1303">On the other hand, if we use our counting rules to examine the experiment from a more theoretical point of view, we get the following type of probability.</p>
+<article class="definition definition-like" id="def_theoretical-probability"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-1304">The <dfn class="terminology">theoretical probability</dfn> of a certain event \(A\) happening in an experiment is found by counting the number of possibly outcomes of the experiment in which \(A\) happens and dividing by the total number of outcomes, assuming each outcome is equally likely. That is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A) = \frac{\text{number of ways }A\text{ can occur}}{\text{number of possible outcomes}}\text{.}
+\end{equation*}
+</div></article><p id="p-1305">Another type of probability, called <dfn class="terminology">subjective probability</dfn>, is basically just an educated guess of how likely an event is to occur based on one's previous experience. In this section we will learn about the basic rules and terms of probability, how to illustrate probabilities using pictures called <dfn class="terminology">Venn Diagrams</dfn>, how to compute probabilities of related events, and finally how to compute theoretical probabilities in experiments in which each outcome is equally likely.</p></section><article class="objectives goal-like" id="sec_probability_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-20"><p id="p-1306">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-528">
+<p id="p-1307">describe the following terms:</p>
+<ul class="circle cols2">
+<li id="li-529"><p id="p-1308">experimental probability</p></li>
+<li id="li-530"><p id="p-1309">subjective probability</p></li>
+<li id="li-531"><p id="p-1310">complement</p></li>
+<li id="li-532"><p id="p-1311">complement rule</p></li>
+<li id="li-533"><p id="p-1312">event</p></li>
+<li id="li-534"><p id="p-1313">general</p></li>
+<li id="li-535"><p id="p-1314">addition rule</p></li>
+<li id="li-536"><p id="p-1315">sample space</p></li>
+<li id="li-537"><p id="p-1316">theoretical probability</p></li>
+<li id="li-538"><p id="p-1317">valid probability measure</p></li>
+</ul>
+</li>
+<li id="li-539">
+<p id="p-1318">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-540"><p id="p-1319">Differentiate between experimental and theoretical probability</p></li>
+<li id="li-541"><p id="p-1320">State and apply basic probability rules.</p></li>
+<li id="li-542"><p id="p-1321">Identify valid probability measures.</p></li>
+<li id="li-543"><p id="p-1322">Use Venn Diagrams to assist in computing probabilities.</p></li>
+<li id="li-544"><p id="p-1323">Finding probabilities when all outcomes are equally likely.</p></li>
+<li id="li-545"><p id="p-1324">Using counting rules to assist in finding probabilities.</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_probability_basic-rules"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Basic Probability Rules</span>
+</h3>
+<a href="sec_probability.html#sec_probability_basic-rules" class="permalink">¶</a><p id="p-1325">Before we start discussing the basic rules of probability, it is important to clarify some terminology that has already been used in the introduction. Consider the following example.</p>
+<article class="example example-like" id="examp_probabilty_basic-rules_coin-flip"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probabilty_basic-rules_coin-flip"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Analyzing a Simple Experiment.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probabilty_basic-rules_coin-flip"><article class="example example-like"><p id="p-1326">A fair coin is flipped twice, and the number of heads is noted. What is the probability that exactly one heads appears in these two flips?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like">
+<p id="p-1327">To better understand this question, let's look at two important sets. The first set is called the <dfn class="terminology">sample space</dfn> and typically named \(S\text{.}\) It and contains all of the possible outcomes of this experiment.  In this case:</p>
+<div class="displaymath">
+\begin{equation*}
+S = \lbrace HH, HT, TH, TT \rbrace\text{.}
+\end{equation*}
+</div>
+<p id="p-1328">The second set is the set containing all of the outcomes from S which meet our criteria of having exactly one heads. Any subset of the sample space is called an <dfn class="terminology">event</dfn>.  For this problem, the event of interest is:</p>
+<div class="displaymath">
+\begin{equation*}
+A = \lbrace HT, TH \rbrace\text{.}
+\end{equation*}
+</div>
+<p id="p-1329">If we assume that each of the outcomes is equally likely (see a <a href="sec_probability.html#sec_probability_counting" class="internal" title="Subsection 2.3.5: Probability from Counting">Subsection 2.3.5</a>), then</p>
+<div class="displaymath">
+\begin{equation*}
+P(A) = \frac{ n(A)}{n(S)} = \frac{2}{4} = \frac{1}{2} = 0.50\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1330">In the example above, there are two sets pointed out. The names of these two sets are of particular importance.</p>
+<article class="definition definition-like" id="def_sample-space"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h6>
+<p id="p-1331">The <dfn class="terminology">sample space</dfn> for an experiment is the set of all possible outcomes of the experiment.</p></article><article class="definition definition-like" id="def_event"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-1332">An <dfn class="terminology">event</dfn> for a particular experiment is a subset of the sample space for that experiment.</p></article><p id="p-1333">In <a class="xref" data-knowl="./knowl/examp_probabilty_basic-rules_coin-flip.html" title="Example 2.3.3: Analyzing a Simple Experiment">Example 2.3.3</a>, the event of interest was \(A = \lbrace HT, TH \rbrace\text{.}\) Notice that every outcome in that event is also an outcome in the sample space \(S\text{.}\) This is what it means to say that \(A\) is a <dfn class="terminology">subset</dfn> of \(S\text{.}\) Also notice that because \(A\) is a subset of \(S\text{,}\) it must always be true that \(A\) contains at most the same number of elements as \(S\text{.}\) That is, \(n(A) \leq n(S)\text{.}\) This, together with our definition of <a class="xref" data-knowl="./knowl/def_theoretical-probability.html" title="Definition 2.3.2">theoretical probability</a>, leads to the following rules.</p>
+<article class="theorem theorem-like" id="thm_basic-probability"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Basic Probability Rules.</span>
+</h6>
+<p id="p-1334">For any event \(A\) in a sample space \(S\text{,}\) the following rules must hold.</p>
+<ul class="disc cols2">
+<li id="li-546"><p id="p-1335">\(0 \leq P(A) \leq 1\)</p></li>
+<li id="li-547"><p id="p-1336">\(P(S) = 1\)</p></li>
+</ul></article><p id="p-1337">The first rule says that because \(A\) is a subset of \(S\text{,}\) the ratio of \(n(A)\) to \(n(S)\) can be at most one, and as with any ratio, must be at least 0. The second rule tells us that the probability of something in the sample space happening is 1. Since the sample space contains all possible outcomes, this gives us the maximum possible probability of 1. The following Scale can be useful in judging how likely something is to happen based on its probability.</p>
+<figure class="figure figure-like" id="fig_probability_scale"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image_probability_scale.svg" style="width: 100%; height: auto;" alt="A line starting at 0 (can't happen) on the far left and extending to 1 (must happen) on the far right.  In the middle is 0.5 which stands for a 50-50 chance."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.7<span class="period">.</span></span><span class="space"> </span>Range of Possible Probabilities</figcaption></figure><p id="p-1338">Let's apply these basic rules and interpretations to the following example.</p>
+<article class="example example-like" id="examp_probability-riles_basic"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability-riles_basic"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Applying Probability Rules to Events.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability-riles_basic"><article class="example example-like"><p id="p-1339">A sample space \(S\) contains two <a class="xref" data-knowl="./knowl/def_mutually-exclusive.html" title="Definition 2.2.8">mutually exclusive</a> events, \(A\) and \(B\) with probabilities \(P(A) = 0.6\) and \(P(B) = 0.2\text{.}\) Use this to answer the following questions.</p>
+<ol class="lower-alpha">
+<li id="li-548"><p id="p-1340">Which event is more likely to occur, \(A\) or \(B\text{?}\)</p></li>
+<li id="li-549"><p id="p-1341">What is the probability that either \(A\) or \(B\) will occur?</p></li>
+<li id="li-550"><p id="p-1342">What if you were told that \(C\) is another event in the sample space with \(P(C) = 7\text{?}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like"><ol id="p-1343" class="lower-alpha">
+<li id="li-551"><p id="p-1344">Because \(P(A)\) is larger (closer to 1) than \(P(B)\text{,}\) \(A\) is more likely to occur than \(B\text{.}\)</p></li>
+<li id="li-552">
+<p id="p-1345">Because \(A\) and \(B\) are mutually exclusive (have no intersection), the number of ways that \(A\) or \(B\) (<a class="xref" data-knowl="./knowl/def_union.html" title="Definition 2.2.3">\(A\) union \(B\)</a>) can occur is the sum \(n(A) + n(B)\text{.}\) Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cup B) = \frac{n(A\cup B)}{n(S)} = \frac{n(A)}{n(S)} + \frac{n(B)}{n(S)} = P(A) + P(B)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus, in our case, the probability that \(A\) or \(B\) will occur is \(0.6 + 0.2 = 0.8\)</p>
+</li>
+<li id="li-553"><p id="p-1346">Finally, based on the rules above, it is impossible to have an event \(C\) with \(P(C) = 7\text{.}\) Remember that probabilities are always between 0 and 1.</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-1347">Part (b) in the above example is a specific instance of the following general rule. This rule comes directly from the addition counting rule, so it has a similar name.</p>
+<article class="theorem theorem-like" id="thm_probability-rule_addition"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Addition Rule.</span>
+</h6>
+<p id="p-1348">For <a class="xref" data-knowl="./knowl/def_mutually-exclusive.html" title="Definition 2.2.8">mutually exclusive</a> events \(A\) and \(B\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cup B) = P(A) + P(B)\text{.}
+\end{equation*}
+</div></article><figure class="figure figure-like" id="video_probability_basic-rules-1"><video id="video-66" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.10<span class="period">.</span></span><span class="space"> </span>Sample Spaces and Events I</figcaption></figure><figure class="figure figure-like" id="video_probability_basic-rules-2"><video id="video-67" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.11<span class="period">.</span></span><span class="space"> </span>Sample Spaces and Events II</figcaption></figure><article class="exercise exercise-like" id="ckpt_probability_basic-rules-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_basic-rules-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_basic-rules-1"><article class="exercise exercise-like"><p id="p-1349">Below you will find several statements about the probability of events. Recall that \(S\) stands for the sample space in an experiment.</p>
+<ol class="lower-alpha">
+<li id="li-554"><p id="p-1350">\(P(A) = 0.3\)</p></li>
+<li id="li-555"><p id="p-1351">\(P(B) = -2\)</p></li>
+<li id="li-556"><p id="p-1352">\(P(C) = \frac{15}{16}\)</p></li>
+<li id="li-557"><p id="p-1353">\(P(D) = -2\)</p></li>
+<li id="li-558"><p id="p-1354">\(P(E) = 17\)</p></li>
+<li id="li-559"><p id="p-1355">\(P(S) = 1\)</p></li>
+<li id="li-560"><p id="p-1356">\(P(S) = \frac{1}{2}\)</p></li>
+</ol>
+<p id="p-1357">Question: Which of these statements could be a correct assignment of probability?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-94" id="answer-94"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-94"><div class="answer solution-like"><p id="p-1358">Statements (a), (c), and (f) could be correct.  The others could not.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_basic-rules-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_basic-rules-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_basic-rules-2"><article class="exercise exercise-like"><p id="p-1359">An experiment consists of rolling two fair die and noting the sum of the numbers rolled. Below are several sets related to this experiment.</p>
+<ol class="lower-alpha">
+<li id="li-561"><p id="p-1360">\(\lbrace 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12 \rbrace\)</p></li>
+<li id="li-562"><p id="p-1361">\(\lbrace 2, 4, 6, 8, 10, 12 \rbrace\)</p></li>
+<li id="li-563"><p id="p-1362">\(\lbrace (1,1), (1,2), ... , (5,6), (6,6) \rbrace\)</p></li>
+<li id="li-564"><p id="p-1363">\(\lbrace 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 \rbrace\)</p></li>
+<li id="li-565"><p id="p-1364">\(\lbrace 3, 5, 7, 9, 11 \rbrace\)</p></li>
+</ol>
+<p id="p-1365">Question: Which of these sets is the sample space of the experiment?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-95" id="answer-95"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-95"><div class="answer solution-like"><p id="p-1366">the set in (d) gives the possible sums.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_basic-rules-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_basic-rules-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_basic-rules-3"><article class="exercise exercise-like"><p id="p-1367">A two-step experiment involves tossing a fair coin and noting the result (Heads or Tails) and then rolling a fair die and noting the result (1-6).</p>
+<p id="p-1368">Question: How many outcomes are in the sample space for this experiment?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-96" id="answer-96"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-96"><div class="answer solution-like"><p id="p-1369">\(2\times 6 = 12\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_probability_measure"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Valid Probability Measures</span>
+</h3>
+<a href="sec_probability.html#sec_probability_measure" class="permalink">¶</a><p id="p-1370">The simplest events for a particular experiment are the individual outcomes—that is, the elements of the sample space. Each outcome can be assigned a probability based on the process being modeled. Consider the following example.</p>
+<article class="example example-like" id="examp_probability_measure_urn"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_measure_urn"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Assigning Probabilities to Outcomes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_measure_urn"><article class="example example-like"><p id="p-1371">An urn contains four red marbles, three blue marbles, two green marbles, and one white marble. A marble is drawn and its color is noted. Find the sample space in this experiment, and assign each outcome a probability.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
+<p id="p-1372">First, we must find the sample space. There are two ways we could look at this.</p>
+<ol class="decimal">
+<li id="li-566">
+<p id="p-1373">We could pretend that we can tell each marble apart, regardless of its color. In that case, the sample space is:</p>
+<div class="displaymath">
+\begin{equation*}
+S = \lbrace R_1, R_2, R_3, R_4, B_1, B_2, B_3, G_1, G_2, W_1 \rbrace\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-567">
+<p id="p-1374">Since we can't actually tell the marbles of the same color apart, it is more accurate to say that the sample space is:</p>
+<div class="displaymath">
+\begin{equation*}
+S = \lbrace R, B, G, W\rbrace\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p data-braille="continuation">The best answer for the sample space is \(S = \lbrace R,B,G, W\rbrace\) as shown in (2). However, the sample space from (1) can be a good way to answer the second part of the problem, what probability each outcome should have.</p>
+<ul class="no-marker cols2">
+<li id="li-568"><p id="p-1375">\(P(R) = \frac{n(R)}{n(S)} = \frac{4}{10} = \frac{2}{5} = 0.40\)</p></li>
+<li id="li-569"><p id="p-1376">\(P(B) = \frac{n(B)}{n(S)} = \frac{3}{10} = 0.30\)</p></li>
+<li id="li-570"><p id="p-1377">\(P(G) = \frac{n(G)}{n(S)} = \frac{2}{10} = \frac{1}{5} = 0.20\)</p></li>
+<li id="li-571"><p id="p-1378">\(P(W) = \frac{n(W)}{n(S)} = \frac{1}{10} = 0.10\text{.}\)</p></li>
+</ul>
+</div></div>
+</div></article></div>
+<p id="p-1379">Note that in the above example, the probabilities of the individual outcomes were \(0.40\text{,}\) \(0.30\text{,}\) \(0.20\text{,}\) and \(0.10\text{.}\) The sum of all of these probabilities is, not surprisingly, the probability of the sample space, 1. This is a specific application of the addition rule we saw on the previous page. Using this observation, let's work on another example.</p>
+<article class="example example-like" id="examp_probability_measure_missing-outcome"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_measure_missing-outcome"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Missing Outcome Probability.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_measure_missing-outcome"><article class="example example-like"><p id="p-1380">A sample space \(S = \lbrace O_1, O_2, O_3, O_4 \rbrace\text{.}\) Outcome \(O_1\) is twice as likely as outcome \(O_2\text{.}\) Outcomes \(O_2\) and \(O_3\) have the same probability. Finally, outcome \(O_4\) is three times as likely as outcome \(O_1\text{.}\) What is the probability of each of these outcomes?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like">
+<p id="p-1381">To solve this problem, we need to assign a variable to the smallest probability. In this case, the probabilities of outcomes \(O_2\) and \(O_3\) are equal and we will call them both \(x\text{.}\) That means that the probability of outcome \(O_1\) is \(2x\text{,}\) and the probability of outcome \(O_4\) is \(3(2x) = 6x\text{.}\) Putting this all together,</p>
+<div class="displaymath">
+\begin{equation*}
+1 = P(S) = P(O_1) + P(O_2) + P(O_3) + P(O_4) = 2x + x + x + 6x = 10x\text{.}
+\end{equation*}
+</div>
+<p id="p-1382">Therefore, \(x = \frac{1}{10} = 0.10\text{.}\) From the above discussion, we know that \(P(O_1) = 0.20\text{,}\) \(P(O_2) = 0.10\text{,}\) \(P(O_3) = 0.10\text{,}\) and \(P(O_4) = 0.60\text{.}\)</p>
+</div></div>
+</div></article></div>
+<p id="p-1383">When each outcome in the sample space has been assigned a valid probability, between 0 and 1,and the sum of those probabilities is one, probabilities make up a valid probability measure.</p>
+<article class="definition definition-like" id="def_probability-measure"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.17</span><span class="period">.</span>
+</h6>
+<p id="p-1384">An assignment of probabilities to the outcomes in a sample space in such a way as to ensure that each outcome has a probability between 0 and 1, and the sum of these probabilities is 1 is called a valid <dfn class="terminology">probability measure</dfn>.</p></article><article class="example example-like" id="examp_probability_measure_validity"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_measure_validity"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing Probability Measures.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_measure_validity"><article class="example example-like"><p id="p-1385">Let \(S = \lbrace O_1, O_2, O_3 \rbrace\text{.}\) Construct one valid probability measures for \(S\text{,}\) and two that are not valid.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like">
+<p id="p-1386">We start with a valid probability measure.</p>
+<div class="displaymath">
+\begin{equation*}
+P(O_1) = 0.2, \quad P(O_2) = 0.3, \quad P(O_3) = 0.5.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is a valid assignment of probabilities because each probability is between 0 and 1, and the sum of the probabilities is 1.</p>
+<p id="p-1387">Now let's look at an invalid probability measure.</p>
+<div class="displaymath">
+\begin{equation*}
+P(O_1) = P(O_2) = P(O_3) = 0.5\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is not a valid probability measure because the sum of these probabilities is not 1.</p>
+<p id="p-1388">Another invalid probability measure would be</p>
+<div class="displaymath">
+\begin{equation*}
+P(O_1) = 0.8, \quad P(O_2) = 0.4, \quad P(O_3) = -0.2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">While the sum of these is 1, note that \(O_3\) has a negative probability, which is not allowed.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_probability_measure-1"><video id="video-68" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.19<span class="period">.</span></span><span class="space"> </span>Valid Probability Measures I</figcaption></figure><figure class="figure figure-like" id="video_probability_measure-2"><video id="video-69" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.20<span class="period">.</span></span><span class="space"> </span>Valid Probability Measures II</figcaption></figure><article class="exercise exercise-like" id="ckpt_probability_measure-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_measure-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_measure-1"><article class="exercise exercise-like"><p id="p-1389">A sample space has three ouctomes, \(S = \lbrace O_1, O_2, O_3 \rbrace\text{.}\)  Possible probability measures include:</p>
+<ol class="lower-alpha">
+<li id="li-572"><p id="p-1390">\(P(O_1) = 0.5, \quad P(O_2) = 0.3, \quad P(O_3) = 0.2\)</p></li>
+<li id="li-573"><p id="p-1391">\(P(O_1) = 5, \quad P(O_2) = -3, \quad P(O_3) = -1\)</p></li>
+<li id="li-574"><p id="p-1392">\(P(O_1) = 0.1, \quad P(O_2) = 0.7, \quad P(O_3) = 0.2\)</p></li>
+<li id="li-575"><p id="p-1393">\(P(O_1) = 0.3, \quad P(O_2) = 0.3, \quad P(O_3) = -0.3\)</p></li>
+<li id="li-576"><p id="p-1394">\(P(O_1) = 0.4, \quad P(O_2) = 0.7, \quad P(O_3) = -0.1\)</p></li>
+<li id="li-577"><p id="p-1395">\(P(O_1) = 0.5, \quad P(O_2) = 0, \quad P(O_3) = 0.5\)</p></li>
+</ol>
+<p id="p-1396">Question: Which of these are valid probability measures for \(S\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-97" id="answer-97"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-97"><div class="answer solution-like"><p id="p-1397">measures (a), (c), and (f) are valid</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_measure-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_measure-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.22</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_measure-2"><article class="exercise exercise-like"><p id="p-1398">A certain experiment has sample space \(S = \lbrace O_1, O_2, O_3, O_4 \rbrace\text{.}\) You are told that \(O_1\) is twice as likely as \(O_2\text{,}\) and that \(O_2\text{,}\) \(O_3\text{,}\) and \(O_4\) are all equally likely.</p>
+<p id="p-1399">Question: What is \(P(O_3)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-98" id="answer-98"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-98"><div class="answer solution-like"><p id="p-1400">0.2</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_measure-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_measure-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.23</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_measure-3"><article class="exercise exercise-like"><p id="p-1401">An experiment has sample space \(S = \lbrace O_1, O_2, O_3, O_4 \rbrace\text{.}\) You are told that \(P(O_1) = 0.42\) and \(P(O_2) = 0.16\text{.}\)</p>
+<p id="p-1402">Question: Which of the following could not be \(P(O_4)\text{?}\)</p>
+<ol class="lower-alpha cols2">
+<li id="li-578"><p id="p-1403">\(0.3\)</p></li>
+<li id="li-579"><p id="p-1404">\(0.50\)</p></li>
+<li id="li-580"><p id="p-1405">\(-0.25\)</p></li>
+<li id="li-581"><p id="p-1406">\(17\)</p></li>
+<li id="li-582"><p id="p-1407">\(0.21\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-99" id="answer-99"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-99"><div class="answer solution-like"><p id="p-1408">(b), (c), and (d)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_probability_more-rules"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">More Probability Rules</span>
+</h3>
+<a href="sec_probability.html#sec_probability_more-rules" class="permalink">¶</a><p id="p-1409">There are several other probability rules that can be helpful when working with events. The first is a generalization of the <a class="xref" data-knowl="./knowl/thm_probability-rule_addition.html" title="Theorem 2.3.9: Addition Rule">addition rule</a>. It follows from the <a class="xref" data-knowl="./knowl/thm_counting-rule_inclusion-exclusion.html" title="Theorem 2.2.17">inclusion/exclusion counting rule</a> that we saw in the previous section.</p>
+<article class="theorem theorem-like" id="thm_probability-rule_general-addition"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.24</span><span class="period">.</span>
+</h6>
+<p id="p-1410">The <dfn class="terminology">general addition rule</dfn> states that if events \(A\) and \(B\) are not-necessarily mutually exclusive events in a sample space, then:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cup B) = P(A) + P(B) - P(A\cap B)\text{.}
+\end{equation*}
+</div></article><p id="p-1411">Let's apply this rule to a case where two events have a non-empty intersection.</p>
+<article class="example example-like" id="examp_probability_more-rules_general-addition"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_more-rules_general-addition"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.25</span><span class="period">.</span><span class="space"> </span><span class="title">Using the General Addition Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_more-rules_general-addition"><article class="example example-like"><p id="p-1412">Suppose that \(A\) and \(B\) are events in a sample space \(S\) with \(P(A) = 0.25\text{,}\) \(P(B) = 0.60\text{,}\) and \(P(A\cap B) = 0.10\text{.}\) Find \(P(A\cup B)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-91" id="solution-91"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-91"><div class="solution solution-like">
+<p id="p-1413">Using the general addition rule,</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cup B) = P(A) + P(B) - P(A\cap B) = 0.25 + 0.60 - 0.10 = 0.75\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1414">We can also use the general addition rule in reverse, as seen in the next example.</p>
+<article class="example example-like" id="examp_probability_more-rules_find-intersection"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_more-rules_find-intersection"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.26</span><span class="period">.</span><span class="space"> </span><span class="title">Using the General Addition Rule to Find an Intersection.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_more-rules_find-intersection"><article class="example example-like"><p id="p-1415">A sample space contains events \(X\) and \(Y\) with \(P(X) = 0.45\text{,}\) \(P(Y) = 0.65\text{,}\) and \(P(X\cup Y) = 0.80\text{.}\) Find \(P(X \cap Y)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-92" id="solution-92"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-92"><div class="solution solution-like">
+<p id="p-1416">Using the general addition rule,</p>
+<div class="displaymath">
+\begin{align*}
+P(A\cup B) = P(A) + P(B) - P(A\cap B) \amp\Rightarrow 0.80 = 0.45 + 0.65 - P(A\cap B)\\
+\amp \Rightarrow P(A\cap B) = 0.30.
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1417">Another rule that is often useful deals with the <dfn class="terminology">complement</dfn> of a set.  We will first define what a complement is and then explore the rule.</p>
+<article class="definition definition-like" id="def_complement"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.27</span><span class="period">.</span>
+</h6>
+<p id="p-1418">The <dfn class="terminology">complement</dfn> of a set \(A\) in a sample space \(S\) is the set \(\overline{A}\) consisting of all elements of the sample space that are not in \(A\text{.}\)</p></article><p id="p-1419">Notice the use of the word <em class="emphasis">not</em> in the definition above.  Just like we used the word <em class="emphasis">or</em> to help recognize the <a class="xref" data-knowl="./knowl/def_union.html" title="Definition 2.2.3">union</a> of sets and <em class="emphasis">and</em> to recognize the <a class="xref" data-knowl="./knowl/def_intersection.html" title="Definition 2.2.4">intersection</a> of sets, the word <em class="emphasis">not</em> usuall indicates that we need to take the complement of two sets.</p>
+<article class="example example-like" id="examp_probability_more-rules_complement"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_more-rules_complement"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.28</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Probability of a Complement.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_more-rules_complement"><article class="example example-like"><p id="p-1420">A fair die is rolled and the number that comes up is noted. This results in the sample space \(S = \lbrace 1,2,3,4,5,6\rbrace\text{.}\) Consider the event \(E =\) "an even number is rolled" and \(F =\) "a number greater than 4 is rolled." Find the probabilities of both \(E\) and \(F\) and their complements.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-93" id="solution-93"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-93"><div class="solution solution-like">
+<p id="p-1421">The set \(E = \lbrace 2, 4, 6 \rbrace\) consists of all even numbers. The complement of \(E\text{,}\) \(\overline{E} = \lbrace 1, 3, 5 \rbrace\text{.}\) The probability of each of these sets is \(\frac{3}{6} = \frac{1}{2}\text{.}\)</p>
+<p id="p-1422">The set \(F = \lbrace 5, 6 \rbrace\) has probability \(P(F) = \frac{2}{6} = \frac{1}{3}\text{.}\) The complement of \(F\) is \(\overline{F} = \lbrace 1,2,3,4 \rbrace\text{.}\) The probability of this set is \(P(\overline{F}) = \frac{4}{6} = \frac{2}{3}\text{.}\)</p>
+</div></div>
+</div></article></div>
+<p id="p-1423">Did you notice that an event and its complement divide up the sample space?  That is, every element in the sample space is either in the event or in its complement, and never in both.  We can generalize the results from the above example into a rule for finding the probability of the complement of an event.</p>
+<article class="theorem theorem-like" id="def_probability-rule_complement"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.29</span><span class="period">.</span>
+</h6>
+<p id="p-1424">The <dfn class="terminology">complement rule</dfn> states that if \(A\) is an event in a sample space \(S\text{,}\) then the probability of the complement of \(A\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(\overline{A}) = 1 - P(A)\text{.}
+\end{equation*}
+</div></article><p id="p-1425">We finish this section with an example applying the complement rule and the general addition rule.</p>
+<article class="example example-like" id="examp_probability_more-rules_complement-and-addition"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_more-rules_complement-and-addition"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.30</span><span class="period">.</span><span class="space"> </span><span class="title">Combining the Complement and General Addition Rules.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_more-rules_complement-and-addition"><article class="example example-like"><p id="p-1426">Sets \(A\) and \(B\) are events in a sample space \(S\) with \(P(A) = 0.40\text{,}\) \(P(B) = 0.50\text{,}\) and \(P(\overline{A\cup B}) = 0.20\text{.}\) Find \(P(A\cap B)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-94" id="solution-94"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-94"><div class="solution solution-like">
+<p id="p-1427">Based on the complement rule,</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cup B) = 1 - P(\overline{A\cup B}) = 1 - 0.20 = 0.80\text{.}
+\end{equation*}
+</div>
+<p id="p-1428">Then, using the general addition rule,</p>
+<div class="displaymath">
+\begin{align*}
+P(A\cup B) = P(A) + P(B) - P(A\cap B) \amp \Rightarrow 0.80 = 0.40 + 0.50 - P(A\cap B)\\
+\amp \Rightarrow P(A\cap B) = 0.10.
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_probability_more-rules-1"><video id="video-70" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.31<span class="period">.</span></span><span class="space"> </span>Other Probability Rules</figcaption></figure><figure class="figure figure-like" id="video_probability_more-rules-2"><video id="video-71" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.32<span class="period">.</span></span><span class="space"> </span>Other Probability Rules</figcaption></figure><article class="exercise exercise-like" id="ckpt_probability_more-rules-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_more-rules-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.33</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_more-rules-1"><article class="exercise exercise-like"><p id="p-1429">A set \(A\) in a sample space \(S\) has probability \(P(A) = 0.23\text{.}\)</p>
+<p id="p-1430">Question: What is the probability of the complement of \(A\text{,}\) \(P(\overline{A})\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-100" id="answer-100"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-100"><div class="answer solution-like"><p id="p-1431">0.77</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_more-rules-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_more-rules-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.34</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_more-rules-2"><article class="exercise exercise-like"><p id="p-1432">Events \(A\) and \(B\) in a sample space \(S\) have probability \(P(A) = 0.45\) and \(P(B) = 0.37\text{.}\) The probability of the union is \(P(A\cup B) = 0.64\text{.}\)</p>
+<p id="p-1433">Question: What is \(P(A\cap B)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-101" id="answer-101"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-101"><div class="answer solution-like"><p id="p-1434">0.18</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_more-rules-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_more-rules-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_more-rules-3"><article class="exercise exercise-like"><p id="p-1435">The events \(A\) and \(B\) in the sample space \(S\) have probabilities \(P(A) = 0.62\) and \(P(B) = 0.49\text{.}\) The probability of the intersection is \(P(A\cap B) = 0.33\text{.}\)</p>
+<p id="p-1436">Question: What is the probability of the complement of the union. That is, what is \(P(\overline{A\cup B})\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-102" id="answer-102"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-102"><div class="answer solution-like"><p id="p-1437">0.22</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_probability_venn"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.4</span> <span class="title">Venn Diagrams</span>
+</h3>
+<a href="sec_probability.html#sec_probability_venn" class="permalink">¶</a><p id="p-1438">When we start working with probabilities of unions, intersections, and complements of events, it can be difficult to keep everything straight. Luckily, the <a class="xref" data-knowl="./knowl/def_venn-diagram.html" title="Definition 2.2.5">Venn diagrams</a> we saw when counting the number of elements in a set can als be useful for organizing probabilities. When using a Venn diagram with probability questions, we always let the box represent the sample space.  This means that, according to the valid probability measure rules we just learned, the total probability inside the box must be one.</p>
+<article class="example example-like" id="examp_probability_venn_two-set"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_venn_two-set"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.36</span><span class="period">.</span><span class="space"> </span><span class="title">Using Venn Diagrams to Compute Probability.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_venn_two-set"><article class="example example-like"><p id="p-1439">A weatherman predicts that the probability it will rain tomorrow is 0.35 and the probability it will be windy is 0.64. The probability that it will be clear (no rain) but windy is 0.39. Use a Venn diagram to find the probability it will be clear and calm (no rain and no wind).</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:10% 0%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:flex-start;">
+<p id="p-1440">Our first Venn Diagram shows the information given in the problem statement. There are several things to note:</p>
+<ul class="disc">
+<li id="li-583"><p id="p-1441">The probability of the entire box is one, as mentioned above.</p></li>
+<li id="li-584"><p id="p-1442">The probabilities of \(R\) and \(W\) (rain and wind) are each split between two regions, as indicated by the arrows.</p></li>
+<li id="li-585"><p id="p-1443">The probability of \(W \cap \overline{R}\) is written into the appropriate region.</p></li>
+</ul>
+</div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_probability_examp_venn_two-set-i"><img src="images/image_probability_examp_venn_two-set-i.svg" style="width: 100%; height: auto;" alt="A Venn Diagram with two circles, one for R and one for W.  The probability in W that is not also in R is 0.39.  The probability of 0.64 is divided between the part of W that is also in R and the part that is not.  The probability of 0.35 is divided between the part of R that is not in W and the part that is."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.37<span class="period">.</span></span><span class="space"> </span>Initial Venn diagram</figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:10% 0%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:flex-start;">
+<p id="p-1444">Now we are ready to do some computations to figure out the missing pieces in the Venn diagrams, starting with the intersection of \(R\) and \(W\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+P(R\cap W) \amp = P(W) - P(R\cap \overline(W)\\
+\amp = 0.64 - 0.39\\
+\amp = 0.25
+\end{align*}
+</div>
+<p data-braille="continuation">Next, we move on to find the union of \(R\) and \(W\) since we are after the complement of this union (not windy or rainy).</p>
+<div class="displaymath">
+\begin{align*}
+P(R\cup W) \amp = P(R) + P(W) - P(R\cap W)\\
+\amp = 0.35 + 0.64 - 0.25\\
+\amp = 0.74.
+\end{align*}
+</div>
+</div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_probability_examp_venn_two-set-ii"><img src="images/image_probability_examp_venn_two-set-ii.svg" style="width: 100%; height: auto;" alt="A Venn Diagram with circles for R and W.  The probability in the region included in both R and W is 0.25.  The probability in the region in R but not W is 0.10.  The probability in the region in W but not R is 0.39."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.38<span class="period">.</span></span><span class="space"> </span>Final Venn diagram</figcaption></figure></div>
+</div></div>
+<p id="p-1445">Finally, using the complement rule, the probability we are looking for is found below.</p>
+<div class="displaymath">
+\begin{align*}
+P(\overline{R\cup W}) \amp = 1 - P(R\cup W)\\
+\amp = 1 - 0.74\\
+\amp  = 0.26.
+\end{align*}
+</div>
+<p id="p-1446">Note that in the final Venn diagram the sum of all numbers in the box is 1.</p>
+</div></div>
+</div></article></div>
+<p id="p-1447">Let's take a look at one more Venn Diagram example, this one involving three events.</p>
+<article class="example example-like" id="examp_probability_venn_three-set"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_venn_three-set"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.39</span><span class="period">.</span><span class="space"> </span><span class="title">Using a Three-Set Venn Diagram.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_venn_three-set"><article class="example example-like"><p id="p-1448">On a given day, the probability that George the squirrel will spend time napping is 0.27. The probability that he will spend time chasing his tail is 0.45. The probability that he will spend time hunting for nuts is 0.65. If George chases his tail, then he will be too excited to take a nap, so those two events are mutually exclusive. The probability that George will both chase his tail and hunt for nuts is 0.35. Finally, the probability that George does none of these things is 0.16. Find the probability that George chases naps and hunts for nuts but does not chase his tail.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like">
+<p id="p-1449">The final Venn Diagram is shown below. Can you determine how these numbers were found?</p>
+<figure class="figure figure-like" id="fig_probability_examp_venn_three-set"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_probability_examp_venn_three-set.svg" style="width: 100%; height: auto;" alt="A three set Venn diagram with circles for N, C, and H.  The probability in the region included in all three circles is zero.  The probability in N and C but not H is 0.  The probability in N and H but not C is 0.18, the probability in C and H but not N is 0.35.  The probability in C only is 0.10.  The probability in N only is 0.09.  The probability in H only is 0.12.  The probability outside of all three circles is 0.16."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.40<span class="period">.</span></span><span class="space"> </span>Three Set Venn Diagram</figcaption></figure>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_probability_venn-1"><video id="video-72" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.41<span class="period">.</span></span><span class="space"> </span>Probability and Venn Diagrams I</figcaption></figure><figure class="figure figure-like" id="video_probability_venn-2"><video id="video-73" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.42<span class="period">.</span></span><span class="space"> </span>Probability and Venn Diagrams II</figcaption></figure><article class="exercise exercise-like" id="ckpt_probability_venn-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_venn-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.43</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_venn-1"><article class="exercise exercise-like"><p id="p-1450">Consider the following Venn Diagram.</p>
+<figure class="figure figure-like" id="fig_probability_ckpt_venn_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/image_probability_ckpt_venn_1.svg" style="width: 100%; height: auto;" alt='A Venn diagram with two circles.  The probabilty in the region in the left circle only is 0.53.  The probability in the region inside both circles is labeled "x".  The probability in the region in the right circle only is labeled "y".  The probabilty outside of both circles is 0.14.'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.44<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1451">Question: Which of the following could not be used for the value of \(x\text{?}\)</p>
+<ul class="disc cols2">
+<li id="li-586"><p id="p-1452">\(0.46\)</p></li>
+<li id="li-587"><p id="p-1453">\(-0.36\)</p></li>
+<li id="li-588"><p id="p-1454">\(0.72\)</p></li>
+<li id="li-589"><p id="p-1455">\(0.13\)</p></li>
+</ul>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-103" id="answer-103"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-103"><div class="answer solution-like"><p id="p-1456">\(-0.36\) and \(0.72\) could <em class="emphasis">not</em> be used for \(x\text{.}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_venn-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_venn-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.45</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_venn-2"><article class="exercise exercise-like"><p id="p-1457">Suppose you are told that in the Venn Diagram below, \(P(A\cup B) = 0.40\text{.}\)</p>
+<figure class="figure figure-like" id="fig_probability_ckpt_venn-2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/image_probability_ckpt_venn-2.svg" style="width: 100%; height: auto;" alt='A Venn diagram with two circles, one labeled "A" and the other "B".  The probability in the region in circle A only is 0.16.  The probability in the region in circle B only is 0.19.'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.46<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1458">Question: what is \(P(A)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-104" id="answer-104"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-104"><div class="answer solution-like"><p id="p-1459">\(0.24\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_venn-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_venn-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.47</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_venn-3"><article class="exercise exercise-like"><p id="p-1460">In the following Venn Diagram, \(P(B) = 0.60\text{.}\)</p>
+<figure class="figure figure-like" id="fig_probability_ckpt_venn-3"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/image_probability_ckpt_venn-3.svg" style="width: 100%; height: auto;" alt='A Venn diagram with two circles, one labeled "A" and the other "B".  The probability in the region in circle A only is 0.40.  The probability in the region in circle B only is 0.16.  The probability outside of both circles is labeled "x".'></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.48<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1461">Question: what is the value of \(x\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-105" id="answer-105"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-105"><div class="answer solution-like"><p id="p-1462">0</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_probability_counting"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.5</span> <span class="title">Probability from Counting</span>
+</h3>
+<a href="sec_probability.html#sec_probability_counting" class="permalink">¶</a><p id="p-1463">We have assumed in this section that each outcome is equally likely. In <a class="xref" data-knowl="./knowl/examp_probability_measure_urn.html" title="Example 2.3.15: Assigning Probabilities to Outcomes">Example 2.3.15</a> we pulled colored marbles from an urn in which each marble was equally likely, but not each color. This was because there were more marbles of some colors than others. In this example, we start to see how counting can be an important tool for computing probabilities.</p>
+<p id="p-1464">Recall the definition of <a class="xref" data-knowl="./knowl/def_theoretical-probability.html" title="Definition 2.3.2">theoretical probability 2.3.2</a>. Using the rule given in that definition, we can now answer several more complicated probability questions. In the examples that follow, we will use several different counting rules to help us compute probabilities.  Notice how in each example we must first figure out which counting rule or rules to select and how to combine them to count the number of outcomes in both the sample space and in the event we which to find the probability of.</p>
+<article class="example example-like" id="examp_probability_counting_basic"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_counting_basic"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.49</span><span class="period">.</span><span class="space"> </span><span class="title">Using Basic Counting Rules to Compute Probability.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_counting_basic"><article class="example example-like"><p id="p-1465">An elderly woman owns 12 cats. She has 3 male tabby cats, 4 female tabby cats, 3 female calico, and 2 male Siamese cats. A single cat is chosen from the herd at random. Find the probability that the cat is:</p>
+<ol class="lower-alpha cols3">
+<li id="li-590"><p id="p-1466">male</p></li>
+<li id="li-591"><p id="p-1467">a tabby cat</p></li>
+<li id="li-592"><p id="p-1468">a male or a calico.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like">
+<p id="p-1469">Since we are told the cat is chosen at random, we know that each cat is equally likely to be chosen. Thus, we can use the theoretical probability rule above to solve these problems. For each of these events, note that the sample space is all of the cats owned by this woman. So \(n(S) = 12\) in each problem.</p>
+<ol class="lower-alpha">
+<li id="li-593"><p id="p-1470">Since we are told that \(n(M) = 5\text{,}\) we compute \(P(M) = \frac{5}{12}\text{.}\)</p></li>
+<li id="li-594"><p id="p-1471">Because \(n(T) = 7\text{,}\) we get \(P(T) = \frac{7}{12}\text{.}\)</p></li>
+<li id="li-595"><p id="p-1472">Finally, \(n(M \cup C) = 5 + 3 = 8\text{,}\) so \(P(M\cup C) = \frac{8}{12} = \frac{2}{3}\text{.}\)</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-1473">A process in which we choose one item, as we chose a single cat above, is often much easier to work with than a process in which we must choose two or more items. Consider the next example.</p>
+<article class="example example-like" id="examp_probability_counting_steps"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_counting_steps"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.50</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities with Permutations and Combinations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_counting_steps"><article class="example example-like"><p id="p-1474">A special deck of cards contains only 10 cards. These are the two black aces, two red kings, all four queens, and the two red jacks from the regular deck. Four cards are drawn at random from the deck without replacement. What is the probability that:</p>
+<ol class="lower-alpha">
+<li id="li-596"><p id="p-1475">none of the cards are aces?</p></li>
+<li id="li-597"><p id="p-1476">two of the cards are black, and two are red?</p></li>
+<li id="li-598"><p id="p-1477">at least one of the cards is a queen?</p></li>
+<li id="li-599"><p id="p-1478">the cards are the queen of hearts, diamonds, clubs, and spades in that order?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like">
+<p id="p-1479">Notice that nothing is said about the order in which cards are drawn for the first three events.  So we will use <a class="xref" data-knowl="./knowl/thm_counting-rule_combination.html" title="Theorem 2.2.62">combinations</a> to count both the sample space and the number of outcomes in these events.  The common sample space is found by couting the number of ways to select 4 of the 10 cards if order doesn't matter: \(C(10,4) = \frac{10 \times 9\times 8\times 7}{4\times 3\times 2\times 1} = 210\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-600"><p id="p-1480">If none of the cards are aces, then all four are selected from the remaining 8 non-ace cards. This can be done in \(C(8,4) = 70\) ways. So, \(P(\text{no aces}) = \frac{70}{210} = \frac{1}{3}\text{.}\)</p></li>
+<li id="li-601">
+<p id="p-1481">We first split the cards into black and red. There are two black aces and two black queens making 4 total black cards. There are two red kings, two red queens, and two red jacks making 6 red cards. Next we must pick 2 of the 4 black cards and 2 of the 6 red cards. This is a multi-step process, so using the multiplication rule:</p>
+<div class="displaymath">
+\begin{align*}
+n(\text{2 black and 2 red}) \amp = n(\text{2 black}) \times n(\text{2 red})\\
+\amp = C(4,2) \times C(6,2)\\
+\amp = 6 \times 15\\
+\amp = 90.
+\end{align*}
+</div>
+<p data-braille="continuation">Thus, \(P(\text{ 2 black and 2 red }) = \frac{90}{210} = \frac{3}{7}\text{.}\)</p>
+</li>
+<li id="li-602">
+<p id="p-1482">“At least one queen” means we could have one queen, two queens, three queens, or all four queens. If we try to count this directly, we must count these four separate cases and then use the addition rule to add them together. Instead, let's take a short-cut. The opposite of “at least one queen” is “no queens”. If we can find the probability of no queens, then we can use the complement rule to find the probability of at least one queen. If we don't allow the queens to be chosen, there are only 6 cards available. We can pick our entire hand from these 6 cards in \(C(6,4) = 15\) ways. So, \(P(\text{no queens}) = \frac{15}{210} = \frac{1}{14}\text{.}\) Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{at least one queen}) = 1 - P(\text{no queens}) = 1-\frac{1}{14} = \frac{13}{14}.
+\end{equation*}
+</div>
+</li>
+<li id="li-603">
+<p id="p-1483">Our last event is different from the other three because the order in which we pick our cards matters.  We should therefore use a <a class="xref" data-knowl="./knowl/thm_counting-rule_permutation.html" title="Theorem 2.2.52">permutation</a> or the <a class="xref" data-knowl="./knowl/thm_counting-rule_multiplication.html" title="Theorem 2.2.28">multiplication rule</a> instead of a combination. Keeping in mind that there is only one of each suite's queen in the deck, we compute</p>
+<div class="displaymath">
+\begin{align*}
+P(\text{Queen of Hearts, Diamons, Clubs, then Spades}) \amp = \frac{1\times 1\times 1\times 1}{P(10,4)}\\
+\amp = \frac{1}{10\times 9\times 8\times 7}\\
+\amp  = \frac{1}{5040}.
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-1484">We conclude this section with one final example.</p>
+<article class="example example-like" id="examp_probability_counting_cases"><a data-knowl="" class="id-ref original" data-refid="hk-examp_probability_counting_cases"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.51</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities with Cases.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_probability_counting_cases"><article class="example example-like"><p id="p-1485">An experiment consists of randomly selecting three marbles from an urn containing six red marbles, four white marbles, and two green marbles. What is the probability that:</p>
+<ol class="lower-alpha">
+<li id="li-604"><p id="p-1486">All three marbles are green?</p></li>
+<li id="li-605"><p id="p-1487">All three marbles are white?</p></li>
+<li id="li-606"><p id="p-1488">All three marbles are of the same color?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-99" id="solution-99"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-99"><div class="solution solution-like">
+<p id="p-1489">We start by counting the sample space, which will be the same for all three events. We are drawing three marbles from an urn containing 12 total marbles. We don't care about the order in which we draw the marbles, just the colors that are drawn. Therefore, \(n(S) = C(12,3) = 220\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-607"><p id="p-1490">Since there are only two green marbles, it is impossible for all three of the marbles we draw to be green. Therefore, \(P(\text{all three are green}) = 0\text{.}\)</p></li>
+<li id="li-608"><p id="p-1491">There are four white marbles. The number of ways we can draw three of the four is \(C(4,3) = 4\text{.}\) Therefore, \(P(\text{all three are white}) = \frac{4}{220} = \frac{1}{55}\text{.}\)</p></li>
+<li id="li-609">
+<p id="p-1492">All three marbles can be the same color by being all green, all white, or all red. We said that \(P(\text{all green}) = 0\) and \(P(\text{all white}) = \frac{1}{55}\text{.}\) To determine the probability they are all red, we count \(n(\text{all three red}) = C(6,3) = 20\text{.}\) Thus, \(P(\text{all red}) = \frac{20}{220} = \frac{1}{11}\text{.}\)</p>
+<p id="p-1493">Now since these are three different ways that we can get all three marbles to be the same color, and since each of these events is mutually exclusive (we can't get all three red and all three white), we use the general addition rule to get:</p>
+<div class="displaymath">
+\begin{align*}
+P(\text{all same color}) \amp = P(\text{all green}) + P(\text{all white}) + P(\text{all red} )\\
+\amp = 0 + \frac{4}{220} + \frac{20}{220} = \frac{24}{220}\\
+\amp = \frac{6}{55}.
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_probability_counting-1"><video id="video-74" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.52<span class="period">.</span></span><span class="space"> </span>Probability from Counting I</figcaption></figure><figure class="figure figure-like" id="video_probability_counting-2"><video id="video-75" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.53<span class="period">.</span></span><span class="space"> </span>Probability from Counting II</figcaption></figure><figure class="figure figure-like" id="video_probability_counting-3"><video id="video-76" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-11.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.54<span class="period">.</span></span><span class="space"> </span>Probability from Counting III</figcaption></figure><article class="exercise exercise-like" id="ckpt_probability_counting-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_counting-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.55</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_counting-1"><article class="exercise exercise-like"><p id="p-1494">A student needs to take 4 classes in a certain quarter. There are 5 science classes and 3 humanities classes from which to choose. The student decides to make her selection randomly.</p>
+<p id="p-1495">Question: what is the probability she will take exactly 3 science classes?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-106" id="answer-106"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-106"><div class="answer solution-like"><p id="p-1496">\(\frac{C(5,3)\times C(3,1)}{C(8,4)} = \frac{10 \times 3}{70} = \frac{3}{7}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_counting-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_counting-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.56</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_counting-2"><article class="exercise exercise-like"><p id="p-1497">A cage contains 5 white mice and 4 grey mice. 3 mice are selected at random from the cage.</p>
+<p id="p-1498">Question: what is the probability that at least one of the mice is grey?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-107" id="answer-107"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-107"><div class="answer solution-like"><p id="p-1499">\(1-\frac{C(5,3)}{C(9,3)} = 1 - \frac{10}{84} = \frac{74}{84} = \frac{37}{42}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_probability_counting-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_probability_counting-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.3.57</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_probability_counting-3"><article class="exercise exercise-like"><p id="p-1500">A poker hand consists of 5 cards selected at random from an ordinary deck of 52 cards. The deck is divided into four suits of 13 cards each.</p>
+<p id="p-1501">Question: what is the probability of getting a flush—all five cards of the same suit?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-108" id="answer-108"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-108"><div class="answer solution-like"><p id="p-1502">\(\frac{C(4,1)\times C(13,5)}{C(52,5)} = \frac{4\times 1287}{2598960} = \frac{5148}{2598960} \approx 0.0020\)</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

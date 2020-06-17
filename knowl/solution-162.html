@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:32-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.5.39.1</span><span class="period">.</span>
+</h6>
+<p>Checking that we can apply the normal distribution, we compute \(n\times p = 900(0.58) = 522\) and \(n\times q = 900(0.42) = 378\text{,}\) both of which are greater than 5. Now the mean and standard deviation for our normal distribution of \(\hat p\) are:</p>
+<div class="displaymath">
+\begin{align*}
+\mu_{\hat p} \amp = 0.58\\
+\sigma_{\hat p} \amp = \sqrt{\frac{(0.58)(0.42)}{900}} \approx 0.01645
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore, the probability that they mistaken predict passage of the ballot measure is:</p>
+<div class="displaymath">
+\begin{align*}
+P(\hat P \geq 0.60) \amp = P\left(\frac{\hat P - p}{\sqrt{\frac{pq}{n}}} \geq \frac{0.60 - 0.58}{0.01645}\right)\\
+\amp = P(Z \geq 1.22)\\
+\amp = 1 - P(Z \lt 1.22)\\
+\amp = 1 - 0.8888\\
+\amp = 0.1112
+\end{align*}
+</div>
+<p data-braille="continuation">So, there is approximately an 11% chance the polling organizaiton will get it wrong.</p>
+</div>
+<span class="incontext"><a href="sec_sampling.html#solution-162">in-context</a></span>
+</body>
+</html>

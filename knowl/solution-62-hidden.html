@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:16-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We will follow the steps outlined above.</p>
+<ol class="decimal">
+<li><p>We have already noted that the component in this process is catching a single fish.</p></li>
+<li>
+<p>Our simulation must model the three types of fish that make up the outcomes. We need to do this in such a way that the fish types and the modeled outcomes are in the same proportion. Recall that there were 500 catfish, 750 bass, and 1000 trout, for a total of 2250 fish. This gives:</p>
+<ul class="disc">
+<li><p>\(\frac{500}{2250} = \frac{2}{9}\) — we use digits 0, 1 from 0-9 to represent catfish</p></li>
+<li><p>\(\frac{750}{2250} = \frac{3}{9}\) — we use digits 2, 3, 4 from 0-9 to represent bass</p></li>
+<li><p>\(\frac{1000}{2250} = \frac{4}{9}\) — we use digits 5, 6, 7, and 8 for trout</p></li>
+</ul>
+<p data-braille="continuation">Note that the digit 9 will not be used.</p>
+</li>
+<li><p>To simulate a trial, we will select a starting point and record digits (representing fish) until we have recorded one of each “type of fish.”</p></li>
+<li><p>The response variable will be the number of “fish” recorded (so number of digits).</p></li>
+<li>
+<p>The results of 10 trials starting as indicated are shown below.  The <em class="emphasis">*</em> symbol in the outcomes represents the unassigned digit “9.”</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">Starting Point</td>
+<td class="c m b2 r2 l0 t0 lines">Outcomes</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Response Var.</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 1, column 1</td>
+<td class="l m b0 r2 l0 t0 lines">2217726304 \(\Rightarrow\) bbct</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 2, column 11</td>
+<td class="l m b0 r2 l0 t0 lines">6438002922 \(\Rightarrow\) tbbtc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">5 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 3, column 21</td>
+<td class="l m b0 r2 l0 t0 lines">982266538858732 \(\Rightarrow\) *tbbtttbtttttbc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">14 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 4, column 31</td>
+<td class="l m b0 r2 l0 t0 lines">4984322000 \(\Rightarrow\) b*tbbbbc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 5, column 41</td>
+<td class="l m b0 r2 l0 t0 lines">6714963835 \(\Rightarrow\) ttcb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 6, column 51</td>
+<td class="l m b0 r2 l0 t0 lines">23867858226440 \(\Rightarrow\) bbttttttbbtbbc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">14 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 1, column 21</td>
+<td class="l m b0 r2 l0 t0 lines">3708627058 \(\Rightarrow\) btc</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 2, column 31</td>
+<td class="l m b0 r2 l0 t0 lines">0642389043 \(\Rightarrow\) ctb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 3, column 41</td>
+<td class="l m b0 r2 l0 t0 lines">6990278431 \(\Rightarrow\) t**ccttb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">6 fish caught</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">row 4, column 51</td>
+<td class="l m b0 r2 l0 t0 lines">7790263900 \(\Rightarrow\) tt*cb</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4 fish caught</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.1.30<span class="period">.</span></span><span class="space"> </span>Ten Simulation Trials for Fishing Example</figcaption></figure>
+</li>
+<li>
+<p>The response variable had values 4, 5, 14, 7, 4, 14, 3, 3, 6, 4 giving a mean value of:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{4+5+14+7+4+14+3+3+6+4}{10} = 6.4 \text{ fish}.
+\end{equation*}
+</div>
+<p data-braille="continuation">It appears that the number of fish we would need to catch before having one of each sort is around 6. Note, however, that the 14's may be outliers.</p>
+</li>
+</ol>
+</div></body>
+</html>

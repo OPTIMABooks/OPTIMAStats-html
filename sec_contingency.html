@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:23:17-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Tests of Independence and Homogeneity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_goodness-of-fit.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_other-tests.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_goodness-of-fit.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_other-tests.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency" class="active">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_contingency"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Tests of Independence and Homogeneity</span>
+</h2>
+<a href="sec_contingency.html" class="permalink">¶</a><section class="introduction" id="sec_contingency_intro"><h6 class="heading">Tests for Contingency Tables.<span></span>
+</h6>
+<p id="p-3858">We've made it to the last section in the text! In this section, we will look at one more type of hypothesis test that uses the \(\chi^2\)-distribution. This test is used to compare characteristics between two or more populations. Consider the following example.</p>
+<article class="example example-like" id="examp_contingency_intro"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_intro"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Explaining Independence in a Contingency Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_intro"><article class="example example-like"><p id="p-3859">A student-body representative wishes to determine if a student's class standing affects their housing arrangements. To test this, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_intro"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">Freshman</td>
+<td class="c m b2 r1 l0 t2 lines">Sophomore</td>
+<td class="c m b2 r1 l0 t2 lines">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Senior</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Dorm</td>
+<td class="c m b1 r1 l0 t0 lines">114</td>
+<td class="c m b1 r1 l0 t0 lines">99</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">78</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Off-Campus College-Owned Housing</td>
+<td class="c m b1 r1 l0 t0 lines">42</td>
+<td class="c m b1 r1 l0 t0 lines">83</td>
+<td class="c m b1 r1 l0 t0 lines">104</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">124</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Off-Campus Other Housing</td>
+<td class="c m b2 r1 l0 t0 lines">16</td>
+<td class="c m b2 r1 l0 t0 lines">19</td>
+<td class="c m b2 r1 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">21</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.2<span class="period">.</span></span><span class="space"> </span>Student Housing Status by Class Standing</figcaption></figure><p id="p-3860">If class standing does not affect housing arrangements (they are independent), what would we expect to see in this table?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-266" id="solution-266"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-266"><div class="solution solution-like"><p id="p-3861">We would expect to see the same proportion of all four classes to be staying in the dorm, staying in off-campus college owned housing, and off-campus other housing. Note that this does not mean the numbers will all be equal, but the proportions of a row entry to the column total should be the same for every column.</p></div></div>
+</div></article></div>
+<p id="p-3862">Our goal in this situation is to determine if the proportion of people who live in each housing type is different within the four populations. That is, is housing type independent of class standing, or do different classes have a different distribution of housing types. Many of the same tools we used in <a href="sec_goodness-of-fit.html" class="internal" title="Section 6.2: Goodness-of-Fit Tests">Section 6.2</a> will reappear in this section. This includes the <a class="xref" data-knowl="./knowl/def_chi-squared-distribution.html" title="Definition 6.2.29">\(\chi^2\)-distribution</a>, the notion of <a class="xref" data-knowl="./knowl/def_observed-counts.html" title="Definition 6.2.16">observed and expected counts</a>, and the <a class="xref" data-knowl="./knowl/thm_chi-squared-test-stat.html" title="Theorem 6.2.40: Goodness-of-Fit Test Statistic">\(\chi^2\) test statistic</a>.</p></section><article class="objectives goal-like" id="sec_contingency_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-62"><p id="p-3863">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1364">
+<p id="p-3864">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1365"><p id="p-3865">Degrees of Freedom for a Test of Independence or Homogeneity</p></li>
+<li id="li-1366"><p id="p-3866">Expected Counts for a Contingency Table</p></li>
+<li id="li-1367"><p id="p-3867">Test of Homogeneity</p></li>
+<li id="li-1368"><p id="p-3868">Test of Independence</p></li>
+<li id="li-1369"><p id="p-3869">Test Statistic for a Test of Independence or homogeneity</p></li>
+</ul>
+</li>
+<li id="li-1370">
+<p id="p-3870">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1371"><p id="p-3871">Formulate hypotheses for tests of independence and homogeneity</p></li>
+<li id="li-1372"><p id="p-3872">Compute the expected counts for a test of independence or homogeneity</p></li>
+<li id="li-1373"><p id="p-3873">Compute the \(\chi^2\) test statistic for a contingency table</p></li>
+<li id="li-1374"><p id="p-3874">Look up critical values in the \(\chi^2\)-distribution table</p></li>
+<li id="li-1375"><p id="p-3875">Conduct a traditional test of independence or homogeneity</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_contingency_hypotheses"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">Two Types of Hypotheses</span>
+</h3>
+<a href="sec_contingency.html#sec_contingency_hypotheses" class="permalink">¶</a><p id="p-3876">In this lesson, we will actually look at two types of hypothesis tests. The only difference between these two tests is the way in which the null hypothesis is stated. Because of this, the difference may seem like a technicality. However, it is important that we recognize the difference between these two types of tests.</p>
+<article class="definition definition-like" id="def_test-of-independence"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-3877">In a <dfn class="terminology">\(\chi^2\) test of independence</dfn>, the null hypothesis is that two characteristics in a single population are independent of each other.</p></article><article class="definition definition-like" id="def_test-of-homogeneity"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
+</h6>
+<p id="p-3878">In a <dfn class="terminology">\(\chi^2\) test of homogeneity</dfn>, the null hypothesis is that a single characteristic is distributed the same way across two or more populations.</p></article><p id="p-3879">The difference between these two tests has to do with the number of populations. If we are looking at a single characteristic across different populations, then we are conducting a <dfn class="terminology">test of homogeneity</dfn>. On the other hand, if we are looking at the relationship between two characteristics in the same population, we need to conduct a <dfn class="terminology">test of independence</dfn>.</p>
+<p id="p-3880">In both cases, the alternative hypothesis is simply that the distribution is <em class="emphasis">not</em> independent or homogeneous. In the following examples, we will take a look at the hypotheses for each of these tests.</p>
+<article class="example example-like" id="examp_contingency_hypotheses-homogeneity"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_hypotheses-homogeneity"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Recognizing a Test of Homogeneity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_hypotheses-homogeneity"><article class="example example-like"><p id="p-3881">A student-body representative wishes to determine if a student's class standing affects their housing arrangements. To test this, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_hypothesis-homogeneity"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">Freshman</td>
+<td class="c m b2 r1 l0 t2 lines">Sophomore</td>
+<td class="c m b2 r1 l0 t2 lines">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Senior</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Dorm</td>
+<td class="c m b1 r1 l0 t0 lines">114</td>
+<td class="c m b1 r1 l0 t0 lines">99</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">78</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Off-Campus College-Owned Housing</td>
+<td class="c m b1 r1 l0 t0 lines">42</td>
+<td class="c m b1 r1 l0 t0 lines">83</td>
+<td class="c m b1 r1 l0 t0 lines">104</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">124</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Off-Campus Other Housing</td>
+<td class="c m b2 r1 l0 t0 lines">16</td>
+<td class="c m b2 r1 l0 t0 lines">19</td>
+<td class="c m b2 r1 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">21</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.6<span class="period">.</span></span><span class="space"> </span>Student Housing Status by Class Standing</figcaption></figure><p id="p-3882">State the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-267" id="solution-267"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-267"><div class="solution solution-like">
+<p id="p-3883">We are looking at a single characteristic, housing type, among the four populations of Freshmen, Sophomores, Juniors, and Seniors. Therefore, this is a test of homogeneity. The hypotheses are therefore:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \text{Housing distributions in the four populations are homogeneous}\\
+H_A\amp:\ \text{Housing distributions are not homogeneous across the four populations}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_contingency_hypotheses-independence"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_hypotheses-independence"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Recognizing a Test of Homogeneity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_hypotheses-independence"><article class="example example-like"><p id="p-3884">An efficiency expert at a certain large company believes that the number of years experience that an employee has is independent from their efficiency rating. To test this claim, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_hypothesis-independence"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">\(\lt\) 5 Years</td>
+<td class="c m b2 r1 l0 t2 lines">5-15 Years</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">15+ Years</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Low Efficiency</td>
+<td class="c m b1 r1 l0 t0 lines">21</td>
+<td class="c m b1 r1 l0 t0 lines">14</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">11</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Moderate Efficiency</td>
+<td class="c m b1 r1 l0 t0 lines">45</td>
+<td class="c m b1 r1 l0 t0 lines">28</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">24</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">High Efficiency</td>
+<td class="c m b2 r1 l0 t0 lines">62</td>
+<td class="c m b2 r1 l0 t0 lines">38</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">32</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.8<span class="period">.</span></span><span class="space"> </span>Efficience Rating vs. Years of Experience</figcaption></figure><p id="p-3885">State the hypothesis for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-268" id="solution-268"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-268"><div class="solution solution-like">
+<p id="p-3886">In this case, we are comparing two characteristics of the same population of employees. This is therefore a test of independence, and the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \text{Efficiency and years of experience are independent characteristics}\\
+H_A\amp:\ \text{These characteristics are dependent}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_contingency_hypotheses-1"><video id="video-255" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.9<span class="period">.</span></span><span class="space"> </span>Two Types of Hypotheses I</figcaption></figure><figure class="figure figure-like" id="video_contingency_hypotheses-2"><video id="video-256" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.10<span class="period">.</span></span><span class="space"> </span>Two Types of Hypotheses II</figcaption></figure><article class="exercise exercise-like" id="ckpt_contingency_hypotheses-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_hypotheses-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_hypotheses-1"><article class="exercise exercise-like"><p id="p-3887">A fish and game expert wishes to determine if two species of fish that live together in a certain lake have the same proportion of adult fish, juvenile fish, and minnows, or baby fish.</p>
+<p id="p-3888">Question: what hypotheses should he use?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-311" id="answer-311"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-311"><div class="answer solution-like"><div class="displaymath" id="p-3889">
+\begin{align*}
+H_0\amp:\ \text{The two populations are homogeneous}\\
+H_A\amp:\ \text{The populations are not homogeneous}
+\end{align*}
+</div></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_contingency_hypotheses-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_hypotheses-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_hypotheses-2"><article class="exercise exercise-like"><p id="p-3890">A social worker believes that there is a relationship between marital status: married, widowed, divorced, or never married, and happiness. To test this, she randomly selects a group of 1000 individuals and records their marital status and happiness levels.</p>
+<p id="p-3891">Question: what hypotheses should she use?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-312" id="answer-312"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-312"><div class="answer solution-like"><div class="displaymath" id="p-3892">
+\begin{align*}
+H_0\amp:\ \text{The characteristics are independent}\\
+H_A\amp:\ \text{Marital status and happpiness are dependent}
+\end{align*}
+</div></div></div>
+</div></article></div></section><section class="subsection" id="sec_contingency_counts"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.2</span> <span class="title">Observed and Expected Counts</span>
+</h3>
+<a href="sec_contingency.html#sec_contingency_counts" class="permalink">¶</a><p id="p-3893">No matter which type of hypothesis test we are doing, a test of homogeneity or a test of independence, the underlying assumption of the null hypothesis is the same. That assumption is that the rows and columns of our contingency table are independent. Put another way, the probability of being in a certain row is the same no matter what column you are in. Let's explore that idea with the following table.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;">
+<p id="p-3894">We will use the following notation.</p>
+<ul class="disc">
+<li id="li-1376"><p id="p-3895">\(O_{ij}\) represent the observed counts in the \(i^\text{th}\) column and \(j^\text{th}\) row. So, for example, \(O_{23}\) is the number of individuals in the 2nd row, 3rd column.</p></li>
+<li id="li-1377"><p id="p-3896">\(R_j\) stands for the row total of the \(j^\text{th}\) row. That means, \(R_1 = O_{11} + O_{21} + O_{31}\) in the table shown.</p></li>
+<li id="li-1378"><p id="p-3897">\(C_i\) stands for the column total of the \(i^\text{th}\) column. So \(C_1 = O_{11} + O_{12}\) in this table.</p></li>
+<li id="li-1379">
+<p id="p-3898">Finally, \(T\) stands for the grand total. In our table,</p>
+<div class="displaymath">
+\begin{equation*}
+T = C_1 + C_2 + C_3 = R_1 + R_2\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+</div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><figure class="table figure-like" id="table-104"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">col 1</td>
+<td class="c m b2 r1 l0 t2 lines">col 2</td>
+<td class="c m b2 r2 l0 t2 lines">col 3</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">total</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">row 1</td>
+<td class="c m b1 r1 l0 t0 lines">\(O_{11}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(O_{21}\)</td>
+<td class="c m b1 r2 l0 t0 lines">\(O_{31}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(R_1\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">row 2</td>
+<td class="c m b2 r1 l0 t0 lines">\(O_{12}\)</td>
+<td class="c m b2 r1 l0 t0 lines">\(O_{22}\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(O_{23}\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(R_2\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">total</td>
+<td class="c m b0 r0 l0 t0 lines">\(C_1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(C_2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(C_3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(T\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<p id="p-3899">Our goal is to find out what counts we would expect in each entry if we assume that the row and column probabilities are independent. Recall that we saw a <a class="xref" data-knowl="./knowl/thm_independence-test.html" title="Theorem 2.4.28: Test of Independence">test for independence</a> in <a href="sec_conditional.html" class="internal" title="Section 2.4: Conditional Probability and Independence">Section 2.4</a>.  It stated that two events, \(A\) and \(B\text{,}\) are independent if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cap B) = P(A)P(B)\text{.}
+\end{equation*}
+</div>
+<p id="p-3900">Suppose that \(A\) is the event of being in column \(i\) and \(B\) is the event of being in column \(j\text{.}\) Using the table above, we can figure out what these probabilities are.</p>
+<div class="displaymath">
+\begin{align*}
+P(A) \amp = P(\text{column } i) = \frac{\text{number in column } i}{\text{total in table}} = \frac{C_i}{T}\\
+P(B) \amp = P(\text{row } j) = \frac{\text{number in row } j}{\text{total in table}} = \frac{R_j}{T}
+\end{align*}
+</div>
+<p id="p-3901">If these two events are independent, then the probability of being in the single cell in both row \(i\) and column \(j\) should be</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{column } i \cap \text{row } j) = P(A \cap B) = P(A)P(B) = \left(\frac{C_i}{T}\right)\left(\frac{R_j}{T}\right) = \frac{C_iR_j}{T^2}\text{.}
+\end{equation*}
+</div>
+<p id="p-3902">This gives us the probability of being in the cell in column \(i\) and row \(j\text{.}\) To get the expected number of counts, we multiply that probability by the total number of individuals, \(T\text{.}\) This gives the following formulas for computing the expected counts in a contingency table.</p>
+<article class="theorem theorem-like" id="tmp_contingencey-expected-counts"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Counts for a Contingency Table.</span>
+</h6>
+<p id="p-3903">The expected count for a cell in row \(i\) and column \(j\) of a contingency table under the assumption that rows and columns are independent is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+E_{ij} = \frac{C_iR_j}{T}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(C_i\) is the column total, \(R_j\) is the row total, and \(T\) is the grand total in the table.</p></article><p id="p-3904">Let's practice finding the expected counts using one of our previously seen examples.</p>
+<article class="example example-like" id="examp_contingency_counts-homogeneous"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_counts-homogeneous"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Expected Counts for a Contingency Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_counts-homogeneous"><article class="example example-like"><p id="p-3905">A student-body representative wishes to determine if a student's class standing affects their housing arrangements. To test this, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_counts-homogeneity"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">Freshman</td>
+<td class="c m b2 r1 l0 t2 lines">Sophomore</td>
+<td class="c m b2 r1 l0 t2 lines">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Senior</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Dorm</td>
+<td class="c m b1 r1 l0 t0 lines">114</td>
+<td class="c m b1 r1 l0 t0 lines">99</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">78</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Off-Campus College-Owned Housing</td>
+<td class="c m b1 r1 l0 t0 lines">42</td>
+<td class="c m b1 r1 l0 t0 lines">83</td>
+<td class="c m b1 r1 l0 t0 lines">104</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">124</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Off-Campus Other Housing</td>
+<td class="c m b2 r1 l0 t0 lines">16</td>
+<td class="c m b2 r1 l0 t0 lines">19</td>
+<td class="c m b2 r1 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">21</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.16<span class="period">.</span></span><span class="space"> </span>Student Housing Status by Class Standing</figcaption></figure><p id="p-3906">Find the expected counts for each entry in this table.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-269" id="solution-269"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-269"><div class="solution solution-like">
+<p id="p-3907">In order to compute the expected counts, we follow the process outlined below.</p>
+<ol class="decimal">
+<li id="li-1380"><p id="p-3908">First compute the marginal distributions (row and column totals).</p></li>
+<li id="li-1381"><p id="p-3909">Next, use the formula for expected counts above for each cell, taking the product of its row and column totals divided by the grand total.</p></li>
+<li id="li-1382"><p id="p-3910">Finally, check our work by verifying that the row and column totals of the expected counts match the row and column totals of the observed counts, ignoring any rounding error.</p></li>
+</ol>
+<p id="p-3911">While we won't go through the details of the computation for every cell, the the expected number of Juniors in College Owned housing is found as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+E_{23} = \frac{211 \times 353}{807} \approx 92.30\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The rest of the table is filled in as shown below.</p>
+<figure class="table figure-like" id="table-106"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Freshman</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Sophomore</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Senior</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Dorm</td>
+<td class="c m b0 r0 l0 t0 lines">114</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">99</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">90</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">78</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">381</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">81.20</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">94.90</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">99.62</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">105.28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">College Owned</td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">83</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">104</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">124</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">353</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">75.24</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">87.92</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">92.30</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">97.55</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Other</td>
+<td class="c m b0 r0 l0 t0 lines">16</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">19</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">17</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">21</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">73</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">15.56</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">18.18</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">19.09</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">20.17</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">172</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">201</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">211</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">223</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">807</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.17<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-3912">Pay special attention to the third step in the process outlined in the example above.  The sum of the observed and expected counts in any row or columnn should be the same.  In fact, this can be used to help reduce the number of computations you have to perform.  If you find the expected count in all but one of the cells in a row or column, you can subtract those expected count from the row or column total, and what is left must be the expected count in the final cell.</p>
+<figure class="figure figure-like" id="video_contingency_counts-1"><video id="video-257" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.18<span class="period">.</span></span><span class="space"> </span>Computing Expected Counts I</figcaption></figure><figure class="figure figure-like" id="video_contingency_counts-2"><video id="video-258" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.19<span class="period">.</span></span><span class="space"> </span>Computing Expected Counts II</figcaption></figure><article class="exercise exercise-like" id="ckpt_contingency_counts-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_counts-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_counts-1"><article class="exercise exercise-like"><p id="p-3913">In a test of independence, the following observed counts are recorded.</p>
+<figure class="table figure-like" id="table-107"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">Characteristic 1</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Characteristic 2</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Characteristic A</td>
+<td class="c m b1 r1 l0 t0 lines">24</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">49</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Characteristic B</td>
+<td class="c m b1 r1 l0 t0 lines">46</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">85</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Characteristic C</td>
+<td class="c m b2 r1 l0 t0 lines">31</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">62</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.21<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><p id="p-3914">Question: What is the expected count for the entry in characteristic B, characteristic 2?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-313" id="answer-313"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-313"><div class="answer solution-like"><p id="p-3915">86.45</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_contingency_counts-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_counts-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.22</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_counts-2"><article class="exercise exercise-like"><p id="p-3916">In a test of homogeneity, the following observed counts are recorded.</p>
+<figure class="table figure-like" id="table-108"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines">Population 1</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Population 2</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Characteristic A</td>
+<td class="c m b1 r2 l0 t0 lines">24</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">49</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Characteristic B</td>
+<td class="c m b1 r2 l0 t0 lines">46</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">85</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Characteristic C</td>
+<td class="c m b2 r2 l0 t0 lines">31</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">62</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.23<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><p id="p-3917">Question: what is the expected count for the entry in characteristic C, population 1?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-314" id="answer-314"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-314"><div class="answer solution-like"><p id="p-3918">31.63</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_contingency_test-stat"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.3</span> <span class="title">The Test Statistic</span>
+</h3>
+<a href="sec_contingency.html#sec_contingency_test-stat" class="permalink">¶</a><p id="p-3919">As in the goodness-of-fit test, a test of homogeneity or independence is based on measuring the differences between what we observed in our sample, and what we expected if the null hypothesis is really true. We just saw how to use the observed counts in a ontingency table to find the expected counts for each entry in that table. The test statistic is then computed as shown below.</p>
+<article class="theorem theorem-like" id="thm_test-statistic-contingency"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.24</span><span class="period">.</span><span class="space"> </span><span class="title">Test Statistic for a Test of Independence or Homogeneity.</span>
+</h6>
+<p id="p-3920">The \(\chi^2\) test statistic for a test of independence or homogeneity using a contingency table in which \(O_{ij}\) and \(E_{ij}\) represent the observed and expected counts in the cell in column \(i\) and row \(j\) is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+\chi^2_\text{test} = \sum_j\sum_i \frac{(O_{ij} - E_{ij})^2}{E_{ij}}\text{.}
+\end{equation*}
+</div></article><p id="p-3921">Don't let the double summation sign confuse you. All that this means is that we add together the observed count minus the expected count squared divided by the expected count for every cell in the contingency table. Below we perform this computation on the table we found in <a class="xref" data-knowl="./knowl/examp_contingency_counts-homogeneous.html" title="Example 6.3.15: Finding Expected Counts for a Contingency Table">Example 6.3.15</a>.</p>
+<article class="example example-like" id="examp_contingency_test-stat-homogeneity"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_test-stat-homogeneity"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.25</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Test Statistic for a Test of Homogeneity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_test-stat-homogeneity"><article class="example example-like"><p id="p-3922">A student-body representative wishes to determine if a student's class standing affects their housing arrangements. To test this, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_test-stat-homogeneity"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">Freshman</td>
+<td class="c m b2 r1 l0 t2 lines">Sophomore</td>
+<td class="c m b2 r1 l0 t2 lines">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Senior</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Dorm</td>
+<td class="c m b1 r1 l0 t0 lines">114</td>
+<td class="c m b1 r1 l0 t0 lines">99</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">78</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Off-Campus College-Owned Housing</td>
+<td class="c m b1 r1 l0 t0 lines">42</td>
+<td class="c m b1 r1 l0 t0 lines">83</td>
+<td class="c m b1 r1 l0 t0 lines">104</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">124</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Off-Campus Other Housing</td>
+<td class="c m b2 r1 l0 t0 lines">16</td>
+<td class="c m b2 r1 l0 t0 lines">19</td>
+<td class="c m b2 r1 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">21</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.26<span class="period">.</span></span><span class="space"> </span>Student Housing Status by Class Standing</figcaption></figure><p id="p-3923">Compute the test statistic for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-270" id="solution-270"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-270"><div class="solution solution-like">
+<p id="p-3924">Recall that the observed and expected counts were as follows.</p>
+<figure class="table figure-like" id="table-110"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Freshman</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Sophomore</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Senior</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Dorm</td>
+<td class="c m b0 r0 l0 t0 lines">114</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">99</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">90</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">78</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">381</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">81.20</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">94.90</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">99.62</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">105.28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">College Owned</td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">83</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">104</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">124</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">353</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">75.24</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">87.92</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">92.30</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">97.55</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Other</td>
+<td class="c m b0 r0 l0 t0 lines">16</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">19</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">17</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">21</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">73</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">15.56</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">18.18</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">19.09</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">20.17</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">172</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">201</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">211</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">223</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">807</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.27<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure><p id="p-3925">To compute the test statistic, we must step through each entry in the table, adding the appropriate values.</p>
+<div class="displaymath">
+\begin{align*}
+\chi^2_{\text{test}} \amp= \frac{(114-81.20)^2}{81.20} + \frac{(99-94.90)^2}{94.90} + \frac{(90-99.62)^2}{99.62} + \frac{(78-105.28)^2}{105.28}\\
+\amp+ \frac{(42-75.24)^2}{75.24} + \frac{(83-87.92)^2}{87.92} + \frac{(104-92.30)^2}{92.30} + \frac{(124-97.55)^2}{97.55}\\
+\amp+ \frac{(16-15.56)^2}{15.56} + \frac{(19-18.18)^2}{18.18} + \frac{(17-19.09)^2}{19.09} + \frac{(21 - 20.17)^2}{20.17}\\
+\amp\approx 45.35.
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_contingency_test-stat-1"><video id="video-259" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.28<span class="period">.</span></span><span class="space"> </span>Test Statistic I</figcaption></figure><figure class="figure figure-like" id="video_contingency_test-stat-2"><video id="video-260" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.29<span class="period">.</span></span><span class="space"> </span>Test Statistic II</figcaption></figure><article class="exercise exercise-like" id="ckpt_contingency_test-stat-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_test-stat-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.30</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_test-stat-1"><article class="exercise exercise-like"><p id="p-3926">In a test of homogeneity, the following observed counts are measured and the expected counts are shown in the lower right-hand corners of each cell.</p>
+<figure class="table figure-like" id="table_contingency_ckpt_test-stat-1"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Population 1</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell" colspan="2">Population 2</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic A</td>
+<td class="c m b0 r0 l0 t0 lines">114</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">99</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">98.31</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">114.69</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic B</td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">83</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">57.69</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">67.31</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.31<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure><p id="p-3927">Question: what is the test statistic for this test? Round your answer to three decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-315" id="answer-315"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-315"><div class="answer solution-like"><p id="p-3928">12.575</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_contingency_test-stat-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_test-stat-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.32</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_test-stat-2"><article class="exercise exercise-like"><p id="p-3929">In a test of independence, the following observed counts are observed, and the expected counts are shown in the lower right-hand corners of each cell.</p>
+<figure class="table figure-like" id="table_contingency_ckpt_test-stat-2"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Characteristic 1</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell" colspan="2">Characteristic 2</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic A</td>
+<td class="c m b0 r0 l0 t0 lines">27</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">37</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">28.35</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">35.65</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic B</td>
+<td class="c m b0 r0 l0 t0 lines">43</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">51</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">41.65</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">52.35</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.33<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure><p id="p-3930">Question: what is the test statistic for this test? Round your answer to three decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-316" id="answer-316"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-316"><div class="answer solution-like"><p id="p-3931">0.194</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_contingency_test"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.4</span> <span class="title">Traditional Tests</span>
+</h3>
+<a href="sec_contingency.html#sec_contingency_test" class="permalink">¶</a><p id="p-3932">The last step in conducting a test of homogeneity or independence is to find the appropriate critical value from the \(\chi^2\)-distribution table. To do that, we need the number of degrees of freedom. Because we are dealing with contingency tables, instead of the categories we saw in the goodness-of-fit test, the degrees of freedom must be computed differently.</p>
+<article class="theorem theorem-like" id="thm_contingency-df"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.34</span><span class="period">.</span><span class="space"> </span><span class="title">Degrees of Freedom for a Test of Independence or Homogeneity.</span>
+</h6>
+<p id="p-3933">The degrees of freedom for a test of independence or homogeneity using a contingency table with \(c\) columns and \(r\) rows is \(df = (c-1)(r-1)\text{.}\)</p></article><p id="p-3934">Thus, if we take one less than the number of columns times one less than the number of rows, we have the degrees of freedom to use when looking up our critical value. This process is shown in the following examples.</p>
+<article class="example example-like" id="examp_contingency_test-homogeneity"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_test-homogeneity"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.35</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Test of Homogeneity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_test-homogeneity"><article class="example example-like"><p id="p-3935">A student-body representative wishes to determine if a student's class standing affects their housing arrangements. To test this, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_test-homogeneity"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">Freshman</td>
+<td class="c m b2 r1 l0 t2 lines">Sophomore</td>
+<td class="c m b2 r1 l0 t2 lines">Junior</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">Senior</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Dorm</td>
+<td class="c m b1 r1 l0 t0 lines">114</td>
+<td class="c m b1 r1 l0 t0 lines">99</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">78</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Off-Campus College-Owned Housing</td>
+<td class="c m b1 r1 l0 t0 lines">42</td>
+<td class="c m b1 r1 l0 t0 lines">83</td>
+<td class="c m b1 r1 l0 t0 lines">104</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">124</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">Off-Campus Other Housing</td>
+<td class="c m b2 r1 l0 t0 lines">16</td>
+<td class="c m b2 r1 l0 t0 lines">19</td>
+<td class="c m b2 r1 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">21</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.36<span class="period">.</span></span><span class="space"> </span>Student Housing Status by Class Standing</figcaption></figure><p id="p-3936">Use a \(\chi^2\) test at the \(\alpha = 0.01\) significance level to make this determination.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-271" id="solution-271"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-271"><div class="solution solution-like">
+<p id="p-3937">Recall that our hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \text{Housing distributions in the four populations are homogeneous}\\
+H_A\amp:\ \text{Housing distributions are not homogeneous across the four populations}
+\end{align*}
+</div>
+<p data-braille="continuation">which means that the alternative is that they are not homogeneous, or in other words, that students in different class standings have different types of housing.</p>
+<p id="p-3938">Our test statistic from <a class="xref" data-knowl="./knowl/examp_contingency_test-stat-homogeneity.html" title="Example 6.3.25: Computing the Test Statistic for a Test of Homogeneity">Example 6.3.25</a> was:</p>
+<div class="displaymath">
+\begin{equation*}
+\chi^2_{\text{test}} = 45.35\text{.}
+\end{equation*}
+</div>
+<p id="p-3939">At the 0.01 significance level, with \((4-1)(3-1) = 6\) degrees of freedom, the critical value from the \(\chi^2\)-distribution table is \(\chi^2_{0.01} = 16.812\) as shown below.</p>
+<figure class="figure figure-like" id="fig_contingency_examp_test-homogeneity"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image_contingency_examp_test-homogeneity.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.37<span class="period">.</span></span><span class="space"> </span>Rejection Region for \(\chi^2\) Test</figcaption></figure><p id="p-3940">Since our test statistic is further into the right tail than the critical value of 16.812, we must reject the null hypothesis. There is highly significant evidence that students with different class standing live in different types of housing.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_contingency_test-independence"><a data-knowl="" class="id-ref original" data-refid="hk-examp_contingency_test-independence"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.38</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Test of Independence.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_contingency_test-independence"><article class="example example-like"><p id="p-3941">An efficiency expert at a certain large company believes that the number of years experience that an employee has is independent from their efficiency rating. To test this claim, the following data is collected.</p>
+<figure class="table figure-like" id="table_contingency_examp_test-independence"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r1 l0 t2 lines">\(\lt\) 5 Years</td>
+<td class="c m b2 r1 l0 t2 lines">5-15 Years</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell">15+ Years</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Low Efficiency</td>
+<td class="c m b1 r1 l0 t0 lines">21</td>
+<td class="c m b1 r1 l0 t0 lines">14</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">11</td>
+</tr>
+<tr>
+<td class="l m b1 r2 l2 t0 lines">Moderate Efficiency</td>
+<td class="c m b1 r1 l0 t0 lines">45</td>
+<td class="c m b1 r1 l0 t0 lines">28</td>
+<td class="c m b1 r2 l0 t0 lines" data-braille="last-cell">24</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines">High Efficiency</td>
+<td class="c m b2 r1 l0 t0 lines">62</td>
+<td class="c m b2 r1 l0 t0 lines">38</td>
+<td class="c m b2 r2 l0 t0 lines" data-braille="last-cell">32</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.39<span class="period">.</span></span><span class="space"> </span>Efficience Rating vs. Years of Experience</figcaption></figure><p id="p-3942">Conduct a test of independence at the \(\alpha = 0.05\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-272" id="solution-272"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-272"><div class="solution solution-like">
+<p id="p-3943">You may recall that the hypotheses for this test are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \text{Efficiency and years of experience are independent characteristics}\\
+H_A\amp:\ \text{These characteristics are dependent}
+\end{align*}
+</div>
+<p id="p-3944">Next, we compute the expected counts.</p>
+<figure class="table figure-like" id="table-115"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">\(\lt\) 5 Years</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">5-15 Years</td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">15+ Years</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Low Efficiency</td>
+<td class="c m b0 r0 l0 t0 lines">20</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">15</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">11</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">46</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">21.41</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">13.38</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">11.20</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Moderate Efficiency</td>
+<td class="c m b0 r0 l0 t0 lines">43</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">27</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">27</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">97</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">45.15</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">28.22</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">23.63</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">High Efficiency</td>
+<td class="c m b0 r0 l0 t0 lines">65</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">38</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">29</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">132</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">61.44</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">38.40</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">32.16</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">128</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">80</td>
+<td class="c m b0 r0 l0 t0 lines" colspan="2">67</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">275</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.40<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure><p id="p-3945">And then we compute the \(\chi^2\) test statistic using this table.</p>
+<div class="displaymath">
+\begin{align*}
+\chi^2_{\text{test}} \amp= \frac{(20-21.41)^2}{21.41} + \frac{(15-13.38)^2}{13.38} + \frac{(11-11.20)^2}{11.20}\\
+\amp+ \frac{(43-45.15)^2}{45.15} + \frac{(27-28.22)^2}{28.22} + \frac{(27-23.63)^2}{23.63}\\
+\amp+ \frac{(65-61.44)^2}{61.44} + \frac{(38.38.40)^2}{38.40} + \frac{(29-32.16)^2}{32.16}\\
+\amp\approx 1.449
+\end{align*}
+</div>
+<p id="p-3946">At the \(\alpha = 0.05\) significance level with \(df = (3-1)(3-1) = 4\text{,}\) the critical value from the \(\chi^2\)-distribution is 9.488. The distribution and test statistic are shown below.</p>
+<figure class="figure figure-like" id="fig_contingency_examp_test-independence"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_contingency_examp_test-independence.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.41<span class="period">.</span></span><span class="space"> </span>Rejection Region for \(\chi^2\) Test</figcaption></figure><p id="p-3947">Since our test statistic is not further into the tail than the critical value of \(\chi^2_{0.05} = 9.488\text{,}\) we must fail to reject the null hypothesis. There is no statistically significant evidence that efficiency and years worked are related. These two variables appear to be independent.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_contingency_test-1"><video id="video-261" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.42<span class="period">.</span></span><span class="space"> </span>Tests of Independence or Homogeneity I</figcaption></figure><figure class="figure figure-like" id="video_contingency_test-2"><video id="video-262" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.43<span class="period">.</span></span><span class="space"> </span>Tests of Independence or Homogeneity II</figcaption></figure><article class="exercise exercise-like" id="ckpt_contingency_test-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_test-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.44</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_test-1"><article class="exercise exercise-like"><p id="p-3948">In a test of homogeneity, the following observed counts are observed, and the expected counts are shown in the lower right-hand corners of each cell.</p>
+<figure class="table figure-like" id="table_contingency_ckpt_test-1"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Population 1</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell" colspan="2">Population 2</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic A</td>
+<td class="c m b0 r0 l0 t0 lines">51</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">43.22</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">49.78</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic B</td>
+<td class="c m b0 r0 l0 t0 lines">61</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">87</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">68.78</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">79.22</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.45<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure><p id="p-3949">This results in a test statistic \(\chi^2_\text{test} = 4.260\text{.}\)</p>
+<p id="p-3950">Question: what is your conclusion at the \(\alpha = 0.01\) significance level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-317" id="answer-317"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-317"><div class="answer solution-like"><p id="p-3951">The populations appear to be homogeneous.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_contingency_test-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_contingency_test-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.46</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_contingency_test-2"><article class="exercise exercise-like"><p id="p-3952">In a test of independence, the following observed counts are observed, and the expected counts are shown in the lower right-hand corners of each cell.</p>
+<figure class="table figure-like" id="table_contingency_ckpt_test-2"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t2 lines" colspan="2">Characteristic 1</td>
+<td class="c m b2 r2 l0 t2 lines" data-braille="last-cell" colspan="2">Characteristic 2</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic A</td>
+<td class="c m b0 r0 l0 t0 lines">51</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">43.22</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">49.78</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l2 t0 lines">Characteristic B</td>
+<td class="c m b0 r0 l0 t0 lines">61</td>
+<td class="l m b1 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines">87</td>
+<td class="l m b1 r2 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines">68.78</td>
+<td class="c m b2 r1 l0 t0 lines"></td>
+<td class="l m b2 r2 l0 t0 lines" data-braille="last-cell">79.22</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.3.47<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure><p id="p-3953">This results in a test statistic \(\chi^2_{\text{test}} = 4.260\text{.}\)</p>
+<p id="p-3954">Question: what is your conclusion at the \(\alpha = 0.05\) significance level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-318" id="answer-318"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-318"><div class="answer solution-like"><p id="p-3955">There is statistically significant evidence the characteristics are dependent.</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

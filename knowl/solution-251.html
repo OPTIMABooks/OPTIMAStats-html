@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:26:26-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.16.1</span><span class="period">.</span>
+</h6>
+<p>We will analyze the data and fill in the ANOVA table one column at a time.</p>
+<ul class="disc">
+<li>
+<h6 class="heading"><span class="title">Degrees of Freedom.</span></h6>
+<p>In our height data we see a total of twelve measurements, so \(n=12\text{.}\)  We have three different treatment groups (the three fertilizers), so \(k = 3\text{.}\)  This gives us the following degrees of freedom:</p>
+<ul class="circle">
+<li><p>Treatments: \(k - 1 = 3 - 1 = 2\)</p></li>
+<li><p>Error: \(n - k = 12 - 3 = 9\)</p></li>
+<li><p>Total: \(n - 1 = 12 - 1 = 11\)</p></li>
+</ul>
+<p data-braille="continuation">As a double-check, we verify that the sum of the degrees of freedom for the treatments and error is equal to the total degrees of freedom, and indeed, \(2 + 9 = 11\text{.}\)</p>
+</li>
+<li>
+<h6 class="heading"><span class="title">Sum of the Squares.</span></h6>
+<p>We are told that SST = 9 and TSS = 47.  Since we know that SST + SSE = SST, we can solve:</p>
+<div class="displaymath">
+\begin{equation*}
+9 + \text{SSE} = 47 \Rightarrow \text{SSE} = 47 - 9 = 39
+\end{equation*}
+</div>
+</li>
+<li>
+<h6 class="heading"><span class="title">Mean Squares.</span></h6>
+<p>We get the mean squares by dividing the sum of the squares by the degrees of freedom.  In particular,</p>
+<ul class="circle">
+<li><p>Treatment: \(\text{MST} = \text{SST} / \text{df} = 8 / 2 = 4\)</p></li>
+<li><p>Error: \(\text{MSE} = \text{SSE} / \text{df} = 39 / 9 \approx 4.3333\)</p></li>
+</ul>
+<p data-braille="continuation">Note that there is no “total mean square” to compute.</p>
+</li>
+<li>
+<h6 class="heading"><span class="title">\(F_\text{test}\) Statistic.</span></h6>
+<p>Finally, we compute our test statistic by dividing the mean squares of the treatment by the mean squares of the error.  This gives</p>
+<div class="displaymath">
+\begin{equation*}
+F_\text{test} = \text{MST} / \text{MSE} = 4 / 4.3333 \approx 0.923
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">This results in the following ANOVA table.</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">Source</td>
+<td class="c m b2 r0 l0 t0 lines">df</td>
+<td class="c m b2 r0 l0 t0 lines">Sum Squares</td>
+<td class="c m b2 r0 l0 t0 lines">Mean Squares</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(F_\text{test}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Treatments</td>
+<td class="c m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.923\)</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines">Error</td>
+<td class="c m b2 r0 l0 t0 lines">\(9\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(39\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(4.3333\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Total</td>
+<td class="c m b0 r0 l0 t0 lines">\(11\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(47\)</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.18<span class="period">.</span></span><span class="space"> </span>ANOVA Table for Tomato Plant Heights</figcaption></figure>
+</div>
+<span class="incontext"><a href="sec_anova.html#solution-251">in-context</a></span>
+</body>
+</html>

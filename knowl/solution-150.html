@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:23-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.4.28.1</span><span class="period">.</span>
+</h6>
+<p>We first must be sure that we can use a normal approximation. To assess this, we check \(n\times p\) and \(n\times q\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 400(0.35) = 140 \quad \text{ and } \quad n\times q = 400(0.65) = 260\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since both of these are greater than \(5\text{,}\) we can continue with a normal approximation.</p>
+<p>Next, we need to compute the mean and standard deviation to use for the normal distribution. We have actually already found the mean above, but we repeat this computation together with that of the standard deviation below.</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = n\times p = 400(0.35) = 140\\
+\sigma \amp = \sqrt{n\times p\times q} = \sqrt{400(0.35)(0.65)} \approx 9.54
+\end{align*}
+</div>
+<p>Our final task is to use the normal distribution given by this mean and standard deviation to find \(P(X \geq 168)\text{.}\) We draw a picture to help us visualize the appropriate continuity correction, zooming in on the right tail of the distribution since 168 is above the mean of 140.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_approximating_examp_computation-at-least.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.29<span class="period">.</span></span><span class="space"> </span>Continuity Correction</figcaption></figure><p>The picture and the z-score formula help us make the following computation.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \geq 168) \amp = P(Y &gt; 167.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} &gt; \frac{167.5 - 140}{9.54}\right)\\
+\amp = P(Z &gt; 2.88)\\
+\amp = 1 - P(Z\lt 2.88)\\
+\amp = 1 - 0.9980\\
+\amp = 0.0020\text{.}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_approximating.html#solution-150">in-context</a></span>
+</body>
+</html>

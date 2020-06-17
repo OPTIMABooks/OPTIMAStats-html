@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:24-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="li"><h6 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">b</span><span class="period">.</span>
+</h6>
+<p>Now using a normal approximation, we first check \(n\times p\) and \(n\times q\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 14(0.63) = 8.82 \quad \text{ and } \quad n\times q = 14(0.37) = 5.18\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that both of these are very close to 5. This means we can just barely use a normal approximation. Next, the mean and standard deviation are</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = n\times p = 8.82\\
+\sigma \amp = \sqrt{n\times p\times q} = \sqrt{14(0.63)(0.37)} \approx 1.8065\text{.}
+\end{align*}
+</div>
+<p>We wish to know \(P(X \geq 10)\text{.}\)  This region, along with the continuity correction, is illustrated below.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_approximating_examp_how-good-small.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.39<span class="period">.</span></span><span class="space"> </span>Normal Approximation</figcaption></figure><p>Completing the computation, we get the following probability.</p>
+<div class="displaymath">
+\begin{align*}
+P(X \geq 10) \amp = P(Y &gt; 9.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} \gt \frac{9.5 - 8.82}{1.8065}\right)\\
+\amp = P(Z \gt 0.38)\\
+\amp = 1 - P(Z \lt 0.38)\\
+\amp = 1 - 0.6480\\
+\amp = 0.3520\text{.}
+\end{align*}
+</div>
+<p>The approximation of \(0.3520\) is close to the actual probability of \(0.3622\text{,}\) but we are about one one-hundredth off.</p></article><span class="incontext"><a href="sec_approximating.html#li-917">in-context</a></span>
+</body>
+</html>

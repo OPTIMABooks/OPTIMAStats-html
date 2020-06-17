@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:16-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basic Counting Rules</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_simulation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_probability.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_simulation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_probability.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting" class="active">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_counting"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Basic Counting Rules</span>
+</h2>
+<a href="sec_counting.html" class="permalink">¶</a><section class="introduction" id="sec_counting_intro"><h6 class="heading">A Theoretical Approach.<span></span>
+</h6>
+<p id="p-1035">The simulations that we saw in the last section can be thought of as an experimental approach to understanding a random process. While this is a good way to investigate a random process, it can be time consuming and will yield different results each time it is performed, due to its random nature.</p>
+<p id="p-1036">An alternative approach is to be more theoretical. Instead of simulating the process, we try to understand the process by counting the number of different outcomes that could happen and the number of outcomes that lead to each value of the response variable in which we are interested. In order to use this more theoretical approach, which we will talk more about in <span>(((sec_probability-rules)))</span>, we first need to know how to count.</p>
+<p id="p-1037">In this section we will introduce several important counting rules. Many of these rules may be familiar to you already. Some of them, however, will probably be new. We will focus not only on understanding the formulas that go with these counting rules, but also when to use each rule.</p></section><article class="objectives goal-like" id="sec_counting_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-18"><p id="p-1038">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-426">
+<p id="p-1039">describe the following terms:</p>
+<ul class="circle cols2">
+<li id="li-427"><p id="p-1040">union</p></li>
+<li id="li-428"><p id="p-1041">addition rule</p></li>
+<li id="li-429"><p id="p-1042">combination</p></li>
+<li id="li-430"><p id="p-1043">factorial</p></li>
+<li id="li-431"><p id="p-1044">inclusion/exclusion rule</p></li>
+<li id="li-432"><p id="p-1045">intersection</p></li>
+<li id="li-433"><p id="p-1046">multiplication rule</p></li>
+<li id="li-434"><p id="p-1047">mutually exclusive</p></li>
+<li id="li-435"><p id="p-1048">permutation</p></li>
+<li id="li-436"><p id="p-1049">tree diagram</p></li>
+</ul>
+</li>
+<li id="li-437">
+<p id="p-1050">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-438"><p id="p-1051">Use the addition and multiplication counting rules</p></li>
+<li id="li-439"><p id="p-1052">Use the inclusion/exclusion counting rule</p></li>
+<li id="li-440"><p id="p-1053">Correctly compute and use factorials.</p></li>
+<li id="li-441"><p id="p-1054">Correctly apply the permutation counting rule</p></li>
+<li id="li-442"><p id="p-1055">Correctly apply the combination counting rule</p></li>
+<li id="li-443"><p id="p-1056">Identify and use appropriate counting rules to solve story problems</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_counting_addition"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Sets and the Addition Rule</span>
+</h3>
+<a href="sec_counting.html#sec_counting_addition" class="permalink">¶</a><p id="p-1057">In this first section of the lesson, we will remind you of one of the most basic counting rules: the <dfn class="terminology">addition rule</dfn>. We will also introduce the idea of set notation.</p>
+<article class="principle theorem-like" id="thm_counting-rule_addition-informal"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-1058">If a process can happen in one of two distinct ways, the first way having \(n\)n different possibilities and the second having \(m\) possibilities, then the entire process can happen \(n+m\) ways.  This is referred to as the <dfn class="terminology">addition rule</dfn>.</p></article><p id="p-1059">To see this counting rule in action, consider the following example.</p>
+<article class="example example-like" id="examp_counting_addition-informal"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_addition-informal"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Addition Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_addition-informal"><article class="example example-like"><p id="p-1060">You have won a church raffle. The winning ticket entitles you to choose either one of eight possible home-made pies, or one of six types of home-made cakes. In how many ways can you make your choice?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><p id="p-1061">Since you may choose either a pie <em class="emphasis">or</em> a cake, and none of your choices are <em class="emphasis">both</em> a pie and a cake, you have \(8+6=14\) choices, according to the addition rule.</p></div></div>
+</div></article></div>
+<p id="p-1062">Note the emphasized word <em class="emphasis">or</em> in the above solution. The addition rule can be thought of as going with the word “or” because we have one of two types of objects from which we must choose. In terms of mathematical sets, the word or goes with the notion of a <dfn class="terminology">union</dfn>.</p>
+<article class="definition definition-like" id="def_union"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-1063">The <dfn class="terminology">union</dfn> of two sets, \(A\) and \(B\text{,}\) is \(A\cup B\text{,}\) the set containing all elements that are in \(A\) or in \(B\) (or both).</p></article><p id="p-1064">The union of the pies and the cakes in <a class="xref" data-knowl="./knowl/examp_counting_addition-informal.html" title="Example 2.2.2: Using the Addition Rule">Example 2.2.2</a> above is the set of all 14 baked goods from which you can choose your prize. You may have also noticed that the word <em class="emphasis">both</em> was emphasized in the solution above. This is because it is important that when we use the addition rule, none of the choices be members of both groups—that is, none of the elements are in both sets.  Being in both sets \(A\) and \(B\) also has a mathematical name.</p>
+<article class="definition definition-like" id="def_intersection"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-1065">The <dfn class="terminology">intersection</dfn> of two sets, \(A\) and \(B\text{,}\) is \(A \cap B\text{,}\) the set containing all elements that are in both \(A\) and \(B\text{.}\)</p></article><p id="p-1066">One way to keep the union and intersection straight is to associate them with the common English terms. If the word “or” is used, chances are that we are talking about a <dfn class="terminology">union</dfn>. If the word “and” is used, we are probably referring to an <dfn class="terminology">intersection</dfn>.  While associating specific English words with the set operations is one way to help remember what each does, sometimes a picture can help even more.  When drawing pictures of combinations of sets, we typically use a special type called a <dfn class="terminology">Venn diagram</dfn>.</p>
+<article class="definition definition-like" id="def_venn-diagram"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-1067">A <dfn class="terminology">Venn diagram</dfn> is a picture used to represent sets and their relationships.  Each set is represented by a circle, with the area inside the circle representing the elements that are in the set.  The entire diagram is enclosed in a rectangle representing the set of all possible elements, called the <dfn class="terminology">universal set</dfn>.</p></article><p id="p-1068">Perhaps the best way to understand what a Venn diagram is, is to construct an example.</p>
+<article class="example example-like" id="examp_counting_addition_venn-diagram"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_addition_venn-diagram"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing a Venn Diagram.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_addition_venn-diagram"><article class="example example-like"><p id="p-1069">Let \(A = \lbrace a, c, d, e \rbrace\) and \(B = \lbrace d, e, f \rbrace\) be subsets of the universal set \(U = \lbrace a, b, c, d, e, f \rbrace\text{.}\)  Draw a Venn diagram representing these sets.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
+<p id="p-1070">We draw a box to represent \(U\) and one circle for each of \(A\) and \(B\text{,}\) making sure that there is a region inside both circles.  Then we place the elements in the appropriate region as shown below.</p>
+<figure class="figure figure-like" id="fig_counting_examp_addition_venn-diagram"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/image_counting_examp_addition_venn-diagram.svg" style="width: 100%; height: auto;" alt="A Venn Diagram with two circles, one for A and one for B, which overlap in the middle.  Elements a and c are in circle A but not circle B, element f is in circle B but not circle A, elements d and e are in both circles, and element b is not in either circle."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.7<span class="period">.</span></span><span class="space"> </span>Venn Diagram</figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-1071">As you can see in the Venn diagram example above, any element that is in the intersection of two sets is in both sets.  So if we add together the number of elements in both sets, we will wind up double counting anything in the intersection.  To avoid this, we need to make sure that two sets are <dfn class="terminology">mutually exclusive</dfn> before we use the addition rule to count their union.</p>
+<article class="definition definition-like" id="def_mutually-exclusive"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-1072">Two sets, \(A\) and \(B\text{,}\) are said to be <dfn class="terminology">mutually exclusive</dfn> if their intersection is empty.  Symbolically, we write this as \(A\cap B = \emptyset\text{.}\)</p></article><p id="p-1073">Using these more formal ideas involving sets, we can restate the addition rule as follows.</p>
+<article class="theorem theorem-like" id="thm_counting-rule_addition"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+</h6>
+<p id="p-1074">If \(A\) and \(B\) are mutually exclusive sets, then the <dfn class="terminology">addition rule</dfn> states that</p>
+<div class="displaymath">
+\begin{equation*}
+n(A\cup B) = n(A) + n(B)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(n(A)\) represents the number of elements in set \(A\text{.}\)</p></article><p id="p-1075">The next example will give us a little more practice using sets and the addition rule.</p>
+<article class="example example-like" id="examp_counting_addition-formal"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_addition-formal"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Formal Addition Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_addition-formal"><article class="example example-like"><p id="p-1076">Use the sets \(A = \lbrace a, b, c \rbrace\text{,}\) \(B = \lbrace 1, 2, 3 \rbrace\text{,}\) and \(C = \lbrace 1, a, 2, c \rbrace\) to answer the following questions.</p>
+<ol class="lower-alpha">
+<li id="li-444"><p id="p-1077">Find \(A \cup B\)</p></li>
+<li id="li-445"><p id="p-1078">Use the addition rule to find \(n(A\cup B)\text{.}\)</p></li>
+<li id="li-446"><p id="p-1079">Find \(A \cap C\text{.}\)</p></li>
+<li id="li-447"><p id="p-1080">Can you use the addition rule to find \(n(A\cup C)\text{?}\)  Explain.</p></li>
+<li id="li-448"><p id="p-1081">What are \(A\cup C\) and \(n(A\cup C)\text{?}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like"><ol id="p-1082" class="lower-alpha">
+<li id="li-449"><p id="p-1083">\(A\cup B = \lbrace a,b,c,1,2,3 \rbrace\) since those are the elements in \(A\) <em class="emphasis">or</em> \(B\text{.}\)</p></li>
+<li id="li-450"><p id="p-1084">According to the addition rule, because \(A\) and \(B\) are mutually exclusive, \(n(A\cup B) = n(A) + n(B) = 3 + 3 = 6\text{.}\)</p></li>
+<li id="li-451"><p id="p-1085">\(A\cap C = \lbrace a,c \rbrace\) because those are the elements in both \(A\) and \(C\text{.}\)</p></li>
+<li id="li-452"><p id="p-1086">We can not use the addition rule because \(A\cap C\) is not empty.</p></li>
+<li id="li-453"><p id="p-1087">\(A\cup C = \lbrace a,b,c,1,2 \rbrace\text{.}\) Note that \(n(A\cup C) = 5\) (there are 5 things in \(A\cup C\text{,}\) but \(n(A) + n(C) = 3+4 = 7\)). The addition rule fails because the intersection was not empty.</p></li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_counting_addition-1"><video id="video-52" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.11<span class="period">.</span></span><span class="space"> </span>Sets and the Addition Rule I</figcaption></figure><figure class="figure figure-like" id="video_counting_addition-2"><video id="video-53" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.12<span class="period">.</span></span><span class="space"> </span>Sets and the Addition Rule II</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_addition-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_addition-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_addition-1"><article class="exercise exercise-like"><p id="p-1088">Consider the following sets:</p>
+<div class="displaymath">
+\begin{equation*}
+A = \lbrace 1, 3, x, 5, y, 8 \rbrace \qquad B = \lbrace w, 2, x, 5, z, 8 \rbrace
+\end{equation*}
+</div>
+<p id="p-1089">Question: Find the number of elements in the intersection of these two sets. That is, find: \(n(A\cap B)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-73" id="answer-73"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-73"><div class="answer solution-like"><p id="p-1090">3</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_addition-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_addition-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.14</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_addition-2"><article class="exercise exercise-like"><p id="p-1091">Consider the following sets:</p>
+<div class="displaymath">
+\begin{equation*}
+A = \lbrace 1, 3, x, 5, y, 8 \rbrace \qquad B = \lbrace w, 2, x, 5, z, 8 \rbrace
+\end{equation*}
+</div>
+<p id="p-1092">Question: Find the number of elements in the union of these two sets. That is, find: \(n(A\cup B)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-74" id="answer-74"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-74"><div class="answer solution-like"><p id="p-1093">9</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_addition-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_addition-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_addition-3"><article class="exercise exercise-like"><p id="p-1094">Consider the following sets:</p>
+<div class="displaymath">
+\begin{align*}
+A = \lbrace x, y, z \rbrace\amp \qquad B = \lbrace 1, 2, 3 \rbrace\amp \quad C = \lbrace a, 1, x \rbrace\\
+D = \lbrace a, 2, b \rbrace\amp \qquad E = \lbrace x, a, 3 \rbrace\amp \quad F = \lbrace a, b, c \rbrace
+\end{align*}
+</div>
+<p id="p-1095">Question: Identify each of the following pairs of sets as mutually exclusive or intersecting.</p>
+<ol class="lower-alpha cols2">
+<li id="li-454"><p id="p-1096">\(A\) and \(B\)</p></li>
+<li id="li-455"><p id="p-1097">\(B\) and \(E\)</p></li>
+<li id="li-456"><p id="p-1098">\(C\) and \(F\)</p></li>
+<li id="li-457"><p id="p-1099">\(B\) and \(F\)</p></li>
+<li id="li-458"><p id="p-1100">\(A\) and \(D\)</p></li>
+<li id="li-459"><p id="p-1101">\(E\) and \(F\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-75" id="answer-75"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-75"><div class="answer solution-like"><ol id="p-1102" class="lower-alpha">
+<li id="li-460"><p id="p-1103">\(A\) and \(B\) are mutually exclusive</p></li>
+<li id="li-461"><p id="p-1104">\(B\) and \(E\) are intersecting</p></li>
+<li id="li-462"><p id="p-1105">\(C\) and \(F\) are intersecting</p></li>
+<li id="li-463"><p id="p-1106">\(B\) and \(F\) are mutually exclusive</p></li>
+<li id="li-464"><p id="p-1107">\(A\) and \(D\) are mutually exclusive</p></li>
+<li id="li-465"><p id="p-1108">\(E\) and \(F\) are intersecting</p></li>
+</ol></div></div>
+</div></article></div></section><section class="subsection" id="sec_counting_inclusion-exclusion"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Inclusion/Exclusion Rule</span>
+</h3>
+<a href="sec_counting.html#sec_counting_inclusion-exclusion" class="permalink">¶</a><p id="p-1109">The addition rule only applies if the two sets whose union we are counting are mutually exclusive. What do we do then if we are asked to count the union of two sets that are not mutually exclusive?</p>
+<article class="example example-like" id="examp_counting_includion-exclusion_double"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_includion-exclusion_double"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Avoiding Double Counting.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_includion-exclusion_double"><article class="example example-like"><p id="p-1110">Mary is enrolled in a statistics class and a religion class this term. There are 23 total students, including Mary, in her statistics class.  There are 34 in her religion class. Again including Mary, 10 people are taking both classes. How many people are in the two classes combined?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like"><p id="p-1111">If the two classes were <a class="xref" data-knowl="./knowl/def_mutually-exclusive.html" title="Definition 2.2.8">mutually exclusive</a>, then we could use the addition rule to get \(23+34 = 57\)57 total people. However, doing this would double-count the 10 people who took both classes. To remedy this, we compute \(23+34-10=47\text{,}\) subtracting out those who were double-counted.</p></div></div>
+</div></article></div>
+<p id="p-1112">In the above example, those who were in both classes are included in both the 23 and the 34. So to make up for the fact that they were counted twice, we have to subtract them back out, or exclude them, to get the final total.</p>
+<article class="theorem theorem-like" id="thm_counting-rule_inclusion-exclusion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.17</span><span class="period">.</span>
+</h6>
+<p id="p-1113">The <dfn class="terminology">inclusion/exclusion rule</dfn> states that, for two sets \(A\) and \(B\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+n(A\cup B) = n(A) + n(B) - n(A\cap B)\text{.}
+\end{equation*}
+</div></article><p id="p-1114">You have already seen the inclusion/exclusion rule at work when you worked with <a class="xref" data-knowl="./knowl/def_contingency-table.html" title="Definition 1.2.18">contingency tables</a> in <a href="sec_graphs.html#sec_graphs_qualitative_bivariate" class="internal" title="Subsubsection 1.2.1.3: Bivariate Data">Subsubsection 1.2.1.3</a>. Consider the following example.</p>
+<article class="example example-like" id="examp_counting_inclusion-exclusion_from-table"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_inclusion-exclusion_from-table"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Inclusion/Exclusion Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_inclusion-exclusion_from-table"><article class="example example-like"><p id="p-1115">Those wishing to take a driving test at a certain DMV office are asked what type of vehicle they will be driving, and what history of driving they have. Use the contingency table below, which summarizes their responses, to answer the following questions.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width" style="width:40%;justify-content:flex-start;"><figure class="table figure-like" id="table-25"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">car</td>
+<td class="c m b2 r2 l0 t0 lines">van</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">truck</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\lt\) 1 year</td>
+<td class="c m b0 r2 l0 t0 lines">19</td>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">11</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">1-20 years</td>
+<td class="c m b0 r2 l0 t0 lines">7</td>
+<td class="c m b0 r2 l0 t0 lines">13</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">7</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">20+ years</td>
+<td class="c m b0 r2 l0 t0 lines">9</td>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">1</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.19<span class="period">.</span></span><span class="space"> </span>DMV Responses</figcaption></figure></div>
+<div class="sbspanel" style="width:60%;justify-content:flex-start;"><ol id="p-1116" class="lower-alpha">
+<li id="li-466"><p id="p-1117">How many people indicated that they drive a van?</p></li>
+<li id="li-467"><p id="p-1118">How many people indicated that they drive a van and have between 1 and 20 years driving experience?</p></li>
+<li id="li-468"><p id="p-1119">How many people indicated that they drive a van or have between 1 and 20 years driving experience?</p></li>
+</ol></div>
+</div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like"><ol id="p-1120" class="lower-alpha">
+<li id="li-469">
+<p id="p-1121">The first question can be answered using the addition rule. There are three “sets” of individuals which together make up the set “drive a van.”These are:</p>
+<ul class="disc">
+<li id="li-470"><p id="p-1122">“Drive a van” and “less than 1 year experience” — 2 drivers</p></li>
+<li id="li-471"><p id="p-1123">“Drive a van” and “1-20 years experience” — 13 drivers</p></li>
+<li id="li-472"><p id="p-1124">“Drive a van” and “20+ years experience” — 3 drivers</p></li>
+</ul>
+<p data-braille="continuation">Adding these all together yields \(2+13+3 = 18\) drivers.</p>
+</li>
+<li id="li-473"><p id="p-1125">This is an intersection. The intersection of “drives a van” and “1-20 years experience” is the cell with 13 drivers in it.</p></li>
+<li id="li-474"><p id="p-1126">Here we need to use inclusion/exclusion. If we add the “van drivers”, 18 from (a), to those with “1-20 years of experience”, \(7+13+7 = 27\text{,}\) we double count those from (b) who both drive a van and have 1-20 years experience. Using inclusion/exclusion, our answer is \(18 + 27-13 = 32\text{.}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_counting_inclusion-exclusion-1"><video id="video-54" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.20<span class="period">.</span></span><span class="space"> </span>Inclusion/Exclusion I</figcaption></figure><figure class="figure figure-like" id="video_counting_inclusion-exclusion-2"><video id="video-55" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.21<span class="period">.</span></span><span class="space"> </span>Inclusion/Exclusion II</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_inclusion-exclusion-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_inclusion-exclusion-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.22</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_inclusion-exclusion-1"><article class="exercise exercise-like"><p id="p-1127">In a survey of 200 Americans, people were asked two questions. They were first asked if they lived in an urban, suburban, or rural area. Next, they were asked if they had a large garden, small garden, or no garden at all. The results of this survey are tabulated below.</p>
+<figure class="table figure-like" id="table-26"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Urban</td>
+<td class="c m b2 r2 l0 t0 lines">Suburban</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Rural</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Large Garden</td>
+<td class="c m b0 r2 l0 t0 lines">7</td>
+<td class="c m b0 r2 l0 t0 lines">18</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">13</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Small Garden</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">6</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">No Garden</td>
+<td class="c m b0 r2 l0 t0 lines">51</td>
+<td class="c m b0 r2 l0 t0 lines">47</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.23<span class="period">.</span></span><span class="space"> </span>Living Situation and Garden Size</figcaption></figure><p id="p-1128">Question: How many of the survey participants live a rural area or have a large garden?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-76" id="answer-76"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-76"><div class="answer solution-like"><p id="p-1129">48</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_inclusion-exclusion-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_inclusion-exclusion-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.24</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_inclusion-exclusion-2"><article class="exercise exercise-like"><p id="p-1130">In a survey of 200 Americans, people were asked two questions. They were first asked if they lived in an urban, suburban, or rural area. Next, they were asked if they had a large garden, small garden, or no garden at all. The results of this survey are tabulated below.</p>
+<figure class="table figure-like" id="table-27"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Urban</td>
+<td class="c m b2 r2 l0 t0 lines">Suburban</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Rural</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Large Garden</td>
+<td class="c m b0 r2 l0 t0 lines">7</td>
+<td class="c m b0 r2 l0 t0 lines">18</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">13</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Small Garden</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">6</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">No Garden</td>
+<td class="c m b0 r2 l0 t0 lines">51</td>
+<td class="c m b0 r2 l0 t0 lines">47</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.25<span class="period">.</span></span><span class="space"> </span>Living Situation and Garden Size</figcaption></figure><p id="p-1131">Question: How many of the survey participants have a small garden or live in an urban area?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-77" id="answer-77"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-77"><div class="answer solution-like"><p id="p-1132">118</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_inclusion-exclusion-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_inclusion-exclusion-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_inclusion-exclusion-3"><article class="exercise exercise-like"><p id="p-1133">In a survey of 200 Americans, people were asked two questions. They were first asked if they lived in an urban, suburban, or rural area. Next, they were asked if they had a large garden, small garden, or no garden at all. The results of this survey are tabulated below.</p>
+<figure class="table figure-like" id="table-28"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Urban</td>
+<td class="c m b2 r2 l0 t0 lines">Suburban</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Rural</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Large Garden</td>
+<td class="c m b0 r2 l0 t0 lines">7</td>
+<td class="c m b0 r2 l0 t0 lines">18</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">13</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Small Garden</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">6</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">No Garden</td>
+<td class="c m b0 r2 l0 t0 lines">51</td>
+<td class="c m b0 r2 l0 t0 lines">47</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">4</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.27<span class="period">.</span></span><span class="space"> </span>Living Situation and Garden Size</figcaption></figure><p id="p-1134">Question: How many of the survey participants live a suburban area or have no garden?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-78" id="answer-78"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-78"><div class="answer solution-like"><p id="p-1135">162</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_counting_multiplication"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">The Multiplication Rule</span>
+</h3>
+<a href="sec_counting.html#sec_counting_multiplication" class="permalink">¶</a><p id="p-1136">In some instances, a process may have two or more steps, each of which can happen in several different ways. In order to determine the total number of ways that such a multi-step process can happen, we need to use a new rule, called the <dfn class="terminology">multiplication rule</dfn>.</p>
+<article class="theorem theorem-like" id="thm_counting-rule_multiplication"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.28</span><span class="period">.</span>
+</h6>
+<p id="p-1137">The <dfn class="terminology">multiplication rule</dfn> states that if a process includes two steps where step one can happen in \(n_1\) ways and step two can happen in \(n_2\) ways, then the entire process can happen in \(n_1 \times n_2\) ways.</p>
+<p id="p-1138">This can be expanded to a process which includes \(k\) stages, the \(i^\text{th}\) of which can happen in \(n_i\) ways, then the total number of ways the process can happen is:</p>
+<div class="displaymath">
+\begin{equation*}
+n_1 \times n_2 \times \cdots \times n_k\text{.}
+\end{equation*}
+</div></article><p id="p-1139">To see how this rule works, let's look at several examples.</p>
+<article class="example example-like" id="examp_counting_multiplication_2-step"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_multiplication_2-step"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.29</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Multiplication Rule I.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_multiplication_2-step"><article class="example example-like"><p id="p-1140">A certain model of car comes in seven different colors, with a choice of 3 different engines. If you limit yourself to these options, how many different configurations are possible?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like">
+<p id="p-1141">The process of configuring the car has two steps:</p>
+<ol class="decimal">
+<li id="li-475"><p id="p-1142">Choose a color — 7 choices</p></li>
+<li id="li-476"><p id="p-1143">Chose an engine — 3 choices</p></li>
+</ol>
+<p data-braille="continuation">So the total number of configurations is:</p>
+<div class="displaymath">
+\begin{equation*}
+7 \times 3 = 21\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_counting_multiplication_3-step"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_multiplication_3-step"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.30</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the Multiplication Rule II.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_multiplication_3-step"><article class="example example-like"><p id="p-1144">To put together your wardrobe on a certain morning, you must select from 5 pairs of slacks, 3 shirts, and 2 pairs of shoes. How many different outfits are possible?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like">
+<p id="p-1145">The process of putting together a wardrobe has three steps:</p>
+<ol class="decimal">
+<li id="li-477"><p id="p-1146">Choose your pants — 5 different choices</p></li>
+<li id="li-478"><p id="p-1147">Choose your shirt — 3 choices</p></li>
+<li id="li-479"><p id="p-1148">Choose your shoes — only 2 choices</p></li>
+</ol>
+<p data-braille="continuation">So the total number of outfits is:</p>
+<div class="displaymath">
+\begin{equation*}
+5\times 3\times 2 = 30\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1149">Both of the examples above could be modeled using a tree diagram. A tree diagram is a useful way of picturing the multiplication rule. It can also be used to help us work through multiple-step problems that don't fit the multiplication rule above.</p>
+<article class="definition definition-like" id="def_tree-diagram"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.31</span><span class="period">.</span>
+</h6>
+<p id="p-1150">In a <dfn class="terminology">tree diagram</dfn>, each step in a process is represented by a set of branches leading to the possible outcomes in that step.</p></article><article class="example example-like" id="examp_counting_multiplication_tree-diagram"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_multiplication_tree-diagram"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.32</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing Tree Diagrams.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_multiplication_tree-diagram"><article class="example example-like"><p id="p-1151">Construct a tree diagram to illustrate the solutions to <a class="xref" data-knowl="./knowl/examp_counting_multiplication_2-step.html" title="Example 2.2.29: Applying the Multiplication Rule I">Example 2.2.29</a> and <a class="xref" data-knowl="./knowl/examp_counting_multiplication_3-step.html" title="Example 2.2.30: Applying the Multiplication Rule II">Example 2.2.30</a> above.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_counting_multiplication_examp_tree-diagram-a"><img src="images/image_counting_multiplication_examp_tree-diagram-a.svg" style="width: 100%; height: auto;" alt="A tree diagram with one branch from the starting point for each of colors one through seven, and three branches from each color, one for each engine type."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.33<span class="period">.</span></span><span class="space"> </span>Tree Diagram for <a class="xref" data-knowl="./knowl/examp_counting_multiplication_2-step.html" title="Example 2.2.29: Applying the Multiplication Rule I">Example 2.2.29</a></figcaption></figure></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_counting_multiplication_examp_tree-diagram-b"><img src="images/image_counting_multiplication_examp_tree-diagram-b.svg" style="width: 100%; height: auto;" alt="A tree diagram with one branch from the starting point for each of the five pants, three branches from each of those from reach of the three shirts, and two branches from each sirt for the two pairs of shoes."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.34<span class="period">.</span></span><span class="space"> </span>Tree Diagram for <a class="xref" data-knowl="./knowl/examp_counting_multiplication_3-step.html" title="Example 2.2.30: Applying the Multiplication Rule II">Example 2.2.30</a></figcaption></figure></div>
+</div></div></div></div>
+</div></article></div>
+<p id="p-1152">Notice that we can model a particular sequence of choices in this process by following a path through the tree. For example, in the second tree diagram, going along the third branch to pant 3, then the first branch to shirt 1, and then the second branch to shoes 2 gives us one complete outfit. Therefore, the total number of outfits is the same as the total number of branches at the last step.</p>
+<p id="p-1153">There are some instances where the number of choices we have at a given step depends on the choice we made at the previous step. In these cases the multiplication rule will not work. However, a tree diagram can still be a useful tool for counting the total number of ways to complete such a process.</p>
+<article class="example example-like" id="examp_counting_multiplication_unbalanced-tree"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_multiplication_unbalanced-tree"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.35</span><span class="period">.</span><span class="space"> </span><span class="title">Counting with a Tree Diagram.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_multiplication_unbalanced-tree"><article class="example example-like"><p id="p-1154">A certain vacation package allows you to pick from three destinations: Hawaii, Florida, and Alaska. There are two resorts available in Hawaii, three in Florida, and one in Alaska. How many choices are available to you in this vacation package?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3%;margin-right:4% 3%;">
+<div class="sbspanel" style="width:53.7634408602151%;justify-content:flex-start;">
+<p id="p-1155">This process can be broken up into two steps:</p>
+<ol class="decimal">
+<li id="li-480"><p id="p-1156">pick a destination (there are three of them)</p></li>
+<li id="li-481"><p id="p-1157">pick a resort (the number depends on the destination chosen in step 1)</p></li>
+</ol>
+</div>
+<div class="sbspanel" style="width:43.010752688172%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_counting_multiplication_examp_unbalanced-tree"><img src="images/image_counting_multiplication_examp_unbalanced-tree.svg" style="width: 100%; height: auto;" alt="A three with one branch from the starting point for each destination, Hawaii, Florida, and Alaska.  Hawaii has two branches for its two resorts, Florida has three branches for its three resorts, and Alaska has one branch."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.36<span class="period">.</span></span><span class="space"> </span>Vacations</figcaption></figure></div>
+</div></div>
+<p id="p-1158">Because the number of options in step 2 depends on our choice in step 1, we can not use the multiplication rule. Instead, we create a tree diagram as shown to the right.	Note that there are a total of six branches in the last step, so there are six different choices in this vacation package. The tree diagram allows us to represent the different number of choices that are available depending on our destination.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_counting_multiplication-1"><video id="video-56" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.37<span class="period">.</span></span><span class="space"> </span>Multiplication Rule and Tree Diagrams I</figcaption></figure><figure class="figure figure-like" id="video_counting_multiplication-2"><video id="video-57" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.38<span class="period">.</span></span><span class="space"> </span>Multiplication Rule and Tree Diagrams II</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_multiplication-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_multiplication-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.39</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_multiplication-1"><article class="exercise exercise-like"><p id="p-1159">A cable company offers a special deal in which subscribers can choose one of three base packages, add on one of four different special movie channels and finally choose to either upgrade to a DVR or receive $5 off their monthly bill for six months.</p>
+<p id="p-1160">Question: How many different packages are available under this special deal?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-79" id="answer-79"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-79"><div class="answer solution-like"><p id="p-1161">24</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_multiplication-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_multiplication-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.40</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_multiplication-2"><article class="exercise exercise-like"><p id="p-1162">A value meal consists of your choice of one sandwich, one drink, and one side. The restaurant offers four different sandwiches, six types of drink, and four sides.</p>
+<p id="p-1163">Question: How many different value meals are possible?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-80" id="answer-80"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-80"><div class="answer solution-like"><p id="p-1164">96</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_multiplication-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_multiplication-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.41</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_multiplication-3"><article class="exercise exercise-like"><p id="p-1165">A new car comes in your choice of three engine types. The highest performing engine is only available with a manual transmission. The other two engines are available with either manual or automatic transmissions.</p>
+<p id="p-1166">Question: How many different choices of engine and transmission are available for this car?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-81" id="answer-81"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-81"><div class="answer solution-like"><p id="p-1167">5</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_counting_factorial"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.4</span> <span class="title">Factorials</span>
+</h3>
+<a href="sec_counting.html#sec_counting_factorial" class="permalink">¶</a><p id="p-1168">Let's look at an example that gives a special case of the multiplication rule.</p>
+<article class="example example-like" id="examp_counting_factorial_trolls"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_factorial_trolls"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.42</span><span class="period">.</span><span class="space"> </span><span class="title">Arranging Items.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_factorial_trolls"><article class="example example-like"><p id="p-1169">You wish to arrange your four most treasured possessions: your troll doll, Darth Vader action figure, toy Ewok, and GI Joe doll, in a row on your desk. In how many ways can you order these four items?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like">
+<p id="p-1170">This is an example of the multiplication rule using the following steps.</p>
+<ol class="decimal">
+<li id="li-482"><p id="p-1171">Chose which of the 4 items to place first (4 choices)</p></li>
+<li id="li-483"><p id="p-1172">Choose which of the 3 remaining items to place 2nd (3 choices)</p></li>
+<li id="li-484"><p id="p-1173">Choose which of the 2 remaining items to place 3rd (2 choices left)</p></li>
+<li id="li-485"><p id="p-1174">Choose which of the 1 remaining items to place at the end of the row (only one choice).</p></li>
+</ol>
+<p data-braille="continuation">Therefore, according to the multiplication rule, the number of orderings is:</p>
+<div class="displaymath">
+\begin{equation*}
+4\times 3\times 2 \times 1 = 24\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1175">Notice that because we were selecting from our group of items without replacing them, the number of choices went down by one each time. When we use the multiplication rule with this sort of process, we wind up multiplying the numbers between 1 and the original number of choices. This product has a special name.</p>
+<article class="definition definition-like" id="def_factorial"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.43</span><span class="period">.</span>
+</h6>
+<p id="p-1176">For any positive integer \(n\text{,}\) \(n!\) (read “\(n\) <dfn class="terminology">factorial</dfn>”) is the product of the numbers between \(1\) and \(n\text{.}\) That is:</p>
+<div class="displaymath">
+\begin{equation*}
+n! = n\times(n-1)\times \cdots \times 2\times 1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that \(0!\) is defined to be 1.</p></article><p id="p-1177">In the next example we practice computing factorials. Note how quickly the value of a factorial grows as \(n\) grows. Also, note that when dividing factorials, canceling can be a very useful tool.</p>
+<article class="example example-like" id="examp_counting_factorial_compute"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_factorial_compute"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.44</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Factorials.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_factorial_compute"><article class="example example-like"><p id="p-1178">Find the value of each expression below.</p>
+<ol class="lower-alpha cols3">
+<li id="li-486"><p id="p-1179">\(5!\)</p></li>
+<li id="li-487"><p id="p-1180">\(8!\)</p></li>
+<li id="li-488"><p id="p-1181">\(\frac{8!}{5!}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
+<p id="p-1182">Using the definition above,</p>
+<ol class="lower-alpha">
+<li id="li-489"><p id="p-1183">\(5! = 5\times 4\times 3\times 2\times 1 = 120\)</p></li>
+<li id="li-490"><p id="p-1184">\(8! = 8\times 7\times 6\times 5! = 336\times 120 = 40320\)</p></li>
+<li id="li-491"><p id="p-1185">\(\frac{8!}{5!} = \frac{8\times 7\times 6\times 5!}{5!} = \frac{8\times 7\times 6}{1} = 336\text{.}\)</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-1186">We finish our brief discussion of factorials with one final counting example.</p>
+<article class="example example-like" id="examp_factorial_digits"><a data-knowl="" class="id-ref original" data-refid="hk-examp_factorial_digits"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.45</span><span class="period">.</span><span class="space"> </span><span class="title">Arranging Digits.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_factorial_digits"><article class="example example-like"><p id="p-1187">In how many ways can the digits from 0 through 9 be arranged in order?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like">
+<p id="p-1188">There are 10 such digits to be arranged in order. According to the multiplication rule, the total number of orderings is:</p>
+<div class="displaymath">
+\begin{equation*}
+10! = 10\times 9\times 8\times 7\times 6\times 5\times 4\times 3\times 2\times 1 = 3628800\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1189">Factorials will be used in the next two counting rules, but to see more computations and counting problems involving just the factorial operation, watch the following video examples.</p>
+<figure class="figure figure-like" id="video_counting_factorial-1"><video id="video-58" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.46<span class="period">.</span></span><span class="space"> </span>Factorials</figcaption></figure><figure class="figure figure-like" id="video_counting_factorial-2"><video id="video-59" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.47<span class="period">.</span></span><span class="space"> </span>Factorials</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_factorial-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_factorial-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.48</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_factorial-1"><article class="exercise exercise-like"><p id="p-1190">An athletic coordinator needs to arrange six games into the six time slots available during a given week.</p>
+<p id="p-1191">Question: In how many ways can the director make up this schedule?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-82" id="answer-82"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-82"><div class="answer solution-like"><p id="p-1192">720</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_factorial-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_factorial-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.49</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_factorial-2"><article class="exercise exercise-like"><p id="p-1193">Consider the expression \(\frac{200!}{198!}\text{.}\)</p>
+<p id="p-1194">Question: What is the value of this expression? Hint: simplify by canceling before attempting to use your calculator.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-83" id="answer-83"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-83"><div class="answer solution-like"><p id="p-1195">39800</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_factorial-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_factorial-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.50</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_factorial-3"><article class="exercise exercise-like"><p id="p-1196">Suppose that the nine Supreme Court justices are lining up to enter the courtroom on the last day of the court term.</p>
+<p id="p-1197">Question: In how many ways could they line up?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-84" id="answer-84"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-84"><div class="answer solution-like"><p id="p-1198">362880</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_counting_permutations"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.5</span> <span class="title">Permutations</span>
+</h3>
+<a href="sec_counting.html#sec_counting_permutations" class="permalink">¶</a><p id="p-1199">In some counting problems, we will find a process that looks much like the “factorial” questions from the last page, but in which we are not asked to use up or arrange all of the items. One such example can be found below.</p>
+<article class="example example-like" id="examp_counting_permutation_runners"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_permutation_runners"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.51</span><span class="period">.</span><span class="space"> </span><span class="title">Ordering a Subset.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_permutation_runners"><article class="example example-like"><p id="p-1200">Suppose that ten runners compete in a race in which first, second, and third prizes are awarded. In how many ways can these prizes be won?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
+<p id="p-1201">Using the multiplication rule, the steps in this process are:</p>
+<ol class="decimal">
+<li id="li-492"><p id="p-1202">Award first prize to the winner (10 choices since anybody could win).</p></li>
+<li id="li-493"><p id="p-1203">Award second prize (9 choices since the winner is excluded).</p></li>
+<li id="li-494"><p id="p-1204">Award third prize (8 choices).</p></li>
+</ol>
+<p data-braille="continuation">This gives the following total number of ways that the prizes can be won:</p>
+<div class="displaymath">
+\begin{equation*}
+10\times 9\times 8 = 720\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1205">While the solution to this problem started off looking like a factorial, \(10 \times 9 \times 8\text{,}\) it stopped after 8 because we didn't need to order the remaining seven runners in this race. In general, when we need to count the number of ways to order or arrange \(r\) items chosen from \(n\) possible items, we are using a permutation.</p>
+<article class="theorem theorem-like" id="thm_counting-rule_permutation"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.52</span><span class="period">.</span>
+</h6>
+<p id="p-1206">A <dfn class="terminology">permutation</dfn> of n items taken r at a time is used to count the number of ways to arrange (or permute) \(r\) items chosen from \(n\) possible items. The formula for this permutation is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(n,r) = \frac{n!}{(n-r)!}\text{.}
+\end{equation*}
+</div></article><p id="p-1207">Applying this formula to the foot-race example above, we could have computed:</p>
+<div class="displaymath">
+\begin{equation*}
+P(10,3) = \frac{10!}{(10-3)!} = \frac{10\times 9\times 8\times 7!}{7!} = 10\times 9\times 8 = 720\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Permutations are a general rule that can be used to count the number of ways to complete a process in which the order of completion matters. A race is a good example of when order matters. Another example can be found below.</p>
+<article class="example example-like" id="examp_counting_permutation_bands"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_permutation_bands"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.53</span><span class="period">.</span><span class="space"> </span><span class="title">Using Permutations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_permutation_bands"><article class="example example-like"><p id="p-1208">Six bands have expressed interest in performing at a concert with time slots for three performances. In how many ways can the concert manager make up a schedule for the concert?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<p id="p-1209">Since there are 6 bands to choose from, and only 3 are needed, and since the order of performance matters (changing the order would make a different schedule) the number of ways to schedule these bands is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(6,3) = \frac{6!}{3!} = 6\times 5\times 4 = 120\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1210">There are a few general rules which work no matter what \(n\) is used in a permutation. Three of these are shown below.</p>
+<ul class="disc">
+<li id="li-495"><p id="p-1211">\(P(n,n) = \frac{n!}{(n-n)!} = \frac{n!}{0!} = n!\)</p></li>
+<li id="li-496"><p id="p-1212">\(P(n,0) = \frac{n!}{(n-0)!} = \frac{n!}{n!} = 1\)</p></li>
+<li id="li-497"><p id="p-1213">\(P(n,1) = \frac{n!}{(n-1)!} = \frac{n\times (n-1)!}{(n-1)!} = n\)</p></li>
+</ul>
+<p data-braille="continuation">Additionally, there is a short-cut that can be used instead of the formula. This is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(n,r) = \underbrace{n\times (n-1) \times \cdots \times (n-r+1)}_{r \text { items}}\text{.}
+\end{equation*}
+</div>
+<article class="example example-like" id="examp_counting_permutation_compute"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_permutation_compute"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.54</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Permutations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_permutation_compute"><article class="example example-like"><p id="p-1214">Use the rules and short-cut seen above to find each of the following.</p>
+<ol class="lower-alpha cols3">
+<li id="li-498"><p id="p-1215">\(P(5,1)\)</p></li>
+<li id="li-499"><p id="p-1216">\(P(17,3)\)</p></li>
+<li id="li-500"><p id="p-1217">\(P(200,0)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<p id="p-1218">The values of these expressions are:</p>
+<ol class="lower-alpha">
+<li id="li-501"><p id="p-1219">\(P(5,1) = 5\) (the third rule above)</p></li>
+<li id="li-502"><p id="p-1220">\(P(17,3) = 17\times 16\times 15 = 4080\) (short-cut formula above)</p></li>
+<li id="li-503"><p id="p-1221">\(P(200,0) = 1\) (the second rule above)</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_counting_permutation-1"><video id="video-60" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.55<span class="period">.</span></span><span class="space"> </span>Permutations I</figcaption></figure><figure class="figure figure-like" id="video_counting_permutation-2"><video id="video-61" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.56<span class="period">.</span></span><span class="space"> </span>Permutations II</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_permutaton-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_permutaton-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.57</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_permutaton-1"><article class="exercise exercise-like"><p id="p-1222">A law school wishes to schedule speaking appointments for 3 of the 9 Supreme Court justices.</p>
+<p id="p-1223">Question: In how many ways can this be done if the order of the speeches matters?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-85" id="answer-85"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-85"><div class="answer solution-like"><p id="p-1224">504</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_permutation-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_permutation-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.58</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_permutation-2"><article class="exercise exercise-like"><p id="p-1225">A “32-flavors” ice cream shop is offering a special deal. For only $3.00 you can get a large cone with two scoops of your favorite flavors. The only condition is that you can not repeat flavors.</p>
+<p id="p-1226">Question: How many ice cream cones are possible if the order in which you choose the scoops matters?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-86" id="answer-86"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-86"><div class="answer solution-like"><p id="p-1227">992</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_permutation-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_permutation-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.59</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_permutation-3"><article class="exercise exercise-like"><p id="p-1228">A librarian wishes to designate books in a special collection using five letter codes in which letters are not repeated. Note that there are 26 letters in the list of allowable letters.</p>
+<p id="p-1229">Question: How many codes are possible using this scheme?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-87" id="answer-87"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-87"><div class="answer solution-like"><p id="p-1230">7,893,600</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_counting_combinations"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.6</span> <span class="title">Combinations</span>
+</h3>
+<a href="sec_counting.html#sec_counting_combinations" class="permalink">¶</a><p id="p-1231">Permutations are particularly useful when the order in which we select individuals makes a difference—such as in running a race or creating a schedule. But order does not always matter, as seen in the next example.</p>
+<article class="example example-like" id="examp_counting_combination_movies"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_combination_movies"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.60</span><span class="period">.</span><span class="space"> </span><span class="title">Counting when Order Doesn't Matter.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_combination_movies"><article class="example example-like"><p id="p-1232">You have two extra movie tickets and wish to share them with two of your four good friends. In how many ways can you pick the friends to go with you to the movies?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
+<p id="p-1233">Let's say that your friends names are: Alice, Bob, Candace, and David. If you try to count this using a permutation, you get:</p>
+<div class="displaymath">
+\begin{equation*}
+P(4,2) = 4\times 3 = 12\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Unfortunately, this is not the correct answer. Consider the actual list of possible choices that this produces.</p>
+<figure class="table figure-like" id="table-29"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">AB</td>
+<td class="l m b0 r0 l0 t0 lines">AC</td>
+<td class="l m b0 r0 l0 t0 lines">AD</td>
+<td class="l m b0 r0 l0 t0 lines">BA</td>
+<td class="l m b0 r0 l0 t0 lines">BC</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">BD</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">CA</td>
+<td class="l m b0 r0 l0 t0 lines">CB</td>
+<td class="l m b0 r0 l0 t0 lines">CD</td>
+<td class="l m b0 r0 l0 t0 lines">DA</td>
+<td class="l m b0 r0 l0 t0 lines">DB</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">DC</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.61<span class="period">.</span></span><span class="space"> </span>Possible Selections</figcaption></figure><p id="p-1234">Notice that each pair appears twice. For example, AB and BA are counted separately. This is because in a permutation, the order in which we hand out the tickets makes a difference. But really, we don't care who got the first ticket—we just want to know who is going. Since there are two of each possible pairs, the actual number of ways to pick the two friends to go with us is:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{P(4,2)}{P(2,2)} = \frac{12}{2} = 6\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1235">In the example above, we arrived at the final solution using two steps. First, we counted the number of ways to pick the friends to go with us if the order did matter, in this case it was 12. Then we counted the number of ways that those two friends could be arranged, which was 2. Finally, we divide the 12 ordered ways by the 2 different orderings to get a total of 6 ways to choose our two friends if the order does not matter. This process can be combined into a single counting rule called a combination.</p>
+<article class="theorem theorem-like" id="thm_counting-rule_combination"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.62</span><span class="period">.</span>
+</h6>
+<p id="p-1236">A <dfn class="terminology">combination</dfn> of \(n\) items taken \(r\) at a time is used to count the number of ways to choose \(r\) items from \(n\) possible items if the order in which we select them does not matter. The formula for this combination is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(n,r) = \frac{P(n,r)}{r!} = \frac{n!}{r!(n-r)!}\text{.}
+\end{equation*}
+</div></article><p id="p-1237">Applying this formula to the movie ticket example, we get:</p>
+<div class="displaymath">
+\begin{equation*}
+C(4,2) = \frac{4!}{2!(4-2)!} = \frac{4\times 3\times 2!}{2!\times 2!} = \frac{4\times 3}{2\times 1} = 6\text{.}
+\end{equation*}
+</div>
+<p id="p-1238">Let's try applying this to another example.</p>
+<article class="example example-like" id="examp_counting_combination_committee"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_combination_committee"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.63</span><span class="period">.</span><span class="space"> </span><span class="title">Using a Combination.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_combination_committee"><article class="example example-like"><p id="p-1239">A committee of 10 business executives wishes to choose a sub-committee of 3 to research a certain topic. In how many ways can this sub-committee be chosen?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
+<p id="p-1240">The order in which a sub-committee is selected does not matter—a person is either on the committee or not on the committee. Therefore, this is a combination and the solution is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(10,3) = \frac{10!}{3!(10-3)!} = \frac{10\times 9\times 8 \times 7!}{3!\times 7!} = \frac{10\times 9\times 8}{3\times 2\times 1} = 120\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1241">As with permutations, there are a few general rules that combinations follow no matter what the value of \(n\) is. Several of these rules are shown below.</p>
+<ul class="disc">
+<li id="li-504"><p id="p-1242">\(C(n,n) = 1\)</p></li>
+<li id="li-505"><p id="p-1243">\(C(n,1) = n\)</p></li>
+<li id="li-506"><p id="p-1244">\(C(n,r) = C(n,n-r)\)</p></li>
+</ul>
+<p id="p-1245">And finally, a short-cut that can be easier to use than the formula above.</p>
+<div class="displaymath">
+\begin{equation*}
+C(n,r) = \frac{\overbrace{n\times (n-1) \times \cdots \times (n-r+1)}^{r \text{ values}}}{r!}\text{.}
+\end{equation*}
+</div>
+<p id="p-1246">We finish with an example of how these rules and shortcuts can be useful.</p>
+<article class="example example-like" id="examp_counting_combination_compute"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_combination_compute"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.64</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Combinations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_combination_compute"><article class="example example-like"><p id="p-1247">Use the rules and short-cut seen above to find the value of each expression.</p>
+<ol class="lower-alpha cols2">
+<li id="li-507"><p id="p-1248">\(C(12,12)\)</p></li>
+<li id="li-508"><p id="p-1249">\(C(250,1)\)</p></li>
+<li id="li-509"><p id="p-1250">\(C(12,0)\)</p></li>
+<li id="li-510"><p id="p-1251">\(C(250,247)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
+<p id="p-1252">Applying the rules and short-cut seen above, we get the following values.</p>
+<ol class="lower-alpha">
+<li id="li-511">
+<h6 class="heading"><span class="title">\(C(12,12) = 1\).</span></h6>
+<p id="p-1253">Here we use the first rule.  You could also recognize that there is only one way to pick all 12 of the 12 things we have</p>
+</li>
+<li id="li-512">
+<h6 class="heading"><span class="title">\(C(250,1) = 250\).</span></h6>
+<p id="p-1254">We use the second rule.</p>
+</li>
+<li id="li-513">
+<h6 class="heading"><span class="title">\(C(12,0) = C(12,12-0) = C(12,12) = 1\).</span></h6>
+<p id="p-1255">We use the third rule and (a) above.  We could also note that there is only 1 way to pick nothing</p>
+</li>
+<li id="li-514">
+<h6 class="heading"><span class="title">\(C(250,247) = C(250,250-247) = C(250,3) = \frac{250\times 249\times 248}{3\times 2\times 1} = 2573000\).</span></h6>
+<p id="p-1256">We used the third rule and the shortcut formula.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_counting_combination-1"><video id="video-62" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-11.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.65<span class="period">.</span></span><span class="space"> </span>Combinations I</figcaption></figure><figure class="figure figure-like" id="video_counting_combination-2"><video id="video-63" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-12.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.66<span class="period">.</span></span><span class="space"> </span>Combinations II</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_combination-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_combination-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.67</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_combination-1"><article class="exercise exercise-like"><p id="p-1257">A pizza restaurant has a special deal—a large thin-crust pizza with your choice of 4 toppings for only $13.99. The restaurant offers 12 different toppings.</p>
+<p id="p-1258">Question: How many different pizzas are possible if the order of the toppings does not matter?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-88" id="answer-88"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-88"><div class="answer solution-like"><p id="p-1259">495</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_combination-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_combination-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.68</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_combination-2"><article class="exercise exercise-like"><p id="p-1260">A student needs to make up a class schedule for summer classes. She has 10 possible classes to choose from, and wants to take 3 of them. None of the classes have scheduling conflicts.</p>
+<p id="p-1261">Question: How many class schedules are possible?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-89" id="answer-89"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-89"><div class="answer solution-like"><p id="p-1262">120</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_combination-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_combination-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.69</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_combination-3"><article class="exercise exercise-like"><p id="p-1263">A church group of 20 young people wishes to select four of their members to plan a mission trip. Every member of the group is interested in being one of the four selected.</p>
+<p id="p-1264">Question: In how many ways can the four planners be chosen?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-90" id="answer-90"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-90"><div class="answer solution-like"><p id="p-1265">4845</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_counting_mixed"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2.7</span> <span class="title">Mixed Counting Techniques</span>
+</h3>
+<a href="sec_counting.html#sec_counting_mixed" class="permalink">¶</a><p id="p-1266">One of the hardest parts of counting problems is determining which rules or combinations of rules to use to answer a given question. Here are a few basic things to remember:</p>
+<article class="principle theorem-like" id="thm_counting-rules_principles"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">2.2.70</span><span class="period">.</span><span class="space"> </span><span class="title">Combining Counting Rules.</span>
+</h6>
+<ol id="p-1267" class="decimal">
+<li id="li-515"><p id="p-1268">If the things you are counting come in two distinct groups, count each group then add together the results. (<a class="xref" data-knowl="./knowl/thm_counting-rule_addition.html" title="Theorem 2.2.9">addition rule</a> — goes with “or”)</p></li>
+<li id="li-516"><p id="p-1269">If there is overlap between the two groups, remember to subtract the intersection. (<a class="xref" data-knowl="./knowl/thm_counting-rule_inclusion-exclusion.html" title="Theorem 2.2.17">inclusion/exclusion rule</a>)</p></li>
+<li id="li-517"><p id="p-1270">If the process you are counting can be broken down into steps, count the number of ways each step can be performed and multiply. (<a class="xref" data-knowl="./knowl/thm_counting-rule_multiplication.html" title="Theorem 2.2.28">multiplication rule</a> — goes with “and”)</p></li>
+<li id="li-518"><p id="p-1271">If you are arranging things or selecting multiple items and the order of selection matters, use a permutation. (<a class="xref" data-knowl="./knowl/thm_counting-rule_permutation.html" title="Theorem 2.2.52">permutation rule 2.2.52</a>).</p></li>
+<li id="li-519"><p id="p-1272">If you are selecting multiple items from a group of items and the order in which you pick them does not matter, use a combination. (<a class="xref" data-knowl="./knowl/thm_counting-rule_combination.html" title="Theorem 2.2.62">combination rule</a>).</p></li>
+</ol></article><p id="p-1273">Let's apply these ideas to several examples. Remember that our fist step should always be to identify the rule or rules that we are going to use to count our options.</p>
+<article class="example example-like" id="examp_counting_mixed_permutation"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_mixed_permutation"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.71</span><span class="period">.</span><span class="space"> </span><span class="title">Picking a Counting Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_mixed_permutation"><article class="example example-like"><p id="p-1274">The back row of Professor Duncan's classroom has only 4 seats. There are 8 students who wish to sit in these seats. In how many ways can the seats be assigned?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
+<p id="p-1275">In a seating chart, the order would matter. This must therefore be a permutation, and the solution is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(8,4) = 8\times 7\times 6\times 5 = 1680\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_counting_mixed_two-combinations"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_mixed_two-combinations"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.72</span><span class="period">.</span><span class="space"> </span><span class="title">Combining Counting Rules.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_mixed_two-combinations"><article class="example example-like"><p id="p-1276">A committee contains 6 men and 3 women. Four members of the committee are selected for a fact-finding junket. In how many ways can these four be selected if three of them are men and one is a woman?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
+<p id="p-1277">The order in which we pick members of a committee to go on a trip does not matter—a member either goes on the trip or does not. However, notice that we have two steps to this problem.</p>
+<ol class="decimal">
+<li id="li-520"><p id="p-1278">Pick the three men to go on the trip.</p></li>
+<li id="li-521"><p id="p-1279">Pick the one woman to go on the trip.</p></li>
+</ol>
+<p data-braille="continuation">The number of ways to pick the three men from the 6 male committee members is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(6,3) = \frac{6\times 5\times 4}{3\times 2\times 1} = 20\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The number of ways to pick the one woman is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(3,1) = 3\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, using the multiplication rule, the total number of ways to pick the four people to go on the junket is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(6,3)\times C(3,1) = 20\times 3 = 60\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_counting_mixed_permutation-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_mixed_permutation-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.73</span><span class="period">.</span><span class="space"> </span><span class="title">Counting by Combining Objects.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_mixed_permutation-2"><article class="example example-like"><p id="p-1280">Trains arrive at a station in random order from Berlin, Munich, Salzberg, Vienna, and Hamburg. In how many ways can the trains arrive so that the train from Berlin arrives immediately after the train from Salzberg?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like">
+<p id="p-1281">This problem specifically mentions the order of the trains, so the order will matter. However, we are not asked in how many ways the trains can arrive in general, which would be \(P(5,5) = 5!\text{.}\)</p>
+<p id="p-1282">Instead, we specify that the Berlin and Salzberg train must arrive one after the other. Symbolically, we want to arrange the following four trains in order: BS, M, V, H. BS is listed together because of the condition mentioned above. We can order these in \(P(4,4) = 4! = 24\) ways.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_counting_mixed_at-least"><a data-knowl="" class="id-ref original" data-refid="hk-examp_counting_mixed_at-least"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.74</span><span class="period">.</span><span class="space"> </span><span class="title">Couting Cases with “At Least”.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_counting_mixed_at-least"><article class="example example-like"><p id="p-1283">A deli sells 6 types of salads, 8 types of sandwiches, and 3 types of chips. Picnic baskets can be purchased which contain 4 different items from these 17. How many different picnic baskets can be made to contain at least two different sandwiches?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like">
+<p id="p-1284">This is actually the most challenging problem in this section. The reason is that we have to use both the multiplication rule to split the process into steps, and the addition rule to split the process into cases. Here's how we do it:</p>
+<ul class="disc">
+<li id="li-522">
+<h6 class="heading"><span class="title">Case 1.</span></h6>
+<p id="p-1285">Pick two from 8 sandwiches and 2 from the remaining 9 items</p>
+<div class="displaymath">
+\begin{equation*}
+C(8,2)\times C(9,2) = \frac{8\times 7}{2\times 1}\times\frac{9\times 8}{2\times 1} = 1008\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-523">
+<h6 class="heading"><span class="title">Case 2.</span></h6>
+<p id="p-1286">Pick three sandwiches from 8 available and 1 item from remaining 9</p>
+<div class="displaymath">
+\begin{equation*}
+C(8,3)\times C(9,1) = \frac{8\times 7\times 6}{3\times 2\times 1} \times 9 = 504\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-524">
+<h6 class="heading"><span class="title">Case 3.</span></h6>
+<p id="p-1287">Pick four sandwiches from 8 available and none of the remaining 9 items</p>
+<div class="displaymath">
+\begin{equation*}
+C(8,4)\times C(9,0) = \frac{8\times 7\times 6\times 5}{4\times 3\times 2\times 1}\times 1 = 70\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Note that these three cases are mutually exclusive based on the number of sandwiches chosen, and that a picnic basket with at least two sandwiches would fall into one of these cases. So using the addition rule, the total number of picnic baskets is:</p>
+<div class="displaymath">
+\begin{equation*}
+1008 + 504 + 70 = 1582\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_counting_mixed-1"><video id="video-64" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-13.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.75<span class="period">.</span></span><span class="space"> </span>Mixed Counting Techniques I</figcaption></figure><figure class="figure figure-like" id="video_counting_mixed-2"><video id="video-65" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-14.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.76<span class="period">.</span></span><span class="space"> </span>Mixed Counting Techniques II</figcaption></figure><article class="exercise exercise-like" id="ckpt_counting_mixed-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_mixed-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.77</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_mixed-1"><article class="exercise exercise-like"><p id="p-1288">A restaurant offers a special weekday menu deal. This includes dinner for two with two entrees and one appetizer. The restaurant offers 14 different entrees and six appetizers.</p>
+<p id="p-1289">Question: In how many ways can a couple select their meal if they agree to order different entrees and split them?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-91" id="answer-91"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-91"><div class="answer solution-like"><p id="p-1290">546</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_mixed-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_mixed-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.78</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_mixed-2"><article class="exercise exercise-like"><p id="p-1291">A congressional committee consists of 12 Democrats and 7 Republicans. They wish to select a subcommittee of 4 members.</p>
+<p id="p-1292">Question: In how many ways can this be done if there must be at least one Republican and at least two Democrats on the subcommittee?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-92" id="answer-92"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-92"><div class="answer solution-like"><p id="p-1293">2926</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_counting_mixed-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_counting_mixed-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.79</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_counting_mixed-3"><article class="exercise exercise-like"><p id="p-1294">You are in charge of a parade. There are five floats and four marching bands scheduled to participate in the parade. You decide that you want to alternate floats and marching bands, starting with a float.</p>
+<p id="p-1295">Question: In how many different ways could you order the floats and marching bands in this parade?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-93" id="answer-93"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-93"><div class="answer solution-like"><p id="p-1296">2880</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

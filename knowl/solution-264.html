@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:26:37-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.2.53.1</span><span class="period">.</span>
+</h6>
+<p>We now put our previous work on this problem together to complete the hypothesis test. Recall that the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10\\
+H_A\amp:\ \text{At least one probability is different}
+\end{align*}
+</div>
+<p>We then construct the goodness-of-fit table below to compare the observed and expected counts and compute the test statistic.</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r2 l0 t0 lines">Expected</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">156</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.40(355) = 142\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(156-142)^2}{142} \approx 1.3081\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Hazelnut</td>
+<td class="c m b0 r2 l0 t0 lines">96</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.25(355) = 88.75\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(96-88.75)^2}{88.75} \approx 0.5923\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Cashew</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.15(355) = 53.25\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(42-53.25)^2}{53.25} \approx 2.1230\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Brazil Nut</td>
+<td class="c m b0 r2 l0 t0 lines">28</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.10(355) = 35.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(28-35.5)^2}{35.5} \approx 1.5845\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Other</td>
+<td class="c m b2 r2 l0 t0 lines">33</td>
+<td class="c m b2 r2 l0 t0 lines">\(0.10(355) = 35.5\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(33-35.5)^2}{35.5} \approx 0.1761\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{\text{test}} \approx 5.7840\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.55<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p>To make our decision, we want to compare this test statistic with the critical value that separates the top \(\alpha = 0.05\) in the right tail of a \(\chi^2\)-distribution with with \(df = 5-1 = 4\) degrees of freedom (since there are five categories of nuts) from the rest of the distribution. Looking this up in the chi-squared distribution table, we find \(\chi^2_{0.05} = 9.488\) as shown below.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_goodness-of-fit_examp_test-set.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.56<span class="period">.</span></span><span class="space"> </span>Comparing \(\chi^2\) Values</figcaption></figure><p>Since the test statistic of 5.784 is not further into the right-tail than the critical value, we fail to reject the null hypothesis. It looks like this sample does fit the claimed distribution of nuts.</p>
+</div>
+<span class="incontext"><a href="sec_goodness-of-fit.html#solution-264">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:57-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction to Hypothesis Testing</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap_testing.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_testing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ht-means.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap_testing.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_testing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ht-means.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro" class="active">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ht-intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Introduction to Hypothesis Testing</span>
+</h2>
+<a href="sec_ht-intro.html" class="permalink">¶</a><section class="introduction" id="sec_ht-intro_intro"><h6 class="heading">Why Do We Need Hypothesis Tests?<span></span>
+</h6>
+<p id="p-3029">While we now have a good set of tools for estimating the value of a population mean, proportion, or differences between means and proportions, there are some times when we wish to make a decision instead of estimate a value. Consider the following situations.</p>
+<ul class="disc">
+<li id="li-1129"><p id="p-3030">In order to be profitable, a bus route must have an average of at least 25 paying customers. We wish to decide if a certain route is profitable by collecting ridership information on 15 different occasions during a given month.</p></li>
+<li id="li-1130"><p id="p-3031">In order to pass, a new school bond measure needs to get at least 60% support among voters. You collect a sample of 500 likely voters and find that 61% of them plan to vote for the bond. Is this sufficient evidence to claim that the bond will pass on election day?</p></li>
+<li id="li-1131"><p id="p-3032">A researcher claims that men and women do not get the same number of hours of sleep a night. To test this claim, you take a sample of 250 men and 200 women and determine the number of hours of sleep that each individual in these samples gets.</p></li>
+</ul>
+<p id="p-3033">In each case we make a claim about a population and then gather a sample from that population to determine if our claim is reasonable. As we shall see, we do this in a very methodical way. For example, the 61% of voters who support the school bond in our sample will probably not be enough for us to claim with any level of statistical significance that the bond will pass.  A random sample of only 500 voters is likely to have a proportion supporting the bond that is one percent or more different from proportion of support in the entire population.</p>
+<article class="definition definition-like" id="def_hypothesis-test"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Statistical Test of Hypothesis.</span>
+</h6>
+<p id="p-3034">A <dfn class="terminology">statistical test of hypothesis</dfn>, or just a <dfn class="terminology">hypothesis test</dfn>, is a four-step process used to make a decision about a population based on a sample.  These steps are:</p>
+<ol class="decimal">
+<li id="li-1132"><p id="p-3035">Identify the hypothesis being tested and the underlying assumptions that go with that hypothesis.</p></li>
+<li id="li-1133"><p id="p-3036">From a given sample, compute a test statistic based on the sample statistics and the underlying assumptions about the population.</p></li>
+<li id="li-1134"><p id="p-3037">Determine the likelihood of observing a test statistic at least as extreme as the one computed if our assumptions are correct.</p></li>
+<li id="li-1135"><p id="p-3038">Come to a conclusion about the hypothesis based on the likelihood found above.</p></li>
+</ol></article><p id="p-3039">We begin <a href="chap_testing.html" class="internal" title="Chapter 5: Testing Hypotheses for Means and Proportions">Chapter 5</a> by examining these steps in detail.</p></section><article class="objectives goal-like" id="sec_ci-intro_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-47"><p id="p-3040">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1136">
+<p id="p-3041">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1137"><p id="p-3042">Left-Tailed Hypothesis Test</p></li>
+<li id="li-1138"><p id="p-3043">Null and Alternative Hypothesis</p></li>
+<li id="li-1139"><p id="p-3044">P-Value</p></li>
+<li id="li-1140"><p id="p-3045">Right-Tailed Hypothesis Test</p></li>
+<li id="li-1141"><p id="p-3046">Significance Level</p></li>
+<li id="li-1142"><p id="p-3047">Statistical Test of Hypothesis</p></li>
+<li id="li-1143"><p id="p-3048">Test Statistic</p></li>
+<li id="li-1144"><p id="p-3049">Two-Tailed Hypothesis Test</p></li>
+<li id="li-1145"><p id="p-3050">Type I Error</p></li>
+<li id="li-1146"><p id="p-3051">Type II Error</p></li>
+</ul>
+</li>
+<li id="li-1147">
+<p id="p-3052">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1148"><p id="p-3053">Formulate null and alternative hypotheses</p></li>
+<li id="li-1149"><p id="p-3054">Understand what a test statistic tells us</p></li>
+<li id="li-1150"><p id="p-3055">Be able to perform a traditional hypothesis test using a test statistic and critical regions</p></li>
+<li id="li-1151"><p id="p-3056">Be able to perform a p-value hypothesis test using a normal distribution</p></li>
+<li id="li-1152"><p id="p-3057">Understand and identify type I and type II errors</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_ht-intro_hypothesis"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.1</span> <span class="title">Formulating Hypotheses</span>
+</h3>
+<a href="sec_ht-intro.html#sec_ht-intro_hypothesis" class="permalink">¶</a><p id="p-3058">The first step in conducting a hypothesis test is to figure out what we are hypothesizing. While this may seem obvious, it is often overlooked or thought to be “understood.” However we must be very careful that we explicitly state two hypotheses, called the <dfn class="terminology">null</dfn> and <dfn class="terminology">alternative hypothesis</dfn>, before we begin a hypothesis test. This is done not only to ensure our own understanding, but also because the numbers used in these hypotheses will be needed in the next step of the hypothesis test.</p>
+<article class="definition definition-like" id="def_hypotheses"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-3059">In a statistical test of hypothesis, we compare the <dfn class="terminology">alternative hypothesis</dfn> against the <dfn class="terminology">null hypothesis</dfn>. These hypotheses are:</p>
+<ul class="disc">
+<li id="li-1153">
+<h6 class="heading"><span class="title">Alternative Hypothesis: \(H_A\).</span></h6>
+<p id="p-3060">This is generally the hypothesis that the researcher wishes to support. The alternative hypothesis claims that a population parameter is “greater than,” “less than,” or “not equal to” a certain value.</p>
+</li>
+<li id="li-1154">
+<h6 class="heading"><span class="title">Null Hypothesis: \(H_0\).</span></h6>
+<p id="p-3061">The null hypothesis is a contradiction of the alternative hypothesis. This is the commonly held belief about the population parameter, and must involve equality. The null hypothesis is the claim that the research is trying to disprove, reject, or nullify.</p>
+</li>
+</ul></article><p id="p-3062">As a general rule, the best way to identify these hypothesis is to start by looking for the null hypothesis. It is usually easiest to find \(H_0\) because it must involve equality. Then, you can find \(H_A\) by contradicting \(H_0\text{.}\) Consider the following examples.</p>
+<article class="example example-like" id="examp_ht-intro_hypothesis-mean"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_hypothesis-mean"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses About a Mean.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_hypothesis-mean"><article class="example example-like"><p id="p-3063">In order to be profitable, a bus route must have an average of at least 25 paying customers. We wish to decide if a certain route is profitable by collecting ridership information on 15 different occasions during a given month. State the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-196" id="solution-196"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-196"><div class="solution solution-like">
+<p id="p-3064">We wish to determine if the number of customers on the bus is “at least 25” in order to continue the bus route. Turning this around, we will cancel the bus route if the number of customers is “less than 25.” This then should be our alternative hypothesis. Note also that “less than 25” does not involve equality, while “at least 25,” meaning greater-than-or-equal-to 25 does involve equality, making it a null hypothesis. Since these are average ridership numbers, our hypotheses are:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ \mu \geq 25 \qquad \qquad H_A:\ \mu \lt 25\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-intro_hypothesis-difference"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_hypothesis-difference"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses About a Difference Between Means.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_hypothesis-difference"><article class="example example-like"><p id="p-3065">A researcher claims that men and women do not get the same number of hours of sleep a night. To test this claim, you take a sample of 250 men and 200 women and determine the number of hours of sleep that each individual in these samples gets.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-197" id="solution-197"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-197"><div class="solution solution-like">
+<p id="p-3066">In this example, the research claims that two means—hours of sleep for men and hours of sleep for women—are not equal. The opposite of that is that the means are equal. If the means are equal, then their difference is zero, and if the means are not equal, their difference is not zero.</p>
+<p id="p-3067">These are stated as the null and alternative hypotheses below.</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ \mu_1 - \mu_2 = 0 \qquad \qquad H_A:\ \mu_1 - \mu_2 \not= 0\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-3068">While we will spend more time on this later in the section, it should be noted here that the outcome of a hypothesis test will be one of two conclusions:</p>
+<ul class="disc">
+<li id="li-1155">
+<h6 class="heading"><span class="title">“We reject the null hypothesis”.</span></h6>
+<p id="p-3069">This means that the sample we found is very unlikely if the null hypothesis were indeed true, so we conclude that the null hypothesis can not be true. Note that because \(H_A\) is the opposite of \(H_0\text{,}\) we must therefore support the alternative hypothesis.</p>
+</li>
+<li id="li-1156">
+<h6 class="heading"><span class="title">“We fail to reject the null hypothesis”.</span></h6>
+<p id="p-3070">Notice the wording. We do not say that we have proven the null hypothesis, or even that we support it. We are simply stating that the sample we found is consistent with the assumptions put forth in the null hypothesis. That means that we have found no support for the alternative hypothesis.</p>
+</li>
+</ul>
+<figure class="figure figure-like" id="video_ht-intro_hypothesis-1"><video id="video-188" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.5<span class="period">.</span></span><span class="space"> </span>Stating Hypotheses I</figcaption></figure><figure class="figure figure-like" id="video_ht-intro_hypothesis-2"><video id="video-189" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.6<span class="period">.</span></span><span class="space"> </span>Stating Hypotheses II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-intro_hypothesis-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_hypothesis-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_hypothesis-1"><article class="exercise exercise-like"><p id="p-3071">You wish to test the claim that the average weight of a black bear is more than 300 pounds.</p>
+<p id="p-3072">Question: which of the following should be your null hypothesis?</p>
+<ol class="lower-alpha cols2">
+<li id="li-1157"><p id="p-3073">\(\mu \lt 300\)</p></li>
+<li id="li-1158"><p id="p-3074">\(\mu \leq 300\)</p></li>
+<li id="li-1159"><p id="p-3075">\(\mu \not= 300\)</p></li>
+<li id="li-1160"><p id="p-3076">\(\mu \geq 300\)</p></li>
+<li id="li-1161"><p id="p-3077">\(\mu \gt 300\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-244" id="answer-244"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-244"><div class="answer solution-like"><p id="p-3078">(b)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-intro_hypothesis-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_hypothesis-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_hypothesis-2"><article class="exercise exercise-like"><p id="p-3079">A restaurant claims that more than 80% of their customers call them their favorite eating establishment. You wish to test this claim.</p>
+<p id="p-3080">Question: what is the alternative hypothesis, \(H_A\text{,}\) in this situation?</p>
+<ol class="lower-alpha cols2">
+<li id="li-1162"><p id="p-3081">\(\mu lt 80\)</p></li>
+<li id="li-1163"><p id="p-3082">\(\mu \leq 80\)</p></li>
+<li id="li-1164"><p id="p-3083">\(p \leq 0.8\)</p></li>
+<li id="li-1165"><p id="p-3084">\(p \gt 0.80\)</p></li>
+<li id="li-1166"><p id="p-3085">\(p \leq 80\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-245" id="answer-245"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-245"><div class="answer solution-like"><p id="p-3086">(d)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-intro_test-stat"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.2</span> <span class="title">Test Statistics and Significance Levels</span>
+</h3>
+<a href="sec_ht-intro.html#sec_ht-intro_test-stat" class="permalink">¶</a><p id="p-3087">Once we have stated our hypotheses, it is time to see if our sample supports those claims. To do this we must translate the information from our sample—which will be a mean, a proportion, a difference between means, etc—into a standardized random variable. That is, we need to find the z-score or t-score that goes with the sample we observed, under the assumption that the null hypothesis is true.</p>
+<article class="definition definition-like" id="def_test-statistic"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-3088">The test statistic for a sample is a numerical summary that reduces the sample data to a single value based on the assumptions of the null hypothesis.</p></article><p id="p-3089">Notice that the test statistic is computed based on two pieces of information: the observed sample, and the assumptions made in the null hypothesis. In later sections we will see how to compute test statistics for single means, proportions, and differences between means and proportions.</p>
+<p id="p-3090">This test statistic is the first step in determining if the sample we found is unusual. We must also have some guidance as to what the word “unusual” should mean. In this context, the term “unusual” refers to how likely we would be to see this test statistic for a sample if the null hypothesis is indeed true. We have seen this notion of how likely a sample is before. Recall that to construct a confidence interval, we need to pick a <a class="xref" data-knowl="./knowl/def_confidence-level.html" title="Definition 4.1.18">confidence level</a>. If, for example, we decide to use the 95% confidence level, we are willing for our confidence interval to be “wrong” 5% of the time. In general, in a \((1-\alpha)100\%\) confidence interval, \(\alpha\) is the likelihood that our sample is unlikely enough that the confidence interval won't contain the true population parameter. When conducting hypothesis tests, this same \(\alpha\) has a special role.</p>
+<article class="definition definition-like" id="def_significance-level"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-3091">The significance level \(\alpha\) in a statistical test of hypothesis is the probability of incorrectly rejecting the null hypothesis with which we are willing to live.</p></article><p id="p-3092">The following chart shows commonly used significance levels, the corresponding confidence level, and the term applied to those values of \(\alpha\text{.}\)</p>
+<figure class="table figure-like" id="table_significance-levels"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(\alpha\)</td>
+<td class="c m b2 r2 l0 t0 lines">Confidence Level</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Terminology</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">0.10</td>
+<td class="c m b0 r2 l0 t0 lines">90%</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Tends Towards Significance</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">0.05</td>
+<td class="c m b0 r2 l0 t0 lines">95%</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Statistically Significant</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">0.01</td>
+<td class="c m b0 r2 l0 t0 lines">99%</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Highly Significant</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.11<span class="period">.</span></span><span class="space"> </span>Common Significance Levels</figcaption></figure><figure class="figure figure-like" id="video_ht-intro_test-stat-1"><video id="video-190" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.12<span class="period">.</span></span><span class="space"> </span>Test Statistics and Significance Levels</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-intro_test-stat-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_test-stat-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_test-stat-1"><article class="exercise exercise-like"><p id="p-3093">Recall that significance level and confidence level are related. Suppose that you wish to use the \(\alpha = 0.03\) significance level.</p>
+<p id="p-3094">Question: what confidence level goes with this?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-246" id="answer-246"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-246"><div class="answer solution-like"><p id="p-3095">97%</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-intro_test-stat-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_test-stat-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.14</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_test-stat-2"><article class="exercise exercise-like"><p id="p-3096">We have seen that certain significance levels have special names.</p>
+<p id="p-3097">Question: which significance level is called “highly significant?”</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-247" id="answer-247"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-247"><div class="answer solution-like"><p id="p-3098">\(\alpha = 0.01\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-intro_critical-region"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.3</span> <span class="title">Critical Regions and the Traditional Test</span>
+</h3>
+<a href="sec_ht-intro.html#sec_ht-intro_critical-region" class="permalink">¶</a><p id="p-3099">In order to reach a conclusion in our hypothesis test, we need to compare the test statistic with the significance level.  However, the test statistic will typically be a z-score or t-score, while the significance level is a probability.  So we need to convert one or the other of them before we can compare them.  This can be done in two ways.</p>
+<ol class="decimal">
+<li id="li-1167"><p id="p-3100">We can convert our significance level to critical values and then compare the test statistic to those critical values. This is called a <dfn class="terminology">traditional hypothesis test</dfn>. This is the first method we will use.</p></li>
+<li id="li-1168"><p id="p-3101">We can find convert our test statistic to a probability by finding the probability of getting a test statistic at least as extreme as our test statistic and compare this to \(\alpha\text{.}\) This is called a <dfn class="terminology">p-value hypothesis test</dfn>.</p></li>
+</ol>
+<p data-braille="continuation">To conduct a traditional hypothesis test, we must divide the test statistic's distribution up into two regions. The <dfn class="terminology">rejection region</dfn> will be those values of the test statistic which are more unusual than the significance level, and will therefore lead to rejecting \(H_0\text{.}\) The <dfn class="terminology">acceptance region</dfn> is the rest of the distribution, containing those values of the test statistic which are not unusual. How we draw these regions depends on the alternative hypothesis being tested. In the pictures that follow, the red areas are the rejection regions and the blue areas are the acceptance regions. Note that \(\theta\) could be a mean or proportion.</p>
+<article class="definition definition-like" id="def_left-tailed-test"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.15</span><span class="period">.</span>
+</h6>
+<p id="p-3102">In a <dfn class="terminology">left-tailed hypothesis test</dfn>, we test the alternative that the population parameter is less-than a given value against the null hypothesis that it is greater-than-or-equal-to that value. We therefore put the full significance level \(\alpha\) in the left tail as shown.</p>
+<figure class="figure figure-like" id="fig_ht-intro_def_left-tailed-test"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image_ht-intro_def_left-tailed-test.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.16<span class="period">.</span></span><span class="space"> </span>Left-Tailed Test with Alternative Hypothesis \(H_A:\ \theta \lt \theta_0\)</figcaption></figure></article><article class="definition definition-like" id="def_right-tailed-test"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.17</span><span class="period">.</span>
+</h6>
+<p id="p-3103">In a <dfn class="terminology">right-tailed hypothesis test</dfn>, we test the alternative that the population parameter is greater-than a given value against the null hypothesis that it is less-than-or-equal-to that value. We therefore put the full significance level \(\alpha\) in the right tail as shown.</p>
+<figure class="figure figure-like" id="fig_ht-intro_def_right-tailed-test"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image_ht-intro_def_right-tailed-test.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.18<span class="period">.</span></span><span class="space"> </span>Right-Tailed Test with Alternative Hypothesis \(H_A:\ \theta &gt; \theta_0\)</figcaption></figure></article><article class="definition definition-like" id="def_two-tailed-test"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.19</span><span class="period">.</span>
+</h6>
+<p id="p-3104">In a two-tailed hypothesis test, we test the alternative that the population parameter is not equal to a given value against the null hypothesis that it is equal to that value. We therefore split the significance level \(\alpha\) equally between the left and right tails.</p>
+<figure class="figure figure-like" id="fig_ht-intro_def_two-tailed-test"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image_ht-intro_def_two-tailed-test.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.20<span class="period">.</span></span><span class="space"> </span>Right-Tailed Test with Alternative Hypothesis \(H_A:\ \theta \not= \theta_0\)</figcaption></figure></article><p id="p-3105">To determine if a test statistic lies in a rejection region, we find the critical value from the appropriate distribution which separates the rejection region from the acceptance region.  In a normal distribution, these would be \(-z_\alpha\text{,}\) \(z_\alpha\text{,}\) or \(\pm z_{\alpha/2}\text{.}\)  If our test statistic is more extreme—that is, further into the tail—than this critical value, we reject the null hypothesis. If it is less extreme—closer to the middle—we fail to reject the null hypothesis. Consider the following example.</p>
+<article class="example example-like" id="examp_ht-intro_critical-region-right"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_critical-region-right"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Right-Tailed Traditional Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_critical-region-right"><article class="example example-like"><p id="p-3106">You wish to test the null hypothesis \(H_0:\ \mu \leq 0.5\) against the alternative \(H_A:\ \mu &gt; 0.5\) at the \(\alpha = 0.05\) significance level. If your test statistic of \(z_\text{test} = 2.04\) comes from a standard normal distribution, what conclusion do you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-198" id="solution-198"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-198"><div class="solution solution-like"><p id="p-3107">We first note that this is a right-tailed test since the alternative hypothesis involves “\(\gt\)”. At the \(\alpha = 0.05\) significance level, our critical value is \(z_{0.05} = 1.645\text{.}\) Since the test statistic \(z_\text{test} = 2.04\) is further into the tail (and thus more unusual) than the critical value, we reject the null hypothesis.</p></div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-intro_critical-region-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_critical-region-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Two-Tailed Traditional Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_critical-region-two"><article class="example example-like"><p id="p-3108">You wish to test the null hypothesis \(H_0:\ p = 0.4\) against the alternative \(H_A:\ p \not= 0.4\) at the \(\alpha = 0.01\)significance level. Your test statistic of \(z_\text{test} = 2.40\) comes from a standard normal distribution. What conclusion do you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-199" id="solution-199"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-199"><div class="solution solution-like"><p id="p-3109">Because the alternative hypothesis involves “not equal to,” this is a two tailed test. So we split the significance level \(\alpha = 0.01\) evenly between the two tails, giving us critical values \(z_{0.005} = \pm 2.575\text{.}\) To be more extreme, our test statistic would either need to be bigger than 2.575, or less than -2.575. Because 2.40 is neither, the test statistic lies in the acceptance region. We must therefore fail to reject the null hypothesis.</p></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-intro_critical-region-1"><video id="video-191" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.23<span class="period">.</span></span><span class="space"> </span>Test Statistics and Significance Levels I</figcaption></figure><figure class="figure figure-like" id="video_ht-intro_critical-region-2"><video id="video-192" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.24<span class="period">.</span></span><span class="space"> </span>Test Statistics and Significance Levels II</figcaption></figure><figure class="figure figure-like" id="video_ht-intro_critical-region-3"><video id="video-193" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.25<span class="period">.</span></span><span class="space"> </span>Test Statistics and Significance Levels III</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-intro_critical-region-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_critical-region-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_critical-region-1"><article class="exercise exercise-like"><p id="p-3110">In testing the hypotheses:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ \mu \geq 10 \qquad \qquad H_A:\ \mu \lt 10\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">you find a test statistic of \(z_\text{test} = -1.88\text{.}\)</p>
+<p id="p-3111">Question: if this test statistic comes from a standard normal distribution, what decision do you make at the \(\alpha = 0.05\) significance level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-248" id="answer-248"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-248"><div class="answer solution-like"><p id="p-3112">Reject The Null Hypothesis</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-intro_critical-region-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_critical-region-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.27</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_critical-region-2"><article class="exercise exercise-like"><p id="p-3113">In testing the hypotheses:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p = 0.45 \qquad \qquad H_A:\ p \not= 0.45\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">you find a test statistic of \(z_\text{test} = 2.41\text{.}\)</p>
+<p id="p-3114">Question: if this test statistic comes from a standard normal distribution, what decision should you make at the \(\alpha = 0.01\) significance level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-249" id="answer-249"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-249"><div class="answer solution-like"><p id="p-3115">Fail to Reject the Null Hypothesis</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-intro_p-value"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.4</span> <span class="title">p-Value Tests</span>
+</h3>
+<a href="sec_ht-intro.html#sec_ht-intro_p-value" class="permalink">¶</a><p id="p-3116">The second method of deciding if a test statistic is unusual enough to warrant rejecting the null hypothesis is called a p-value test. In the traditional test seen on the last page, we looked up critical values based on the probability \(\alpha\) and then compared our test statistics to those critical values. In a p-value test, we look up a probability for the test statistic, and then compare it directly with the significance level \(\alpha\text{.}\)</p>
+<article class="definition definition-like" id="def_p-value"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.28</span><span class="period">.</span>
+</h6>
+<p id="p-3117">The p-value of a test statistic is the probability of observing a sample that is at least as unusual as the sample on which the test statistic is based.</p></article><p id="p-3118">When computing p-values, we must still pay attention to the type of test being conducted.</p>
+<ul class="disc">
+<li id="li-1169">
+<h6 class="heading"><span class="title">Left-Tailed Test.</span></h6>
+<p id="p-3119">The p-value of the test statistic is the probability to the left of that test statistic in the distribution. This is the probability of finding a value less than the test statistic.</p>
+</li>
+<li id="li-1170">
+<h6 class="heading"><span class="title">Right-Tailed Test.</span></h6>
+<p id="p-3120">The p-value of the test statistic is the probability to the right of the test statistic in the distribution. This is the probability of finding a value greater than the test statistic.</p>
+</li>
+<li id="li-1171">
+<h6 class="heading"><span class="title">Two-Tailed Test.</span></h6>
+<p id="p-3121">The p-value of the test statistic is the probability further into either the left or right tail than the test statistic. To determine this we find the probability of being further to the left than the left-tailed “version” of the test statistic, and add the probability of being further to the right than the right-tailed “version” of the test statistic.</p>
+</li>
+</ul>
+<p id="p-3122">Once we have computed the p-value of a test static, we then compare this probability to the significance level \(\alpha\text{.}\) If the p-value is less than \(\alpha\text{,}\) then our sample is less likely than our significance level, so we reject the null hypothesis. We have seen a sample that is too unusual for us to accept that the null hypothesis is true. If the p-value is greater than \(\alpha\text{,}\) then we fail to reject the null hypothesis. Our sample is more likely than the significance level, so there is no reason to suspect that \(H_0\) is incorrect.</p>
+<p id="p-3123">Compare the example below with <a class="xref" data-knowl="./knowl/examp_ht-intro_critical-region-right.html" title="Example 5.1.21: Conducting a Right-Tailed Traditional Test">Example 5.1.21</a> to see how the same test is conducted using a p-value.</p>
+<article class="example example-like" id="examp_ht-intro_p-value-right"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_p-value-right"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.29</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the p-Value for a Right-Tailed Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_p-value-right"><article class="example example-like"><p id="p-3124">You wish to test the null hypothesis \(H_0:\ \mu \leq 0.5\) against the alternative \(H_A:\ \mu &gt; 0.5\) at the \(\alpha = 0.05\) significance level. If your test statistic of \(z_\text{test} = 2.04\) comes from a standard normal distribution, find its p-value and decide what conclusion should be made.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-200" id="solution-200"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-200"><div class="solution solution-like">
+<p id="p-3125">This is a right-tailed test. The p-value is therefore the probability to the right of \(2.04\) in the standard normal distribution. Using the table, this is</p>
+<div class="displaymath">
+\begin{equation*}
+1-P(Z\lt 2.04) = 1 - 0.9793 = 0.0207\text{.}
+\end{equation*}
+</div>
+<p id="p-3126">Because the p-value is less than the significance level \(0.05\text{,}\) our sample is less likely they we are willing to tolerate. We must therefore reject the null hypothesis.</p>
+</div></div>
+</div></article></div>
+<p id="p-3127">And compare the following example with <a class="xref" data-knowl="./knowl/examp_ht-intro_critical-region-two.html" title="Example 5.1.22: Conducting a Two-Tailed Traditional Test">Example 5.1.22</a>.</p>
+<article class="example example-like" id="examp_ht-intro_p-value-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_p-value-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.30</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the p-Value for a Two-Tailed Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_p-value-two"><article class="example example-like"><p id="p-3128">You wish to test the null hypothesis \(H_0:\ p = 0.4\) against the alternative \(H_A:\ p \not= 0.4\) at the \(\alpha = 0.01\) significance level. Your test statistic of \(z_\text{test} = 2.40\) comes from a standard normal distribution.  Find the associated p-value and state the conclusion you should reach.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-201" id="solution-201"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-201"><div class="solution solution-like">
+<p id="p-3129">This test is a two-tailed test. The p-value is therefore the area above 2.40, and below -2.40 in the standard normal distribution. This can be found by taking twice the area above 2.40, which is</p>
+<div class="displaymath">
+\begin{equation*}
+2\times P(Z\gt 2.40) = 2(1 - 0.9918) = 2(0.0082) = 0.0164\text{.}
+\end{equation*}
+</div>
+<p id="p-3130">Because this p-value is greater than the significance level \(\alpha = 0.01\text{,}\) we fail to reject the null hypothesis.</p>
+</div></div>
+</div></article></div>
+<p id="p-3131">Notice that in the two examples above the results we found, either rejecting or failing to reject \(H_0\text{,}\) were the same as when we made our decision using a critical region and a traditional test.  That is not a coincidence! A p-value test and a traditional test will always give you the same results when conducted at the same significance level. The p-value test can, however, provide more information since the reader can see not only the final conclusion, but the actual probability of getting the sample that was collected.</p>
+<figure class="figure figure-like" id="video_ht-intro_p-value-1"><video id="video-194" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.31<span class="period">.</span></span><span class="space"> </span>P-Value Hypothesis Tests I</figcaption></figure><figure class="figure figure-like" id="video_ht-intro_p-value-2"><video id="video-195" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.32<span class="period">.</span></span><span class="space"> </span>P-Value Hypothesis Tests II</figcaption></figure><figure class="figure figure-like" id="video_ht-intro_p-value-3"><video id="video-196" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.33<span class="period">.</span></span><span class="space"> </span>P-Value Hypothesis Tests III</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-intro_p-value-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_p-value-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.34</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_p-value-1"><article class="exercise exercise-like"><p id="p-3132">In conducting a right-tailed test, you find a test statistic of \(z_\text{test} = 1.70\) from a standard normal distribution.</p>
+<p id="p-3133">Question: what is the p-value of this test statistic?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-250" id="answer-250"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-250"><div class="answer solution-like"><p id="p-3134">0.0446</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-intro_p-value-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_p-value-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_p-value-2"><article class="exercise exercise-like"><p id="p-3135">In conducting a two-tailed test, you find a test statistic \(z_\text{test} = 2.44\) from a standard normal distribution.</p>
+<p id="p-3136">Question: what is the p-value of this test statistic?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-251" id="answer-251"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-251"><div class="answer solution-like"><p id="p-3137">0.0146</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-intro_errors"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.5</span> <span class="title">Type I and Type II Errors</span>
+</h3>
+<a href="sec_ht-intro.html#sec_ht-intro_errors" class="permalink">¶</a><p id="p-3138">Whenever we conduct a hypothesis test, there is a chance that we will make an error. When we talk about an error in a hypothesis test, we are not talking about a mistake in the computation, or missing a step in the process. The errors we could make are statistical errors. A statistical error happens when we get an unusual sample and wind up “correctly” making the wrong decision. Consider the following table.</p>
+<figure class="figure figure-like" id="fig_ht-intro_errors_types"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_ht-intro_errors_types.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.36<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors</figcaption></figure><p id="p-3139">The green boxes represent the two correct decisions that we can make. The red boxes represent the two ways in which we can make an error. We can mistakenly reject a true null hypothesis, or we can fail to reject a null hypothesis that is false. These errors have specific names as defined below.</p>
+<article class="definition definition-like" id="def_type-1-error"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.37</span><span class="period">.</span>
+</h6>
+<p id="p-3140">A <dfn class="terminology">type I error</dfn> in a hypothesis test is the error of mistakenly rejecting a true null hypothesis. The probability of making a type I error is \(\alpha\text{,}\) the significance level.</p></article><article class="definition definition-like" id="def_type-2-error"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.38</span><span class="period">.</span>
+</h6>
+<p id="p-3141">A <dfn class="terminology">type II error</dfn> in a hypothesis test is the error of failing to reject a false null hypothesis. The probability of making a type II error is called \(\beta\) and depends on the true value of the population parameter.</p></article><p id="p-3142">In the following examples, we will identify type I and type II errors and compute their probabilities.</p>
+<article class="example example-like" id="examp_ht-intro_errors-type-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_errors-type-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.39</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Probability of a Type I Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_errors-type-1"><article class="example example-like"><p id="p-3143">In order to be profitable, a bus route must have an average of at least 25 paying customers. We wish to decide if a certain route is profitable by collecting ridership information on 15 different occasions during a given month and conducting a hypothesis test at the \(\alpha = 0.05\) significance level.</p>
+<p id="p-3144">After collecting your sample, you decide that the bus route is not profitable, even though the true average number of riders is 25. What type of error did you make, and what was its probability?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-202" id="solution-202"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-202"><div class="solution solution-like">
+<p id="p-3145">Recall that the null and alternative hypotheses were:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ \mu \geq 25 \qquad \qquad H_A:\ \mu \lt 25\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If the true average is 25, then the null hypothesis is correct. But when we said the bus route was not profitable, we rejected \(H_0\text{.}\) This is therefore a type I error—rejecting a true null hypothesis.</p>
+<p id="p-3146">The probability of this error is the significance level, \(\alpha = 0.05\text{.}\)</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-intro_errors-type-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-intro_errors-type-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.40</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying a Type II Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-intro_errors-type-2"><article class="example example-like"><p id="p-3147">In order to pass, a new school bond measure needs to get at least 60% support among voters. You collect a sample of 500 likely voters and find that 61% of them plan to vote for the bond. You conduct a hypothesis test at the \(\alpha = 0.10\) significance level and conclude that there is at least 60% support for the bond, and it will pass. However, come election day only 59% of voters vote for the bond and it fails. What type of error did you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-203" id="solution-203"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-203"><div class="solution solution-like">
+<p id="p-3148">The null and alternative hypotheses for this test are:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p \geq 0.60 \qquad \qquad H_A:\ p \lt 0.60\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The true population proportion was 0.59, meaning the null hypothesis was wrong. But in our test we decided the bond would pass, meaning we failed to reject the null hypothesis. This is therefore a type II error.</p>
+</div></div>
+</div></article></div>
+<p id="p-3149">Note that finding the value of \(\beta\text{,}\) the probability of a type II error, is more difficult and will not be covered in this text.</p>
+<figure class="figure figure-like" id="fig_ht-intro_errors-1"><video id="video-197" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.41<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors I</figcaption></figure><figure class="figure figure-like" id="fig_ht-intro_errors-2"><video id="video-198" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-11.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.42<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-intro_errors-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_errors-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.43</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_errors-1"><article class="exercise exercise-like"><p id="p-3150">The null hypothesis states that \(p = 0.4\text{.}\) Based on your test statistic, you reject this null hypothesis. But in actuality, \(p = 0.4\text{.}\)</p>
+<p id="p-3151">Question: what type of error have you made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-252" id="answer-252"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-252"><div class="answer solution-like"><p id="p-3152">Type I Error</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-intro_errors-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-intro_errors-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.1.44</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-intro_errors-2"><article class="exercise exercise-like"><p id="p-3153">The null hypothesis states that a mean is 20. You fail to reject this hypothesis based on your test statistic. However, in actuality the mean is 21.</p>
+<p id="p-3154">Question: what type of error have you made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-253" id="answer-253"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-253"><div class="answer solution-like"><p id="p-3155">Type II Error</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

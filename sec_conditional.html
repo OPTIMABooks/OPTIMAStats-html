@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:24-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Conditional Probability and Independence</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_probability.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap_distributions.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_probability.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap_distributions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional" class="active">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_conditional"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Conditional Probability and Independence</span>
+</h2>
+<a href="sec_conditional.html" class="permalink">¶</a><section class="introduction" id="sec_conditional_intro"><h6 class="heading">Relationships Between Events.<span></span>
+</h6>
+<p id="p-1503">Consider the following problem, which appeared in <em class="emphasis">Parade magazines Ask Marilyn</em> column.</p>
+<article class="example example-like" id="examp_conditional_monty-hall"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_monty-hall"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">The Monty Hall Problem.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_monty-hall"><article class="example example-like"><p id="p-1504">Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, “Do you want to pick door No. 2?” Is it to your advantage to switch your choice? (<a class="external" href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank">Whitaker 1990</a>)</p>
+<p id="p-1505">What would you do? Think carefully and make up your mind before checking out the video which explains the solution.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-100" id="solution-100"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-100"><div class="solution solution-like">
+<p id="p-1506">It turns out that it is to your advantage to switch, as explained in the video below.</p>
+<figure class="figure figure-like" id="fig_examp_conditional_monty-hall"><iframe id="video-77" width="480" height="270" allowfullscreen="" src="https://www.youtube.com/embed/mhlc7peGlGg?&amp;modestbranding=1&amp;rel=0"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-1507">If you guessed wrong, don't feel bad. After the problem was published with a solution similar to that shown in the video, approximately 10,000 readers, including many with Ph.D.s wrote into the magazine claiming that the solution is wrong.</p>
+<p id="p-1508">In this section, we will study how knowing extra information can change probabilities. This means that we will first need to understand how the probability of one event can depend on another event happening or not happening.</p></section><article class="objectives goal-like" id="sec_conditional_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-22"><p id="p-1509">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-610">
+<p id="p-1510">describe the following terms:</p>
+<ul class="circle">
+<li id="li-611"><p id="p-1511">Bayes' Theorem</p></li>
+<li id="li-612"><p id="p-1512">conditional probability</p></li>
+<li id="li-613"><p id="p-1513">conditional probability formula</p></li>
+<li id="li-614"><p id="p-1514">general multiplication rule</p></li>
+<li id="li-615"><p id="p-1515">independent</p></li>
+<li id="li-616"><p id="p-1516">test of independence</p></li>
+</ul>
+</li>
+<li id="li-617">
+<p id="p-1517">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-618"><p id="p-1518">Describe what it means for events to be independent</p></li>
+<li id="li-619"><p id="p-1519">Identify pairs of events which are independent or mutually exclusive</p></li>
+<li id="li-620"><p id="p-1520">Compute conditional probabilities</p></li>
+<li id="li-621"><p id="p-1521">Use the general multiplication rule for probabilities</p></li>
+<li id="li-622"><p id="p-1522">Use tree diagrams to organize events and compute their probabilities</p></li>
+<li id="li-623"><p id="p-1523">Use Bayes' Theorem to find conditional probabilities from a tree diagram</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_conditional_independence"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Independence</span>
+</h3>
+<a href="sec_conditional.html#sec_conditional_independence" class="permalink">¶</a><p id="p-1524">As the Monty Hall problem shows, sometimes knowing something about one event can change the probability of another event. Let's restate the Monty Hall problem solution in a different way.</p>
+<article class="example example-like" id="examp_conditional_monty-hall-formal"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_monty-hall-formal"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Restating the Monty Hall Problem.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_monty-hall-formal"><article class="example example-like"><p id="p-1525">In the context of the Monty Hall problem, define the following events:</p>
+<ul class="disc">
+<li id="li-624"><p id="p-1526">\(A\text{:}\) the car is behind door number one</p></li>
+<li id="li-625"><p id="p-1527">\(B\text{:}\) the car is behind door number two</p></li>
+<li id="li-626"><p id="p-1528">\(C\text{:}\) the car is behind door number three</p></li>
+</ul>
+<p id="p-1529">Suppose you pick door number three, and the game show host reveals that behind door number two there is a goat. Restate the conclusion to the Monty Hall problem in terms of these events.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-101" id="solution-101"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-101"><div class="solution solution-like"><p id="p-1530">When you choose door three, you are hoping that \(P(C) = 1\text{.}\) That is, you are hoping that even \(C\) definitely happens.  When the game show host reveals the goat behind door number two, he tells you that event \(B\) definitely did not happen. This changes the probability of event \(C\text{,}\) and as we saw in the video, you should switch to door number one.</p></div></div>
+</div></article></div>
+<p id="p-1531">When knowledge about one event happening or not happening changes the probability of another event happening, the events are called <dfn class="terminology">dependent</dfn>. When knowledge about one event makes no difference in the probability of another event happening, the events are called <dfn class="terminology">independent</dfn>.</p>
+<article class="definition definition-like" id="def_independent"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6>
+<p id="p-1532">Two events, \(A\) and \(B\text{,}\) are called independent if the occurrence of \(A\) has no influence on the probability of \(B\text{.}\)</p></article><p id="p-1533">To better understand the idea of independence, let&amp;s practice identifying dependent and independent events.</p>
+<article class="example example-like" id="examp_conditional_independent-or-dependent"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_independent-or-dependent"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if Events are Independent or Dependent.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_independent-or-dependent"><article class="example example-like"><p id="p-1534">Determine if the pairs of events \(A\) and \(B\) described below are independent or dependent.</p>
+<ol class="lower-alpha">
+<li id="li-627"><p id="p-1535">A coin is flipped three times and \(A =\) “the first flip is a heads” while \(B =\) “the last flip is a heads.”</p></li>
+<li id="li-628"><p id="p-1536">A coin is flipped three times and \(A =\) “the first flip is a heads"” while \(B =\) “all flips are heads.”</p></li>
+<li id="li-629"><p id="p-1537">An urn contains three marbles: 2 red and 1 white. Two marbles are drawn, with replacement. \(A =\) “the first marble is white” while \(B =\) “the second marble is white.”</p></li>
+<li id="li-630"><p id="p-1538">An urn contains three marbles: 2 red and 1 white. Two marbles are drawn, without replacement. \(A =\) “the first marble is white” while \(B =\) “the second marble is white.”</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-102" id="solution-102"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-102"><div class="solution solution-like"><ol id="p-1539" class="lower-alpha">
+<li id="li-631"><p id="p-1540">Does knowing if the first flip was a heads or tails change the probability that the third flip will be a heads? Coins do not have memories. Anything we know about the first flip has no effect on what happens on the second flip, so \(A\) and \(B\) are <dfn class="terminology">independent</dfn>.</p></li>
+<li id="li-632"><p id="p-1541">This experiment is different. Knowing that the first flip came up a heads does have an effect on whether all three flips come up heads. After all, if \(A\) did not happen, then \(B\) can not possibly happen either. Therefore, \(A\) and \(B\) are <dfn class="terminology">dependent</dfn>.</p></li>
+<li id="li-633"><p id="p-1542">Since we are replacing the marbles after we draw them, the probability of getting a red on the first draw and on the second draw are the same: \(\frac{2}{3}\text{.}\) What happens on the first draw does not effect the probability of getting a red on the second draw. Because of this, \(A\) and \(B\) are <dfn class="terminology">independent</dfn>.</p></li>
+<li id="li-634"><p id="p-1543">In our final question, we are again drawing marbles, but this time what happens on the first draw does make a difference. Since we do not replace the marbles we draw, if \(A\) does not happen (we draw red), there are two marbles left: 1 red and 1 white. So \(P(B) = \frac{1}{2}\text{.}\) However, if \(A\) does happen (we draw a white), then there are two marbles left, both of which are red. So \(P(B) = 0\text{.}\) Since \(P(B)\) changes depending on whether \(A\) happens or not, \(A\) and \(B\) are <dfn class="terminology">dependent</dfn>.</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-1544">As we shall see moving forward in this section, independent and dependent events play an important role in understanding more complex, multi-step probability experiments. This concept also becomes important later in the course when we are taking “independent random samples” and comparing them.</p>
+<figure class="figure figure-like" id="video_conditional_independence-1"><video id="video-78" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.6<span class="period">.</span></span><span class="space"> </span>Dependent and Independent Events I</figcaption></figure><figure class="figure figure-like" id="video_conditional_independence-2"><video id="video-79" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.7<span class="period">.</span></span><span class="space"> </span>Dependent and Independent Events II</figcaption></figure><article class="exercise exercise-like" id="ckpt_conditional_independence-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_independence-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_independence-1"><article class="exercise exercise-like"><p id="p-1545">An urn contains 6 marbles: 4 blue and 2 red. Two marbles are drawn at random, without replacement, and the resulting colors are noted. Then, a single die is thrown and the number is noted. An example of an outcome in this experiment would be R-B-3 (1st marble was red, 2nd was blue, then a 3 was rolled). Consider the following events.</p>
+<ul class="disc">
+<li id="li-635"><p id="p-1546">\(A =\) the first marble drawn is red</p></li>
+<li id="li-636"><p id="p-1547">\(B =\) both marbles drawn are red</p></li>
+<li id="li-637"><p id="p-1548">\(C =\) the die roll is an even number</p></li>
+<li id="li-638"><p id="p-1549">\(D =\) the sum of the number of red marbles drawn and the die roll is more than 2</p></li>
+<li id="li-639"><p id="p-1550">\(E =\) the die rolls a 1</p></li>
+</ul>
+<p id="p-1551">Question: Which pairs of events are independent?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-109" id="answer-109"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-109"><div class="answer solution-like"><p id="p-1552">A and C, A and E, B and C, B and E</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_independence-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_independence-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_independence-2"><article class="exercise exercise-like"><p id="p-1553">Events in everyday life can be classified as dependent or independent using common sense and the notion of cause-and-effect.  For example,</p>
+<ol class="lower-alpha">
+<li id="li-640"><p id="p-1554">You forget to put gas in your car, and the next day it won't start.</p></li>
+<li id="li-641"><p id="p-1555">You toss salt over your shoulder for luck, buy a lottery ticket, and win $20.</p></li>
+<li id="li-642"><p id="p-1556">You stay up all night playing games and sleep through a meeting the next day.</p></li>
+<li id="li-643"><p id="p-1557">You miss paying the electricity bill and your lights and other electrical appliances stop working.</p></li>
+<li id="li-644"><p id="p-1558">You speed through a school zone on Monday and don't get a ticket. You do the same thing on Tuesday and are pulled over and ticketed.</p></li>
+</ol>
+<p id="p-1559">Question: which of the pairs of events above are independent?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-110" id="answer-110"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-110"><div class="answer solution-like"><p id="p-1560">(b) and (e) are likely independent</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_independence-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_independence-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_independence-3"><article class="exercise exercise-like"><p id="p-1561">You toss a fair coin four times, noting whether heads or tails comes up on each toss. The event \(A\) is that the first toss is a heads.  Consider the following pairs of events:</p>
+<ol class="lower-alpha">
+<li id="li-645"><p id="p-1562">The second toss is a heads</p></li>
+<li id="li-646"><p id="p-1563">All tosses are heads</p></li>
+<li id="li-647"><p id="p-1564">None of the tosses are heads</p></li>
+<li id="li-648"><p id="p-1565">One of the last three tosses is a heads</p></li>
+<li id="li-649"><p id="p-1566">An even number of the tosses are tails</p></li>
+</ol>
+<p id="p-1567">Question: which of the events described above are independent from A?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-111" id="answer-111"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-111"><div class="answer solution-like"><p id="p-1568">(a) and (d) are independent from \(A\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_conditional_formula"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Conditional Probability</span>
+</h3>
+<a href="sec_conditional.html#sec_conditional_formula" class="permalink">¶</a><p id="p-1569">As we saw on the last page, the probability of one event can change depending on the occurrence of another. Because these probabilities can be different, we need a way to denote the probability of one event given than another has occurred. This is called the <dfn class="terminology">conditional probability</dfn> of the first event, given that the second event happens. The formal definition is given below.</p>
+<article class="definition definition-like" id="def_conditional-probability"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span>
+</h6>
+<p id="p-1570">The <dfn class="terminology">conditional probability</dfn> of \(A\) given \(B\) is the probability of event \(A\) given that event \(B\) has occurred. Symbolically, this is written as \(P(A|B)\text{.}\)</p></article><p id="p-1571">Many times we read \(P(A|B)\) as “the probability of \(A\) given \(B\text{.}\)” This simply means the probability of \(A\) with the extra information that \(B\) has happened. In <a class="xref" data-knowl="./knowl/examp_conditional_independent-or-dependent.html" title="Example 2.4.5: Determining if Events are Independent or Dependent">Example 2.4.5</a> we saw several pairs \(A\) and \(B\) of events for which having the information that \(B\) happened changed the probability of \(A\text{.}\) These dependent events provide good examples for computing conditional probabilities.</p>
+<article class="example example-like" id="examp_conditional_compute"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_compute"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Conditional Probabilities from Outcomes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_compute"><article class="example example-like"><p id="p-1572">A coin is flipped three times. Events \(A\) and \(B\) are defined as follows.</p>
+<ul class="disc cols2">
+<li id="li-650"><p id="p-1573">\(A\text{:}\) the first flip is a heads</p></li>
+<li id="li-651"><p id="p-1574">\(B\text{:}\) all three flips are heads</p></li>
+</ul>
+<p id="p-1575">Find the sample space for this experiment, the outcomes in \(A\text{,}\) and the outcomes in \(B\text{.}\) Use this information to find \(P(A)\) and \(P(A|B)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like">
+<p id="p-1576">Since the experiment involves flipping a coin three times, a sample outcome would be \(HHT\text{,}\) representing the first flip coming up heads, the second heads, and the last tails. The set of all outcomes is therefore:</p>
+<div class="displaymath">
+\begin{equation*}
+S = \lbrace HHH, HHT, HTH, HTT, THH, THT, TTH, TTT \rbrace\text{.}
+\end{equation*}
+</div>
+<p id="p-1577">The first event of interest, \(A\text{,}\) consists of all of the outcomes above resulting in a heads on the first flip. This is:</p>
+<div class="displaymath">
+\begin{equation*}
+A = \lbrace HHH, HHT, HTH, HTT \rbrace\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can therefore conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+P(A) = \frac{n(A)}{n(S)} = \frac{4}{8} = \frac{1}{2} = 0.50\text{.}
+\end{equation*}
+</div>
+<p id="p-1578">But what about B? The event B is:</p>
+<div class="displaymath">
+\begin{equation*}
+B = \lbrace HHH \rbrace\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we know that \(B\) has happened, then we automatically know that \(A\) has happened as well.  This is because if all three flips are heads, the first one must have been a heads (\(B\) is a subset of \(A\)). Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(A|B) = 1\text{.}
+\end{equation*}
+</div>
+<p id="p-1579">Note that \(P(A|B)\) and \(P(A)\) are different! This is equivalent to saying that \(A\) and \(B\) are dependent.</p>
+</div></div>
+</div></article></div>
+<p id="p-1580">One good tool for visualizing conditional probability is a <a class="xref" data-knowl="./knowl/def_venn-diagram.html" title="Definition 2.2.5">Venn Diagram</a>. In the two Venn Diagrams below, we see how the “extra” information that \(B\) has happened changes the probability of \(A\) by, in a sense, redefining the sample space.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_conditional_venn-a"><img src="images/image_conditional_venn-a.svg" style="width: 100%; height: auto;" alt="A Venn diagram with two circles, A and B.  Circle A is shaded a light yellow.  Circle B is not shaded."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_conditional_venn-b"><img src="images/image_conditional_venn-b.svg" style="width: 100%; height: auto;" alt="A Venn diagram with two circles, A and B.  Circle A is shaded a light yellow.  Circle B is shaded a light pink.  The region inside both circles A and B is a mixture of the two colors."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
+<p id="p-1581">To compute \(P(A)\text{,}\) we ignore \(B\) and take the ratio of the yellow area in \(A\text{,}\) to the area of the whole box. This is equivalent to saying that</p>
+<div class="displaymath">
+\begin{equation*}
+P(A) = \frac{P(A)}{P(S)} = \frac{P(A)}{1}
+\end{equation*}
+</div>
+</div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;">
+<p id="p-1582">When computing \(P(A|B)\text{,}\) we know \(B\) has happened, so we are in the purple area above.  To figure out how likely \(A\) is, we take the ratio of the area in common to \(A\) and \(B\) to the area in \(B\text{.}\) This is equivalent to saying that</p>
+<div class="displaymath">
+\begin{equation*}
+P(A|B) = \frac{P(A\cap B)}{P(B)}
+\end{equation*}
+</div>
+</div>
+</div></div>
+<article class="theorem theorem-like" id="thm_conditional-probability-formula"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability Formula.</span>
+</h6>
+<p id="p-1583">If \(A\) and \(B\) are events in a sample space \(S\text{,}\) then the conditional probability of \(A\) given \(B\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A|B) = \frac{P(A\cap B)}{P(B)}\text{.}
+\end{equation*}
+</div></article><p id="p-1584">It is a good idea to have several different ways to think of a difficult concept such as conditional probability. Let's take a look at another example in which we use a contingency table to represent two different events and then to compute conditional probabilities.</p>
+<article class="example example-like" id="examp_conditional_table"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_table"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Conditional Probabilities Using the Formula.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_table"><article class="example example-like"><p id="p-1585">A hospital conducts a research study on 138 patients who have a history of serious headaches. Several of the patients are given an experimental headache drug, while others are given ordinary Tylenol. Patients are then checked after 15 minutes to see if they are still suffering from headaches.  The resulting data is summarized in the table below.</p>
+<figure class="table figure-like" id="table-30"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Experimental Drug</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Tylenol</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Headach Persists</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">40</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Headache Gone</td>
+<td class="c m b0 r2 l0 t0 lines">53</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">33</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.17<span class="period">.</span></span><span class="space"> </span>Headache Study Results</figcaption></figure><p id="p-1586">Suppose one of these people is randomly selected. Use the given table to answer the following questions.</p>
+<ol class="lower-alpha">
+<li id="li-652"><p id="p-1587">Find \(P(\text{H. Gone})\text{,}\) the probability the person's headache is gone.</p></li>
+<li id="li-653"><p id="p-1588">Find \(P(\text{H. Gone}\,|\,\text{Tylenol})\text{,}\) the probability the person's headache is gone given that they took Tylenol.</p></li>
+<li id="li-654"><p id="p-1589">Are the events “H. Gone” and “Tylenol” independent? Explain.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like">
+<p id="p-1590">Our first step is to find the marginal distributions for this contingency table. With those added, the table becomes:</p>
+<figure class="table figure-like" id="table-31"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Experimental Drug</td>
+<td class="c m b2 r3 l0 t0 lines">Tylenol</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Headach Persists</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r3 l0 t0 lines">40</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">52</td>
+</tr>
+<tr>
+<td class="l m b3 r2 l0 t0 lines">Headache Gone</td>
+<td class="c m b3 r2 l0 t0 lines">53</td>
+<td class="c m b3 r3 l0 t0 lines">33</td>
+<td class="c m b3 r0 l0 t0 lines" data-braille="last-cell">86</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total</td>
+<td class="c m b0 r2 l0 t0 lines">65</td>
+<td class="c m b0 r3 l0 t0 lines">73</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">138</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.18<span class="period">.</span></span><span class="space"> </span>Study Results with Marginal Distributions</figcaption></figure><p id="p-1591">Using this table, we compute the following probabilities.</p>
+<ol class="lower-alpha">
+<li id="li-655"><p id="p-1592">\(P(\text{H. Gone}) = \frac{86}{138} \approx 0.6232\) since 86 of the 138 peoples' headaches were gone after 15 minutes.</p></li>
+<li id="li-656">
+<p id="p-1593">To find \(P(\text{H. Gone}\,|\,\text{Tylenol})\text{,}\) we use the conditional probability formula.</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{H. Gone}\,|\,\text{Tylenol}) = \frac{P(\text{H. Gone}\,\cap\,\text{Tylenol})}{P(\text{Tylenol})} = \frac{\frac{33}{138}}{\frac{73}{138}} = \frac{33}{73} \approx 0.4521\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-657"><p id="p-1594">Since the probability of the headache being gone changed when we were told the person took Tylenol, these two events are not independent—they are dependent.</p></li>
+</ol>
+<p id="p-1595">Note: When we have a contingency table, there is a short-cut to finding conditional probability. Since we are told in (b) that the person took Tylenol, we restrict ourselves to the Tylenol column. Then, the probability that their headache is gone is simply \(\frac{33}{73} \approx 0.4521\text{,}\) as above.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_conditional_formula-1"><video id="video-80" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.19<span class="period">.</span></span><span class="space"> </span>Conditional Probability I</figcaption></figure><figure class="figure figure-like" id="video_conditional_formula-2"><video id="video-81" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.20<span class="period">.</span></span><span class="space"> </span>Conditional Probability II</figcaption></figure><article class="exercise exercise-like" id="ckpt_conditional_formula-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_formula-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_formula-1"><article class="exercise exercise-like"><p id="p-1596">A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
+<figure class="table figure-like" id="table-32"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Brown</td>
+<td class="c m b2 r2 l0 t0 lines">Green</td>
+<td class="c m b2 r2 l0 t0 lines">Yellow</td>
+<td class="c m b2 r2 l0 t0 lines">Red</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">Blue</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Plain</td>
+<td class="c m b0 r2 l0 t0 lines">13</td>
+<td class="c m b0 r2 l0 t0 lines">17</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">9</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">21</td>
+<td class="c m b0 r2 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">2</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.22<span class="period">.</span></span><span class="space"> </span>Table for Checkpoint 2.4.21</figcaption></figure><p id="p-1597">Question: what is the probability that the M&amp;M you select is red given that it is a plain M&amp;M?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-112" id="answer-112"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-112"><div class="answer solution-like"><p id="p-1598">0.2794</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_formula-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_formula-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.23</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_formula-2"><article class="exercise exercise-like"><p id="p-1599">A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
+<figure class="table figure-like" id="table-33"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Brown</td>
+<td class="c m b2 r2 l0 t0 lines">Green</td>
+<td class="c m b2 r2 l0 t0 lines">Yellow</td>
+<td class="c m b2 r2 l0 t0 lines">Red</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">Blue</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Plain</td>
+<td class="c m b0 r2 l0 t0 lines">13</td>
+<td class="c m b0 r2 l0 t0 lines">17</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">9</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">21</td>
+<td class="c m b0 r2 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">2</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.24<span class="period">.</span></span><span class="space"> </span>Table for Checkpoint 2.4.21</figcaption></figure><p id="p-1600">Question: what is the probability that the M&amp;M you select is peanut given that it is yellow?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-113" id="answer-113"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-113"><div class="answer solution-like"><p id="p-1601">0.6364</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_formula-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_formula-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_formula-3"><article class="exercise exercise-like"><p id="p-1602">Events \(A\) and \(B\) in a sample space have probabilities \(P(A) = 0.45\) and \(P(B) = 0.36\text{.}\) The probability of their union is \(P(A\cup B) = 0.69\text{.}\)</p>
+<p id="p-1603">Question: what is \(P(A|B)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-114" id="answer-114"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-114"><div class="answer solution-like"><p id="p-1604">0.3333</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_conditional_multiplication-rule"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">General Multiplication Rule</span>
+</h3>
+<a href="sec_conditional.html#sec_conditional_multiplication-rule" class="permalink">¶</a><p id="p-1605">In <a href="sec_probability.html#sec_probability_more-rules" class="internal" title="Subsection 2.3.3: More Probability Rules">Subsection 2.3.3</a>, we saw a rule for finding \(P(A\cup B)\text{,}\) which we called the <a class="xref" data-knowl="./knowl/thm_probability-rule_general-addition.html" title="Theorem 2.3.24">general addition rule 2.3.24</a>.  We have not, however, seen a general rule for finding \(P(A\cap B)\text{,}\) the probability that both \(A\) and \(B\) occur. A little bit of algebra with the conditional probability formula produces just such a rule.</p>
+<article class="theorem theorem-like" id="thm_probability-rule_general-multiplication"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.26</span><span class="period">.</span><span class="space"> </span><span class="title">General Multiplication Rule.</span>
+</h6>
+<p id="p-1606">If \(A\) and \(B\) are events in a sample space \(S\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cap B) = P(B)P(A|B)\quad\text{and}\quad P(A\cap B) = P(A)P(B|A)\text{.}
+\end{equation*}
+</div></article><p id="p-1607">This is called the <dfn class="terminology">general multiplication rule</dfn> because it works in general—for any \(A\) and \(B\text{.}\)</p>
+<article class="example example-like" id="examp_conditional_multiplication-rule"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_multiplication-rule"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.27</span><span class="period">.</span><span class="space"> </span><span class="title">Using the General Multiplication Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_multiplication-rule"><article class="example example-like"><p id="p-1608">An urn contains 10 marbles: 7 red and 3 white. Two marbles are drawn randomly, one after the other, without replacement. Find the probabilities that:</p>
+<ol class="lower-alpha">
+<li id="li-658"><p id="p-1609">The second marble is red given that the first marble was red.</p></li>
+<li id="li-659"><p id="p-1610">The first and second marbles are both red.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like"><ol id="p-1611" class="lower-alpha">
+<li id="li-660"><p id="p-1612">Since we are told that the first marble was red, when drawing the second marble we have 9 marbles remaining, 6 of which are red. So, the probability the second marble is red is \(\frac{6}{9} = \frac{2}{3}\text{.}\)</p></li>
+<li id="li-661">
+<p id="p-1613">The probability that the first marble is red will be \(\frac{7}{10}\) since seven of the 10 marbles are red. In (a), we saw that the probability the second marble is red given that the first was red is \(\frac{2}{3}\text{.}\) Using the general multiplication rule, the probability that the first and second marbles are red is</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{1st }R) \times P(\text{2nd }R\,|\,\text{1st }R) = \frac{7}{10} \times \frac{2}{3} = \frac{14}{30} = \frac{7}{15}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<p id="p-1614">In the special case where \(A\) and \(B\) are <a class="xref" data-knowl="./knowl/def_independent.html" title="Definition 2.4.4">independent</a>, the conditional probability for \(B\) given \(A\) is the same as the probability for \(B\text{.}\) That is, \(P(B|A) = P(B)\text{.}\) The general multiplication rule then becomes:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cap B) = P(A)P(B)\text{.}
+\end{equation*}
+</div>
+<p id="p-1615">This is in fact one of the best ways to test two events and see if they are independent.</p>
+<article class="theorem theorem-like" id="thm_independence-test"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.28</span><span class="period">.</span><span class="space"> </span><span class="title">Test of Independence.</span>
+</h6>
+<p id="p-1616">Events \(A\) and \(B\) in a sample space \(S\) are independent if and only if \(P(A\cap B) = P(A) P(B)\text{.}\)</p></article><p id="p-1617">Let's try this new test for independence out on an a few examples.</p>
+<article class="example example-like" id="examp_conditional_testing-independence"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_testing-independence"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.29</span><span class="period">.</span><span class="space"> </span><span class="title">Testing for Independence.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_testing-independence"><article class="example example-like"><p id="p-1618">Two events \(A\) and \(B\) in a sample space \(S\) have probabilities \(P(A) = 0.36\) and \(P(B) = 0.25\text{.}\) The probability of their union is \(0.52\text{.}\) Are \(A\) and \(B\) independent?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<p id="p-1619">We first use the <a class="xref" data-knowl="./knowl/thm_probability-rule_general-addition.html" title="Theorem 2.3.24">general addition rule</a> to find \(P(A\cap B)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+P(A\cup B) \amp = P(A) + P(B) - P(A\cap B)\\
+\Rightarrow 0.52 \amp = 0.36 + 0.25 - P(A\cap B)\\
+\Rightarrow P(A\cap B) \amp = 0.09.
+\end{align*}
+</div>
+<p id="p-1620">Next, we check using our test of independence.</p>
+<div class="displaymath">
+\begin{equation*}
+P(A\cap B) = P(A)P(B) \Leftrightarrow 0.09 = 0.36 \times 0.25\text{.}
+\end{equation*}
+</div>
+<p id="p-1621">Since the above equation is true, \(A\) and \(B\) are in fact independent events.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_conditional_using-independence"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_using-independence"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.30</span><span class="period">.</span><span class="space"> </span><span class="title">Using Independence to Compute Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_using-independence"><article class="example example-like"><p id="p-1622">A coin is weighted so that the probability of a heads is \(\frac{1}{3}\) while the probability of a tails is \(\frac{2}{3}\text{.}\) This coin is flipped four times. Find the probability that:</p>
+<ol class="lower-alpha">
+<li id="li-662"><p id="p-1623">all four flips are tails.</p></li>
+<li id="li-663"><p id="p-1624">three of the four flips are tails.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like">
+<p id="p-1625">Because flipping a coin multiple times gives independent events, (remember the coin has no memory, so one flip can not affect another), we can use the multiplication rule.</p>
+<ol class="lower-alpha">
+<li id="li-664">
+<p id="p-1626">The probability  all four flips are tails is computed as follows.</p>
+<div class="displaymath">
+\begin{align*}
+P(\text{1st T}\cap\text{2nd T}\cap\text{3rd T}\cap\text{4thT}) \amp = P(\text{1st T})P(\text{2nd T})P(\text{3rd T})P(\text{4th T})\\
+\amp = \frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\\
+\amp = \frac{16}{81} \approx 0.1975.
+\end{align*}
+</div>
+</li>
+<li id="li-665">
+<p id="p-1627">This event is simular, but one of the four flips must be a heads instead of a tails. So, we split this into the four different cases that give us one tails and add the results of the multiplication rule together, giving:</p>
+<div class="displaymath">
+\begin{align*}
+\amp \left(\frac{1}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\right) + \left(\frac{2}{3}\times\frac{1}{3}\times\frac{2}{3}\times\frac{2}{3}\right) + \\
+\amp \left(\frac{2}{3}\times\frac{2}{3}\times\frac{1}{3}\times\frac{2}{3}\right) + \left(\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{1}{3}\right) = \frac{32}{81} \approx 0.3951.
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_conditional_multiplication-rule-1"><video id="video-82" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.31<span class="period">.</span></span><span class="space"> </span>General Multiplication Rule and Independence I</figcaption></figure><figure class="figure figure-like" id="video_conditional_multiplication-rule-2"><video id="video-83" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.32<span class="period">.</span></span><span class="space"> </span>General Multiplication Rule and Independence II</figcaption></figure><article class="exercise exercise-like" id="ckpt_conditional_multiplication-rule-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_multiplication-rule-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.33</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_multiplication-rule-1"><article class="exercise exercise-like"><p id="p-1628">An urn contains 10 balls: 5 red, 3 blue, and 2 white. Two balls are drawn randomly, without replacement, and the colors are noted.</p>
+<p id="p-1629">Question: what is the probability that the first ball is red and the second is white?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-115" id="answer-115"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-115"><div class="answer solution-like"><p id="p-1630">0.1111</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_multiplication-rule-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_multiplication-rule-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.34</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_multiplication-rule-2"><article class="exercise exercise-like"><p id="p-1631">A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select two M&amp;Ms from this bowl.</p>
+<figure class="table figure-like" id="table-34"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Brown</td>
+<td class="c m b2 r2 l0 t0 lines">Green</td>
+<td class="c m b2 r2 l0 t0 lines">Yellow</td>
+<td class="c m b2 r2 l0 t0 lines">Red</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">Blue</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Plain</td>
+<td class="c m b0 r2 l0 t0 lines">13</td>
+<td class="c m b0 r2 l0 t0 lines">17</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">9</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r2 l0 t0 lines">21</td>
+<td class="c m b0 r2 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">2</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.35<span class="period">.</span></span><span class="space"> </span>Table for Checkpoint 2.4.21</figcaption></figure><p id="p-1632">Question: what is the probability that the first is a plain M&amp;M and the second is a peanut M&amp;M?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-116" id="answer-116"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-116"><div class="answer solution-like"><p id="p-1633">0.2476</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_multiplication-rule-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_multiplication-rule-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_multiplication-rule-3"><article class="exercise exercise-like"><p id="p-1634">A die is weighted so that \(P(H) = \frac{1}{3}\) and \(P(T) = \frac{2}{3}\text{.}\) This die is tossed three times. Note that each toss is independent of the previous tosses.</p>
+<p id="p-1635">Question: what is the probability that the first two tosses are heads and the last toss is a tails?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-117" id="answer-117"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-117"><div class="answer solution-like"><p id="p-1636">0.0741</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_conditional_trees"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.4</span> <span class="title">Tree Diagrams and Probability</span>
+</h3>
+<a href="sec_conditional.html#sec_conditional_trees" class="permalink">¶</a><p id="p-1637">A <a class="xref" data-knowl="./knowl/def_tree-diagram.html" title="Definition 2.2.31">tree diagram</a> has been useful in the past when working with multi-stage experiments. Since the multiplication rule naturally fits experiments that can be broken up into stages (first \(A\) happens, then \(B\text{,}\) etc.) it makes sense to look into using a tree diagram again. Consider the following example.</p>
+<article class="example example-like" id="examp_conditional_probability-tree"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_probability-tree"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.37</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities with a Tree Diagram.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_probability-tree"><article class="example example-like"><p id="p-1638">An urn contains six marbles: 3 blue marbles, 2 red marbles, and 1 white marble. Two marbles are drawn, one after the other, without replacement and their colors are noted. Draw a tree diagram and label the branches with appropriate probabilities for this experiment. Use the tree diagram to find</p>
+<ol class="lower-alpha cols2">
+<li id="li-666"><p id="p-1639">\(P(\text{2nd }W\,|\,\text{1st }R)\)</p></li>
+<li id="li-667"><p id="p-1640">\(P(\text{2nd }W)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
+<p id="p-1641">In the tree diagram below, the labels represent the color of marble drawn. The fractions on the branches represent the probability of drawing that color marble at that stage in the experiment.</p>
+<p id="p-1642">Now using this tree diagram, we find the desired probabilities.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:51.2820512820513%;justify-content:flex-start;"><ol id="p-1643" class="lower-alpha">
+<li id="li-668"><p id="p-1644">Note that \(P(\text{2nd }W\,|\,\text{1st }R)\) can be read right off the tree. Since we are given that the first marble was red, we go across that middle \(R\) branch. Now, the probability the second is white is the probability on the \(W\) branch, so \(\frac{1}{5}\text{.}\)</p></li>
+<li id="li-669">
+<p id="p-1645">There are two ways the 2nd marble can be white. If the 1st is red or if the 1st is blue. These are distinct (<a class="xref" data-knowl="./knowl/def_mutually-exclusive.html" title="Definition 2.2.8">mutually exclusive</a>) paths through the tree. The probability of each is found by multiplying down the branches.  Together, their probability is the sum of these two products, giving us:</p>
+<div class="displaymath">
+\begin{align*}
+P(\text{2nd }W) \amp = P(\text{1st }R\cap \text{2nd }W) + P(\text{1st }B\cap \text{2nd }W)\\
+\amp = \left(\frac{2}{6}\times \frac{1}{5}\right) + \left(\frac{3}{6}\times \frac{1}{5}\right)\\
+\amp = \frac{2}{30} + \frac{3}{30}\\
+\amp = \frac{1}{6}\text{.}
+\end{align*}
+</div>
+</li>
+</ol></div>
+<div class="sbspanel" style="width:46.1538461538462%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_conditional_examp_probability-tree"><img src="images/image_conditional_examp_probability-tree.svg" style="width: 100%; height: auto;" alt="A tree with three branches off of the start.  Branch B has a probability 3/6, branch R has a probability 2/6, and branch W has a probability 1/6.  Of of branch B, there are three branches: B with probability 2/5, R with probability 2/5, and W with probability 1/5.  Off of the initial branch R, there are also three branches: B with probability 3/5, R with probablyt 1/5, and W with probability 1/5.  Finally, off of the original branch W there are just two branches: B with probability 3/5 and W with probability 2/5."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.38<span class="period">.</span></span><span class="space"> </span>Tree Diagram</figcaption></figure></div>
+</div></div>
+</div></div>
+</div></article></div>
+<p id="p-1646">Note that the probabilities on the branches of such a tree diagram are conditional probabilities. In the example above, the \(\frac{2}{5}\) on the bottom branch from \(W\) to \(R\) is actually \(P(\text{2nd }R|\text{1st }W)\) because it connects the event “1st \(W\)” to the event “2nd \(R\)”. The general multiplication rule is then used to find the probability of any path through the tree.</p>
+<ul class="disc">
+<li id="li-670"><p id="p-1647">Probability both red: \(\frac{2}{6}\times \frac{1}{5} = \frac{2}{30}\)</p></li>
+<li id="li-671"><p id="p-1648">Probability the first is red and the second blue: \(\frac{2}{6}\times \frac{3}{5} = \frac{6}{30}\)</p></li>
+<li id="li-672"><p id="p-1649">Etc...</p></li>
+</ul>
+<p id="p-1650">Finally, as in the second question in our example, we can find the probability of events such as “the second is red” by adding together all the different probabilities for paths in which the second marble is red.</p>
+<figure class="figure figure-like" id="video_conditional_trees-1"><video id="video-84" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.39<span class="period">.</span></span><span class="space"> </span>Tree Diagrams and Conditional Probability I</figcaption></figure><figure class="figure figure-like" id="video_conditional_trees-2"><video id="video-85" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.40<span class="period">.</span></span><span class="space"> </span>Tree Diagrams and Conditional Probability II</figcaption></figure><figure class="figure figure-like" id="video_conditional_trees-3"><video id="video-86" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.41<span class="period">.</span></span><span class="space"> </span>Tree Diagrams and Conditional Probability III</figcaption></figure><article class="exercise exercise-like" id="ckpt_conditional_trees-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_trees-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.42</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_trees-1"><article class="exercise exercise-like"><p id="p-1651">The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+<figure class="figure figure-like" id="fig_conditional_ckpt_trees-1"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image_conditional_ckpt_trees-1.svg" style="width: 100%; height: auto;" alt="A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.43<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1652">Question: what is the probability of outcome \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-118" id="answer-118"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-118"><div class="answer solution-like"><p id="p-1653">0.4500</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_trees-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_trees-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.44</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_trees-2"><article class="exercise exercise-like"><p id="p-1654">The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+<figure class="figure figure-like" id="fig_conditional_ckpt_trees-2"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image_conditional_ckpt_trees-2.svg" style="width: 100%; height: auto;" alt="A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.45<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1655">Question: what is the probability of outcome Y given that outcome A has occurred?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-119" id="answer-119"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-119"><div class="answer solution-like"><p id="p-1656">0.60</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_trees-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_trees-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.46</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_trees-3"><article class="exercise exercise-like"><p id="p-1657">The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+<figure class="figure figure-like" id="fig_conditional_ckpt_trees-3"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image_conditional_ckpt_trees-3.svg" style="width: 100%; height: auto;" alt="A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.47<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1658">Question: what is the probability of outcome \(B\) and then \(Y\) occurring?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-120" id="answer-120"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-120"><div class="answer solution-like"><p id="p-1659">0.10</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_conditional_bayes"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.5</span> <span class="title">Bayesian Probability</span>
+</h3>
+<a href="sec_conditional.html#sec_conditional_bayes" class="permalink">¶</a><p id="p-1660">Tree diagrams can be very useful for dealing with conditional probabilities, as long as the conditions are in the correct order. In a multi-stage experiment, the tree diagram does a good job of showing the probability of a particular outcome on the second step, given that a certain outcome on the first step occurred. What if, however, we want to look at things in the other order? Consider the following example.</p>
+<article class="example example-like" id="examp_conditional_bayes"><a data-knowl="" class="id-ref original" data-refid="hk-examp_conditional_bayes"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.48</span><span class="period">.</span><span class="space"> </span><span class="title">Computing “Backwards” Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_conditional_bayes"><article class="example example-like"><p id="p-1661">Recall from <a class="xref" data-knowl="./knowl/examp_conditional_probability-tree.html" title="Example 2.4.37: Computing Probabilities with a Tree Diagram">Example 2.4.37</a> that the tree diagram below gives us the probabilities for an experiment in which two marbles are drawn, without replacement, from an urn containing 3 blue marbles, 2 red marbles, and 1 white marble. Use the tree to help find the probability that the 1st marble was white given that the second is red.</p>
+<figure class="figure figure-like" id="fig_conditional_examp_bayes"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/image_conditional_examp_bayes.svg" style="width: 100%; height: auto;" alt="A tree with three branches off of the start.  Branch B has a probability 3/6, branch R has a probability 2/6, and branch W has a probability 1/6.  Of of branch B, there are three branches: B with probability 2/5, R with probability 2/5, and W with probability 1/5.  Off of the initial branch R, there are also three branches: B with probability 3/5, R with probablyt 1/5, and W with probability 1/5.  Finally, off of the original branch W there are just two branches: B with probability 3/5 and W with probability 2/5."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.49<span class="period">.</span></span><span class="space"> </span>Tree Diagram</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like">
+<p id="p-1662">We wish to find \(P(\text{1st }W\,|\,\text{2nd }R)\text{.}\) Unfortunately, our tree diagram is “backwards” for this computation. The probabilities on the branches are the probability of a particular color on the 2nd marble given that we got a certain color on the first. So, we must resort to the conditional probability formula.</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{1st }W\,|\,\text{2nd }R) = \frac{P(\text{1st }W\cap\text{2nd }R)}{P(\text{2nd }R)}\text{.}
+\end{equation*}
+</div>
+<p id="p-1663">The numerator of this fraction can be found by multiplying along a single branch in the tree—\(\frac{1}{6} \times \frac{2}{5} = \frac{2}{30}\text{.}\) To get the denominator, we need to add together the probabilities for all possible ways the last marble can be red. This is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{2nd }R) = \left(\frac{3}{6}\times\frac{2}{5}\right) + \left(\frac{2}{6}\times\frac{1}{5}\right) + \left(\frac{1}{6}\times\frac{2}{5}\right) = \frac{1}{3}\text{.}
+\end{equation*}
+</div>
+<p id="p-1664">Therefore, the desired conditional probability is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{1st }W\,|\,\text{2nd }R) = \frac{2/30}{1/3} = \frac{1}{5} = 0.20\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1665">These “backwards” conditional probability questions make use of a formula created by a British mathematician and Presbyterian minister, Thomas Bayes. Bayes' theorem, as it was named after his death, is given below.</p>
+<article class="theorem theorem-like" id="thm_bayes"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.50</span><span class="period">.</span><span class="space"> </span><span class="title">Bayes' Theorem.</span>
+</h6>
+<p id="p-1666">If a sample space can be split into mutually exclusive events \(A_1\text{,}\) \(A_2\text{,}\) \(\ldots\text{,}\) \(A_n\) and \(E\) is an event in \(S\) with  \(P(E) &gt; 0\text{,}\) then:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A_i|E) = \frac{P(A_i)P(E|A_i)}{P(A_1)P(E|A_1) + P(A_2)P(E|A_2) + \cdots + P(A_n)P(E|A_n)}\text{.}
+\end{equation*}
+</div></article><p id="p-1667">While this theorem formally states the rule we use to solve problems such as the one above, it is not something you should memorize. Instead, use a tree diagram and the conditional probability formula to solve these problems as we did in <a class="xref" data-knowl="./knowl/examp_conditional_bayes.html" title="Example 2.4.48: Computing “Backwards” Probabilities">Example 2.4.48</a>.</p>
+<figure class="figure figure-like" id="video_conditional_bayes-1"><video id="video-87" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.51<span class="period">.</span></span><span class="space"> </span>Bayesian Probability I</figcaption></figure><figure class="figure figure-like" id="video_conditional_bayes-2"><video id="video-88" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-11.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.52<span class="period">.</span></span><span class="space"> </span>Bayesian Probability II</figcaption></figure><figure class="figure figure-like" id="video_conditional_bayes-3"><video id="video-89" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-12.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.53<span class="period">.</span></span><span class="space"> </span>Bayesian Probability III</figcaption></figure><article class="exercise exercise-like" id="ckpt_conditional_bayes-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_bayes-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.54</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_bayes-1"><article class="exercise exercise-like"><p id="p-1668">The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+<figure class="figure figure-like" id="fig_conditional_ckpt_bayes-1"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_conditional_ckpt_bayes-1.svg" style="width: 100%; height: auto;" alt="A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.55<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1669">Question: what is the probability A given that \(X\) occurred?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-121" id="answer-121"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-121"><div class="answer solution-like"><p id="p-1670">0.6667</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_bayes-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_bayes-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.56</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_bayes-2"><article class="exercise exercise-like"><p id="p-1671">An urn contains 8 marbles numbered 1-8. The marbles numbered 1-6 are red, and marbles 7 and 8 are blue. Two marbles are drawn randomly, without replacement.</p>
+<p id="p-1672">Question: what is the probability the first marble was blue, given that the second is red?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-122" id="answer-122"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-122"><div class="answer solution-like"><p id="p-1673">0.2857</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_conditional_bayes-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_conditional_bayes-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.57</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_conditional_bayes-3"><article class="exercise exercise-like"><p id="p-1674">A math professor uses one of two overhead projectors — \(A\) or \(B\text{.}\) Projector \(A\) breaks down 20% of the time, while projector \(B\) breaks down 40% of the time. On Monday, the professor chose a projector at random, and it broke down.</p>
+<p id="p-1675">Question: what is the probability that it was projector \(A\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-123" id="answer-123"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-123"><div class="answer solution-like"><p id="p-1676">0.3333</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

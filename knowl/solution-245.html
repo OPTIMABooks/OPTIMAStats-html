@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:26:22-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">5.5.16.1</span><span class="period">.</span>
+</h6>
+<p>From previous work, the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \mu_1 - \mu_2 \geq 0\\
+H_A\amp:\ \mu_1 - \mu_2 \lt 0
+\end{align*}
+</div>
+<p>Our test statistic is:</p>
+<div class="displaymath">
+\begin{equation*}
+t_{\text{test}} = \frac{ (2.4-6.7) - 0 }{\sqrt{8.27369\left(\frac{1}{6}+\frac{1}{300}\right)}} \approx -3.626\text{.}
+\end{equation*}
+</div>
+<p>This is a left-tailed test (note that the alternative hypothesis involves “\(\lt\)”) and therefore our critical value will be negative. To find it, we look up the positive critical value in the t-distribution table that leaves an area of \(0.05\) (the significance level) in the right tail and has</p>
+<div class="displaymath">
+\begin{equation*}
+df = 300 + 6 - 2 = 304
+\end{equation*}
+</div>
+<p data-braille="continuation">degrees of freedom. This is clearly 30+, so we use the value \(1.645\) from the t-distribution table. To get the left-tail critical value, we change the sign to get -1.645 as shown below.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-small-samples_examp_traditional-differences.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.5.17<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-small-samples_traditional-differences.html" title="Example 5.5.16: Conducting a Traditional Hypothesis Test for a Difference Between Small Sample Means">Example 5.5.16</a></figcaption></figure><p>Since our test statistic of \(t_\text{test} = -3.626\) is much more extreme than the critical value \(-1.645\text{,}\) we reject the null hypothesis. There is statistically significant evidence that the iron content of moon rocks is less than that of rocks on earth.</p>
+</div>
+<span class="incontext"><a href="sec_ht-small-samples.html#solution-245">in-context</a></span>
+</body>
+</html>

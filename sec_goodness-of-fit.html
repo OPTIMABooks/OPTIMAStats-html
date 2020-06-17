@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:23:15-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Goodness-of-Fit Tests</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_anova.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_other-tests.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_contingency.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_anova.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_other-tests.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_contingency.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit" class="active">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_goodness-of-fit"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Goodness-of-Fit Tests</span>
+</h2>
+<a href="sec_goodness-of-fit.html" class="permalink">¶</a><section class="introduction" id="sec_goodness-of-fit_intro"><h6 class="heading">Testing Multiple Proportions.<span></span>
+</h6>
+<p id="p-3708">As was the case with testing multiple means, we need to be careful how we test multiple proportions. Consider the following example.</p>
+<article class="example example-like" id="examp_goodness-of-fit_multiple-tests"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_multiple-tests"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Testing a Statement About Multiple Proportions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_multiple-tests"><article class="example example-like"><p id="p-3709">A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. How could this be done using the hypothesis tests we've seen thus far?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-253" id="solution-253"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-253"><div class="solution solution-like">
+<p id="p-3710">We could conduct five different hypothesis tests:</p>
+<ol class="decimal cols3">
+<li id="li-1314">
+<h6 class="heading"><span class="title">Peanuts.</span></h6>
+<div class="displaymath" id="p-3711">
+\begin{align*}
+H_0\amp:\ p_1 = 0.40\\
+H_A\amp:\ p_1 \not= 0.40
+\end{align*}
+</div>
+</li>
+<li id="li-1315">
+<h6 class="heading"><span class="title">Hazelnuts.</span></h6>
+<div class="displaymath" id="p-3712">
+\begin{align*}
+H_0\amp:\ p_2 = 0.25\\
+H_A\amp:\ p_2 \not= 0.25
+\end{align*}
+</div>
+</li>
+<li id="li-1316">
+<h6 class="heading"><span class="title">Cashews.</span></h6>
+<div class="displaymath" id="p-3713">
+\begin{align*}
+H_0\amp:\ p_3 = 0.15\\
+H_A\amp:\ p_3 \not= 0.15
+\end{align*}
+</div>
+</li>
+<li id="li-1317">
+<h6 class="heading"><span class="title">Brazil Nuts.</span></h6>
+<div class="displaymath" id="p-3714">
+\begin{align*}
+H_0\amp:\ p_4 = 0.10\\
+H_A\amp:\ p_4 \not= 0.10
+\end{align*}
+</div>
+</li>
+<li id="li-1318">
+<h6 class="heading"><span class="title">Other.</span></h6>
+<div class="displaymath" id="p-3715">
+\begin{align*}
+H_0\amp:\ p_5 = 0.10\\
+H_A\amp:\ p_5 \not= 0.10
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-3716">Once again, the problem we run into is that with each test, we increase the likelihood that we will make a mistake. Also, if we conduct these separate tests, we are treating the process as if it were binomial—with only two outcomes. In actuality, this process has five possible outcomes—the five types of nuts. In this section we will introduce a hypothesis test designed to check if a process with more than two  possible outcomes like this has a given distribution of probabilities. Because it is designed to check how well an observed set of outcomes fits a given list of probabilities, the test is called the <dfn class="terminology">goodness-of-fit test</dfn>.</p></section><article class="objectives goal-like" id="sec_goodness-of-fit_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-60"><p id="p-3717">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1319">
+<p id="p-3718">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1320"><p id="p-3719">Chi-Squared Distributions</p></li>
+<li id="li-1321"><p id="p-3720">Chi-Squared Test Statistic</p></li>
+<li id="li-1322"><p id="p-3721">Degrees of Freedom for a Goodness-of-Fit Test</p></li>
+<li id="li-1323"><p id="p-3722">Expected Counts</p></li>
+<li id="li-1324"><p id="p-3723">Hypotheses for Goodness-of-Fit Tests</p></li>
+<li id="li-1325"><p id="p-3724">Multinomial Process</p></li>
+<li id="li-1326"><p id="p-3725">Observed Counts</p></li>
+</ul>
+</li>
+<li id="li-1327">
+<p id="p-3726">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1328"><p id="p-3727">Identify multinomial processes</p></li>
+<li id="li-1329"><p id="p-3728">Formulate hypotheses for a goodness-of-fit test</p></li>
+<li id="li-1330"><p id="p-3729">Compute the expected counts for a goodness-of-fit test</p></li>
+<li id="li-1331"><p id="p-3730">Compute the chi-squared test statistic</p></li>
+<li id="li-1332"><p id="p-3731">Look up critical values in the chi-squared distribution table</p></li>
+<li id="li-1333"><p id="p-3732">Conduct a traditional goodness-of-fit test</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_goodness-of-fit_multinomial"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.1</span> <span class="title">Multinomial Processes</span>
+</h3>
+<a href="sec_goodness-of-fit.html#sec_goodness-of-fit_multinomial" class="permalink">¶</a><p id="p-3733">Recall that in <a href="sec_binomial.html" class="internal" title="Section 3.2: Families of Discrete Distributions: Uniform and Binomial">Section 3.2</a> we introduced the concept of a <a class="xref" data-knowl="./knowl/def_binomial-process.html" title="Definition 3.2.21">binomial process</a>. The characteristics of a binomial process were defined to be:</p>
+<ol class="decimal">
+<li id="li-1334"><p id="p-3734">The process consists of a fixed number of trials, each of which had only two possible outcomes: success or failure.</p></li>
+<li id="li-1335"><p id="p-3735">Each trial has the same probability of a success, \(p\text{.}\)</p></li>
+<li id="li-1336"><p id="p-3736">The trials are all independent of each other.</p></li>
+<li id="li-1337"><p id="p-3737">The result variable is the number of trials which result in successes.</p></li>
+</ol>
+<p id="p-3738">Our mixed nuts example from the introduction has many of these same properties. However, the process of categorizing nuts is not binomial because each nut may fall into one of five different categories (peanut, hazelnut, etc). In a binomial process we are only allowed two possible categories: success and failure. Since our hypothesis tests for proportions are based on the assumption that we are dealing with a binomial process with only two outcomes, we need a new type of process that will work with problems such as the mixed nuts example.</p>
+<article class="definition definition-like" id="def_multinomial-process"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-3739">A <dfn class="terminology">multinomial process</dfn> is a random process in which:</p>
+<ol class="decimal">
+<li id="li-1338"><p id="p-3740">there is a fixed number of identical trials, called \(n\)</p></li>
+<li id="li-1339"><p id="p-3741">the outcomes of each trial fall into one of \(k\) possible categories</p></li>
+<li id="li-1340"><p id="p-3742">the probability of the \(i^\text{th}\) category is a fixed probability \(p_i\) with \(p_1 + p_2 + \cdots p_k = 1\text{.}\)</p></li>
+<li id="li-1341"><p id="p-3743">each of the trials is independent</p></li>
+</ol>
+<p id="p-3744">The result of the process is the frequency with which each of the possible categories appear.</p></article><p id="p-3745">Let's look at a couple of examples to see if we can identify multinomial processes.</p>
+<article class="example example-like" id="examp_goodness-of-fit_identify-multinomial-true"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_identify-multinomial-true"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying a Multinomial Process.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_identify-multinomial-true"><article class="example example-like"><p id="p-3746">A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. Is this a multinomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-254" id="solution-254"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-254"><div class="solution solution-like">
+<p id="p-3747">Let's check to see if this process is multinomial by checking each property.</p>
+<ol class="decimal">
+<li id="li-1342">
+<h6 class="heading"><span class="title">The process consists of a fixed number of identical trials.</span></h6>
+<p id="p-3748">The trials are drawing a single nut from the container. There are a fixed number of trials because there are a fixed number of nuts in the container.</p>
+</li>
+<li id="li-1343">
+<h6 class="heading"><span class="title">The outcome of each trial is one of a set number of possibilities.</span></h6>
+<p id="p-3749">In this case, there are five classifications of nuts. Thus, there are only five possible outcomes: peanut, hazelnut, cashew, brazil nut, or other type of nut.</p>
+</li>
+<li id="li-1344">
+<h6 class="heading"><span class="title">The probability of each category is fixed.</span></h6>
+<p id="p-3750">although we don't yet know what it is (we want to test to see if it is 40% peanuts, 25% hazelnuts, etc), the probability of getting a nut of each type is fixed (assuming there are enough nuts in the population).</p>
+</li>
+<li id="li-1345">
+<h6 class="heading"><span class="title">The trials are independent.</span></h6>
+<p id="p-3751">If we consider the container of nuts we purchased to be a sample from the larger population of nuts. In this case, it is almost certain that the sample container is much smaller than (less than 5% of) the population of nuts in the packing facility.</p>
+</li>
+</ol>
+<p id="p-3752">Because each of the four properties is true, this is a multinomial process.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_goodness-of-fit_multinomial-false"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_multinomial-false"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying When a Process is Not Multinomial.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_multinomial-false"><article class="example example-like"><p id="p-3753">A process consists of drawing marbles from an urn containing 1000 red marbles, 500 blue marbles, and 250 green marbles without replacement. Marbles are drawn until two green marbles have been observed. Is this a multinomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-255" id="solution-255"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-255"><div class="solution solution-like"><p id="p-3754">This process violates the very first condition. There is no fixed number of times that we draw a marble. If our first two marbles are green, we will stop at \(n = 2\) draws. On the other hand, it could take us hundreds of draws before we see two green marbles. Because there is not a set number of trials, this is not a multinomial process.</p></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_goodness-of-fit_multinomial-1"><video id="video-243" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.5<span class="period">.</span></span><span class="space"> </span>Multinomial Processes I</figcaption></figure><figure class="figure figure-like" id="video_goodness-of-fit_multinomial-2"><video id="video-244" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.6<span class="period">.</span></span><span class="space"> </span>Multinomial Processes II</figcaption></figure><article class="exercise exercise-like" id="ckpt_goodness-of-fit_multinomial-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_multinomial-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_multinomial-1"><article class="exercise exercise-like"><p id="p-3755">Suppose that a certain gym membership comes with a “bonus feature” of either four massage sessions, four sessions with a personal trainer, or free energy drinks at the juice bar. One hundred people sign up for the gym membership, and their “bonus feature” selection is recorded.</p>
+<p id="p-3756">Question: is this a multinomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-299" id="answer-299"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-299"><div class="answer solution-like"><p id="p-3757">Yes</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_goodness-of-fit_multinomial-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_multinomial-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_multinomial-2"><article class="exercise exercise-like"><p id="p-3758">Suppose that a certain gym membership comes with a “bonus feature” of either four massage sessions, four sessions with a personal trainer, or free energy drinks at the juice bar. People are signed up until a total of at least 20 individuals have chosen each “bonus feature” and the number of individuals it took to reach that mark is recorded.</p>
+<p id="p-3759">Question: is this a multinomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-300" id="answer-300"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-300"><div class="answer solution-like"><p id="p-3760">No</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_goodness-of-fit_hypotheses"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.2</span> <span class="title">Formulating Hypotheses</span>
+</h3>
+<a href="sec_goodness-of-fit.html#sec_goodness-of-fit_hypotheses" class="permalink">¶</a><p id="p-3761">A goodness-of-fit test is used to test a claim about the probabilities in a multinomial process. That is, we specify ahead of time what we believe the probability of each of the \(k\) categories should be. We then take a sample and look at the observed probability of those categories. If they are different enough from what we claimed the probabilities should be, we conclude that our claim was wrong. Since this claim involves equality (we specify what we assume the probabilities will be), it is the null hypothesis.</p>
+<article class="principle theorem-like" id="thm_hypotheses-goodness-of-fit"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">6.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Hypotheses for Goodness-of-Fit Tests.</span>
+</h6>
+<p id="p-3762">In a goodness-of-fit hypothesis test, we assume that a multinomial process will have probabilities \(p_1, p_2, \ldots, p_k\text{.}\) The opposite of this claim is that at least one of the probabilities is different from what we specify.  Thus, the null and alternative hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \text{Category probabilities are } p_1, p_2, \ldots, p_k\\
+H_A\amp:\ \text{At least one of the category probabilities is different from those above}
+\end{align*}
+</div></article><p id="p-3763">Null hypotheses can be phrased in one of two ways. The first is as a set probabilities, as was the case in our mixed nuts example.</p>
+<article class="example example-like" id="examp_goodness-of-fit_hypotheses-set"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_hypotheses-set"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Goodness-of-Fit Test Based on Given Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_hypotheses-set"><article class="example example-like"><p id="p-3764">A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. What are your hypotheses?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-256" id="solution-256"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-256"><div class="solution solution-like">
+<p id="p-3765">In this problem statement, we are told what the probabilities of each outcome should be. Stating those as our null hypothesis, we get:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10\\
+H_A\amp:\ \text{At least one of these probabilities is different}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-3766">Another common way that the null hypothesis can be phrased is in terms of relative proportions. We could claim that the outcomes are all equally likely, that one outcome is twice as likely as another, or some similar statement.</p>
+<article class="example example-like" id="examp_goodness-of-fit_hypotheses-relative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_hypotheses-relative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Goodness-of-Fit Test Based on Relative Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_hypotheses-relative"><article class="example example-like"><p id="p-3767">A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. What should the null hypothesis be for a goodness-of-fit test of the politician's claim?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-257" id="solution-257"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-257"><div class="solution solution-like">
+<p id="p-3768">In this case, the claim is that all three political parties are equally likely. If the probability of one of them is called \(x\text{,}\) then stating they are equal and recognizing that their probabilities have to sum to one gives us the following equation.</p>
+<div class="displaymath">
+\begin{equation*}
+x + x + x = 1
+\end{equation*}
+</div>
+<p id="p-3769">If we solve that for \(x\text{,}\) we find that \(x = \frac{1}{3}\text{.}\) Thus, our null and alternative hypothesis should be:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p_R = p_D = p_I = \frac{1}{3}\\
+H_A\amp:\ \text{The probabilities are not as described above}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_goodness-of-fit-hypotheses-1"><video id="video-245" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.12<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Hypotheses I</figcaption></figure><figure class="figure figure-like" id="video_goodness-of-fit-hypotheses-2"><video id="video-246" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.13<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Hypotheses II</figcaption></figure><article class="exercise exercise-like" id="ckpt_goodness-of-fit_hypotheses-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_hypotheses-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.14</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_hypotheses-1"><article class="exercise exercise-like"><p id="p-3770">A farmer believes that in any given growing season, the probability of having a bumper crop, an average crop, or a low-yield crop is the same. He wishes to conduct a goodness-of-fit test to check this claim.</p>
+<p id="p-3771">Question: what should his null hypothesis be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-301" id="answer-301"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-301"><div class="answer solution-like"><p id="p-3772">\(H_0:\ p_1 = p_2 = p_3 = \frac{1}{3}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_goodness-of-fit_hypotheses-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_hypotheses-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_hypotheses-2"><article class="exercise exercise-like"><p id="p-3773">A business man believes that 60% of his customers find him through referrals, 30% through advertising, and 10% are walk-ins. He wishes to test this claim by collecting a sample of customers and seeing how well their answers to the question “how did you find our business” matches these percents.</p>
+<p id="p-3774">Question: what should his null hypothesis be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-302" id="answer-302"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-302"><div class="answer solution-like"><p id="p-3775">\(H_0:\ p_1 = 0.6, \quad p_2 = 0.3, \quad p_3 = 0.1\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_goodness-of-fit_counts"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.3</span> <span class="title">Observed and Expected Counts</span>
+</h3>
+<a href="sec_goodness-of-fit.html#sec_goodness-of-fit_counts" class="permalink">¶</a><p id="p-3776">In a goodness-of-fit test, our goal is to compare what happens in a sample drawn from the population being studied with what we expected to happen based on the null hypothesis. The result of the sample we draw will be a list of frequencies, or counts, for each category.</p>
+<article class="definition definition-like" id="def_observed-counts"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.16</span><span class="period">.</span>
+</h6>
+<p id="p-3777">The number of times in a process that each category of outcome occurred are together called the <dfn class="terminology">observed counts</dfn> for that category.</p></article><p id="p-3778">Our null hypothesis tells us what we expect the probability of each category to be. In order to compare these expected outcomes, we must convert these probabilities into expected counts. We can then compare the counts that we observed with the counts that we expected. To compute the expected counts for each category, we use the following procedure.</p>
+<article class="theorem theorem-like" id="thm_expected-counts_multinomial"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Counts.</span>
+</h6>
+<p id="p-3779">The <dfn class="terminology">expected count</dfn> for category \(i\) in a multinomial process is \(n\times p_i\text{,}\) where \(n\) is the total number of trials and \(p_i\) is the probability of the \(i^\text{th}\) category according to the null hypothesis.</p></article><p id="p-3780">To see how these are computed, consider the following examples.</p>
+<article class="example example-like" id="examp_goodness-of-fit_counts-set"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_counts-set"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Expected Counts Based on Given Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_counts-set"><article class="example example-like"><p id="p-3781">A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. The following number of each type of nuts were observed. Find the expected counts for this problem.</p>
+<figure class="table figure-like" id="table-86"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Nut</td>
+<td class="c m b2 r0 l0 t0 lines">Peanut</td>
+<td class="c m b2 r0 l0 t0 lines">Hazelnut</td>
+<td class="c m b2 r0 l0 t0 lines">Cashews</td>
+<td class="c m b2 r0 l0 t0 lines">Brazil Nuts</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Other</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Observed:</td>
+<td class="c m b0 r0 l0 t0 lines">156</td>
+<td class="c m b0 r0 l0 t0 lines">96</td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines">28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">33</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.19<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-258" id="solution-258"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-258"><div class="solution solution-like">
+<p id="p-3782">The values above are the observed counts. To find the expected counts, we multiply the total number of trials—in this case, the total number of nuts—by the probabilities of each outcome according to the null hypothesis. Recall that the null hypothesis was:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10
+\end{equation*}
+</div>
+<p id="p-3783">Putting this together with the counts above in tabular form gives the following table.</p>
+<figure class="table figure-like" id="table-87"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Expected</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">156</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.40(355) = 142\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Hazelnut</td>
+<td class="c m b0 r2 l0 t0 lines">96</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.25(355) = 88.75\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Cashew</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.15(355) = 53.25\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Brazil Nut</td>
+<td class="c m b0 r2 l0 t0 lines">28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.10(355) = 35.5\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Other</td>
+<td class="c m b2 r2 l0 t0 lines">33</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(0.10(355) = 35.5\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">355</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.20<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-3784">Note that the expected counts are not necessarily whole numbers. This is because these “expected” counts are, much like the <a class="xref" data-knowl="./knowl/def_expected-value.html" title="Definition 3.1.44">expected value</a>, averages.  Therefore they may not be numbers that can actually be observed. However, when we add together the expected counts, the total must be the same (less any rounding errors) as the observed counts. Let's look at another example.</p>
+<article class="example example-like" id="examp_goodness-of-fit_counts-relative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_counts-relative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.21</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Expected Counts Based on Relative Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_counts-relative"><article class="example example-like"><p id="p-3785">A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 179 of them are Republicans, 146 of them are Democrats, and 175 of them are independents. What should the null hypothesis be for a goodness-of-fit test of the politician's claim?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-259" id="solution-259"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-259"><div class="solution solution-like">
+<p id="p-3786">As we noted last time, the null hypothesis is that the probability for each political party is \(\frac{1}{3}\text{.}\) Placing the above information into a table as we did in the last example, yields the following table.</p>
+<figure class="table figure-like" id="table-88"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Expected</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Republican</td>
+<td class="c m b0 r2 l0 t0 lines">179</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{3}(500) \approx 166.67\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Democrats</td>
+<td class="c m b0 r2 l0 t0 lines">146</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{3}(500) \approx 166.67\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Independents</td>
+<td class="c m b2 r2 l0 t0 lines">175</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{3}(500) \approx 166.67\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">500</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">500.01</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.22<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-3787">In the above example, we got a total of 500.01 for the expected counts because we rounded the fraction \(\frac{500}{3}\) to \(166.67\text{.}\)</p>
+<figure class="figure figure-like" id="video_goodness-of-fit_counts-1"><video id="video-247" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.23<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts I</figcaption></figure><figure class="figure figure-like" id="video_goodness-of-fit_counts-2"><video id="video-248" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.24<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts II</figcaption></figure><article class="exercise exercise-like" id="ckpt_goodness-of-fit_counts-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_counts-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_counts-1"><article class="exercise exercise-like"><p id="p-3788">In a goodness of fit test of the null hypothesis:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = 0.3, \quad p_2 = 0.5, \quad p_3 = 0.2
+\end{equation*}
+</div>
+<p data-braille="continuation">the following observed counts were collected.</p>
+<figure class="table figure-like" id="table-89"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Frequency</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">35</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">68</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">27</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.26<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><p id="p-3789">Question: what is the expected count for category 2? Round your answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-303" id="answer-303"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-303"><div class="answer solution-like"><p id="p-3790">64.5</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_goodness-of-fit_counts-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_counts-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.27</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_counts-2"><article class="exercise exercise-like"><p id="p-3791">In a goodness of fit test of the null hypothesis:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = 0.3, \quad p_2 = 0.5, \quad p_3 = 0.2
+\end{equation*}
+</div>
+<p data-braille="continuation">the following observed counts were collected.</p>
+<figure class="table figure-like" id="table-90"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Frequency</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">35</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">68</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">27</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.28<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><p id="p-3792">Question: what is the expected count for category 3? Round your answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-304" id="answer-304"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-304"><div class="answer solution-like"><p id="p-3793">25.5</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_goodness-of-fit_chi-squared"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.4</span> <span class="title">The \(\chi^2\)-Distribution</span>
+</h3>
+<a href="sec_goodness-of-fit.html#sec_goodness-of-fit_chi-squared" class="permalink">¶</a><p id="p-3794">In order to measure the differences between observed and expected counts, we will need yet another distribution. This distribution is useful in hypothesis tests involving squares. As we shall see, we will use squares in the goodness-of-fit test statistic. The family of distributions, called \(\chi^2\) (pronounced /'kai skwered/) distributions, are described below.</p>
+<article class="definition definition-like" id="def_chi-squared-distribution"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.29</span><span class="period">.</span>
+</h6>
+<p id="p-3795">The <dfn class="terminology">\(\chi^2\)-distribution</dfn> is a continuous probability distribution with the following properties</p>
+<ul class="disc">
+<li id="li-1346"><p id="p-3796">Like the <a class="xref" data-knowl="./knowl/def_f-distribution.html" title="Definition 6.1.25">F-distribution</a>, the \(\chi^2\)-distribution is not symmetric, but skewed to the right.</p></li>
+<li id="li-1347"><p id="p-3797">The values of the \(\chi^2\)-distribution are non-negative (zero or larger).</p></li>
+<li id="li-1348"><p id="p-3798">The distribution is different for each degree of freedom.</p></li>
+<li id="li-1349"><p id="p-3799">As the degrees of freedom increases, the distribution becomes less skewed.</p></li>
+</ul></article><p id="p-3800">The picture below shows the members of the \(\chi^2\)-distribution family with 1, 10, and 20 degrees of freedom.</p>
+<figure class="figure figure-like" id="fig_goodness-of-fit_chi-squared"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_goodness-of-fit_chi-squared.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.30<span class="period">.</span></span><span class="space"> </span>Various \(\chi^2\)-Distributions</figcaption></figure><p id="p-3801">As was the case in the F-distribution, because we are always looking for large differences between observed and expected counts, we will reject the null hypothesis, which generates the expected counts, when we have large test statistics. Therefore, we will usually use right-tailed tests.  However, we can use left-tailed tests to look for observed and expected counts that match too well. The following examples allow us to practice looking up critical values using the table for members of the \(\chi^2\)-distribution family.</p>
+<article class="example example-like" id="examp_goodness-of-fit_chi-squared-one"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_chi-squared-one"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.31</span><span class="period">.</span><span class="space"> </span><span class="title">Using the \(\chi^2\)-Distribution Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_chi-squared-one"><article class="example example-like"><p id="p-3802">Use the table below to find the following values.</p>
+<ol class="lower-alpha">
+<li id="li-1350"><p id="p-3803">The \(\chi^2\) critical value with 8 degrees of freedom at the \(\alpha = 0.05\) significance level.</p></li>
+<li id="li-1351"><p id="p-3804">The \(\chi^2\) critical value with 10 degrees of freedom at with \(0.05\) in the left tail.</p></li>
+</ol>
+<figure class="figure figure-like" id="fig_goodness-of-fit_examp_chi-squared-one"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/goodness-of-fig_examp_chi-squared-one.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.32<span class="period">.</span></span><span class="space"> </span>Protion of the \(\chi^2\)-Distribution Table</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-260" id="solution-260"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-260"><div class="solution solution-like"><ol id="p-3805" class="lower-alpha">
+<li id="li-1352"><p id="p-3806">Since there are 8 degrees of freedom, and 0.05 in the right tail, we read across the 8 \(df\) row to the 0.05 column finding the critical value of 15.507. The red lines show this process.</p></li>
+<li id="li-1353"><p id="p-3807">With 10 degrees of freedom, and 0.05 in the left tail, there would be 0.95 in the right tail. Thus, we read across the 10 \(df\) row to the 0.95 column, finding a critical value of 3.940. The blue lines show this process.</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="example example-like" id="examp_goodness-of-fit_chi-squared-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_chi-squared-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.33</span><span class="period">.</span><span class="space"> </span><span class="title">Using the \(\chi^2\)-Distribution Table In Reverse.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_chi-squared-two"><article class="example example-like"><p id="p-3808">Use the table below to find the following values.</p>
+<ol class="lower-alpha">
+<li id="li-1354"><p id="p-3809">The probability that a \(\chi^2\) test statistic with 29 degrees of freedom is greater than 18.493.</p></li>
+<li id="li-1355"><p id="p-3810">The probability that a \(\chi^2\) test statistic with 36 degrees of freedom is less than 51.805.</p></li>
+</ol>
+<figure class="figure figure-like" id="fig_goodness-of-fit_examp_chi-squared-two"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/goodness-of-fig_examp_chi-squared-two.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.34<span class="period">.</span></span><span class="space"> </span>Protion of the \(\chi^2\)-Distribution Table</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-261" id="solution-261"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-261"><div class="solution solution-like"><ol id="p-3811" class="lower-alpha">
+<li id="li-1356"><p id="p-3812">Because the table does not contain a row for 29 degrees of freedom, we round up to the closest \(df\) value that is in the table, which is 30. Looking across the \(df = 30\) row, the value 18.493 goes with a probability of 0.95 in the right tail, so the answer is 0.95. This process is outlined using the blue lines above.</p></li>
+<li id="li-1357"><p id="p-3813">As the table does not contain a row for 36 degrees of freedom, we must round up to the next lowest df in the table, which is 40. Reading across the 40 line, we find that 51.805 goes with 0.10 in the right tail. Thus, the probability of being less than 51.805 is the \(1 - 0.10 = 0.90\) in the left tail.</p></li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_goodness-of-fit_chi-squared-1"><video id="video-249" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.35<span class="period">.</span></span><span class="space"> </span>\(\chi^2\)-Distribution I</figcaption></figure><figure class="figure figure-like" id="video_goodness-of-fit_chi-squared-2"><video id="video-250" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.36<span class="period">.</span></span><span class="space"> </span>\(\chi^2\)-Distribution II</figcaption></figure><article class="exercise exercise-like" id="ckpt_goodness-of-fit_chi-squared-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_chi-squared-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.37</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_chi-squared-1"><article class="exercise exercise-like"><p id="p-3814">Recall that the \(\chi^2\) distribution has the following probability density curves, depending on the degrees of freedom.</p>
+<figure class="figure figure-like" id="fig_goodness-of-fit_ckpt_chi-squared-1"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_goodness-of-fit_ckpt_chi-squared-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.38<span class="period">.</span></span><span class="space"> </span>Various \(\chi^2\)-Distributions</figcaption></figure><p id="p-3815">Question: which of the following are properties of the chi-squared distribution?</p>
+<ol class="lower-alpha">
+<li id="li-1358"><p id="p-3816">It is skewed right</p></li>
+<li id="li-1359"><p id="p-3817">It is symmetric</p></li>
+<li id="li-1360"><p id="p-3818">It is skewed left</p></li>
+<li id="li-1361"><p id="p-3819">It has two modes</p></li>
+<li id="li-1362"><p id="p-3820">It is no negative values</p></li>
+<li id="li-1363"><p id="p-3821">As the degrees of freedom increase, it becomes more mound-shaped</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-305" id="answer-305"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-305"><div class="answer solution-like"><p id="p-3822">(a), (d), and (e)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_goodness-of-fit_chi-squared-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_chi-squared-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.39</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_chi-squared-2"><article class="exercise exercise-like"><p id="p-3823">A \(\chi^2\)-distribution has 14 degrees of freedom.</p>
+<p id="p-3824">Question: what critical value separates the top 10% of the data from the bottom 90%?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-306" id="answer-306"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-306"><div class="answer solution-like"><p id="p-3825">21.064</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_goodness-of-fit_test-stat"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.5</span> <span class="title">The Test Statistic</span>
+</h3>
+<a href="sec_goodness-of-fit.html#sec_goodness-of-fit_test-stat" class="permalink">¶</a><p id="p-3826">To compute the test statistic for a goodness-of-fit test, our goal is to measure how far off our observed counts are from our expected counts. To do this, we want to examine the difference between observed and expected, but we don't care which is larger. Thus, we square that difference. Finally, we scale the difference by dividing by the expected counts. This is done because a difference of 10 means a lot more when only 15 were expected than it would if 100 were expected.</p>
+<article class="theorem theorem-like" id="thm_chi-squared-test-stat"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.40</span><span class="period">.</span><span class="space"> </span><span class="title">Goodness-of-Fit Test Statistic.</span>
+</h6>
+<p id="p-3827">The \(\chi^2\) test statistic for a goodness-of-fit test having observed counts \(O_i\) and expected counts \(E_i\) in category \(i\) is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+\chi^2_{\text{test}} = \sum \frac{(O_i - E_i)^2}{E_i}
+\end{equation*}
+</div></article><p id="p-3828">Let's look at the test statistic computation four our two examples.</p>
+<article class="example example-like" id="examp_goodness-of-fit_test-stat-set"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_test-stat-set"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.41</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the \(\chi^2\) Test Statistic for Set Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_test-stat-set"><article class="example example-like"><p id="p-3829">A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. The following number of each type of nuts were observed. Find the \(\chi^2\) test statistic.</p>
+<figure class="table figure-like" id="table-91"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Nut</td>
+<td class="c m b2 r0 l0 t0 lines">Peanut</td>
+<td class="c m b2 r0 l0 t0 lines">Hazelnut</td>
+<td class="c m b2 r0 l0 t0 lines">Cashews</td>
+<td class="c m b2 r0 l0 t0 lines">Brazil Nuts</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Other</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Observed:</td>
+<td class="c m b0 r0 l0 t0 lines">156</td>
+<td class="c m b0 r0 l0 t0 lines">96</td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines">28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">33</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.42<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-262" id="solution-262"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-262"><div class="solution solution-like">
+<p id="p-3830">To complete this task, we will add one column to the table we saw <a class="xref" data-knowl="./knowl/examp_goodness-of-fit_counts-set.html" title="Example 6.2.18: Finding Expected Counts Based on Given Probabilities">last time</a> we worked on this example. In that column, we will compute the observed count, minus the expected count, squared and then divided by the expected count.</p>
+<figure class="table figure-like" id="table-92"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r2 l0 t0 lines">Expected</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">156</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.40(355) = 142\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(156-142)^2}{142} \approx 1.3081\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Hazelnut</td>
+<td class="c m b0 r2 l0 t0 lines">96</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.25(355) = 88.75\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(96-88.75)^2}{88.75} \approx 0.5923\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Cashew</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.15(355) = 53.25\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(42-53.25)^2}{53.25} \approx 2.1230\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Brazil Nut</td>
+<td class="c m b0 r2 l0 t0 lines">28</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.10(355) = 35.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(28-35.5)^2}{35.5} \approx 1.5845\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Other</td>
+<td class="c m b2 r2 l0 t0 lines">33</td>
+<td class="c m b2 r2 l0 t0 lines">\(0.10(355) = 35.5\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(33-35.5)^2}{35.5} \approx 0.1761\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{\text{test}} \approx 5.7840\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.43<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_goodness-of-fit_test-stat-relative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_test-stat-relative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.44</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the \(\chi^2\) Test Statistic for Relative Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_test-stat-relative"><article class="example example-like"><p id="p-3831">A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. What is the \(\chi^2\) test statistic for a goodness-of-fit test of the politician's claim?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-263" id="solution-263"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-263"><div class="solution solution-like">
+<p id="p-3832">Again, we add a column to our table of observed and expected counts to compute the \(\chi^2\) test statistic.</p>
+<figure class="table figure-like" id="table-93"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r2 l0 t0 lines">Expected</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Republican</td>
+<td class="c m b0 r2 l0 t0 lines">179</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(183-166.67)^2}{166.67} \approx 1.6000\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Democrats</td>
+<td class="c m b0 r2 l0 t0 lines">146</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(142-166.67)^2}{166.67} \approx 3.6516\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Independents</td>
+<td class="c m b2 r2 l0 t0 lines">175</td>
+<td class="c m b2 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(175-166.67)^2}{166.67} \approx 0.4163\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">500</td>
+<td class="c m b0 r2 l0 t0 lines">500.01</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{\text{test}} = 5.6679\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.45<span class="period">.</span></span><span class="space"> </span>Observed and Expected Counts</figcaption></figure>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_goodness-of-fit_test-stat-1"><video id="video-251" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.46<span class="period">.</span></span><span class="space"> </span>\(\chi^2\) Test Statistic I</figcaption></figure><figure class="figure figure-like" id="video_goodness-of-fit_test-stat-2"><video id="video-252" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.47<span class="period">.</span></span><span class="space"> </span>\(\chi^2\) Test Statistic II</figcaption></figure><article class="exercise exercise-like" id="ckpt_goodness-of-fit_test-stat-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_test-stat-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.48</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_test-stat-1"><article class="exercise exercise-like"><p id="p-3833">To test the null hypothesis:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = 0.2, \quad p_2 = 0.4, \quad p_3 = 0.3, \quad p_4 = 0.3
+\end{equation*}
+</div>
+<p data-braille="continuation">the following observed counts were collected, and the given expected counts were computed.</p>
+<figure class="table figure-like" id="table-94"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Expected</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines">16</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">20</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">33</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">40</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">27</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">30</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">4</td>
+<td class="c m b0 r2 l0 t0 lines">24</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">30</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.49<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p id="p-3834">Question: what is the value of \(\chi^2_{\text{test}}\) for this goodness-of-fit test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-307" id="answer-307"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-307"><div class="answer solution-like"><p id="p-3835">3.525</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_goodness-of-fit_test-stat-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_test-stat-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.50</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_test-stat-2"><article class="exercise exercise-like"><p id="p-3836">To test the null hypothesis:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = p_2 = p_3 = p_4 = 0.25\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">the following observed counts were collected, and the given expected counts were computed.</p>
+<figure class="table figure-like" id="table-95"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Expected</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines">19</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">25</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">32</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">25</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">25</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">4</td>
+<td class="c m b0 r2 l0 t0 lines">21</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">25</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.51<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p id="p-3837">Question: what is the value of \(\chi^2_{\text{test}}\) for this goodness-of-fit test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-308" id="answer-308"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-308"><div class="answer solution-like"><p id="p-3838">4.400</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_goodness-of-fit_test"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.2.6</span> <span class="title">The Goodness-of-Fit Test</span>
+</h3>
+<a href="sec_goodness-of-fit.html#sec_goodness-of-fit_test" class="permalink">¶</a><p id="p-3839">The goodness-of-fit test is, like any other hypothesis test, completed by comparing the test statistic from the sample to the significance level. In the case of a \(\chi^2\) test statistic, we again must use a traditional test because the table is not set up to give a p-values. That means that we need a degrees of freedom in order to look up the critical value.</p>
+<article class="theorem theorem-like" id="thm_goodness-of-fit-df"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.52</span><span class="period">.</span><span class="space"> </span><span class="title">Degrees of Freedom for a Goodness-of-Fit Test.</span>
+</h6>
+<p id="p-3840">The degrees of freedom for a goodness-of-fit test of a multinomial process in which there are k categories is \(df = k-1\text{.}\)</p></article><p id="p-3841">Let's finish our two examples by conducting a traditional test.</p>
+<article class="example example-like" id="examp_goodness-of-fit_test-set"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_test-set"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.53</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Goodness-of-Fit Test for Set Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_test-set"><article class="example example-like"><p id="p-3842">A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. Does this sample fit the distribution claimed on the package? Use the \(\alpha = 0.05\) significance level.</p>
+<figure class="table figure-like" id="table-96"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Nut</td>
+<td class="c m b2 r0 l0 t0 lines">Peanut</td>
+<td class="c m b2 r0 l0 t0 lines">Hazelnut</td>
+<td class="c m b2 r0 l0 t0 lines">Cashews</td>
+<td class="c m b2 r0 l0 t0 lines">Brazil Nuts</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Other</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Observed:</td>
+<td class="c m b0 r0 l0 t0 lines">156</td>
+<td class="c m b0 r0 l0 t0 lines">96</td>
+<td class="c m b0 r0 l0 t0 lines">42</td>
+<td class="c m b0 r0 l0 t0 lines">28</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">33</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.54<span class="period">.</span></span><span class="space"> </span>Observed Counts</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-264" id="solution-264"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-264"><div class="solution solution-like">
+<p id="p-3843">We now put our previous work on this problem together to complete the hypothesis test. Recall that the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10\\
+H_A\amp:\ \text{At least one probability is different}
+\end{align*}
+</div>
+<p id="p-3844">We then construct the goodness-of-fit table below to compare the observed and expected counts and compute the test statistic.</p>
+<figure class="table figure-like" id="table-97"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r2 l0 t0 lines">Expected</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Peanut</td>
+<td class="c m b0 r2 l0 t0 lines">156</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.40(355) = 142\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(156-142)^2}{142} \approx 1.3081\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Hazelnut</td>
+<td class="c m b0 r2 l0 t0 lines">96</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.25(355) = 88.75\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(96-88.75)^2}{88.75} \approx 0.5923\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Cashew</td>
+<td class="c m b0 r2 l0 t0 lines">42</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.15(355) = 53.25\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(42-53.25)^2}{53.25} \approx 2.1230\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Brazil Nut</td>
+<td class="c m b0 r2 l0 t0 lines">28</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.10(355) = 35.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(28-35.5)^2}{35.5} \approx 1.5845\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Other</td>
+<td class="c m b2 r2 l0 t0 lines">33</td>
+<td class="c m b2 r2 l0 t0 lines">\(0.10(355) = 35.5\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(33-35.5)^2}{35.5} \approx 0.1761\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r2 l0 t0 lines">355</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{\text{test}} \approx 5.7840\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.55<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p id="p-3845">To make our decision, we want to compare this test statistic with the critical value that separates the top \(\alpha = 0.05\) in the right tail of a \(\chi^2\)-distribution with with \(df = 5-1 = 4\) degrees of freedom (since there are five categories of nuts) from the rest of the distribution. Looking this up in the chi-squared distribution table, we find \(\chi^2_{0.05} = 9.488\) as shown below.</p>
+<figure class="figure figure-like" id="fig_goodness-of-fit_examp_test-set"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_goodness-of-fit_examp_test-set.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.56<span class="period">.</span></span><span class="space"> </span>Comparing \(\chi^2\) Values</figcaption></figure><p id="p-3846">Since the test statistic of 5.784 is not further into the right-tail than the critical value, we fail to reject the null hypothesis. It looks like this sample does fit the claimed distribution of nuts.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_goodness-of-fit_test-relative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_goodness-of-fit_test-relative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.57</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Goodness-of-Fit Test for Relative Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_goodness-of-fit_test-relative"><article class="example example-like"><p id="p-3847">A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. Test this claim at the \(\alpha = 0.10\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-265" id="solution-265"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-265"><div class="solution solution-like">
+<p id="p-3848">We stated before that the our hypothesis are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ p_R = p_D = p_I = \frac{1}{3}\\
+H_A\amp:\ \text{At least one is different}
+\end{align*}
+</div>
+<p id="p-3849">We computed then constructed a goodness-of-fit table to compute the test statistic and found the following.</p>
+<figure class="table figure-like" id="table-98"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r2 l0 t0 lines">Expected</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Republican</td>
+<td class="c m b0 r2 l0 t0 lines">179</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(183-166.67)^2}{166.67} \approx 1.6000\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Democrats</td>
+<td class="c m b0 r2 l0 t0 lines">146</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(142-166.67)^2}{166.67} \approx 3.6516\)</td>
+</tr>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Independents</td>
+<td class="c m b2 r2 l0 t0 lines">175</td>
+<td class="c m b2 r2 l0 t0 lines">\(\frac{1}{3}(500) \approx 166.67\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(175-166.67)^2}{166.67} \approx 0.4163\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total:</td>
+<td class="c m b0 r2 l0 t0 lines">500</td>
+<td class="c m b0 r2 l0 t0 lines">500.01</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{\text{test}} = 5.6679\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.58<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p id="p-3850">We need the critical value for the \(\alpha=0.10\) significance level in a \(\chi^2\) distribution with \(df = 3 - 1 = 2\) degrees of freedom.  Looking this up in the \(\chi^2\)-distribution table, we find \(\chi^2_{0.10} = 4.605\) and sketch the picture below.</p>
+<figure class="figure figure-like" id="fig_goodness-of-fit_examp_test-relative"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_goodness-of-fit_examp_test-relative.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.59<span class="period">.</span></span><span class="space"> </span>Comparing \(\chi^2\) Values</figcaption></figure><p id="p-3851">Because the test statistic is larger than the critical value (and thus further into the right tail) we must reject the null hypothesis. The three parties do not appear to have equal proportions.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_goodness-of-fit_test-1"><video id="video-253" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-11.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.60<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Tests I</figcaption></figure><figure class="figure figure-like" id="video_goodness-of-fit_test-2"><video id="video-254" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-12.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.61<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Tests II</figcaption></figure><article class="exercise exercise-like" id="ckpt_goodness-of-fit_test-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_test-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.62</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_test-1"><article class="exercise exercise-like"><p id="p-3852">To test the null hypothesis:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = 0.7, \quad p_2 = 0.2, \quad p_3 = 0.1
+\end{equation*}
+</div>
+<p data-braille="continuation">the following observed counts were collected, and the given expected counts were computed. The test statistic was then found, as shown in the table.</p>
+<figure class="table figure-like" id="table-99"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r0 l0 t0 lines">Expected</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines">65</td>
+<td class="c m b0 r0 l0 t0 lines">70</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0.357</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">24</td>
+<td class="c m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">1.200</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">11</td>
+<td class="c m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0.100</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Totals:</td>
+<td class="c m b0 r2 l0 t0 lines">110</td>
+<td class="c m b0 r0 l0 t0 lines">110</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_\text{test} = 1.657\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.63<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p id="p-3853">Question: what conclusion should you make at the \(\alpha = 0.05\) significance level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-309" id="answer-309"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-309"><div class="answer solution-like"><p id="p-3854">Fail to reject the null hypothesis.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_goodness-of-fit_test-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_goodness-of-fit_test-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.2.64</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_goodness-of-fit_test-2"><article class="exercise exercise-like"><p id="p-3855">To test the null hypothesis:</p>
+<div class="displaymath">
+\begin{equation*}
+H_0:\ p_1 = 0.7, \quad p_2 = 0.2, \quad p_3 = 0.1
+\end{equation*}
+</div>
+<p data-braille="continuation">the following observed counts were collected, and the given expected counts were computed. The test statistic was then found, as shown in the table.</p>
+<figure class="table figure-like" id="table-100"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">Category</td>
+<td class="c m b2 r2 l0 t0 lines">Observed</td>
+<td class="c m b2 r0 l0 t0 lines">Expected</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">\(\frac{(O-E)^2}{E}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines">61</td>
+<td class="c m b0 r0 l0 t0 lines">70</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">1.157</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">18</td>
+<td class="c m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4.800</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">21</td>
+<td class="c m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">12.100</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Totals:</td>
+<td class="c m b0 r2 l0 t0 lines">110</td>
+<td class="c m b0 r0 l0 t0 lines">110</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_\text{test} = 18.057\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.2.65<span class="period">.</span></span><span class="space"> </span>Goodness-of-Fit Table</figcaption></figure><p id="p-3856">Question: what conclusion should you make at the \(\alpha = 0.01\) significance level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-310" id="answer-310"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-310"><div class="answer solution-like"><p id="p-3857">Reject the null hypothesis.</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

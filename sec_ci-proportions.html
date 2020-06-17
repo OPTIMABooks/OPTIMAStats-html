@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:49-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Confidence Intervals for a Proportion</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_ci-means.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_estimation.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ci-differences.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_ci-means.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_estimation.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ci-differences.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions" class="active">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ci-proportions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Confidence Intervals for a Proportion</span>
+</h2>
+<a href="sec_ci-proportions.html" class="permalink">¶</a><section class="introduction" id="sec_ci-proportions_intro"><h6 class="heading">Estimating a Proportion.<span></span>
+</h6>
+<p id="p-2722">The process for estimating the proportion of a population which has a given characteristic is very similar to the <a href="sec_ci-means.html#sec_ci-means_intro" class="internal" title="Introduction: Estimating a Mean">process for estimating population means</a>. In order to build a confidence interval for \(p\text{,}\) the population proportion, we follow these steps.</p>
+<ol class="decimal">
+<li id="li-1024"><p id="p-2723">Get a point estimate for \(p\text{.}\)</p></li>
+<li id="li-1025"><p id="p-2724">Find the margin of error for \(p\text{.}\)</p></li>
+<li id="li-1026"><p id="p-2725">Add the margin of error to and subtract it from the point estimate to get the confidence interval.</p></li>
+</ol>
+<p data-braille="continuation">The tools we use to find the margin of error again rely on the assumption that the sample proportion, \(\hat p\text{,}\) will have a normal distribution. Recall that this is true as long as \(n\times p\) and \(n\times q\) are both greater than 5.</p></section><article class="objectives goal-like" id="sec_ci-proportions_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-40"><p id="p-2726">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1027">
+<p id="p-2727">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1028"><p id="p-2728">Confidence Interval for a Proportion</p></li>
+<li id="li-1029"><p id="p-2729">Margin of Error for a Proportion</p></li>
+<li id="li-1030"><p id="p-2730">Point Estimate for a Proportion</p></li>
+<li id="li-1031"><p id="p-2731">Sample Size when Estimating a Proportion</p></li>
+</ul>
+</li>
+<li id="li-1032">
+<p id="p-2732">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1033"><p id="p-2733">Identify the best point estimate for a population proportion</p></li>
+<li id="li-1034"><p id="p-2734">Find the margin of error for a population proportion</p></li>
+<li id="li-1035"><p id="p-2735">Construct a confidence interval for a population proportion</p></li>
+<li id="li-1036"><p id="p-2736">Understand and list the assumptions that must be made to construct this confidence interval</p></li>
+<li id="li-1037"><p id="p-2737">Compute the minimum sample size necessary for a given margin of error</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_ci-proportions_point"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Point Estimate</span>
+</h3>
+<a href="sec_ci-proportions.html#sec_ci-proportions_point" class="permalink">¶</a><p id="p-2738">How do we use a sample from a population to estimate the population proportion? Consider the following example.</p>
+<article class="example example-like" id="examp_ci-proportions_point-general"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-proportions_point-general"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Describing the Process for Finding a Point Estimate for a Proportion.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-proportions_point-general"><article class="example example-like"><p id="p-2739">An urn contains a large number of colored marbles. You wish to estimate how many of those marbles are red. Describe how this might be done.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-175" id="solution-175"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-175"><div class="solution solution-like">
+<p id="p-2740">Assuming that the urn contains too many marbles to go through, we will base our estimate on a sample. Draw a sample of 100 marbles, so that \(n=100\text{.}\)  Then count the number that are red and call that \(x\text{.}\) The proportion of red marbles in the sample is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat p = \frac{x}{100}\text{.}
+\end{equation*}
+</div>
+<p id="p-2741">We should use \(\hat p\) to estimate \(p\text{,}\) the proportion of all of the marbles that are red.</p>
+</div></div>
+</div></article></div>
+<p id="p-2742">This is a specific example of using the sample proportion as a point estimate for the population proportion.</p>
+<article class="theorem theorem-like" id="thm_point-estimate-proportion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Point Estimator for a Proportion.</span>
+</h6>
+<p id="p-2743">The best point estimate for a population proportion \(p\) is the sample proportion \(\hat p\text{.}\)</p></article><p id="p-2744">In many examples, such as the last one, we are not directly given the value of \(\hat p\text{.}\) Instead, we are told the sample size, \(n\text{,}\) and the number of individuals in the sample that have the desired characteristic, \(x\text{.}\) It is up to us then to compute \(\hat p = \frac{x}{n}\text{.}\) Another example of this can be seen below.</p>
+<article class="example example-like" id="examp_ci-proportions_point-find"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-proportions_point-find"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Point Estimate for a Proportion.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-proportions_point-find"><article class="example example-like"><p id="p-2745">A storybook writer wishes to know the proportion of 2nd graders who believe in unicorns. He randomly samples \(350\) 2nd graders and finds that \(183\) of them believe in unicorns. What should he use as an estimate for the proportion of all 2nd graders who believe in unicorns?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-176" id="solution-176"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-176"><div class="solution solution-like">
+<p id="p-2746">The best estimate for the population proportion \(p\) is the sample proportion \(\hat p\) which is:</p>
+<div class="displaymath">
+\begin{equation*}
+\hat p = \frac{x}{n} = \frac{183}{350} \approx 0.5229\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The storybook writer should conclude that 52.3% of 2nd graders believe in unicorns.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-proportions_point-1"><video id="video-160" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.4<span class="period">.</span></span><span class="space"> </span>Point Estimates for a Proportion I</figcaption></figure><figure class="figure figure-like" id="video_ci-proportions_point-2"><video id="video-161" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.5<span class="period">.</span></span><span class="space"> </span>Point Estimates for a Proportion II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-proportions_point-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_point-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_point-1"><article class="exercise exercise-like"><p id="p-2747">You wish to estimate the proportion of men who know how to cook. To do this, you collect a random sample of \(725\) men and find that \(433\) of them know how to cook.</p>
+<p id="p-2748">Question: what should you use as a point estimate for \(p\text{,}\) the proportion of men who know how to cook?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-220" id="answer-220"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-220"><div class="answer solution-like"><p id="p-2749">0.5972</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-proportions_point-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_point-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_point-2"><article class="exercise exercise-like"><p id="p-2750">In a sample of 100 bags of M&amp;M's candy, you find that 34.4% of them contain more brown candies than any other color.</p>
+<p id="p-2751">Question: what is the best estimate of the proportion of M&amp;M's candy bags that contain more brown candies than any other color?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-221" id="answer-221"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-221"><div class="answer solution-like"><p id="p-2752">0.344</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_proportions_margin-error"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Margin of Error</span>
+</h3>
+<a href="sec_ci-proportions.html#sec_proportions_margin-error" class="permalink">¶</a><p id="p-2753">How good is a point estimate for a proportion? To answer this question we need to find the margin of error for such an estimate. The basic formula for margin of error is the same as in the past two lessons. We multiply a critical value by the standard deviation of the sampling distribution. In this case, we are using the <a class="xref" data-knowl="./knowl/thm_proportion-sampling-dist.html" title="Theorem 3.5.31: Sampling Distribution for a Proportion">sampling distribution for \(\hat p\)</a>.</p>
+<article class="theorem theorem-like" id="thm_margin-error-proportion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Margin of Error for a Proportion.</span>
+</h6>
+<p id="p-2754">The margin of error when estimating a population proportion with a sample proportion \(\hat p\) drawn from a sample of size \(n\) at the \((1-\alpha)\) significance level is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2}\times \sqrt{\frac{pq}{n}}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that since \(p\) is not known, we approximate with \(p approx \hat p\) and \(q \approx 1-\hat p\text{.}\)</p></article><p id="p-2755">Let's apply this formula to the <a class="xref" data-knowl="./knowl/examp_ci-proportions_point-find.html" title="Example 4.3.3: Finding a Point Estimate for a Proportion">storybook writer example</a>.</p>
+<article class="example example-like" id="examp_ci-proportions_margin-error-99"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-proportions_margin-error-99"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Margin of Error for a Proportion.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-proportions_margin-error-99"><article class="example example-like"><p id="p-2756">A storybook writer wishes to know the proportion of 2nd graders who believe in unicorns. He randomly samples \(350\) 2nd graders and finds that \(183\) of them believe in unicorns. What is the margin of error in estimating the proportion of 2nd graders who believe in unicorns with this sample at the 99% confidence level?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-177" id="solution-177"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-177"><div class="solution solution-like">
+<p id="p-2757">At the 99% confidence level our critical value is \(z_{\alpha/2} = \pm 2.575\text{.}\) We use our point estimate \(\hat p = \frac{183}{350} \approx 0.5229\) to approximate \(p\text{.}\) This gives a margin of error of:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2} \times \sqrt{\frac{pq}{n}} = \pm 2.575\sqrt{\frac{(0.5229)(0.4771)}{350}} \approx \pm 0.0687\text{.}
+\end{equation*}
+</div>
+<p id="p-2758">We are therefore 99% confident that the 52.3% of 2nd graders that we estimate believe in unicorns is no more than 6.9% different from the true population proportion.</p>
+</div></div>
+</div></article></div>
+<p id="p-2759">One final note on the margin of error formula above. To use critical values, \(z_{\alpha/2}\text{,}\) from the standard normal distribution, we have to assume that \(n\times p\) and \(n\times q\) are greater than 5. Since we don't know \(p\)—after all, that is what we are trying to estimate, we again substitute \(\hat p\text{.}\) So we must make sure that \(n\times \hat p = x\) and \(n\times \hat q = n-x\) are both greater than 5 before we can use the formula above for margin of error.  In other words, we must have more than five “successes” and more than five “failures” in our sample in order to proceed.</p>
+<figure class="figure figure-like" id="video_ci-proportions_margin-error-1"><video id="video-162" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span>Margin of Error for a Proportion I</figcaption></figure><figure class="figure figure-like" id="video_ci-proportions_margin-error-2"><video id="video-163" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.11<span class="period">.</span></span><span class="space"> </span>Margin of Error for a Proportion II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-proportions_margin-error-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_margin-error-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_margin-error-1"><article class="exercise exercise-like"><p id="p-2760">You wish to estimate the proportion of men who know how to cook. To do this, you collect a random sample of \(725\) men and find that \(433\) of them know how to cook.</p>
+<p id="p-2761">Question: what is the margin of error at the 95% confidence level in the estimation of \(p\) by \(\hat p\text{?}\) Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-222" id="answer-222"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-222"><div class="answer solution-like"><p id="p-2762">\(\pm 0.0357\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-proportions_margin-error-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_margin-error-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_margin-error-2"><article class="exercise exercise-like"><p id="p-2763">In a sample of 100 bags of M&amp;M's candy, you find that 34.4% of them contain more brown candies than any other color.</p>
+<p id="p-2764">Question: what is the 98% margin of error in your estimation, based on this sample, of the proportion of M&amp;M's bags that contain more brown candies than any other color? Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-223" id="answer-223"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-223"><div class="answer solution-like"><p id="p-2765">\(\pm 0.1107\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-proportions_interval"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Confidence Interval</span>
+</h3>
+<a href="sec_ci-proportions.html#sec_ci-proportions_interval" class="permalink">¶</a><p id="p-2766">Confidence intervals for proportions are found in the same way as they were for means. We take the point estimate, which is \(\hat p\) in this case, and we add and subtract the margin of error we just saw. This formula is summarized below.</p>
+<article class="theorem theorem-like" id="thm_ci-proportion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Confidence Interval for a Proportion.</span>
+</h6>
+<p id="p-2767">The \((1-\alpha)100%\) confidence interval for a population proportion \(p\) is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+\hat p \pm z_{\alpha/2}\times \sqrt{\frac{p q}{n}}\text{.}
+\end{equation*}
+</div></article><p id="p-2768">In the example below we make use of this formula to construct a confidence interval.</p>
+<article class="example example-like" id="examp_ci-proportions_interval"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-proportions_interval"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing a Confidence Interval for a Proportion.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-proportions_interval"><article class="example example-like"><p id="p-2769">In order to judge the popularity of a certain politician, a polling firm surveys \(1500\) registered voters and finds that 53.5% of them have a favorable opinion of the politician. Construct a 98% confidence interval for the proportion of registered voters who have a favorable opinion of the politician.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-178" id="solution-178"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-178"><div class="solution solution-like">
+<p id="p-2770">In this example we are given \(\hat p = 0.535\text{.}\) Since we are using the 98% confidence level, our critical value is \(z_{\alpha/2}= 2.33\text{.}\) Putting this together yields the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+0.535 \pm 2.33\sqrt{\frac{(0.535)(0.465)}{1500}} = 0.535 \pm 0.0300\text{.}
+\end{equation*}
+</div>
+<p id="p-2771">Therefore, we are 98% confident that the true proportion of registered voters who have a favorable opinion of the politician is in the range:</p>
+<div class="displaymath">
+\begin{equation*}
+0.505 \lt p \lt 0.565\text{.}
+\end{equation*}
+</div>
+<p id="p-2772">Note that this result could also have been reported as a 53.5% favorable rating with a margin of error of plus or minus 3%.</p>
+</div></div>
+</div></article></div>
+<p id="p-2773">We can also construct upper or lower confidence bounds for a population proportion.</p>
+<article class="example example-like" id="examp_ci-proportions_one-sided"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-proportions_one-sided"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing a One-Sided Confidence Interval.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-proportions_one-sided"><article class="example example-like"><p id="p-2774">A cereal company claims that at least 20% of its cereal boxes contain a special prize. You collect samples of \(500\) cereal boxes and find that \(83\) of them contain prizes. Based on this sample you suspect that less than 20% of boxes actually contain a prize. Can you be:</p>
+<ol class="lower-alpha">
+<li id="li-1038"><p id="p-2775">95% confident of this?</p></li>
+<li id="li-1039"><p id="p-2776">99% confident?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-179" id="solution-179"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-179"><div class="solution solution-like">
+<p id="p-2777">This question calls for an upper confidence bound on the proportion of cereal boxes that contain a prize. Using our sample data,</p>
+<div class="displaymath">
+\begin{equation*}
+\hat p = \frac{83}{500} = 0.166\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-1040">
+<p id="p-2778">For a 95% upper confidence bound, \(z_\alpha = 1.645\text{.}\) Therefore, the upper confidence bound is:</p>
+<div class="displaymath">
+\begin{equation*}
+0.166 + 1.645\sqrt{\frac{(0.166)(0.834)}{500}} \approx 0.1934\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Yes, we can be 95% certain that \(p \lt 0.20 \) because \(0.20\) is not in the one-sided confidence interval that lies below \(0.1934\text{.}\)</p>
+</li>
+<li id="li-1041">
+<p id="p-2779">Now for a 99% upper confidence bound, \(z_\alpha = 2.33\text{.}\) Therefore, the upper confidence bound is:</p>
+<div class="displaymath">
+\begin{equation*}
+0.166 + 2.33\sqrt{\frac{(0.166)(0.834)}{500}} \approx 0.2048\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In this case we can not be 99% confident that \(p \lt 0.20\) since 0.20 is below the upper confidence bound, and hence still in the one-sided confidence interval.</p>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-proportions_interval-1"><video id="video-164" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.17<span class="period">.</span></span><span class="space"> </span>Confidence Interval for a Proportion I</figcaption></figure><figure class="figure figure-like" id="video_ci-proportions_interval-2"><video id="video-165" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.18<span class="period">.</span></span><span class="space"> </span>Confidence Interval for a Proportion II</figcaption></figure><figure class="figure figure-like" id="video_ci-proportions_interval-3"><video id="video-166" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.19<span class="period">.</span></span><span class="space"> </span>Confidence Interval for a Proportion III</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-proportions_interval-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_interval-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_interval-1"><article class="exercise exercise-like"><p id="p-2780">You wish to estimate the proportion of men who know how to cook with a 99% confidence interval. To do this, you collect a random sample of 725 men and find that 433 of them know how to cook.</p>
+<p id="p-2781">Question: what is the confidence interval for this problem?  Round your confidence bounds to four decomal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-224" id="answer-224"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-224"><div class="answer solution-like"><p id="p-2782">\(0.5503 \lt p \lt 0.6435\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-proportions_interval-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_interval-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_interval-2"><article class="exercise exercise-like"><p id="p-2783">In a sample of 100 bags of M&amp;M's candy, you find that 34.4% of them contain more brown candies than any other color.</p>
+<p id="p-2784">Question: what is the confidence interval for this problem?  Round your confidence bounds to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-225" id="answer-225"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-225"><div class="answer solution-like"><p id="p-2785">\(0.2333 \lt p \lt 0.4547\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-proportions_sample-size"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.4</span> <span class="title">Sample Size</span>
+</h3>
+<a href="sec_ci-proportions.html#sec_ci-proportions_sample-size" class="permalink">¶</a><p id="p-2786">A polling organization needs to construct a 95% confidence interval. They want to be sure that their margin of error is no more than 4%. How many individuals do they need to sample to make this happen? This is just one example of a common situation. Before we even start to collect data, we need to know how big a sample we should plan on gathering. Selecting too large of a sample will be expensive and time consuming. On the other hand if we pick too small of a sample, we will get a large margin of error, and may not even be able to use the normal distribution methods from this section.</p>
+<p id="p-2787">To find the “just right” sample size, we need to refer back to the <a class="xref" data-knowl="./knowl/thm_margin-error-proportion.html" title="Theorem 4.3.8: Margin of Error for a Proportion">margin of error formula</a>. Suppose that we want to know how big \(n\) must be so that our margin of error is no more than some fixed amount \(E\text{.}\) Then, we need to solve the following inequality for \(n\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2}\times \sqrt{\frac{pq}{n}} \leq E\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Squaring both sides yields the following.</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{(z_{\alpha/2})^2pq}{n} \leq E^2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, multiplying both sides by \(n\) and dividing by \(E^2\) gives us the formula below.</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(z_{\alpha/2})^2pq}{E^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The results are summarized in the following theorem.</p>
+<article class="theorem theorem-like" id="thm_sample-size-proportion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Sample Size when Estimating a Proportion.</span>
+</h6>
+<p id="p-2788">To get a maximum margin of error of \(E\) at the \((1-\alpha)\) confidence level, we must take a sample of size \(n\) where:</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(z_{\alpha/2})^2pq}{E^2}\text{.}
+\end{equation*}
+</div></article><p id="p-2789">Note that we usually don't know \(p\) and \(q\) before we take our sample. The population proportion \(p\) is, after all, what we are trying to estimate. To make up for this we can do one of two things. We must either have an estimate for \(p\) from a previous study, or we can assume the “worst case scenario” that \(p = q = 0.5\text{.}\)  We call this the “worst case scenario” because these values for \(p\) and \(q\) will lead to the largest sample size. To see examples of both of these, consider the following.</p>
+<article class="example example-like" id="examp_ci-proportions_sample-size"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-proportions_sample-size"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Sample Size for a Given Margin of Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-proportions_sample-size"><article class="example example-like"><p id="p-2790">You wish to estimate the proportion of fish in a given lake that are too small to be legally kept by fishermen with a 95% confidence interval. To minimize the cost of your sample, you want to know the minimum number of fish you need to catch so that your margin of error is no more than 2%. Find this value of \(n\) if:</p>
+<ol class="lower-alpha">
+<li id="li-1042"><p id="p-2791">a previous study showed that 60% of the fish were too small to be kept.</p></li>
+<li id="li-1043"><p id="p-2792">you have no additional information.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-180" id="solution-180"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-180"><div class="solution solution-like">
+<p id="p-2793">We use the two options mentioned above to find our sample sizes.</p>
+<ol class="lower-alpha">
+<li id="li-1044">
+<p id="p-2794">If we estimate \(p = 0.6\) based on the previous study, we get</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(1.96)^2(0.60)(0.40)}{(0.02)^2} = 2304.96\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since we must sample a whole number of fish, we round this up to a sample size of \(n = 2305\) fish. Remember to always round sample sizes up!</p>
+</li>
+<li id="li-1045">
+<p id="p-2795">If we have no additional information, we must assume that both \(p\) and \(q\) are \(0.5\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(1.96)^2(0.5)(0.5)}{(0.02)^2} = 2401\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus, we must sample \(n = 2401\) fish.</p>
+</li>
+</ol>
+<p data-braille="continuation">Note that if we use the “worse case scenario” estimate of \(p = q = 0.5\text{,}\) we get a bigger sample size, by almost 100, than we did using the information from a previous study.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-proportions_sample-size-1"><video id="video-167" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.24<span class="period">.</span></span><span class="space"> </span>Sample Size I</figcaption></figure><figure class="figure figure-like" id="video_ci-proportions_sample-size-2"><video id="video-168" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.25<span class="period">.</span></span><span class="space"> </span>Sample Size II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-proportions_sample-size-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_sample-size-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_sample-size-1"><article class="exercise exercise-like"><p id="p-2796">In an effort to determine support for a certain ballot measure, sponsors of the ballot measure wish to construct a 99% confidence interval for the proportion of registered voters who plan to vote for the measure. They have no previous information on level of support for this measure, but they wish to get a margin of error that is no more than 4%.</p>
+<p id="p-2797">Question: what is the smallest number of individuals that they can sample to meet these requirements?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-226" id="answer-226"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-226"><div class="answer solution-like"><p id="p-2798">1037</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-proportions_sample-size-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-proportions_sample-size-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.3.27</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-proportions_sample-size-2"><article class="exercise exercise-like"><p id="p-2799">A grocery store chain wishes to determine what proportion of its customers use coupons. They will construct a 95% confidence interval for this proportion based on a sample of size \(n\text{,}\) and they want the margin of error to be no more than 3.5%. Studies at other grocery stores have indicated that approximately 30% of customers actually use coupons.</p>
+<p id="p-2800">Question: what is the minimum number of customers that the store should survey to meet the above requirements?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-227" id="answer-227"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-227"><div class="answer solution-like"><p id="p-2801">659</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:28-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Random Variables and Discrete Probability distributions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap_distributions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_binomial.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap_distributions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_binomial.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars" class="active">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_random-vars"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Random Variables and Discrete Probability distributions</span>
+</h2>
+<a href="sec_random-vars.html" class="permalink">¶</a><section class="introduction" id="sec_random-vars_intro"><h6 class="heading">Assigning Values to Outcomes.<span></span>
+</h6>
+<p id="p-1679">There are times when we are interested not in the sample space of an experiment, but rather in values we assign to the sample space. Consider the following examples.</p>
+<article class="example example-like" id="examp_random-vars_num-heads"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_num-heads"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Tossing a Coin and Counting Heads.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_num-heads"><article class="example example-like"><p id="p-1680">You toss a fair coin three times and count the number of heads.  List both the outcomes for the experiment and the possible values that result from the experiment.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like">
+<p id="p-1681">The outcomes in the experiment make up the sample space shown below.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace HHH, HHT, HTH, HTT, THH, THT, TTH, TTT \rbrace
+\end{equation*}
+</div>
+<p id="p-1682">However, the values that we are interested in are the possible number of heads that come up.  These are:</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 0, 1, 2, 3\rbrace
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1683">Note that the values which we are interested in are the numbers 0 (no heads), 1 (one head), 2 (two heads) or 3 (three heads). Each value is associated with a certain subset of the sample space. For example, the value 2 is generated by the event \(\lbrace HHT, HTH, THH \rbrace\text{.}\) Not all of our examples are this straightforward. Consider the following.</p>
+<article class="example example-like" id="examp_random-vars_citizen-height"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_citizen-height"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Selecting a Person and Measuring Height.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_citizen-height"><article class="example example-like"><p id="p-1684">You select a random US Citizen and measure their height in feet and inches.  List both the outcomes for the experiment and describe the possible values that result from the experiment.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like">
+<p id="p-1685">The outcomes in the experiment are all of the citizens of the US that could be chosen.</p>
+<p id="p-1686">The values are all of the possible heights of US citizens.</p>
+</div></div>
+</div></article></div>
+<p id="p-1687">In this example, we don't know what outcomes make up the event giving a height of 6.0 ft. However, we are fairly certain that there are many different outcomes (i.e. people) who have a height of 6.0 feet.</p>
+<p id="p-1688">In this section, we will learn how to assign values to events in a sample space in a systemmatic way. The values will be said to be the values of a <dfn class="terminology">random variable</dfn>. As we shall see, random variables, just like “ordinary” variables, come in two different varieties: discrete and continuous. We will focus for the first few sections of this chapter on discrete random variables and how to study their entire range of values and probabilities, called their <dfn class="terminology">probability distribution</dfn>.</p></section><article class="objectives goal-like" id="sec_random-vars_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-25"><p id="p-1689">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-673">
+<p id="p-1690">describe the following terms:</p>
+<ul class="circle">
+<li id="li-674"><p id="p-1691">expected value</p></li>
+<li id="li-675"><p id="p-1692">probability distribution</p></li>
+<li id="li-676"><p id="p-1693">probability histogram</p></li>
+<li id="li-677"><p id="p-1694">random variable</p></li>
+<li id="li-678"><p id="p-1695">standard deviation of a discrete random variable</p></li>
+<li id="li-679"><p id="p-1696">variance of a discrete random variable</p></li>
+</ul>
+</li>
+<li id="li-680">
+<p id="p-1697">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-681"><p id="p-1698">Recognize and assign values to random variables</p></li>
+<li id="li-682"><p id="p-1699">Create a probability distribution for discrete random variables</p></li>
+<li id="li-683"><p id="p-1700">Construct and work with probability histograms</p></li>
+<li id="li-684"><p id="p-1701">Find the expected value of a discrete random variable.</p></li>
+<li id="li-685"><p id="p-1702">Find the standard deviation of a discrete random variable.</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_random-vars_definition"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Random Variables</span>
+</h3>
+<a href="sec_random-vars.html#sec_random-vars_definition" class="permalink">¶</a><p id="p-1703">In <a href="chap_descriptive.html" class="internal" title="Chapter 1: Collecting and Describing Data">Chapter 1</a> we studied data collection and the variables that resulted. In <a href="chap_probability.html" class="internal" title="Chapter 2: Understanding Randomness and Probability">Chapter 2</a>, we looked at probability. We can now combine those two topics—the study of variables and probability—into a single topic, the study of variables that result from random processes. Such variables are, not surprisingly, called <dfn class="terminology">random variables</dfn>.</p>
+<article class="definition definition-like" id="def_random-var"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-1704">A <dfn class="terminology">random variable</dfn> is a variable that takes on values corresponding to the outcome of some random process.</p></article><p id="p-1705">Think back to <a href="sec_simulation.html" class="internal" title="Section 2.1: Randomness and Simulation">Section 2.1</a> on randomness and simulation. In that section we introduced the notion of a <a class="xref" data-knowl="./knowl/def_random-process.html" title="Definition 2.1.10">random process</a> and a <a class="xref" data-knowl="./knowl/def_deterministic-process.html" title="Definition 2.1.11">deterministic process</a>. A simple way to tell if a variable is random or “ordinary” is to consider the source of its values. If the values come from a deterministic process—that is, they will be the same each time the measurement is taken, then the variable is not random. If the underlying process is a random process, then so is the variable. Consider the following example.</p>
+<article class="example example-like" id="examp_random-vars_identify"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_identify"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Random Variables.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_identify"><article class="example example-like"><p id="p-1706">Determine which, if any, of the following variables are random variables.</p>
+<ol class="lower-alpha">
+<li id="li-686"><p id="p-1707">The height of your grandmother</p></li>
+<li id="li-687"><p id="p-1708">The height of a randomly selected grandmother from your city</p></li>
+<li id="li-688"><p id="p-1709">The number of heads that appear when a fair coin is tossed 10 times</p></li>
+<li id="li-689"><p id="p-1710">The number of heads that appear when a single, double-headed coin is flipped.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like">
+<p id="p-1711">In each case, we ask ourselves if the value we measure is a result of a random or deterministic process.</p>
+<ol class="lower-alpha">
+<li id="li-690"><p id="p-1712">Since your grandmother can be assumed to have the same height each time you measure her (within a set time-frame of course), this is a deterministic process. Thus, her height is <dfn class="terminology">not a random variable</dfn>.</p></li>
+<li id="li-691"><p id="p-1713">When you randomly choose a grandmother to measure, you will get different grandmothers resulting in different heights. The underlying process is random and therefore, this is a <dfn class="terminology">random variable</dfn>.</p></li>
+<li id="li-692"><p id="p-1714">Flipping a coin is by nature a random event. The number of heads could be anything from 0-10 in this process. Therefore, this variable is a <dfn class="terminology">random variable</dfn>.</p></li>
+<li id="li-693"><p id="p-1715">Since the coin has a heads on both sides, we know for certain that one head will appear. The process is deterministic, and therefore the variable is <dfn class="terminology">not random</dfn>.</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-1716">Just like “ordinary” variables, random variables can be either discrete or continuous. Recall that a <a class="xref" data-knowl="./knowl/def_discrete.html" title="Definition 1.1.14">discrete variable</a> is one that takes on a finite number of values (or an infinite number with “spaces” between the values), whereas a <a class="xref" data-knowl="./knowl/def_continuous.html" title="Definition 1.1.15">continuous variable 1.1.15</a> can take on any value in a given range. Looking back at <a class="xref" data-knowl="./knowl/examp_random-vars_identify.html" title="Example 3.1.4: Identifying Random Variables">Example 3.1.4</a> you should see that both discrete and continuous random variables are represented.</p>
+<article class="example example-like" id="examp_random-vars_identify-type"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_identify-type"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying Random Variables as Discrete or Continuous.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_identify-type"><article class="example example-like"><p id="p-1717">Which of the random variables from <a class="xref" data-knowl="./knowl/examp_random-vars_identify.html" title="Example 3.1.4: Identifying Random Variables">Example 3.1.4</a> is continuous, and which is discrete?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like">
+<p id="p-1718">The number of heads in ten flips of a coin must take on one of the values</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 \rbrace\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is therefore a <dfn class="terminology">discrete</dfn> random variable.</p>
+<p id="p-1719">The height of a grandmother can take on any value within a “reasonable” range (we don't expect 10ft tall grandmothers, nor do we expect 1ft tall grandmothers). It is therefore a <dfn class="terminology">continuous</dfn> random variable.</p>
+</div></div>
+</div></article></div>
+<p id="p-1720">In this text, we will follow standard notation and refer to random variables using capital letters from the end of the alphabet, such as \(X\text{,}\) or \(Y\text{.}\) The notation \(X=x\) stands for the set of outcomes in an experiment which give the random variable \(X\) the value \(x\text{.}\) Consider the following revisitation of <a class="xref" data-knowl="./knowl/examp_random-vars_num-heads.html" title="Example 3.1.1: Tossing a Coin and Counting Heads">Example 3.1.1</a>.</p>
+<article class="example example-like" id="examp_random_num-heads-revisited"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random_num-heads-revisited"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Events Based on Random Variable Values.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random_num-heads-revisited"><article class="example example-like"><p id="p-1721">A random variable \(X\) is defined to be the number of heads in three flips of a fair coin. Find each of the following.</p>
+<ol class="lower-alpha cols3">
+<li id="li-694"><p id="p-1722">\(X=1\)</p></li>
+<li id="li-695"><p id="p-1723">\(X=3\)</p></li>
+<li id="li-696"><p id="p-1724">\(P(X=2)\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like">
+<p id="p-1725">Remembering that “\(X=x\)” stands for a set of outcomes, we find that:</p>
+<ol class="lower-alpha">
+<li id="li-697"><p id="p-1726">“\(X=1\)” is the set \(\lbrace HTT, THT, TTH \rbrace\) — in other words, the set of outcomes with \(X=1\) head in the 3 flips.</p></li>
+<li id="li-698"><p id="p-1727">“\(X=3\)” is the set \(\lbrace HHH \rbrace\) — this is the only outcome in which \(X\) (the number of heads) is 3.</p></li>
+<li id="li-699">
+<p id="p-1728">\(P(X=2)\) is the probability of the event \(\lbrace HHT, HTH, THH \rbrace\text{.}\) Since the coin is fair and each flip is independent of the previous flip, each of these outcomes has probability \(\frac{1}{2}\times \frac{1}{2} \times \frac{1}{2} = \frac{1}{8}\text{.}\) Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+P(X=2) = \frac{1}{8} + \frac{1}{8} + \frac{1}{8} = \frac{3}{8}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_random-vars_definition-1"><video id="video-90" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Random Variables I</figcaption></figure><figure class="figure figure-like" id="video_random-vars_definition-2"><video id="video-91" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.8<span class="period">.</span></span><span class="space"> </span>Random Variables II</figcaption></figure><article class="exercise exercise-like" id="ckpt_random-vars_definition-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_definition-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_definition-1"><article class="exercise exercise-like"><p id="p-1729">Below are the descriptions of several variables.</p>
+<ol class="lower-alpha">
+<li id="li-700"><p id="p-1730">The number of students in a randomly selected college course at your favorite university</p></li>
+<li id="li-701"><p id="p-1731">The amount of money that a randomly selected lottery ticket is worth in a certain scratch-ticket lottery game</p></li>
+<li id="li-702"><p id="p-1732">The length of a randomly selected piece of music from your collection</p></li>
+<li id="li-703"><p id="p-1733">The number of cats that you own</p></li>
+<li id="li-704"><p id="p-1734">The length of your favorite piece of music in your collection</p></li>
+<li id="li-705"><p id="p-1735">The weight of a randomly selected nickel currently in circulation.</p></li>
+</ol>
+<p id="p-1736">Question: identify each of the variables above as a Discrete Random Variable, Continuous Random Variable, Discrete Deterministic Variable, or Continuous Deterministic Variable.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-124" id="answer-124"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-124"><div class="answer solution-like"><ol id="p-1737" class="lower-alpha cols2">
+<li id="li-706"><p id="p-1738">Discrete Random Variable</p></li>
+<li id="li-707"><p id="p-1739">Discrete Random Variable</p></li>
+<li id="li-708"><p id="p-1740">Continuous Random Variable</p></li>
+<li id="li-709"><p id="p-1741">Discrete Deterministic Variable</p></li>
+<li id="li-710"><p id="p-1742">Continuous Deterministic Variable</p></li>
+<li id="li-711"><p id="p-1743">Continuous Random Variable</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_definition-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_definition-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_definition-2"><article class="exercise exercise-like"><p id="p-1744">A game is played by drawing two marbles, without replacement, from an urn containing 10 black marbles and 2 white marbles, and 1 green marble. For every black marble you draw, you win nothing. For every white marble you draw, you win $5. Finally, drawing the green marble earns you $20. A random variable \(X\) is defined to be the amount of money that you win from your two draws.</p>
+<p id="p-1745">Question: what are all of the possible values of \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-125" id="answer-125"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-125"><div class="answer solution-like"><p id="p-1746">\(\lbrace 0, 5, 10, 20, 25 \rbrace\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_definition-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_definition-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_definition-3"><article class="exercise exercise-like"><p id="p-1747">Two standard dice are rolled and a random variable \(Y\) is defined to be the difference between the largest value shown and smallest value shown. So, for example,</p>
+<ul class="disc">
+<li id="li-712"><p id="p-1748">if you roll a 5 and a 2, then \(Y = 5 - 2 = 3\text{,}\)</p></li>
+<li id="li-713"><p id="p-1749">if you roll a 3 and a 6, then \(Y = 6 - 3 = 3\text{,}\) and</p></li>
+<li id="li-714"><p id="p-1750">if you roll a 2 and a 2, then \(Y = 2 - 2 = 0\text{.}\)</p></li>
+</ul>
+<p id="p-1751">Question: how many distinct values of \(Y\) are possible?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-126" id="answer-126"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-126"><div class="answer solution-like"><p id="p-1752">6</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_random-vars_distributions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.2</span> <span class="title">Probability Distributions for Discrete Random Variables</span>
+</h3>
+<a href="sec_random-vars.html#sec_random-vars_distributions" class="permalink">¶</a><p id="p-1753">Again, refering back to <a href="chap_descriptive.html" class="internal" title="Chapter 1: Collecting and Describing Data">Chapter 1</a>, we looked at the distribution of a set of data values by creating <a class="xref" data-knowl="./knowl/def_frequency-table.html" title="Definition 1.2.3">frequency tables</a> for qualitative variables, and <a class="xref" data-knowl="./knowl/def_frequency-distribution.html" title="Definition 1.2.34">frequency distributions</a> for quantitative variables. Once we have defined a random variable for a random process, we can also create a <dfn class="terminology">probability distribution</dfn> for that variable. The difference is that instead of listing a frequency for each value of the variable, we list the probability of that value. Formally, we state this as follows.</p>
+<article class="definition definition-like" id="def_probability-distribution"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+</h6>
+<p id="p-1754">The <dfn class="terminology">probability distribution</dfn> for a discrete random variable is a formula, table, or graph that assigns to each possible value of \(X\) the probability that that value will occur.</p></article><p id="p-1755">As long as our random variable has a relatively small number of possible values, we use a table to organize our probability distribution, as seen in the next example.</p>
+<article class="example example-like" id="examp_random-vars_marble-distribution"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_marble-distribution"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Creating a Probability Distribution Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_marble-distribution"><article class="example example-like"><p id="p-1756">An urn contains seven colored marbles: 4 red, 2 white, and 1 blue. Two marbles are drawn without replacement, and the colors are noted. A random variable \(X\) is defined to be the number of white marbles drawn. Construct the probability distribution for \(X\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like">
+<p id="p-1757">The first step in constructing our probability distribution is to list the possible values of \(X\text{.}\) Since we only draw two marbles, the possible number of white marbles drawn is 0, 1, or 2.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;">
+<p id="p-1758">The next step is to figure out the probability that \(X\) takes on each of those values.</p>
+<div class="displaymath">
+\begin{align*}
+P(X=0) \amp = \frac{C(5,2)}{C(7,2)} = \frac{10}{21}\\
+P(X=1) \amp = \frac{C(5,1)C(2,1)}{C(7,2)} = \frac{10}{21}\\
+P(X=2) \amp = \frac{C(2,2)}{C(7,2)} = \frac{1}{21}
+\end{align*}
+</div>
+</div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:flex-start;"><figure class="table figure-like" id="table_examp_random-vars_marble-distribution"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{10}{21}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{10}{21}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{21}\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.14<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(X\)</figcaption></figure></div>
+</div></div>
+</div></div>
+</div></article></div>
+<p id="p-1759">Note that in the preceding example, the sum of the probabilities is one. This should always be the case since the values of \(X\) cover all possible outcomes of the experiment. No matter how we present a probability distribution, it must always be the case that \(\sum_x P (X=x) = 1\text{,}\) or in other words, if we add together the probability that \(X=x\) for all values of \(x\text{,}\) we get one.</p>
+<article class="example example-like" id="examp_random-vars_distribution_formula"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_distribution_formula"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Probability Distribution Formula.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_distribution_formula"><article class="example example-like"><p id="p-1760">A researcher wishes to find a dog owner in a town in which one-third of individuals own a pet dog. A random variable \(Y\) is defined to be the number of people the researcher must ask before finding one who owns a dog. Give a probability distribution for \(Y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like">
+<p id="p-1761">Our first thought might be to construct a table for this probability distribution similar to what we did in the last example.  The problem we run into is that there are an infinite number of possible values (or at least, very large considering we don't know how big the town is). So instead, we will construct a formula.</p>
+<p id="p-1762">\(Y=y\) means that it took \(y\) attempts to find the first dog owner. So the first \(y-1\) people that we asked were not dog owners. The probability that a given person is not a dog owner is \(\frac{2}{3}\text{.}\) The last person we ask does have a dog, and that probability is \(\frac{1}{3}\text{.}\) This yields the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+P(Y=y) = \left(\frac{2}{3}\right)^{y-1}\left(\frac{1}{3}\right)\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1763">We could construct a partial table for the example above. The first few rows of this table are shown below.</p>
+<figure class="table figure-like" id="table-36"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(y\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(Y=y)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{3}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{2}{9}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{4}{27}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(\vdots\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\vdots\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.16<span class="period">.</span></span><span class="space"> </span>Partial Probability Distribution Table</figcaption></figure><p id="p-1764">In this table, the sum of the probabilities is not one because in this table we have not listed all of the possible values of \(Y\text{.}\) That is the reason that we prefer using a formula for this particular probability distribution.</p>
+<figure class="figure figure-like" id="video_random-vars_distributions-1"><video id="video-92" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.17<span class="period">.</span></span><span class="space"> </span>Probability Distributions I</figcaption></figure><figure class="figure figure-like" id="video_random-vars_distributions-2"><video id="video-93" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.18<span class="period">.</span></span><span class="space"> </span>Probability Distributions II</figcaption></figure><article class="exercise exercise-like" id="ckpt_random-vars_distributions-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_distributions-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.19</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_distributions-1"><article class="exercise exercise-like"><p id="p-1765">A game starts by rolling a standard die. If an even number is rolled, you get nothing. If an odd number is rolled, you then flip a coin. If the coin comes up heads, you win the amount shown on the die. If the coin comes up tails, you win nothing. A random variable \(W\) is defined to be the amount of money that you win.</p>
+<p id="p-1766">Question: find the probability distribution for \(W\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-127" id="answer-127"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-127"><div class="answer solution-like"><figure class="table figure-like" id="table-37"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(w\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(W=w)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3}{4}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{12}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{12}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{12}\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_distributions-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_distributions-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_distributions-2"><article class="exercise exercise-like"><p id="p-1767">A random variable \(X\) has the following probability distribution.</p>
+<figure class="table figure-like" id="table-38"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.237\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(a\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.422\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(12\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.011\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(70\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.216\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.22<span class="period">.</span></span><span class="space"> </span>Distribution of \(X\)</figcaption></figure><p id="p-1768">Question: what is the value of “\(a\)” in the distribution above?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-128" id="answer-128"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-128"><div class="answer solution-like"><p id="p-1769">\(0.114\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_distributions-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_distributions-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.23</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_distributions-3"><article class="exercise exercise-like"><p id="p-1770">Below are four potential probability distributions.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel fixed-width" style="width:21.0526315789474%;justify-content:flex-start;"><figure class="table figure-like" id="table-39"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(w\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(W=w)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.50\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.50\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.50\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.24<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel fixed-width" style="width:21.0526315789474%;justify-content:flex-start;"><figure class="table figure-like" id="table-40"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(-0.25\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.75\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.50\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.25<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel fixed-width" style="width:21.0526315789474%;justify-content:flex-start;"><figure class="table figure-like" id="table-41"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(y\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(Y=y)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.33\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.33\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.34\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.26<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel fixed-width" style="width:21.0526315789474%;justify-content:flex-start;"><figure class="table figure-like" id="table-42"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(z\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(Z=z)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.01\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.90\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.09\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.27<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+</div></div>
+<p id="p-1771">Question: which of these is a valid probability distribution?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-129" id="answer-129"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-129"><div class="answer solution-like"><p id="p-1772">The distributions for \(Y\) and \(Z\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_random-vars_histograms"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.3</span> <span class="title">Probability Histograms</span>
+</h3>
+<a href="sec_random-vars.html#sec_random-vars_histograms" class="permalink">¶</a><p id="p-1773">After constructing frequency distributions, the first thing we did was graph those results using a <a class="xref" data-knowl="./knowl/def_histogram.html" title="Definition 1.2.38">histogram</a>. We can also construct histograms for probability distributions. These histograms are an important step in understanding not only the shape of the distribution, but also an important application of the <a class="xref" data-knowl="./knowl/def_area-principle.html" title="Definition 1.2.92">area principle</a> that we saw in <a href="sec_graphs.html" class="internal" title="Section 1.2: Describing Data Graphically">Section 1.2</a>.</p>
+<article class="definition definition-like" id="def_probability-histogram"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.28</span><span class="period">.</span>
+</h6>
+<p id="p-1774">A <dfn class="terminology">probability histogram</dfn> is a histogram in which each value of the random variable is represented by a bar having a height equal to the probability of that value.</p></article><p id="p-1775">Let's revisit the two examples we saw on the last page. We can construct a probability histogram from the table in <a class="xref" data-knowl="./knowl/examp_random-vars_marble-distribution.html" title="Example 3.1.13: Creating a Probability Distribution Table">Example 3.1.13</a> as follows.</p>
+<article class="example example-like" id="examp_random-vars_marble-histogram"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_marble-histogram"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.29</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing a Probability Histogram from a Distribution Table.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_marble-histogram"><article class="example example-like"><p id="p-1776">Recall that in <a class="xref" data-knowl="./knowl/examp_random-vars_marble-distribution.html" title="Example 3.1.13: Creating a Probability Distribution Table">Example 3.1.13</a> we drew two marbles from an urn containing 4 red, 2 white, and 1 blue marbles. A random variable \(X\) was defined to be the number of white marbles drawn. Use the <a class="xref" data-knowl="./knowl/table_examp_random-vars_marble-distribution.html" title="Table 3.1.14: Probability Distribution for \(X\)">probability distribution</a> given in the solution to construct a probability histogram.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like">
+<p id="p-1777">Based on the distribution we found, which is repeated below, we construct the histogram shown.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:flex-start;"><figure class="table figure-like" id="table-43"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{10}{21} \approx 0.4762\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{10}{21} \approx 0.4762\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{21} \approx 0.0476\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.30<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_random-vars_examp_marble-histogram"><img src="images/image_random-vars_examp_marble-histogram.svg" style="width: 100%; height: auto;" alt="A histogram with bars for 0 and 1 of the same height and a bar for 2 that is much shorter."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.31<span class="period">.</span></span><span class="space"> </span>Probability Histogram</figcaption></figure></div>
+</div></div>
+<p id="p-1778">The area principle plays an important role in this histogram. Recall that the area principle states that the area of a bar in a histogram must accurately reflect the proportion of the class represented by that bar in the frequency distribution. In a probability histogram, this relationship is even stronger. The area of each bar must be equal to the probability of the value of \(X\) that it represents. Since each bar has a height equal to the probability and a width equal to one, this is indeed the case.</p>
+</div></div>
+</div></article></div>
+<p id="p-1779">In the second example from the last page, we did not have a table, but rather a formula for finding the probability of a given value of the random variable \(Y\text{.}\) We can use this formula to construct a partial probability histogram for this random variable, and we do so below.</p>
+<article class="example example-like" id="examp_random-vars_distribution_formula-histogram"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_distribution_formula-histogram"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.32</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing a Probability Histogram from a Distribution Formula.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_distribution_formula-histogram"><article class="example example-like"><p id="p-1780">Recall that in <a class="xref" data-knowl="./knowl/examp_random-vars_distribution_formula.html" title="Example 3.1.15: Finding a Probability Distribution Formula">Example 3.1.15</a> the probability that a researcher would have to ask \(y\) individuals before finding one who owned a dog was given by the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+P(Y=y) = \left(\frac{2}{3}\right)^{y-1}\left(\frac{1}{3}\right)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Construct a probability histogram for this probability distribution using the first ten values of the random variable.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like">
+<p id="p-1781">Limiting ourselves to just the first ten values of the variable, we construct the histogram shown to the right. A few things to note about this histogram:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><ul class="disc">
+<li id="li-715"><p id="p-1782">It still obeys the area principle. That is, each bar has area equal to the probability of that random variable value.</p></li>
+<li id="li-716"><p id="p-1783">If we were to add together all the bars (an infinite number), the sum would be 1 because the probability of the sample space is 1.</p></li>
+<li id="li-717"><p id="p-1784">In this instance, the bars become so short that they can not be seen after about \(Y=10\text{.}\)</p></li>
+</ul></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_random-vars_examp_distribution_formula-histogram"><img src="images/image_random-vars_examp_distribution_formula-histogram.svg" style="width: 100%; height: auto;" alt="a histogram with bars for y-values from 1 to 10, starting with a bar of height 0.33 and then quickly tapering off to heights close to zero."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.33<span class="period">.</span></span><span class="space"> </span>Probability Histogram for \(Y\)</figcaption></figure></div>
+</div></div>
+</div></div>
+</div></article></div>
+<p id="p-1785">We will see more graphs for probability distributions in later sections. For now, the most important thing to remember is that the area in a bar in such a histogram is equal to the probability of the value of the random variable represented by that bar.</p>
+<figure class="figure figure-like" id="video_random-vars_histograms-1"><video id="video-94" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.34<span class="period">.</span></span><span class="space"> </span>Probability Histograms I</figcaption></figure><figure class="figure figure-like" id="video_random-vars_histograms-2"><video id="video-95" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.35<span class="period">.</span></span><span class="space"> </span>Probability Histograms II</figcaption></figure><article class="exercise exercise-like" id="ckpt_random-vars_histograms-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_histograms-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_histograms-1"><article class="exercise exercise-like"><p id="p-1786">Consider the following probability histogram for the random variable \(X\text{.}\)</p>
+<figure class="figure figure-like" id="fig_random-vars_ckpt_histograms-1"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_random-vars_ckpt_histograms-1.svg" style="width: 100%; height: auto;" alt="A histogram with bars of height 0.1 at X=1, 0.2 at X-2, 0.1 at X=5, 0.3 at X=5, 0.2 at X=7, and 0.1 at X=8."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.37<span class="period">.</span></span><span class="space"> </span>Probability Histogram for \(X\)</figcaption></figure><p id="p-1787">Question: what is the probability that \(X\) is between 2 and 5 inclusively?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-130" id="answer-130"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-130"><div class="answer solution-like"><p id="p-1788">\(0.6\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_histograms-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_histograms-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.38</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_histograms-2"><article class="exercise exercise-like"><p id="p-1789">Consider the following probability histogram for the random variable \(X\text{.}\)</p>
+<figure class="figure figure-like" id="fig_random-vars_ckpt_histograms-2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_ckpt_random-vars_histograms-2.svg" style="width: 100%; height: auto;" alt="A histogram with bars of height 0.1 at X=1, 0.2 at X-2, 0.1 at X=5, 0.3 at X=5, 0.2 at X=7, and 0.1 at X=8."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.39<span class="period">.</span></span><span class="space"> </span>Probability Histogram for \(X\)</figcaption></figure><p id="p-1790">Question: which of the following are not possible values of the random variable X?</p>
+<ol class="lower-alpha cols3">
+<li id="li-718"><p id="p-1791">2</p></li>
+<li id="li-719"><p id="p-1792">3</p></li>
+<li id="li-720"><p id="p-1793">4</p></li>
+<li id="li-721"><p id="p-1794">6</p></li>
+<li id="li-722"><p id="p-1795">8</p></li>
+<li id="li-723"><p id="p-1796">12</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-131" id="answer-131"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-131"><div class="answer solution-like"><p id="p-1797">3, 6, and 12</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_histograms-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_histograms-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.40</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_histograms-3"><article class="exercise exercise-like"><p id="p-1798">Consider the following probability histogram for the distribution of the random variable \(X\text{.}\)</p>
+<figure class="figure figure-like" id="fig_random-vars_ckpt_histograms-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image_ckpt_random-vars_histograms-3.svg" style="width: 100%; height: auto;" alt="A histogram with bars of height 0.1 at X=1, X=2, X=4, and X=8 and a bar of height 0.2 at X=7.  There is a question mark about X=3."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.41<span class="period">.</span></span><span class="space"> </span>Probability Histogram for \(X\)</figcaption></figure><p id="p-1799">Question: this histogram is incorrect because the bar for \(X=3\) was left off. What should the height of that bar be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-132" id="answer-132"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-132"><div class="answer solution-like"><p id="p-1800">0.4</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_random-vars_expected-value"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.4</span> <span class="title">Expected Value</span>
+</h3>
+<a href="sec_random-vars.html#sec_random-vars_expected-value" class="permalink">¶</a><p id="p-1801">Probability distributions are useful for more than just summarizing information about a random variable. They can also be used to compute useful information about the overall experiment.  Before we introduce these computations, however, let's look at an example of information about an entire distribution that might be useful.</p>
+<article class="example example-like" id="examp_random-vars_average"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_average"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.42</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Average Value of a Random Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_average"><article class="example example-like"><p id="p-1802">A charity sells raffle tickets for $1.00 each. Each raffle ticket allows you to draw one colored ball from an urn containing 100 balls, 95 of which are red, 4 of which are white, and one of which is gold. If you draw a red ball, you get nothing. If you draw a white ball, you win $5. Finally, if you draw the gold ball, you win $50. Construct a probability distribution for \(X\text{,}\) the amount of money you win in this game. Then determine if the charity will make money on this game.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like">
+<p id="p-1803">To construct a probability distribution, we first list the possible values of \(X\text{.}\)</p>
+<ul class="disc">
+<li id="li-724"><p id="p-1804">If we draw a red ball, we win nothing \(X = 0.\)</p></li>
+<li id="li-725"><p id="p-1805">If we draw a white ball, we win $5 so \(X = 5\text{.}\)</p></li>
+<li id="li-726"><p id="p-1806">Finally, if we are lucky enough to draw the gold ball, we win $50, so \(X=50\text{.}\)</p></li>
+</ul>
+<p data-braille="continuation">This yields the following probability distribution.</p>
+<figure class="table figure-like" id="table-44"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{95}{100}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{4}{100}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(50\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{100}\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.43<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(X\)</figcaption></figure><p id="p-1807">In order to determine if the charity will make money, we need to factor in both the payouts as well as the probability. We will do this by computing the average value of one of the 100 balls in the urn.  We know that there is one ball worth $50 and there are four worth $5.  All of the others are worth $0.  So, the average is:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{50+5+5+5+5+0+\cdots+0}{100} = \frac{70}{100} = 0.70\text{.}
+\end{equation*}
+</div>
+<p id="p-1808">So if we were to play this game over and over again, our average winnings would be $0.70.  But we paid a dollar to play.  So our average payout would be \(0.70-1 = -0.30\text{.}\)  So we end up loosing thirty cents every time we play.  So the charity does in fact make money on the game.</p>
+</div></div>
+</div></article></div>
+<p id="p-1809">The average value mentioned above can be called the <dfn class="terminology">mean</dfn> of the probability distribution, or the <dfn class="terminology">expected value</dfn> of the random variable. It may seem that our computation above had nothing to do with the probability distribution we found, but closer examination shows that they are very closely linked.  If we regroup our average computation, we get:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{50+5+5+5+5+0+\cdots+0}{100} = 50\left(\frac{1}{100}\right) + 5\left(\frac{4}{100}\right) + 0\left(\frac{95}{100}\right)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Do you see how the numbers involved in this grouped form can be read right off of the probability distribution?</p>
+<article class="definition definition-like" id="def_expected-value"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.44</span><span class="period">.</span>
+</h6>
+<p id="p-1810">The <dfn class="terminology">expected value</dfn> of a discrete random variable is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+E(X) = \sum_{x} x\times P(X=x)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(x\) is summed over all values of the random variable.</p></article><p id="p-1811">As shown above, the expected value of \(X\) is really a weighted average. Each value of the random variable is weighted (i.e. multiplied) by its probability. So values that are very unlikely count far less than values that are likely. Let's see how this interaction plays out by finding the expected value of a slight variation on the game from <a class="xref" data-knowl="./knowl/examp_random-vars_average.html" title="Example 3.1.42: Finding the Average Value of a Random Variable">Example 3.1.42</a>.</p>
+<article class="example example-like" id="examp_random-vars_expected-value"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_expected-value"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.45</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Expected Value of a Raffle Ticket.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_expected-value"><article class="example example-like"><p id="p-1812">A charity sells raffle tickets for $2.00 each. Each raffle ticket allows you to draw <em class="emphasis">two</em> colored balls from an urn containing 100 balls, 95 of which are red, 4 of which are white, and one of which is gold. For every white ball you draw, you win $5. If you draw the gold ball, you win $50. If \(Y\) is the amount of money you make on the game (after paying your $2.00), find the probability distribution for \(Y\) and use it to compute the expected value of \(Y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like">
+<p id="p-1813">Your first step is to construct a probability distribution by listing all of the values of \(Y\) and determining their probabilities.</p>
+<ul class="disc">
+<li id="li-727"><p id="p-1814">If we draw two red balls, then \(Y = 0 + 0 - 2 = -2\text{.}\)</p></li>
+<li id="li-728"><p id="p-1815">If we draw one red and one white, then \(Y = 0 + 5 - 2 = 3\text{.}\)</p></li>
+<li id="li-729"><p id="p-1816">If we draw two white, then \(Y = 5 + 5 - 2 = 8\text{.}\)</p></li>
+<li id="li-730"><p id="p-1817">If we draw a red and a gold, then \(Y = 0 + 50 - 2 = 48\text{.}\)</p></li>
+<li id="li-731"><p id="p-1818">And finally, a white and a gold gives \(Y = 5 + 50 - 2 = 53\text{.}\)</p></li>
+</ul>
+<p data-braille="continuation">We can then use combinations to compute the probability of each of these values.  For example, the probability of winning $3 by drawing a red and a white ball is</p>
+<div class="displaymath">
+\begin{equation*}
+P(Y=3) = \frac{C(95,1)\times C(4,1)}{C(100,2)}
+\end{equation*}
+</div>
+<p data-braille="continuation">because we draw 1 of the 95 red balls and 1 of the 4 white balls in an experiment which involves drawing 2 out of 100 possible balls.  The entire probability distirbution is shown below.</p>
+<figure class="table figure-like" id="table-45"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(y\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(Y=y)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(95,2)}{C(100,2)} = \frac{4465}{4950} \approx 0.9020\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(95,1)\times C(4,1)}{C(100,2)} = \frac{95\times 4}{4950} \approx 0.0768\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(4,2)}{C(100,2)} = \frac{6}{4950} \approx 0.0012\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(48\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(95,1)\times C(1,1)}{C(100,2)} = \frac{95\times 1}{4950} \approx 0.0192\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(53\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{C(4,1)\times C(1,1)}{C(100,2)} = \frac{4 \times 1}{4950} \approx 0.0008\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.46<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(Y\text{.}\)</figcaption></figure><p id="p-1819">Now to compute the expected value, we must multiply each value of \(Y\) by its probability and then add those together.  One easy way to keep track of this is to add a third column to our probability distribution table, into which we place these products.  The sum of that third column will be our expected value.</p>
+<figure class="table figure-like" id="table-46"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(y\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(P(Y=y)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(y \times P(Y=y)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-2\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.9020\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(-2(0.9020) = -1.8040\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.0768\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(3(0.0768) = 0.2303\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.0012\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(8(0.0012) = 0.0097\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(48\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.0192\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(48(0.0192) = 0.9212\)</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(53\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(0.0008\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(53(0.0008) = 0.0428\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines" colspan="2">\(E(X) = \)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-$0.60</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.47<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(Y\text{.}\)</figcaption></figure><p id="p-1820">Since the expected value of \(Y\) is negative, the average outcome will result in the player losing money on the game.  That menas that, in the long run, the charity will still make money.</p>
+</div></div>
+</div></article></div>
+<p id="p-1821">Before we move on to the next computation, let's observe a few important things about the expected value.</p>
+<article class="observation remark-like" id="fig_random-vars_expected-value-observations"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.1.48</span><span class="period">.</span>
+</h6>
+<ul id="p-1822" class="disc">
+<li id="li-732"><p id="p-1823">First, the expected values does not need to be one of the possible values of \(Y\text{.}\) In the example above, there is no outcome in this random process that leads to us losing sixty cents. However, the expected value of -$0.60 tells us that on average, we will lose sixty cents on each game we play. This is similar to saying that the average American family has 2.2 children. No family actually has 2.2 children, but if you average it out, this is the number you come up with.</p></li>
+<li id="li-733"><p id="p-1824">Next, note that the expected value is not a guarantee. The charity could sell 100 tickets, making $200, and then have four lucky people pull a red and gold ball and win $50 each. This wipes out their profits all together. That is not a likely scenario, but it could happen. All the expected value tells us is that the most likely outcome is that they make $0.60 per ticket (because we lost that much), so wind up with $60.00 in profit on 100 tickets sold.</p></li>
+<li id="li-734"><p id="p-1825">Finally, notice how the probability and the value of \(Y\) both play an important role in computing its expected value. If a value of \(Y\) is very large, but has a very low probability, it will contribute little to the expected value. A smaller value with a large probability may contribute a lot more. Both the value and its probability need to be considered when computing expected value.</p></li>
+</ul></article><figure class="figure figure-like" id="video_random-vars_expected-value-1"><video id="video-96" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.49<span class="period">.</span></span><span class="space"> </span>Expected Value I</figcaption></figure><figure class="figure figure-like" id="video_random-vars_expected-value-2"><video id="video-97" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.50<span class="period">.</span></span><span class="space"> </span>Expected Value II</figcaption></figure><article class="exercise exercise-like" id="ckpt_random-vars_expected-value-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_expected-value-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.51</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_expected-value-1"><article class="exercise exercise-like"><p id="p-1826">Use the probability distribution of the random variable \(Z\) to answer the following question.</p>
+<figure class="table figure-like" id="table-47"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(z\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(Z=z)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.500\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.250\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.125\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.125\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.52<span class="period">.</span></span><span class="space"> </span>Probability Distribution for \(Z\)</figcaption></figure><p id="p-1827">Question: what is the expected value of \(Z\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-133" id="answer-133"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-133"><div class="answer solution-like"><p id="p-1828">3.75</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_expected-value-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_expected-value-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.53</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_expected-value-2"><article class="exercise exercise-like"><p id="p-1829">A game consists of rolling a single fair die and noting the number that comes up. If the number is even, you must pay $2.00. If the number is a 1 or a 3, you win $1.00. Finally, if the number is a 5 you win $5.00. Let the random variable \(X\) represent the net value of the game (it could be negative if you lose).</p>
+<p id="p-1830">Question: what is the expected value of \(X\text{?}\) Round your answer to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-134" id="answer-134"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-134"><div class="answer solution-like"><p id="p-1831">0.17</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_expected-value-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_expected-value-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.54</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_expected-value-3"><article class="exercise exercise-like"><p id="p-1832">A coin jar contains 6 quarters, 8 dimes, and 10 pennies. You reach into the jar and pull out two coins without replacement. Let the random variable \(Y\) be the amount of money you get.</p>
+<p id="p-1833">Question: what is the expected value of \(Y\text{?}\) Round your answer to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-135" id="answer-135"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-135"><div class="answer solution-like"><p id="p-1834">0.20</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_random-vars_stdev"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.5</span> <span class="title">Standard Deviation</span>
+</h3>
+<a href="sec_random-vars.html#sec_random-vars_stdev" class="permalink">¶</a><p id="p-1835">As was the case with the mean of an ordinary variable, the expected value of a random variable gives us only part of the picture. In addition to knowing what the typical value of the variable will be, we often want to know how spread out the values of the variable are. That is, we want to know the standard deviation of the random variable. To get to the standard deviation, we must first compute the variance.</p>
+<article class="definition definition-like" id="def_random-var-variance"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.55</span><span class="period">.</span>
+</h6>
+<p id="p-1836">The <dfn class="terminology">variance</dfn> of a discrete random variable \(X\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma^2 = E[(X-\mu)^2] = \sum_x (x - \mu)^2 \times P(X=x)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\mu = E(X)\) is the mean, or expected value, of the random variable.</p></article><p id="p-1837">Note that in this formula we are adding together the squares of the differences between each value of \(X\) and the mean of \(X\text{.}\) This definition is similar then to the definition of the variance of a sample or population as seen in <a href="sec_center-spread.html#sec_center-spread_mean-stdev" class="internal" title="Subsection 1.3.4: Mean and Standard Deviation">Subsection 1.3.4</a>. One big difference is that instead of dividing by \(n\) or \(n-1\text{,}\) we multiply each term by the probability that \(X\) will have that value. So in a sense, this is the weighted variance of \(X\) where each value is weighted by its probability. From the variance, it is relatively easy to compute the standard deviation.</p>
+<article class="definition definition-like" id="def_random-var-stdev"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.56</span><span class="period">.</span>
+</h6>
+<p id="p-1838">The <dfn class="terminology">standard deviation</dfn> of a discrete random variable \(X\) is \(\sigma = \sqrt{\sigma^2}\text{.}\)</p></article><p id="p-1839">To see this in action, let's consider the following example.</p>
+<article class="example example-like" id="examp_random-vars_stdev"><a data-knowl="" class="id-ref original" data-refid="hk-examp_random-vars_stdev"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.57</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Standard Deviation of a Random Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_random-vars_stdev"><article class="example example-like"><p id="p-1840">Two fair dice are rolled and the numbers noted. A random variable \(Y\) is defined to be the sum of those two numbers.</p>
+<ol class="lower-alpha">
+<li id="li-735"><p id="p-1841">Find the probability distribution and probability histogram for \(Y\text{.}\) What do you observe about the shape of the distribution?</p></li>
+<li id="li-736"><p id="p-1842">Use the <a class="xref" data-knowl="./knowl/def_empirical-rule.html" title="Definition 1.4.16">empirical rule</a> to deterimine the range into which you would expect the value of \(Y\) to fall 95% of the time.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like"><ol id="p-1843" class="lower-alpha">
+<li id="li-737">
+<p id="p-1844">Our first step is to create a probability distribution for \(Y\text{,}\) which is done below. note that the probabilities are found by observing the number of outcomes that gives each sum.  For example, \(X=4\) is the set \(\lbrace (1,3), (2,2), (3,1) \rbrace\text{,}\) so \(P(X=4) = \frac{3}{36}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:flex-start;"><figure class="table figure-like" id="table_examp_random-vars_stdev"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{2}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{4}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{5}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(7\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{6}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{5}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(9\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{4}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(10\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(11\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{2}{36}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(12\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{36}\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.58<span class="period">.</span></span><span class="space"> </span>Distribution for \(X\)</figcaption></figure></div>
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_random-vars_examp_stdev"><img src="images/image_random-vars_examp_stdev.svg" style="width: 100%; height: auto;" alt="A histogram with bars whose heights grow from X=2 until reaching their highest point at X=7 and then shrink in a mirror image until X=12."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.59<span class="period">.</span></span><span class="space"> </span>Probability Histogram</figcaption></figure></div>
+</div></div>
+<p id="p-1845">We note that the histogram is symmetric about a single mode. In other words, it is <a class="xref" data-knowl="./knowl/def_histogram-mound-shaped.html" title="Definition 1.2.80">mound shaped</a>.</p>
+</li>
+<li id="li-738">
+<p id="p-1846">Next we need to compute the mean (expected value) and standard deviation. We can then use the empirical rule on this mound shaped distribution to determine the range of 95% of the values of \(X\text{.}\)</p>
+<figure class="table figure-like" id="table-49"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(P(X=x)\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(x\times P(X=x)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\((x-\mu)^2\times P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{36} \approx 0.0278\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(2(0.0278) = 0.0556\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((2-7)^2(0.0278) = 0.6950\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{2}{36} \approx 0.0556\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(3(0.0556) = 0.1668\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((3-7)^2(0.0556) = 0.8896\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{3}{36} \approx 0.0833\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(4(0.0833) = 0.3332\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((4-7)^2(0.0833) = 0.7497\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{4}{36} \approx 0.1111\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(5(0.1111) = 0.5555\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((5-7)^2(0.1111) = 0.4444\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{5}{36} \approx 0.1389\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(6(0.1389) = 0.8334\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((6-7)^2(0.1389) = 0.1389\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(7\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{6}{36} \approx 0.1667\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(7(0.1667) = 1.1669\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((7-7)^2(0.1667) = 0.0000\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{5}{36} \approx 0.1389\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(8(0.1389) = 1.1112\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((8-7)^2(0.1389) = 0.1389\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(9\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{4}{36} \approx 0.1111\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(9(0.1111) = 0.9999\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((9-7)^2(0.1111) = 0.4444\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(10\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{3}{36} \approx 0.0833\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(10(0.0833) = 0.8330\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((10-7)^2(0.0833) = 0.7497\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(11\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{2}{36} \approx 0.0556\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(11(0.0556) = 0.6116\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((11-7)^2(0.0556) = 0.8896\)</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(12\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(\frac{1}{36} \approx 0.0278\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(12(0.0278) = 0.3336\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\((12-7)^2(0.0278) = 0.6950\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines" colspan="2"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\mu = E(X) = 7\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma^2 = 5.8352\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.60<span class="period">.</span></span><span class="space"> </span>Exepcted Value and Variance of \(X\)</figcaption></figure><p id="p-1847">So the mean is \(\mu = 7\) and the standard deviation is \(\sigma = \sqrt{5.8352} \approx 2.4156\text{.}\) According to the empirical rule, 95% of the data should like within two standard deviations of the mean in a mound shaped distribution. That is:</p>
+<div class="displaymath">
+\begin{align*}
+7 - 2(2.4156) \amp\lt \text{ 95% of data } \lt 7 + 2(2.4156)\\
+2.1688 \amp\lt \text{ 95% of data } \lt 11.83
+\end{align*}
+</div>
+<p data-braille="continuation">Since the variable is discrete, we round to get the range of 3 to 11. We expect to get between 3 and 11 about 95% of the time.</p>
+</li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_random-vars_stdev-1"><video id="video-98" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.61<span class="period">.</span></span><span class="space"> </span>Standard Deviation I</figcaption></figure><figure class="figure figure-like" id="video_random-vars_stdev-2"><video id="video-99" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.62<span class="period">.</span></span><span class="space"> </span>Standard Deviation II</figcaption></figure><article class="exercise exercise-like" id="ckpt_random-vars_stdev-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_stdev-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.63</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_stdev-1"><article class="exercise exercise-like"><p id="p-1848">Consider the following probability distribution of the random variable \(X\text{.}\)</p>
+<figure class="table figure-like" id="table-50"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(-1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.3\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.6\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(17\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.1\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.64<span class="period">.</span></span><span class="space"> </span>Distribution of \(X\)</figcaption></figure><p id="p-1849">Question: what is the standard deviation of \(X\text{?}\) Round your answer to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-136" id="answer-136"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-136"><div class="answer solution-like"><p id="p-1850">4.98</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_stdev-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_stdev-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.65</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_stdev-2"><article class="exercise exercise-like"><p id="p-1851">A game consists of rolling a single fair die and noting the number that comes up. If the number is even, you must pay $2.00. If the number is a 1 or a 3, you win $1.00. Finally, if the number is a 5 you win $5.00. Let the random variable \(Y\) represent the net value of the game (it could be negative if you loose).</p>
+<p id="p-1852">Question: what is the standard deviation of \(Y\text{?}\) Round your answer to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-137" id="answer-137"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-137"><div class="answer solution-like"><p id="p-1853">2.54</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_random-vars_stdev-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_random-vars_stdev-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.1.66</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_random-vars_stdev-3"><article class="exercise exercise-like"><p id="p-1854">Suppose that you are given a probability distribution for a random variable \(X\) and asked to compute the standard deviation for \(X\text{.}\)  Below are several steps you might perform in this computation.</p>
+<ol class="lower-alpha">
+<li id="li-739"><p id="p-1855">Add a column for \(x\times P(X=x)\)</p></li>
+<li id="li-740"><p id="p-1856">Add a column from \((x-\mu)^2\times P(X=x)\)</p></li>
+<li id="li-741"><p id="p-1857">Divide by \(n-1\)</p></li>
+<li id="li-742"><p id="p-1858">Take the square root of the variance</p></li>
+</ol>
+<p id="p-1859">Question: which of the following is not a step in computing the standard deviation of \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-138" id="answer-138"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-138"><div class="answer solution-like"><p id="p-1860">Divide by \(n-1\text{.}\)</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

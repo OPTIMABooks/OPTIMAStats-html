@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:23:00-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hypothesis Tests for a Mean</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_ht-intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_testing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ht-proportions.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_ht-intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_testing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ht-proportions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means" class="active">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ht-means"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Hypothesis Tests for a Mean</span>
+</h2>
+<a href="sec_ht-means.html" class="permalink">¶</a><section class="introduction" id="sec_ht-means_intro"><h6 class="heading">Testing Claims About a Mean.<span></span>
+</h6>
+<p id="p-3156">In this section we will look at our first type of hypothesis test—tests for single population means. Consider the following situations, with which we will work throughout the section.</p>
+<ul class="disc">
+<li id="li-1172"><p id="p-3157">A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles.</p></li>
+<li id="li-1173"><p id="p-3158">An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm.</p></li>
+<li id="li-1174"><p id="p-3159">A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters.</p></li>
+</ul></section><article class="objectives goal-like" id="sec_ci-means_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-49"><p id="p-3160">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1175">
+<p id="p-3161">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1176"><p id="p-3162">Hypotheses for a Single Population Mean</p></li>
+<li id="li-1177"><p id="p-3163">Test Statistic for a Single Population Mean</p></li>
+</ul>
+</li>
+<li id="li-1178">
+<p id="p-3164">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1179"><p id="p-3165">Formulate null and alternative hypotheses for tests of a single mean.</p></li>
+<li id="li-1180"><p id="p-3166">Compute the test statistic for a single mean.</p></li>
+<li id="li-1181"><p id="p-3167">Use this test statistic to conduct a traditional hypothesis test.</p></li>
+<li id="li-1182"><p id="p-3168">Use this test statistic to conduct a p-value hypothesis test.</p></li>
+<li id="li-1183"><p id="p-3169">Understand and identify type I and type II errors.</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_ht-means_hypotheses"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Formulating Hypotheses</span>
+</h3>
+<a href="sec_ht-means.html#sec_ht-means_hypotheses" class="permalink">¶</a><p id="p-3170">As we saw in <a href="sec_ht-intro.html" class="internal" title="Section 5.1: Introduction to Hypothesis Testing">Section 5.1</a>, the first step in any hypothesis test is to identify the null and alternative hypotheses. When testing a claim about a single population mean, there are three basic types of null/alternative hypothesis combinations.</p>
+<article class="principle theorem-like" id="thm_hypotheses-means"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Hypotheses for a Single Population Mean.</span>
+</h6>
+<p id="p-3171">To test a claim about a single population mean, we use one of the following sets of hypotheses, where \(\mu_0\) is a given value.</p>
+<ul class="disc cols3">
+<li id="li-1184">
+<h6 class="heading"><span class="title">Left-Tailed.</span></h6>
+<div class="displaymath" id="p-3172">
+\begin{align*}
+H_0\amp:\ \mu \geq \mu_0\\
+H_A\amp:\ \mu \lt \mu_0
+\end{align*}
+</div>
+</li>
+<li id="li-1185">
+<h6 class="heading"><span class="title">Two-Tailed.</span></h6>
+<div class="displaymath" id="p-3173">
+\begin{align*}
+H_0\amp :\ \mu = \mu_0\\
+H_A\amp :\ \mu \not= \mu_0
+\end{align*}
+</div>
+</li>
+<li id="li-1186">
+<h6 class="heading"><span class="title">Right-Tailed.</span></h6>
+<div class="displaymath" id="p-3174">
+\begin{align*}
+H_0\amp :\ \mu \leq \mu_0\\
+H_A\amp :\ \mu &gt; \mu_0
+\end{align*}
+</div>
+</li>
+</ul></article><p id="p-3175">Let's look at each of the three examples from the introduction and see if we can determine which of these sets of hypotheses should be used.</p>
+<article class="example example-like" id="examp_ht-means_hypotheses-left"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_hypotheses-left"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Left-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_hypotheses-left"><article class="example example-like"><p id="p-3176">A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. Find the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-204" id="solution-204"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-204"><div class="solution solution-like">
+<p id="p-3177">The claim is that the average lifespan is at least 60,000 miles. This involves equality, and must therefore be the null hypothesis. Thus, this is a left-tailed test with hypotheses:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \geq 60000\\
+H_A\amp :\ \mu \lt 60000
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_hypotheses-right"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_hypotheses-right"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Right-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_hypotheses-right"><article class="example example-like"><p id="p-3178">An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Find the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-205" id="solution-205"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-205"><div class="solution solution-like">
+<p id="p-3179">The environmentalist's claim is that the mercury levels are more than 2 ppm. This does not involve equality, so it must the the alternative hypothesis. Therefore, this is a right-tailed test with hypotheses:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \leq 2\\
+H_A\amp :\ \mu &gt; 2
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_hypotheses-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_hypotheses-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Stating Hypotheses for a Two-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_hypotheses-two"><article class="example example-like"><p id="p-3180">A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters. Find the null and alternative hypotheses for this test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-206" id="solution-206"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-206"><div class="solution solution-like">
+<p id="p-3181">The claim in this case is that the average is exactly 8 cm. This obviously involves equality, and so it must be the null hypothesis. This yields a two-tailed test with hypotheses:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp:\ \mu = 8\\
+H_A\amp:\ \mu \not= 8
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-3182">At this point it is important to point out that a slight change in the wording of a problem can change the type of hypothesis test that we use. If <a class="xref" data-knowl="./knowl/examp_ht-means_hypotheses-left.html" title="Example 5.2.2: Stating Hypotheses for a Left-Tailed Test">Example 5.2.2</a> had said “more than 60,000 miles” instead of “at least 60,000 miles,” then we would have reversed the tails in our test, using the null hypothesis that \(\mu \leq 60,000\text{.}\) If you are conducting your own hypothesis test, you need to be careful how you phrase your questions so that you wind up rejecting, or failing to reject, the hypothesis you really want to investigate.</p>
+<figure class="figure figure-like" id="video_ht-means_hypotheses-1"><video id="video-199" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.5<span class="period">.</span></span><span class="space"> </span>Hypotheses for a Single Mean I</figcaption></figure><figure class="figure figure-like" id="video_ht-means_hypotheses-2"><video id="video-200" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.6<span class="period">.</span></span><span class="space"> </span>Hypotheses for a Single Mean II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-means_hypotheses-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_hypotheses-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_hypotheses-1"><article class="exercise exercise-like"><p id="p-3183">A biologist believes that the fish in a certain lake have stunted growth, never reaching the typical 14 inch length for their species. To test this theory, she randomly selects a sample of 215 fish and finds the average length in the sample to be 13.5 inches with a standard deviation of 3.85 inches.</p>
+<p id="p-3184">Question: what should the null hypothesis be in this test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-254" id="answer-254"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-254"><div class="answer solution-like"><p id="p-3185">\(\mu \geq 14\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-means_hypotheses-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_hypotheses-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_hypotheses-2"><article class="exercise exercise-like"><p id="p-3186">The Wrigley candy company claims that a standard bag of skittles contains an average of 15 yellow candies. To test this claim you purchase 60 regular sized bags and find an average of 16.1 yellow candies in these bags, with a standard deviation of 4.9 candies.</p>
+<p id="p-3187">Question: what should your null hypothesis be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-255" id="answer-255"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-255"><div class="answer solution-like"><p id="p-3188">\(\mu = 15\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-means_test-stat"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Computing the Test Statistic</span>
+</h3>
+<a href="sec_ht-means.html#sec_ht-means_test-stat" class="permalink">¶</a><p id="p-3189">When testing a claim about a population mean, the test statistic measures how unusual the observed sample is if the null hypothesis is true. The test statistic is really just a z-score for the sample mean based on the assumption that the population mean is as indicated in the null hypothesis. This formula should be familiar already from lesson 3.5, but is repeated below in the context of a hypothesis test.</p>
+<article class="theorem theorem-like" id="thm_test-statistic-mean"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Test Statistic for a Single Sample Mean.</span>
+</h6>
+<p id="p-3190">The test statistic for a sample mean \(\overline{x}\) used to test the assumption of the null hypothesis that \(\mu = \mu_0\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{\overline{x} - \mu_0}{\sigma/\sqrt{n}}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that if the sample size is 30 or more, we can approximate \(\sigma \approx s\text{.}\)</p></article><p id="p-3191">When computing a test statistic, the null hypothesis must give us one value for the population mean. In the case of a two-tailed test, the null hypothesis that \(\mu = \mu_0\) does just that. In a left- or right-tailed test, we use the “worst-case” value of \(mu_0\) from the null hypothesis. That is, even if we have:</p>
+<ul class="disc cols2">
+<li id="li-1187"><p id="p-3192">\(H_0:\ \mu \geq \mu_0\text{,}\) or</p></li>
+<li id="li-1188"><p id="p-3193">\(H_0:\ \mu \leq \mu_0\)</p></li>
+</ul>
+<p data-braille="continuation">we will use \(\mu = \mu_0\) in computing our test statistic. Examples of this can be found as we continue working on the problems from the beginning of this lesson.</p>
+<article class="exercise exercise-like" id="examp_ht-means_test-stat-left"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_test-stat-left"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Test Statistic for a Left-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_test-stat-left"><article class="exercise exercise-like"><p id="p-3194">A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. Find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-207" id="solution-207"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-207"><div class="solution solution-like">
+<p id="p-3195">Recall that the null and alternative hypothesis were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \geq 60000\\
+H_A\amp :\ \mu \lt 60000
+\end{align*}
+</div>
+<p id="p-3196">Using the assumption that \(\mu = 60000\) from the null hypothesis, we compute the test statistic for our sample as follows.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{58952.1 - 60000}{6439.6/\sqrt{160}} \approx -2.06\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="examp_ht-means_test-stat-right"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_test-stat-right"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Test Statistic for a Right-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_test-stat-right"><article class="exercise exercise-like"><p id="p-3197">An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-208" id="solution-208"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-208"><div class="solution solution-like">
+<p id="p-3198">In a previous example, we found the null and alternative hypotheses to be:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \leq 2\\
+H_A\amp :\ \mu &gt; 2
+\end{align*}
+</div>
+<p id="p-3199">Under the assumption that \(\mu = 2\text{,}\) we compute the test statistic for this sample as follows.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{2.3 - 2}{0.6/\sqrt{40}} \approx 3.16\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_test-stat-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_test-stat-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Test Statistic for a Two-Tailed Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_test-stat-two"><article class="example example-like"><p id="p-3200">A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters. Find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-209" id="solution-209"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-209"><div class="solution solution-like">
+<p id="p-3201">On the last page, we found the following hypotheses for this situation.</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu = 8\\
+H_A\amp :\ \mu \not= 8
+\end{align*}
+</div>
+<p id="p-3202">Under the null hypothesis assumption that \(\mu = 8\text{,}\) the test statistic is as shown below.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{7.9 - 8}{0.88/\sqrt{125}} \approx -1.27\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-means_test-stat-1"><video id="video-201" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.13<span class="period">.</span></span><span class="space"> </span>Test Statistics for a Single Mean I</figcaption></figure><figure class="figure figure-like" id="video_ht-means_test-stat-2"><video id="video-202" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.14<span class="period">.</span></span><span class="space"> </span>Test Statistics for a Single Mean II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-means_test-stat-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_test-stat-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_test-stat-1"><article class="exercise exercise-like"><p id="p-3203">A biologist believes that the fish in a certain lake have stunted growth, never reaching the typical 14 inch length for their species. To test this theory, she randomly selects a sample of 215 fish and finds the average length in the sample to be 13.5 inches with a standard deviation of 3.85 inches.</p>
+<p id="p-3204">Question: what is the test statistic in this problem?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-256" id="answer-256"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-256"><div class="answer solution-like"><p id="p-3205">-1.91</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-means_test-stat-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_test-stat-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.16</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_test-stat-2"><article class="exercise exercise-like"><p id="p-3206">The Wrigley candy company claims that a standard bag of skittles contains an average of 15 yellow candies. To test this claim you purchase 60 regular sized bags and find an average of 16.1 yellow candies in these bags, with a standard deviation of 4.9 candies.</p>
+<p id="p-3207">Question: find the test statistic for this sample.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-257" id="answer-257"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-257"><div class="answer solution-like"><p id="p-3208">1.74</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-means_traditional"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.3</span> <span class="title">The Traditional Test</span>
+</h3>
+<a href="sec_ht-means.html#sec_ht-means_traditional" class="permalink">¶</a><p id="p-3209">We are now ready to conduct a traditional hypothesis test and draw conclusions. Remember that the steps to conducting a traditional hypothesis test are as follows.</p>
+<ol class="decimal">
+<li id="li-1189"><p id="p-3210">State the null and alternative hypotheses (done).</p></li>
+<li id="li-1190"><p id="p-3211">Compute the test statistic (done).</p></li>
+<li id="li-1191"><p id="p-3212">Find the rejection region and their critical values.</p></li>
+<li id="li-1192"><p id="p-3213">Compare the test statistic with the critical values to reach your conclusion.</p></li>
+</ol>
+<p data-braille="continuation">Since we have already accomplished one and two for our example problems, we have only 3 and 4 left to do. These last two steps are carried out in each example below.</p>
+<article class="example example-like" id="examp_ht-means_traditional-left"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_traditional-left"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Left-Tailed Traditional Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_traditional-left"><article class="example example-like"><p id="p-3214">A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. Conduct a traditional hypothesis test at the \(\alpha = 0.05\) significance level to determine if the companies claim has merit.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-210" id="solution-210"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-210"><div class="solution solution-like">
+<p id="p-3215">Recall that the null and alternative hypothesis were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \geq 60000\\
+H_A\amp :\ \mu \lt 60000
+\end{align*}
+</div>
+<p id="p-3216">We also computed the test statistic as:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{58952.1 - 60000}{6439.6/\sqrt{160}} \approx -2.06\text{.}
+\end{equation*}
+</div>
+<p id="p-3217">The next step is to identify the rejection region and the critical value that separates it from the rest of the normal distribution. Since the alternative hypothesis involves \(\lt\text{,}\) this is a left-tailed test with the entire significance level \(\alpha = 0.05\) in that left tail. This gives a critical value \(z_\alpha = -1.645\) as shown below.</p>
+<figure class="figure figure-like" id="fig_ht-means_examp_traditional-left"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-means_examp_tranditional-left.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.18<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-left.html" title="Example 5.2.17: Conducting a Left-Tailed Traditional Hypothesis Test">Example 5.2.17</a></figcaption></figure><p id="p-3218">Since our test statistic of \(z_\text{test} = -2.06\) is in the rejection region (less than -1.645), we reject the null hypothesis. There is <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">statistically significant</a> evidence that the tires have a lifespan that is less than 60,000 miles.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_traditional-right"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_traditional-right"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Right-Tailed Traditional Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_traditional-right"><article class="example example-like"><p id="p-3219">An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Conduct a traditional hypothesis test to check the  environmentalist's claim at the \(\alpha = 0.01\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-211" id="solution-211"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-211"><div class="solution solution-like">
+<p id="p-3220">Remember that the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \leq 2\\
+H_A\amp :\ \mu &gt; 2
+\end{align*}
+</div>
+<p id="p-3221">And the test statistic is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{2.3 - 2}{0.6/\sqrt{40}} \approx 3.16\text{.}
+\end{equation*}
+</div>
+<p id="p-3222">Now we identify the rejection region and the critical value. This is a right tailed test (because the alternative involves \(\gt\)) with 0.01 in the tail. This picture is shown below, along with the corresponding critical value of 2.33.</p>
+<figure class="figure figure-like" id="fig_ht-means_examp_traditional-right"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-means_examp_tranditional-right.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.20<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-right.html" title="Example 5.2.19: Conducting a Right-Tailed Traditional Hypothesis Test">Example 5.2.19</a></figcaption></figure><p id="p-3223">Because our test statistic 3.16 is greater than the critical value of 2.33, and hence in the rejection region, we reject the null hypothesis. There is <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">highly significant</a> evidence that this stream contains more than 2 ppm mercury.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_traditional-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_traditional-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.21</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Two-Tailed Traditional Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_traditional-two"><article class="example example-like"><p id="p-3224">A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters. Conduct a traditional hypothesis test at the \(\alpha = 0.05\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-212" id="solution-212"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-212"><div class="solution solution-like">
+<p id="p-3225">Recall the hypotheses:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu = 8\\
+H_A\amp :\ \mu \not= 8
+\end{align*}
+</div>
+<p id="p-3226">The test statistic was found to be:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{7.9 - 8}{0.88/\sqrt{125}} \approx -1.27\text{.}
+\end{equation*}
+</div>
+<p id="p-3227">Because the alternative hypothesis involves “not equal to,” this is a two tailed test with the significance level \(0.05\) split evenly between the two tails. This gives us critical values of plus and minus \(1.96\) as shown below.</p>
+<figure class="figure figure-like" id="fig_ht-means_examp_traditional-two"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-means_examp_tranditional-two.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.22<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-two.html" title="Example 5.2.21: Conducting a Two-Tailed Traditional Hypothesis Test">Example 5.2.21</a></figcaption></figure><p id="p-3228">Because our test statistic \(-1.27\) is not in the rejection region, we fail to reject the null hypothesis. There is no <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">statistically significant</a> evidence that the average width of these gears does not equal 8 cm.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-means_traditional-1"><video id="video-203" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.23<span class="period">.</span></span><span class="space"> </span>Traditional Hypothesis Tests I</figcaption></figure><figure class="figure figure-like" id="video_ht-means_traditional-2"><video id="video-204" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.24<span class="period">.</span></span><span class="space"> </span>Traditional Hypothesis Tests II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-means_traditional-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_traditional-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.25</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_traditional-1"><article class="exercise exercise-like"><p id="p-3229">A biologist believes that the fish in a certain lake have stunted growth, never reaching the typical 14 inch length for their species. To test this theory, she randomly selects a sample of 215 fish and finds the average length in the sample to be 13.5 inches with a standard deviation of 3.85 inches.</p>
+<p id="p-3230">Question: what decision do you make at the \(\alpha = 0.01\) significance level? Use a traditional test.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-258" id="answer-258"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-258"><div class="answer solution-like"><p id="p-3231">Fail to Reject the Null Hypothesis</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-means_traditional-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_traditional-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_traditional-2"><article class="exercise exercise-like"><p id="p-3232">The Wrigley candy company claims that a standard bag of skittles contains an average of 15 yellow candies. To test this claim you purchase 60 regular sized bags and find an average of 16.1 yellow candies in these bags, with a standard deviation of 4.9 candies.</p>
+<p id="p-3233">Question: what conclusion do you reach? Use a traditional test at the \(\alpha = 0.05\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-259" id="answer-259"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-259"><div class="answer solution-like"><p id="p-3234">Fail to Reject the Null Hypothesis</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-means_p-value"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.4</span> <span class="title">The P-Value Test</span>
+</h3>
+<a href="sec_ht-means.html#sec_ht-means_p-value" class="permalink">¶</a><p id="p-3235">Like a traditional test, a p-value test will help us reach conclusions about our hypotheses based on the test statistic. The first two steps in a p-value test are exactly the same as the first two steps in a traditional test. It is the last two steps which differ, as outlined below.</p>
+<ol class="decimal">
+<li id="li-1193"><p id="p-3236">State the null and alternative hypotheses (done).</p></li>
+<li id="li-1194"><p id="p-3237">Compute the test statistic (done).</p></li>
+<li id="li-1195"><p id="p-3238">Find the p-value for this test statistic.</p></li>
+<li id="li-1196"><p id="p-3239">Compare the p-value with the significance level to reach your conclusion.</p></li>
+</ol>
+<p id="p-3240">We will now repeat the tests seen in <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-left.html" title="Example 5.2.17: Conducting a Left-Tailed Traditional Hypothesis Test">Example 5.2.17</a>, <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-right.html" title="Example 5.2.19: Conducting a Right-Tailed Traditional Hypothesis Test">Example 5.2.19</a>, and <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-two.html" title="Example 5.2.21: Conducting a Two-Tailed Traditional Hypothesis Test">Example 5.2.21</a> using these revised steps three and four. That is, we will find the p-value of each test statistic and compare it directly with the significance level to determine if we should reject the null hypothesis.</p>
+<article class="example example-like" id="examp_ht-means_p-value-left"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_p-value-left"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.27</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Left-Tailed p-Value Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_p-value-left"><article class="example example-like"><p id="p-3241">A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. Conduct a p-value hypothesis test at the \(\alpha = 0.05\) significance level to determine if the companies claim has merit.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-213" id="solution-213"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-213"><div class="solution solution-like">
+<p id="p-3242">Recall that the null and alternative hypothesis were:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \geq 60000\\
+H_A\amp :\ \mu \lt 60000
+\end{align*}
+</div>
+<p id="p-3243">We also computed the test statistic as:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{58952.1 - 60000}{6439.6/\sqrt{160}} \approx -2.06\text{.}
+\end{equation*}
+</div>
+<p id="p-3244">The next step is to find the p-value for -2.06. Because this is a left-tailed test, this is \(P(Z \lt -2.06)\) as depicted in the sketch below.</p>
+<figure class="figure figure-like" id="fig_ht-means_examp_p-value-left"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-means_examp_p-value-left.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.28<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-means_p-value-left.html" title="Example 5.2.27: Conducting a Left-Tailed p-Value Hypothesis Test">Example 5.2.27</a></figcaption></figure><p id="p-3245">From the standard normal distribution table, that probability is \(P(Z \lt -2.06) = 0.0197\text{.}\) Therefore, the p-value for this test statistic is \(0.0197\text{.}\) Since this p-value is less than the significance level of \(\alpha = 0.05\text{,}\) this sample is less likely than we are willing to tolerate. We must therefore reject the null hypothesis. There is <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">statistically significant</a> evidence that the tires have a lifespan that is less than 60,000 miles.</p>
+</div></div>
+</div></article></div>
+<p id="p-3246">In the above example, note that had we been using the \(0.01\) significance level, we would have failed to reject the null hypothesis. This is because our p-value of \(0.0192\) is greater than \(0.01\text{.}\) This shows one advantage of a p-value test. By reporting the p-value, the reader can see that, while the null hypothesis may have been rejected at this significance level, at others it may not have been rejected. This allows the reader to make a decision for themselves as to how significant a test they would like to conduct.</p>
+<article class="example example-like" id="examp_ht-means_p-value-right"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_p-value-right"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.29</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Right-Tailed p-Value Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_p-value-right"><article class="example example-like"><p id="p-3247">An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Conduct a p-value hypothesis test to check the environmentalist's claim at the \(\alpha = 0.01\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-214" id="solution-214"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-214"><div class="solution solution-like">
+<p id="p-3248">Remember that the hypotheses are:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu \leq 2\\
+H_A\amp :\ \mu &gt; 2
+\end{align*}
+</div>
+<p id="p-3249">And the test statistic is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{2.3 - 2}{0.6/\sqrt{40}} \approx 3.16\text{.}
+\end{equation*}
+</div>
+<p id="p-3250">Because this is a right-tailed test, the p-value for our test statistic is \(P(Z &gt; 3.16)\) as sown in the diagram below.</p>
+<figure class="figure figure-like" id="fig_ht-means_examp_p-value-right"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-means_examp_p-value-right.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.30<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-means_p-value-right.html" title="Example 5.2.29: Conducting a Right-Tailed p-Value Hypothesis Test">Example 5.2.29</a></figcaption></figure><p id="p-3251">Using the standard normal distribution table, this gives a probability of \(1 - 0.09992 = 0.0008\text{.}\) Therefore, as this p-value is less than the significance level of \(0.01\text{,}\) this sample is more unusual than we are willing to accept. Thus we must reject the null hypothesis. There is <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">highly significant</a> evidence that this stream contains more than 2 ppm mercury.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_p-value-two"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_p-value-two"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.31</span><span class="period">.</span><span class="space"> </span><span class="title">Conducting a Two-Tailed p-Value Hypothesis Test.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_p-value-two"><article class="example example-like"><p id="p-3252">A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters. Conduct a p-value hypothesis test at the \(\alpha = 0.05\) significance level.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-215" id="solution-215"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-215"><div class="solution solution-like">
+<p id="p-3253">Recall the hypotheses:</p>
+<div class="displaymath">
+\begin{align*}
+H_0\amp :\ \mu = 8\\
+H_A\amp :\ \mu \not= 8
+\end{align*}
+</div>
+<p id="p-3254">The test statistic was found to be:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\text{test}} = \frac{7.9 - 8}{0.88/\sqrt{125}} \approx -1.27\text{.}
+\end{equation*}
+</div>
+<p id="p-3255">To find the p-value for our test statistic in this two-tailed test, we must find the probability of being more extreme than \(-1.27\text{.}\) That means we are either less than \(-1.27\) or greater than \(1.27\)—further into the left or right tails respectively as shown below.</p>
+<figure class="figure figure-like" id="fig_ht-means_examp_p-value-two"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/image_ht-means_examp_p-value-two.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.32<span class="period">.</span></span><span class="space"> </span>Critical Region for <a class="xref" data-knowl="./knowl/examp_ht-means_p-value-two.html" title="Example 5.2.31: Conducting a Two-Tailed p-Value Hypothesis Test">Example 5.2.31</a></figcaption></figure><p id="p-3256">This computation can be simplified using symmetry. We find \(P(Z \lt -1.27)\) and double it. This gives a p-value of \(2(.1020) = 0.2040\text{.}\) Since our p-value is greater than the significance level of \(0.05\text{,}\) we fail to reject the null hypothesis. There is no <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">statistically significant</a> evidence that the average width of these gears does not equal 8 cm. In fact, our p-value is greater than \(0.10\) so there is not even evidence <a class="xref" data-knowl="./knowl/table_significance-levels.html" title="Table 5.1.11: Common Significance Levels">tending towards significance</a> that the mean width is other than 8 cm. For more examples of conducting a traditional hypothesis test, see the following videos.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-means_p-value-1"><video id="video-205" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.33<span class="period">.</span></span><span class="space"> </span>p-Value Hypothesis Tests I</figcaption></figure><figure class="figure figure-like" id="video_ht-means_p-value-2"><video id="video-206" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.34<span class="period">.</span></span><span class="space"> </span>p-Value Hypothesis Tests I</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-means_p-value-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_p-value-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_p-value-1"><article class="exercise exercise-like"><p id="p-3257">A biologist believes that the fish in a certain lake have stunted growth, never reaching the typical 14 inch length for their species. To test this theory, she randomly selects a sample of 215 fish and finds the average length in the sample to be 13.5 inches with a standard deviation of 3.85 inches.</p>
+<p id="p-3258">Question: what is the p-value of the test statistic?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-260" id="answer-260"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-260"><div class="answer solution-like"><p id="p-3259">0.0287</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-means_p-value-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_p-value-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.36</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_p-value-2"><article class="exercise exercise-like"><p id="p-3260">The Wrigley candy company claims that a standard bag of skittles contains an average of 15 yellow candies. To test this claim you  purchase 60 regular sized bags and find an average of 16.1 yellow candies in these bags, with a standard deviation of 4.9 candies.</p>
+<p id="p-3261">Question: what is the p-value for this test?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-261" id="answer-261"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-261"><div class="answer solution-like"><p id="p-3262">0.0818</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ht-means_errors"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.5</span> <span class="title">Type I and Type II Errors</span>
+</h3>
+<a href="sec_ht-means.html#sec_ht-means_errors" class="permalink">¶</a><p id="p-3263">Any time we conduct a hypothesis test there is a chance, because of randomness in our sampling techniques, that we will make an error. Recall that these errors come in two forms.</p>
+<ul class="disc">
+<li id="li-1197">
+<h6 class="heading"><span class="title">Type I Error.</span></h6>
+<p id="p-3264">This is the error of rejecting a null hypothesis even though it is true.</p>
+</li>
+<li id="li-1198">
+<h6 class="heading"><span class="title">Type II Error.</span></h6>
+<p id="p-3265">This is the error of failing to reject the null hypothesis even though it is in fact wrong.</p>
+</li>
+</ul>
+<p id="p-3266">To be sure we understand what these errors would look line when conducting hypothesis tests for a mean, consider the following examples.</p>
+<article class="example example-like" id="examp_ht-means_errors-type-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_errors-type-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.37</span><span class="period">.</span><span class="space"> </span><span class="title">Detecting a Type I Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_errors-type-1"><article class="example example-like"><p id="p-3267">A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. If you conduct a hypothesis test at the \(\alpha = 0.05\) significance level and the tires really do last 60,000 miles or more, what type of error will be made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-216" id="solution-216"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-216"><div class="solution solution-like"><p id="p-3268">We saw in both the <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-left.html" title="Example 5.2.17: Conducting a Left-Tailed Traditional Hypothesis Test">traditional</a> and <a class="xref" data-knowl="./knowl/examp_ht-means_p-value-left.html" title="Example 5.2.27: Conducting a Left-Tailed p-Value Hypothesis Test">p-value</a> test that we rejected the null hypothesis. If, however, the mean lifespan really is 60,000 miles or more, then the null hypothesis is true. Rejecting a true null hypothesis is a <dfn class="terminology">type I error</dfn>, and the probability that this happens is the significance level, or 0.05 in this case.</p></div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ht-means_errors-type-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ht-means_errors-type-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.38</span><span class="period">.</span><span class="space"> </span><span class="title">Detecting a Type II Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ht-means_errors-type-2"><article class="example example-like"><p id="p-3269">A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters. If you conduct a hypothesis test at the \(\alpha = 0.05\) significance level and the mean width is actually 7.9 centimeters, what type of error will be made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-217" id="solution-217"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-217"><div class="solution solution-like"><p id="p-3270">As we have seen before in <a class="xref" data-knowl="./knowl/examp_ht-means_traditional-two.html" title="Example 5.2.21: Conducting a Two-Tailed Traditional Hypothesis Test">Example 5.2.21</a> and <a class="xref" data-knowl="./knowl/examp_ht-means_p-value-two.html" title="Example 5.2.31: Conducting a Two-Tailed p-Value Hypothesis Test">Example 5.2.31</a>, this sample leads us to fail to reject the null hypothesis. If the mean really is 7.9, then the null hypothesis that it is 8 is wrong. Failing to reject an incorrect null hypothesis is a <dfn class="terminology">type II error</dfn>.</p></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ht-means_errors-1"><video id="video-207" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.39<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors I</figcaption></figure><figure class="figure figure-like" id="video_ht-means_errors-2"><video id="video-208" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.2-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.40<span class="period">.</span></span><span class="space"> </span>Type I and Type II Errors II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ht-means_errors-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_errors-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.41</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_errors-1"><article class="exercise exercise-like"><p id="p-3271">A biologist believes that the fish in a certain lake have stunted growth, never reaching the typical 14 inch length for their species. To test this theory, she randomly selects a sample of 215 fish and finds the average length in the sample to be 13.5 inches with a standard deviation of 3.85 inches. Based on this sample, you conclude that there is not enough evidence to reject the null hypothesis at the \(\alpha = 0.01\) significance level.</p>
+<p id="p-3272">Question: ithe true mean is 13.9 inches, what type of error have you made?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-262" id="answer-262"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-262"><div class="answer solution-like"><p id="p-3273">Type II Error</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ht-means_errors-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ht-means_errors-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">5.2.42</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ht-means_errors-2"><article class="exercise exercise-like"><p id="p-3274">The Wrigley candy company claims that a standard bag of skittles contains an average of 15 yellow candies. To test this claim you purchase 60 regular sized bags and find an average of 16.1 yellow candies in these bags, with a standard deviation of 4.9 candies. Based on this sample you reject the null hypothesis at the \(\alpha = 0.05\) significance level.</p>
+<p id="p-3275">Question: if in fact the true average is 15 yellow candies, what type of error did you make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-263" id="answer-263"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-263"><div class="answer solution-like"><p id="p-3276">Type I Error</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:54-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Confidence Intervals for Means Using Small Samples</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_ci-differences.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_estimation.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap_testing.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_ci-differences.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_estimation.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap_testing.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples" class="active">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ci-small-samples"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Confidence Intervals for Means Using Small Samples</span>
+</h2>
+<a href="sec_ci-small-samples.html" class="permalink">¶</a><section class="introduction" id="sec_ci-small-samples_intro"><h6 class="heading">When Samples are too Small.<span></span>
+</h6>
+<p id="p-2902">When we had a large sample of 30 or more, we were able to use the <a class="xref" data-knowl="./knowl/thm_central-limit.html" title="Theorem 3.5.11: Central Limit Theorem">Central Limit Theorem</a> to estimate the population mean based on the sample mean \(\overline{x}\) and sample standard deviation \(s\text{.}\) That is, we compute our margin of error, such as \(z_{\alpha/2}\times \frac{s}{\sqrt{n}}\text{,}\) using z-scores with a normal distribution and we freely replace \(\sigma\text{,}\) the population standard deviation, with \(s\text{,}\) the sample standard deviation.  Unfortunately, if our sample size is small, we can not make these assumptions.</p>
+<p id="p-2903">Consider the following situations in which this becomes a problem.</p>
+<ul class="disc">
+<li id="li-1074"><p id="p-2904">You wish to estimate the average amount of iron contained in one cubic inch of moon rock. Because of the rarity of moon rocks, you are only able to get a sample of 6 rocks to test. You can, however, assume that the amount of iron follows a normal distribution.</p></li>
+<li id="li-1075"><p id="p-2905">A widget manufacturer wishes to estimate the difference between the lifespan of a basic widget and the lifespan of a deluxe widget. Because this test destroys the widget, and widgets are expensive, they must use a small sample of 14 of each type of widget. The lifespan of a widget is known to follow a normal distribution.</p></li>
+</ul>
+<p id="p-2906">Even though the underlying distributions are normal, because we do not know \(\sigma\text{,}\) the methods from the previous sections in this chapter will not work in these situations.  In this lesson we will introduce a new distribution which will allow us to work with small samples such as those described here, assuming that the distribution of the individual values in the population is normal.</p></section><article class="objectives goal-like" id="sec_ci-small-samples_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-44"><p id="p-2907">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1076">
+<p id="p-2908">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1077"><p id="p-2909">Degrees of Freedom for a Single Sample Student's t-Distribution</p></li>
+<li id="li-1078"><p id="p-2910">Degrees of Freedom for a Two Sample Student's t-Distribution</p></li>
+<li id="li-1079"><p id="p-2911">Pooled Variance</p></li>
+<li id="li-1080"><p id="p-2912">Small Sample Confidence Interval for a Population Mean</p></li>
+<li id="li-1081"><p id="p-2913">Small Sample Confidence Interval for the Difference Between Means</p></li>
+<li id="li-1082"><p id="p-2914">Student's t-Distribution</p></li>
+</ul>
+</li>
+<li id="li-1083">
+<p id="p-2915">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1084"><p id="p-2916">Describe the properties of the Student's t-Distribution</p></li>
+<li id="li-1085"><p id="p-2917">Look up critical values in the t-distribution table</p></li>
+<li id="li-1086"><p id="p-2918">Find the margin of error for a small sample estimate of a single population mean or the difference between two means</p></li>
+<li id="li-1087"><p id="p-2919">Find a confidence interval for a small sample mean or the difference between two small sample means</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_ci-small-samples_t-dist"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Student's t Distribution</span>
+</h3>
+<a href="sec_ci-small-samples.html#sec_ci-small-samples_t-dist" class="permalink">¶</a><p id="p-2920">To construct confidence intervals for means based on small samples drawn from normal populations, we must either know what \(\sigma\) is, or we must come up with a new distribution. It is unreasonable, as mentioned previouly, to know the population standard deviation when we are trying to estimate the population mean. We therefore introduce a new distribution.</p>
+<p id="p-2921">This distribution is actually an entire family of distributions, one for each possible sample size less than 30. It is called the <dfn class="terminology">student's t-distribution</dfn> because the author, who worked for a brewery, was not allowed to publish his results so as to keep these tools away from competing breweries. The author believed, however, that this information should be shared and so he published it under the pen-name “Student.”</p>
+<article class="definition definition-like" id="def_student-t-distribution"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span>
+</h6>
+<p id="p-2922">The <dfn class="terminology">student's t-distribution</dfn> is the name given to the distribution of the variable \(t\) based on a random sample of size \(n\) with mean \(\overline{x}\) and standard deviation \(s\text{,}\) drawn from a normal population. The variable \(t\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+t = \frac{\overline{x} - \mu}{s/\sqrt{n}}\text{.}
+\end{equation*}
+</div></article><p id="p-2923">Note that the formula for \(t\) looks a lot like the the formula for the standard normal variable \(z\text{.}\) The main difference is that we are using \(s\text{,}\) the sample standard deviation, instead of \(\sigma\text{,}\) the population standard deviation. This is no longer just an “approximation,” which we could get away with in larger samples. This is now the exact value of \(t\text{.}\) So what does the distribution of \(t\) look like? Below is a graph of the normal distribution, along with the distribution of \(t\) for several different sample sizes.</p>
+<figure class="figure figure-like" id="fig_ci-small-samples_student-t-dist"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/image_ci-small-samples_student-t-dist.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.2<span class="period">.</span></span><span class="space"> </span>Normal Distribution and Several Student t-Distributions</figcaption></figure><p id="p-2924">Notice that the normal distribution, in black, is the tallest with the shortest tails. The t-distributions look very similar, but they are shorter and have thicker tails. The notation \(df\) stands for <dfn class="terminology">degrees of freedom</dfn>. This is a measure of how big the sample size is—although it is not exactly equal to the sample size. The bigger the degrees of freedom, the more closely the student's t-distribution matches the normal distribution. In fact, when the degrees of freedom is 30 or more, the student's t-distribution will be so close to the normal distribution that we can just use the normal distribution critical values.</p>
+<p id="p-2925">Because there are so many different student's t-distributions, the table that we use to look up critical values looks somewhat different than the normal distribution table. We list the five most common right-tail areas across the top:</p>
+<div class="displaymath">
+\begin{equation*}
+t_{0.10}\quad t_{0.05}\quad t_{0.025}\quad t_{0.01}\quad \text{and}\quad t_{0.005}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We list the different degrees of freedom from 1 to 30 down the left side.  The critical values, or t-scores, are found in the body of the table in the row corresponding to the appropriate degrees of freedom and the column corresponding to the area in the right tail. Note that there are no negative critical values listed in the table, and no left-tail probabilities. This is because we can use symmetry, just as in the normal distribution, to look up those critical values based on the positive values in the table.</p>
+<article class="example example-like" id="examp_ci-small-samples_t-dist-positive"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-samples_t-dist-positive"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Looking Up Critical Values in the Student' t-Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-samples_t-dist-positive"><article class="example example-like"><p id="p-2926">Use the portion of the t-table shown below to find the value of t that:</p>
+<ol class="lower-alpha">
+<li id="li-1088"><p id="p-2927">has nine degrees of freedom and separates the top 2.5% of data from the bottom 97.5% of data.</p></li>
+<li id="li-1089"><p id="p-2928">has seven degrees of freedom and is the positive critical value at the 99% confidence level.</p></li>
+</ol>
+<figure class="figure figure-like" id="fig_ci-small-samples_student-t-table-positive"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="./images/ci-small-samples_student-t-table-positive.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.4<span class="period">.</span></span><span class="space"> </span>t-Distribution Table</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-189" id="solution-189"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-189"><div class="solution solution-like"><ol id="p-2929" class="lower-alpha">
+<li id="li-1090"><p id="p-2930">Since there are nine degrees of freedom, we go to the row with \(df=9\text{.}\) Then, since we want 2.5%, or \(0.025\text{,}\) in the right tail, we go over to \(t_{0.025}\text{.}\) The blue box shows the resulting t-score critical value is \(2.262\text{.}\)</p></li>
+<li id="li-1091"><p id="p-2931">This time there are seven degrees of freedom, and we want \(0.005\) in the right tail, since this is half of \(1 - 0.99 = 0.01\text{.}\) The red box shows us the critical value \(t_{\alpha/2} = 3.499\text{.}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<p id="p-2932">Now some negative examples.</p>
+<article class="example example-like" id="examp_ci-small-samples_t-dist-negative"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-samples_t-dist-negative"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finding Negative Critical Values from the Student' t-Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-samples_t-dist-negative"><article class="example example-like"><p id="p-2933">Use the portion of the t-table shown below to find the value of \(t\) that:</p>
+<ol class="lower-alpha">
+<li id="li-1092"><p id="p-2934">has 12 degrees of freedom and separates the left tail with area 0.05 from the rest of the graph.</p></li>
+<li id="li-1093"><p id="p-2935">has 14 degrees of freedom and is the negative critical value at the 98% confidence level.</p></li>
+</ol>
+<figure class="figure figure-like" id="fig_ci-small-samples_student-t-table-negative"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="./images/ci-small-samples_student-t-table-negative.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.6<span class="period">.</span></span><span class="space"> </span>t-Distribution Table</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-190" id="solution-190"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-190"><div class="solution solution-like"><ol id="p-2936" class="lower-alpha">
+<li id="li-1094"><p id="p-2937">Going to the \(df=12\) row, we move over the the column labeled \(t_{0.050}\text{.}\) The entry in the blue box is the t-score separating the body of the data from the right tail with an area of \(0.05\text{.}\) Since we want the left tail, we just change the sign to get a t-score of \(-1.782\text{.}\)</p></li>
+<li id="li-1095"><p id="p-2938">The red lines show the entry with \(df=14\) and a right-tail probability of \(0.010\text{.}\) Since we want the negative critical value, we switch the sign to get \(t_{\alpha/2} = -2.624\text{.}\)</p></li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-small-samples_t-dist-1"><video id="video-179" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.7<span class="period">.</span></span><span class="space"> </span>Using the t-Distribution Table I</figcaption></figure><figure class="figure figure-like" id="video_ci-small-samples_t-dist-2"><video id="video-180" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.8<span class="period">.</span></span><span class="space"> </span>Using the t-Distribution Table II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-small-samples_t-dist-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_t-dist-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_t-dist-1"><article class="exercise exercise-like"><p id="p-2939">You wish to look up the positive critical t-value in the student's t-distribution that has 11 degrees of freedom and goes with a confidence level of 98%.</p>
+<p id="p-2940">Question: what is this critical value?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-236" id="answer-236"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-236"><div class="answer solution-like"><p id="p-2941">2.718</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-small-samples_t-dist-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_t-dist-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_t-dist-2"><article class="exercise exercise-like"><p id="p-2942">You wish to find the negative critical value that goes with a 95% lower confidence bound. There are \(df = 17\) degrees of freedom.</p>
+<p id="p-2943">Question: what is the critical t-value in this situation?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-237" id="answer-237"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-237"><div class="answer solution-like"><p id="p-2944">-1.740</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-small-samples_mean"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Single Population Mean</span>
+</h3>
+<a href="sec_ci-small-samples.html#sec_ci-small-samples_mean" class="permalink">¶</a><p id="p-2945">The process for building a confidence interval for a population mean based on a small sample should be very familiar. Aside from using the t-distribution to look up critical values, it is in fact exactly the same as what was done for large-sample estimation. Below you will find the formula for this confidence interval.</p>
+<article class="theorem theorem-like" id="thm_ci-small-sample-mean"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Small Sample Confidence Interval for a Population Mean.</span>
+</h6>
+<p id="p-2946">The \((1-\alpha)100\%\) small sample confidence interval for a population mean based on a sample of size \(n\) taken from a normal population with sample mean \(\overline{x}\) and standard deviation \(s\) is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} \pm t_{\alpha/2}\times \left(\frac{s}{\sqrt{n}}\right)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(t_{\alpha/2}\) is a critical value taken from the student's t-distribution with \(df=n-1\) degrees of freedom.</p></article><p id="p-2947">This confidence interval is still made up of a point estimate plus-or-minus a margin of error. Again the sample mean is the point estimate, and the margin of error is based on the critical value t-score for a given confidence level and degrees of freedom.  Note that we do need to assume that the distribution whose mean we are trying to estimate is normal.</p>
+<article class="example example-like" id="examp_ci-small-samples_ci-single-mean"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-samples_ci-single-mean"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Confidence Interval for a Small Sample Mean.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-samples_ci-single-mean"><article class="example example-like"><p id="p-2948">You wish to estimate the average amount of iron contained in one cubic inch of moon rock. Because of the rarity of moon rocks, you are only able to get a sample of 6 rocks to test. You can, however, assume that the amount of iron follows a normal distribution. Your tests show that in these six rocks, there is a mean of \(\overline{x} = 2.4\) grams per cubic inch with a standard deviation of 0.35 grams per cubic inch. Use this information to construct a 99% confidence interval for the amount of iron contained in one cubic inch of moon rock.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-191" id="solution-191"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-191"><div class="solution solution-like">
+<p id="p-2949">From the t-distribution table with \(df = 6-1 = 5\) and \(0.005\) in the right tail, the critical value is \(t_{0.005} = 4.032\text{.}\)  Plugging this into the formula for the confidence interval, we get:</p>
+<div class="displaymath">
+\begin{equation*}
+2.4 \pm 4.032\left(\frac{0.35}{\sqrt{6}}\right) = 2.4 \pm 0.5761\text{.}
+\end{equation*}
+</div>
+<p id="p-2950">Adding and subtracting gives us the following confidence interval.</p>
+<div class="displaymath">
+\begin{equation*}
+1.8239 \lt \mu \lt 2.9761\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ci-small-smaples_upper-bound-single-mean"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-smaples_upper-bound-single-mean"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Upper Confidence Bound for a Small Sample Mean.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-smaples_upper-bound-single-mean"><article class="example example-like"><p id="p-2951">The salaries from the top 10 business executives in your state have a mean value of $84 million with a standard deviation of $12.4 million. Assuming that the salaries of top business executives are normally distributed, find a 95% upper confidence bound for the average salary of a top business executive in your state.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-192" id="solution-192"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-192"><div class="solution solution-like">
+<p id="p-2952">Because this is an upper confidence bound, we want the entire \(\alpha = 0.05\) in the right tail. That means, we want to find \(t_{0.05}\) with \(n - 1 = 10 - 1 = 9\) degrees of freedom. Using the value \(t_{0.05} = 1.833\) found in the t-distribution table, we get the following upper bound.</p>
+<div class="displaymath">
+\begin{equation*}
+84 + 1.833\left(\frac{12.4}{\sqrt{10}}\right) = 84 + 7.188 = 91.188\text{.}
+\end{equation*}
+</div>
+<p id="p-2953">Therefore, we conclude that we are 95% confident that the average salary of top executives in your state is less than $91.188 million.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-small-samples_single-mean-1"><video id="video-181" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.14<span class="period">.</span></span><span class="space"> </span>Confidence Intervals for Single Small-Sample Means I</figcaption></figure><figure class="figure figure-like" id="video_ci-small-samples_single-mean-2"><video id="video-182" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.15<span class="period">.</span></span><span class="space"> </span>Confidence Intervals for Single Small-Sample Means II</figcaption></figure><figure class="figure figure-like" id="video_ci-small-samples_single-mean-3"><video id="video-183" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.16<span class="period">.</span></span><span class="space"> </span>Confidence Intervals for Single Small-Sample Means III</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-small-samples_single-mean-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_single-mean-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.17</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_single-mean-1"><article class="exercise exercise-like"><p id="p-2954">To estimate the mean weight of a blue whale, you somehow manage to measure 6 different blue whales and find a sample mean of \(\overline x= 297,451\) pounds with a standard deviation of \(s = 9,542.5\) pounds.</p>
+<p id="p-2955">Question: what is the 99% confidence interval for the true average weight of a blue whale?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-238" id="answer-238"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-238"><div class="answer solution-like"><p id="p-2956">\(281,744 \lt \mu \lt 313,158\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-small-samples_single-mean-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_single-mean-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.18</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_single-mean-2"><article class="exercise exercise-like"><p id="p-2957">In order to estimate the number of times a week that an NBA player eats at home, a sample of 16 NBA players are interviewed and the mean number of times is found to be 6.8 with a standard deviation of 2.8 days.</p>
+<p id="p-2958">Question: what is the 95% confidence interval for the true average number of times a week that an NBA player eats at home?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-239" id="answer-239"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-239"><div class="answer solution-like"><p id="p-2959">\(5.308 \lt \mu \lt 8.292\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-small-samples_differences"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">Difference Between Means</span>
+</h3>
+<a href="sec_ci-small-samples.html#sec_ci-small-samples_differences" class="permalink">¶</a><p id="p-2960">When using large samples to estimate the difference between two population means, we found that we could use the following for the standard deviation of the sampling distribution for the difference between the sample means.</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_{\overline{x}_1 - \overline{x}_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\text{.}
+\end{equation*}
+</div>
+<p id="p-2961">As long as both samples contain 30 or more individuals, we can approximate \(\sigma_1 \approx s_1\) and \(\sigma_2 \approx s_2\) and the distribution of \(\overline{x}_1 - \overline{x}_2\) will be normal with this standard deviation. Unfortunately, for samples of size less than 30, the approximation using sample means will not work, and it will not even have a t-distribution.</p>
+<p id="p-2962">It turns out that in order to get critical values for the difference between two sample means, we have to make one more assumption. We have to assume that the two populations from which we are sampling have the same variance and therefore standard deviation, so \(\sigma_1^2\) and \(\sigma_2^2\) are the same. However when we draw samples we can not expect that they will come out with exactly the same variance. To get as accurate an estimate of what that single variance is, we must combine the variances of our two samples into a <dfn class="terminology">pooled variance</dfn> as shown below.</p>
+<article class="definition definition-like" id="def_pooled-variance"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.19</span><span class="period">.</span><span class="space"> </span><span class="title">Pooled Variance.</span>
+</h6>
+<p id="p-2963">If samples of sizes \(n_1\) and \(n_2\) with variances \(s_1^2\) and \(s_2^2\) respectively are drawn from independent populations with a common variance \(\sigma^2\text{,}\) then the pooled estimate for this variance based on these samples is:</p>
+<div class="displaymath">
+\begin{equation*}
+s^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}\text{.}
+\end{equation*}
+</div></article><p id="p-2964">We can then use this pooled variance in place of both \(\sigma_1^2\) and \(\sigma_2^2\) in the standard error formula above to get the following confidence interval formula for small samples.</p>
+<article class="theorem theorem-like" id="thm_ci-small-sample-differences"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.20</span><span class="period">.</span><span class="space"> </span><span class="title">Small Sample Confidence Interval for the Difference Between Means.</span>
+</h6>
+<p id="p-2965">The \((1-\alpha)100\%\) small sample confidence interval for the difference between population means, \(\mu_1 - \mu_2\text{,}\) based on two independent samples of sizes \(n_1\) and \(n_2\) drawn from normal populations with a common variance, estimated by the pooled variance \(s^2\text{,}\) and having sample means \(\overline{x}_1\) and \(\overline{x}_2\) is:</p>
+<div class="displaymath">
+\begin{equation*}
+(\overline{x}_1 - \overline{x}_2) \pm t_{\alpha/2}\times \sqrt{s^2\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(t_{\alpha/2}\) is taken from a student's t-distribution with \(n_1 + n_2 - 2\) degrees of freedom.</p></article><p id="p-2966">Notice that the degrees of freedom depends on the size of the two samples used to construct the confidence interval. It can also be seen in the denominator of the pooled variance estimate, in case you forget. Now let's take a look at several examples in which we must make use of these formulas.</p>
+<article class="example example-like" id="examp_ci-small-samples_ci-differences"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-samples_ci-differences"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.21</span><span class="period">.</span><span class="space"> </span><span class="title">Finding a Confidence Interval for a Difference Between Small Sample Means.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-samples_ci-differences"><article class="example example-like"><p id="p-2967">A widget manufacturer wishes to estimate the difference between the lifespan of a basic widget and the lifespan of a deluxe widget, both of which are known to have a normal distribution. Two samples are taken and the following information is gathered. Find the 90% confidence interval for the difference between the mean lifespan of a basic widget and a deluxe widget.</p>
+<figure class="table figure-like" id="table-62"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Sample Size</td>
+<td class="c m b2 r2 l0 t0 lines">Sample Mean</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Sample StDev</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Basic</td>
+<td class="c m b0 r2 l0 t0 lines">\(n_1 = 14\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\overline{x}_1 = 742\) days</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(s_1 = 42.1\) days</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Deluxe</td>
+<td class="c m b0 r2 l0 t0 lines">\(n_2 = 12\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\overline{x}_2 = 951\) days</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(s_2 = 39.6\) days</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.5.22<span class="period">.</span></span><span class="space"> </span>Widget Sample Statistics</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-193" id="solution-193"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-193"><div class="solution solution-like">
+<p id="p-2968">We first find the critical value for this confidence interval. A 90% confidence interval will have an area of \(0.05\) in each tail. The degrees of freedom is \(df = 14 + 12 - 2 = 24\text{.}\) This gives us a critical value \(t_{0.050} = 1.711\text{.}\)</p>
+<p id="p-2969">Our pooled variance is:</p>
+<div class="displaymath">
+\begin{equation*}
+s^2 = \frac{(14-1)(42.1)^2 + (12 - 1)(39.6)^2}{14 + 12 - 2} \approx 1678.7954\text{.}
+\end{equation*}
+</div>
+<p id="p-2970">Finally, we put this all together into our confidence interval formula.</p>
+<div class="displaymath">
+\begin{equation*}
+(742-951) \pm 1.711\sqrt{1678.7954\left(\frac{1}{14} + \frac{1}{12}\right)} = -209 \pm 27.5792\text{.}
+\end{equation*}
+</div>
+<p id="p-2971">Adding and subtracting gives the following confidence interval.</p>
+<div class="displaymath">
+\begin{equation*}
+-236.5792 \lt \mu_1 - \mu_2 \lt -181.4208\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ci-small-smaples_upper-bound-differences"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-smaples_upper-bound-differences"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.23</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Lower Confidence Bound for a Difference Between Two Small Sample Means.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-smaples_upper-bound-differences"><article class="example example-like"><p id="p-2972">A researcher wishes to estimate the difference between achievement test scores in affluent neighborhoods and low-income neighborhoods using the few test scores which he has collected from parents. To assist in this he is going to construct a 99% lower confidence bound for the mean test scores in affluent neighborhoods and mean test scores in low-income neighborhoods. The following data is collected.</p>
+<figure class="table figure-like" id="table-63"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Sample Size</td>
+<td class="c m b2 r2 l0 t0 lines">Sample Mean</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Sample StDev</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Affluent</td>
+<td class="c m b0 r2 l0 t0 lines">\(n_1 = 16\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\overline{x}_1 = 94\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(s_1^2 = 71\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Low-Income</td>
+<td class="c m b0 r2 l0 t0 lines">\(n_2 = 19\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\overline{x}_2 = 73\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(s_2^2 = 185\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.5.24<span class="period">.</span></span><span class="space"> </span>Achievement Test Statistics</figcaption></figure><div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-194" id="solution-194"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-194"><div class="solution solution-like">
+<p id="p-2973">Again we start by finding the critical value. The degrees of freedom in this case is \(df = 16 + 19 - 2 = 33\text{.}\) For a 99% lower confidence bound, we want \(0.01\) in the left tail, so the critical value is \(-t_{0.010} = -2.326\text{.}\)</p>
+<p id="p-2974">The pooled variance is:</p>
+<div class="displaymath">
+\begin{equation*}
+s^2 = \frac{(16-1)(71) + (19-1)(185)}{16+19-2} = 133.1818\text{.}
+\end{equation*}
+</div>
+<p id="p-2975">We use the formula for a confidence interval, but only subtract the margin of error to find the lower confidence bound.</p>
+<div class="displaymath">
+\begin{equation*}
+(94 - 73) - 2.326\sqrt{133.1818\left(\frac{1}{16} + \frac{1}{19}\right)} = 21 - 9.1081 = 11.8919\text{.}
+\end{equation*}
+</div>
+<p id="p-2976">We are therefore 99% confident that students in the affluent neighborhoods score at least 11.9 points better on standardized tests than do those in low-income neighborhoods.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-small-samples_differences-1"><video id="video-184" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.25<span class="period">.</span></span><span class="space"> </span>Small-Sample Confidence Intervals for Differences I</figcaption></figure><figure class="figure figure-like" id="video_ci-small-samples_differences-2"><video id="video-185" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.26<span class="period">.</span></span><span class="space"> </span>Small-Sample Confidence Intervals for Differences II</figcaption></figure><figure class="figure figure-like" id="video_ci-small-samples_differences-3"><video id="video-186" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.27<span class="period">.</span></span><span class="space"> </span>Small-Sample Confidence Intervals for Differences III</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-small-samples_differences-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_differences-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.28</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_differences-1"><article class="exercise exercise-like"><p id="p-2977">To estimate the difference between the time it takes fire and police to respond to emergencies, you randomly select several recent emergencies and collect the following data.</p>
+<figure class="table figure-like" id="table-64"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Sample Size</td>
+<td class="c m b2 r2 l0 t0 lines">Mean Time</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">StDev Time</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Fire</td>
+<td class="c m b0 r2 l0 t0 lines">\(n_1 = 12\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\overline{x}_1 = 6.3\) minutes</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(s_1 = 1.46\) minutes</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Police</td>
+<td class="c m b0 r2 l0 t0 lines">\(n_2 = 8\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\overline{x}_2 = 5.2\) minutes</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(s_2 = 2.33\) minutes</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.5.29<span class="period">.</span></span><span class="space"> </span>Emergence Response Time Statistics</figcaption></figure><p id="p-2978">Question: what is the 99% confidence interval for the difference between the average response times for fire and police?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-240" id="answer-240"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-240"><div class="answer solution-like"><p id="p-2979">\(-1.327 \lt \mu_1-\mu_2 \lt 3.527\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-small-samples_differences-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_differences-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.30</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_differences-2"><article class="exercise exercise-like"><p id="p-2980">You wish to estimate the difference between the number of Skittles in a regular sized bag and the number of M&amp;M's in a regular sized bag. To do this, you collect the following information:</p>
+<ul class="disc">
+<li id="li-1096"><p id="p-2981">Number of Skittles: 62, 67, 64, 71, 59, 63</p></li>
+<li id="li-1097"><p id="p-2982">Number of M&amp;M's: 58, 63, 55, 59, 42</p></li>
+</ul>
+<p id="p-2983">Using this data you compute the sample means and standard deviations shown below.</p>
+<figure class="table figure-like" id="table-65"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Sample Size</td>
+<td class="c m b2 r2 l0 t0 lines">Mean</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">StDev</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Skittles</td>
+<td class="c m b0 r2 l0 t0 lines">6</td>
+<td class="c m b0 r2 l0 t0 lines">64.33</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">4.18</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">M&amp;M's</td>
+<td class="c m b0 r2 l0 t0 lines">5</td>
+<td class="c m b0 r2 l0 t0 lines">55.4</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">8.02</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.5.31<span class="period">.</span></span><span class="space"> </span>Statistics for Candy Counts</figcaption></figure><p id="p-2984">Question: what is the 95% confidence interval for the difference between the mean number of Skittles and M&amp;M's in a regular sized bag?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-241" id="answer-241"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-241"><div class="answer solution-like"><p id="p-2985">\(0.454 \lt \mu_1 - \mu_2 \lt 17.406\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-small-samples_when"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.4</span> <span class="title">When to Use the Student's t-Distribution</span>
+</h3>
+<a href="sec_ci-small-samples.html#sec_ci-small-samples_when" class="permalink">¶</a><p id="p-2986">Since the formulas we've seen in this lesson are a lot like the formulas for a normal distribution, trying to decide which type of critical values to use can be difficult. The following rules of thumb should help you to choose the correct type of distribution to use.</p>
+<ul class="disc">
+<li id="li-1098">
+<p id="p-2987">For estimating means:</p>
+<ul class="circle">
+<li id="li-1099"><p id="p-2988">If the sample size or sizes are greater than 30, we should use the normal distribution techniques from previous sections.</p></li>
+<li id="li-1100">
+<p id="p-2989">If any sample size is less than 30 and the population has a normal distribution, then:</p>
+<ul class="square">
+<li id="li-1101"><p id="p-2990">If we somehow know the population standard deviation, we should still use the normal distribution techniques from previous sections.</p></li>
+<li id="li-1102"><p id="p-2991">If the population standard deviation is not known, then we must use the t-distribution techniques from this section.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="li-1103">
+<p id="p-2992">For estimating proportions:</p>
+<ul class="circle"><li id="li-1104"><p id="p-2993">If each of \(n\times p_1\text{,}\) \(n\times q_1\text{,}\) and if necessary, \(n\times p_2\) and \(n\times q_2\) are all greater than 5, then we can use the normal techniques seen in previous sections.</p></li></ul>
+</li>
+</ul>
+<p id="p-2994">Notice that if we have small samples and we do not know that the population has a normal distribution, then none of the above apply. Also, if we have a proportion in which one of the products is not greater than 5, none of the above apply. In these cases, will not be able to perform estimation using the tools described in this text.</p>
+<article class="example example-like" id="examp_ci-small-samples_when"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-small-samples_when"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.32</span><span class="period">.</span><span class="space"> </span><span class="title">Determining Which Distribution to Use.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-small-samples_when"><article class="example example-like"><p id="p-2995">For each of the situations below, determine what distribution we should use to construct a confidence interval: normal, t-distribution, or neither.</p>
+<ol class="lower-alpha">
+<li id="li-1105"><p id="p-2996">The proportion of a population with a given characteristic is to be approximated using a sample of 40 individuals, 12 of which have the desired characteristic.</p></li>
+<li id="li-1106"><p id="p-2997">A population mean is to be estimated using a sample of size 50. The standard deviation of the population is not known, and the population may not be normal.</p></li>
+<li id="li-1107"><p id="p-2998">The difference between proportions in two independent populations is to be estimated, but only one individual in the second sample had the desired characteristic.</p></li>
+<li id="li-1108"><p id="p-2999">The difference between two population means is to be estimated using samples of size 20 and 40. The population distributions are known to be normal.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-195" id="solution-195"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-195"><div class="solution solution-like"><ol id="p-3000" class="lower-alpha">
+<li id="li-1109"><p id="p-3001">Since \(n\times p = 12\) and \(n\times q = 28\text{,}\) we can use the normal distribution for our critical values.</p></li>
+<li id="li-1110"><p id="p-3002">Because the sample size is 30 or more, we can use the normal distribution and approximate \(\sigma\) with the sample standard deviation.</p></li>
+<li id="li-1111"><p id="p-3003">Since \(n\times p = 1\) for one of the two samples, we can not use the normal distribution. We will unfortunately not be able to build a confidence interval for this difference with the tools we have available.</p></li>
+<li id="li-1112"><p id="p-3004">Because one of the two samples is smaller than 30, we must use small sample techniques and the t-distribution to construct this confidence interval.</p></li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-small-samples_when-1"><video id="video-187" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.33<span class="period">.</span></span><span class="space"> </span>Choosing Distributions</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-small-samples_when-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_when-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.34</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_when-1"><article class="exercise exercise-like"><p id="p-3005">Consider the following estimation tasks.</p>
+<ol class="lower-alpha">
+<li id="li-1113"><p id="p-3006">Constructing a confidence interval for a single population proportion in which \(n\times p\) and \(n\times q\) are both greater than five.</p></li>
+<li id="li-1114"><p id="p-3007">Constructing a confidence interval for a single mean in which the population has a normal distribution, and the sample size is \(n = 100\text{.}\)</p></li>
+<li id="li-1115"><p id="p-3008">Constructing a confidence interval for a single mean in which the population has a normal distribution, and the sample size is \(n = 20\text{.}\)</p></li>
+<li id="li-1116"><p id="p-3009">Constructing a confidence interval for a difference between means in which the two populations have normal distributions, but different standard deviations, using samples of size 10.</p></li>
+</ol>
+<p id="p-3010">Question: which distribution, if any, can be used to construct these intervals</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-242" id="answer-242"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-242"><div class="answer solution-like"><ol id="p-3011" class="lower-alpha cols2">
+<li id="li-1117"><p id="p-3012">normal</p></li>
+<li id="li-1118"><p id="p-3013">normal</p></li>
+<li id="li-1119"><p id="p-3014">t-distribution</p></li>
+<li id="li-1120"><p id="p-3015">none</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-small-samples_when-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-small-samples_when-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.5.35</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-small-samples_when-2"><article class="exercise exercise-like"><p id="p-3016">Consider the following estimation tasks.</p>
+<ol class="lower-alpha">
+<li id="li-1121"><p id="p-3017">Constructing a confidence interval for a single population mean in which the population has a uniform distribution and the sample size is n = 10.</p></li>
+<li id="li-1122"><p id="p-3018">Constructing a confidence interval for a difference between means in which the populations have a normal distribution and the sample sizes are 100 and 150.</p></li>
+<li id="li-1123"><p id="p-3019">Constructing a confidence interval for the difference between proportions where \(n\times p_1 = 1\text{.}\)</p></li>
+<li id="li-1124"><p id="p-3020">Constructing a confidence interval for the difference between means when the sample sizes are 10 and 15, and the populations have a normal distribution with equal variances.</p></li>
+</ol>
+<p id="p-3021">Question: which distribution, if any, can be used to construct these intervals</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-243" id="answer-243"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-243"><div class="answer solution-like"><ol id="p-3022" class="lower-alpha cols2">
+<li id="li-1125"><p id="p-3023">none</p></li>
+<li id="li-1126"><p id="p-3024">normal</p></li>
+<li id="li-1127"><p id="p-3025">none</p></li>
+<li id="li-1128"><p id="p-3026">t-distribution</p></li>
+</ol></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

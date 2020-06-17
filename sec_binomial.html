@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:32-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Families of Discrete Distributions: Uniform and Binomial</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_random-vars.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_normal.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_random-vars.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_normal.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial" class="active">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_binomial"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Families of Discrete Distributions: Uniform and Binomial</span>
+</h2>
+<a href="sec_binomial.html" class="permalink">¶</a><section class="introduction" id="sec_binomial_intro"><h6 class="heading">Families of Probability Distributions.<span></span>
+</h6>
+<p id="p-1861"><a href="sec_random-vars.html" class="internal" title="Section 3.1: Random Variables and Discrete Probability distributions">Section 3.1</a> gave us a general introduction to probability distributions. In the next several sections we will introduce some specific families of probability distributions. What makes these specific families of probability distributions interesting is that:</p>
+<ol class="decimal">
+<li id="li-743"><p id="p-1862">they are very common in every-day situations.</p></li>
+<li id="li-744"><p id="p-1863">we can develop general rules for finding the mean and standard deviation for probability distributions that are members of a specific family.</p></li>
+</ol>
+<p data-braille="continuation">This means that we can avoid the work of computing expected value and standard deviation from the probability distribution table, and instead create a formula for finding these parameters for common random processes.</p>
+<p id="p-1864">In this section we will look at two discrete probability distribution families. The first is a fairly straightforward, but common none-the-less distribution seen whenever you roll a fair die or flip a fair coin. The second is more involved, but is very common when dealing with yes/no sorts of questions such as “do you support candidate \(X\)” or “did you draw a red ball?”</p></section><article class="objectives goal-like" id="sec_random-vars_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-27"><p id="p-1865">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-745">
+<p id="p-1866">describe the following terms:</p>
+<ul class="circle">
+<li id="li-746"><p id="p-1867">Bernoulli trial</p></li>
+<li id="li-747"><p id="p-1868">binomial distribution</p></li>
+<li id="li-748"><p id="p-1869">binomial probability formula</p></li>
+<li id="li-749"><p id="p-1870">binomial process</p></li>
+<li id="li-750"><p id="p-1871">binomial random variable</p></li>
+<li id="li-751"><p id="p-1872">discrete uniform probability distribution</p></li>
+<li id="li-752"><p id="p-1873">mean and standard deviation of a binomial random variable</p></li>
+<li id="li-753"><p id="p-1874">mean and standard deviation of a discrete uniform random variable</p></li>
+<li id="li-754"><p id="p-1875">the 5% condition</p></li>
+</ul>
+</li>
+<li id="li-755">
+<p id="p-1876">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-756"><p id="p-1877">Identify and work with random variables having a discrete uniform distributions</p></li>
+<li id="li-757"><p id="p-1878">Identify a Bernoulli process</p></li>
+<li id="li-758"><p id="p-1879">Identify a binomial random variable</p></li>
+<li id="li-759"><p id="p-1880">Correctly apply the binomial probability formula</p></li>
+<li id="li-760"><p id="p-1881">Find probabilities that a binomial random variable is at least or at most a given value</p></li>
+<li id="li-761"><p id="p-1882">Compute the mean and standard deviation of a binomial random variable</p></li>
+<li id="li-762"><p id="p-1883">Determine when a binomial random variable has a mound-shaped distribution</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_binomial_uniform"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Discrete Uniform Distribution</span>
+</h3>
+<a href="sec_binomial.html#sec_binomial_uniform" class="permalink">¶</a><p id="p-1884">When you roll a fair die or flip a fair coin, each of the outcomes is equally likely. If you assign the values of those outcomes to a random variable, then each value of the variable is equally likely. One could say that the probabilities are <dfn class="terminology">uniform</dfn>. These are members of the following family of distributions.</p>
+<article class="definition definition-like" id="def_discrete-uniform"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-1885">A random variable \(X\) has a <dfn class="terminology">discrete uniform</dfn> probability distribution if <dfn class="terminology">X</dfn> can take on one of \(k\) possible values, \(x_1\text{,}\) \(x_2\text{,}\) \(\ldots\text{,}\) \(x_k\text{,}\) each with probability \(P(X=x_i) = \frac{1}{k}\text{.}\)</p></article><p id="p-1886">Consider the following, very common, member of this family.</p>
+<article class="example example-like" id="examp_binomial_uniform-graph"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_uniform-graph"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying a Discrete Uniform Random Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_uniform-graph"><article class="example example-like"><p id="p-1887">A fair die is rolled and a random variable \(X\) is defined to be the number that appears. Show that \(X\) has a discrete uniform probability distribution.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-122" id="solution-122"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-122"><div class="solution solution-like">
+<p id="p-1888">The random variable has six values, \(X = 1, 2, 3, 4, 5, \text{ and } 6\text{.}\) So, for each of these values, \(P(X=x) = \frac{1}{6}\text{.}\) Therefore, this is a discrete uniform distribution with \(k=6\text{.}\) To help visualize this, we construct the following probability histogram.</p>
+<figure class="figure figure-like" id="fig_examp_binomial_uniform-graph"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/image_binomial_examp_uniform-graph.svg" style="width: 100%; height: auto;" alt="A histogram with one bar for each outcome, all having exactly the same heights."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Probability Histogram for \(X\)</figcaption></figure>
+</div></div>
+</div></article></div>
+<p id="p-1889">The second reason to study families of distributions is to develop general rules for computation. For example, a discrete uniform distribution has the following property.</p>
+<article class="theorem theorem-like" id="thm_discrete-uniform-mean-stdev"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Mean and Standard Deviation of a Discrete Uniform Random Variable.</span>
+</h6>
+<p id="p-1890">If a random variable \(X\) has a discrete uniform distribution then the mean and standard deviation of the random variable \(X\) are the mean and standard deviation of the set of possible values of \(X\text{.}\)</p></article><p id="p-1891">Let's apply this to the die example above.</p>
+<article class="example example-like" id="examp_binomial_uniform-mean-stdev"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_uniform-mean-stdev"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Mean and Standard Deviation of a Discrete Uniform Random Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_uniform-mean-stdev"><article class="example example-like"><p id="p-1892">A fair die is rolled and a random variable \(X\) is defined to be the number that appears. Find the expected value (mean) and standard deviation of \(X\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-123" id="solution-123"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-123"><div class="solution solution-like">
+<p id="p-1893">To show that the mean and standard deviation really are as stated above, we will do the computation two ways.</p>
+<ol class="decimal">
+<li id="li-763">
+<p id="p-1894">First, we use the probability distribution method of <a href="sec_random-vars.html" class="internal" title="Section 3.1: Random Variables and Discrete Probability distributions">Section 3.1</a>:</p>
+<figure class="table figure-like" id="table-51"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(P(X=x)\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(x\times P(X=x)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\((x-\mu)^2\times P(X=x)\)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{6} \approx 0.1667\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(1(0.1667) = 0.1667\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((1-3.5)^2(0.1667) = 1.0417\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{6} \approx 0.1667\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(2(0.1667) = 0.3333\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((2-3.5)^2(0.1667) = 0.3750\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{6} \approx 0.1667\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(3(0.1667) = 0.5000\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((3-3.5)^2(0.1667) = 0.0417\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{6} \approx 0.1667\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(4(0.1667) = 0.6667\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((4-3.5)^2(0.1667) = 0.0417\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(\frac{1}{6} \approx 0.1667\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(5(0.1667) = 0.8333\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\((5-3.5)^2(0.1667) = 0.3750\)</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(\frac{1}{6} \approx 0.1667\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(6(0.1667) = 1.0000\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\((6-3.5)^2(0.1667) = 1.0417\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines" colspan="2"></td>
+<td class="c m b0 r0 l0 t0 lines">\(\mu = 3.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma^2= 2.9168\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.6<span class="period">.</span></span><span class="space"> </span>Distribution for \(X\)</figcaption></figure><p id="p-1895">So from the table to the left, we can read off the mean (expected value) and variance, which gives:</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = 3.5\\
+\sigma \amp = \sqrt{2.9168} = 1.71
+\end{align*}
+</div>
+</li>
+<li id="li-764">
+<p id="p-1896">Next, we use the methods from <a href="sec_center-spread.html#sec_center-spread_mean-stdev" class="internal" title="Subsection 1.3.4: Mean and Standard Deviation">Subsection 1.3.4</a>.</p>
+<p id="p-1897">We first compute the mean:</p>
+<div class="displaymath">
+\begin{equation*}
+\mu = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3.5
+\end{equation*}
+</div>
+<p data-braille="continuation">Then we can construct the table below to find the standard deviation.</p>
+<figure class="table figure-like" id="table-52"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r2 l0 t0 lines">\((x-\mu)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\((x-\mu)^2\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(-2.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(6.25\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(-1.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(2.25\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(-0.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.25\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(0.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.25\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(1.5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(2.25\)</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(2.5\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(6.25\)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0 lines" colspan="2">Total:</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(17.5\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.7<span class="period">.</span></span><span class="space"> </span>Finding the Variance</figcaption></figure><p id="p-1898">Based on that table,</p>
+<div class="displaymath">
+\begin{align*}
+\sigma^2 \amp = \frac{17.5}{6} \approx 2.9167\\
+\Rightarrow \sigma \amp = \sqrt{2.9167} \approx 1.71\text{.}
+\end{align*}
+</div>
+</li>
+</ol>
+<p id="p-1899">Note that the answers found agreed.</p>
+</div></div>
+</div></article></div>
+<p id="p-1900">The reason we may be interested in the result from the last example is that the method from <a href="sec_center-spread.html#sec_center-spread_mean-stdev" class="internal" title="Subsection 1.3.4: Mean and Standard Deviation">Subsection 1.3.4</a> is more familiar and involves fewer computations.  This allows us to cut down on the amount of work necessary to find the expected value of a random variable with a discrete uniform distribution.</p>
+<figure class="figure figure-like" id="video_binomial_uniform-1"><video id="video-100" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.8<span class="period">.</span></span><span class="space"> </span>Discrete Uniform Distributions I</figcaption></figure><figure class="figure figure-like" id="video_binomial_uniform-2"><video id="video-101" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.9<span class="period">.</span></span><span class="space"> </span>Discrete Uniform Distributions II</figcaption></figure><article class="exercise exercise-like" id="ckpt_binomial_uniform-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_uniform-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_uniform-1"><article class="exercise exercise-like"><p id="p-1901">A discrete random variable \(X\) has possible values 1, 3, 5, and 7.</p>
+<p id="p-1902">Question: if \(X\) is to be a discrete uniform random variable, what is \(P(X=3)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-139" id="answer-139"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-139"><div class="answer solution-like"><p id="p-1903">\(\frac{1}{4}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_uniform-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_uniform-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_uniform-2"><article class="exercise exercise-like"><p id="p-1904">A discrete uniform random variable \(X\) has several possible values including the value \(4\text{.}\) Suppose that \(P(X=4) = \frac{1}{9}\text{.}\)</p>
+<p id="p-1905">Question: how many possible values does \(X\) have?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-140" id="answer-140"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-140"><div class="answer solution-like"><p id="p-1906">9</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_uniform-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_uniform-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_uniform-3"><article class="exercise exercise-like"><p id="p-1907">A discrete uniform random variable \(X\) has possible values 1, 4, 7, and 12.</p>
+<p id="p-1908">Question: What is the expected value of \(X\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-141" id="answer-141"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-141"><div class="answer solution-like"><p id="p-1909">6</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_binomial_bernoulli"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Bernoulli Trials</span>
+</h3>
+<a href="sec_binomial.html#sec_binomial_bernoulli" class="permalink">¶</a><p id="p-1910">The family of binomial probability distributions is based on one of the simplest random processes around. This basic process is called a <dfn class="terminology">Bernoulli trial</dfn>. Bernoulli Trial.</p>
+<article class="definition definition-like" id="def_bernoulli-trial"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.13</span><span class="period">.</span>
+</h6>
+<p id="p-1911">A <dfn class="terminology">Bernoulli trial</dfn> is a random process in which there are only two possible outcomes: success and failure. The probability of a success is denoted by \(p\text{,}\) and the probability of a failure by \(q = 1 - p\text{.}\)</p></article><p id="p-1912">The key property of a Bernoulli trial is that there are only two possible outcomes. We call them “success” and “failure,” but there is nothing inherently good or bad about these outcomes. We simply refer to the particular outcome that we wish to observe as a success, and the other outcome as a failure.</p>
+<article class="example example-like" id="examp_binomial_is-bernoulli-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_is-bernoulli-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying a Bernoulli Trial.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_is-bernoulli-1"><article class="example example-like"><p id="p-1913">A coin is weighted so that a heads is twice as likely as a tails. The coin is flipped and the result noted. Is this a Bernoulli Trial?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-124" id="solution-124"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-124"><div class="solution solution-like"><p id="p-1914">There are only two outcomes, so this is a Bernoulli trial. We could choose to call flipping a heads a <em class="emphasis">success</em> and a tails a <em class="emphasis">failure</em>. In that case, \(p = \frac{2}{3}\) and \(q = 1 - \frac{2}{3} = \frac{1}{3}\text{.}\)</p></div></div>
+</div></article></div>
+<p id="p-1915">It is possible to have a Bernoulli trial even when there are more than two outcomes. To do this, you must designate a certain set of outcomes as the desired or successful outcomes, and lump all others together into the failures. Consider the following example.</p>
+<article class="example example-like" id="examp_binomial_is-bernoulli-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_is-bernoulli-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.15</span><span class="period">.</span><span class="space"> </span><span class="title">More Identifying of Bernoulli Trials.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_is-bernoulli-2"><article class="example example-like"><p id="p-1916">An urn contains 15 marbles: 6 red, 4 green, 3 blue, and 2 white. A single marble is drawn at random and we note either:</p>
+<ol class="lower-alpha">
+<li id="li-765"><p id="p-1917">the color of the marble drawn, or</p></li>
+<li id="li-766"><p id="p-1918">whether we got a red or white marble, or something else.</p></li>
+</ol>
+<p data-braille="continuation">Which of these, if either of them, is a Bernoulli trial?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-125" id="solution-125"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-125"><div class="solution solution-like">
+<p id="p-1919">While the underlying experiment is the same, the result variable is different in these two cases.</p>
+<ol class="lower-alpha">
+<li id="li-767"><p id="p-1920">If we note the color drawn, then the results are either \(R\text{,}\) \(G\text{,}\) \(B\text{,}\) or \(W\text{.}\) Since there are more then two possible outcomes, this is not a Bernoulli trial.</p></li>
+<li id="li-768"><p id="p-1921">In this case the outcomes are categorized as either a success (\(R\) or \(W\)) or failure (\(G\) or \(B\)). Therefore this is a Bernoulli trial with \(p = \frac{8}{15}\) and \(q = 1 - \frac{8}{15} = \frac{7}{15}\text{.}\)</p></li>
+</ol>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_binomial_bernoulli-1"><video id="video-102" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.16<span class="period">.</span></span><span class="space"> </span>Bernoulli Processes I</figcaption></figure><figure class="figure figure-like" id="video_binomial_bernoulli-2"><video id="video-103" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.17<span class="period">.</span></span><span class="space"> </span>Bernoulli Processes II</figcaption></figure><article class="exercise exercise-like" id="ckpt_binomial_bernoulli-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_bernoulli-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.18</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_bernoulli-1"><article class="exercise exercise-like"><p id="p-1922">Consider the following random processes.</p>
+<ol class="lower-alpha">
+<li id="li-769"><p id="p-1923">A weighted coin is flipped and the outcome of heads or tails is recorded.</p></li>
+<li id="li-770"><p id="p-1924">A fair die is rolled and the outcome 1-6 is recorded.</p></li>
+<li id="li-771"><p id="p-1925">A marble is drawn from an urn containing 10 marbles: 4 red, 3 blue, and 3 green and the color of the marble is noted.</p></li>
+<li id="li-772"><p id="p-1926">Two cards are drawn from a deck of 52 cards and note whether the cards are of the same suit.</p></li>
+</ol>
+<p id="p-1927">Question: identify each process as a Bernoulli trial or not a Bernoulli trial.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-142" id="answer-142"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-142"><div class="answer solution-like"><ol id="p-1928" class="lower-alpha">
+<li id="li-773"><p id="p-1929">Bernoulli trial</p></li>
+<li id="li-774"><p id="p-1930">Not a Bernoulli trial</p></li>
+<li id="li-775"><p id="p-1931">Not a Bernoulli trial</p></li>
+<li id="li-776"><p id="p-1932">Bernoulli trial</p></li>
+</ol></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_bernoulli-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_bernoulli-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.19</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_bernoulli-2"><article class="exercise exercise-like"><p id="p-1933">Refer to the <a class="xref" data-knowl="./knowl/def_bernoulli-trial.html" title="Definition 3.2.13">definition of a Bernoulli Trial</a> and compare it with te following statements.</p>
+<ol class="lower-alpha">
+<li id="li-777"><p id="p-1934">The random variable is discrete.</p></li>
+<li id="li-778"><p id="p-1935">The random variable is continuous.</p></li>
+<li id="li-779"><p id="p-1936">The random variable has at least three values.</p></li>
+<li id="li-780"><p id="p-1937">The random variable has only two outcomes.</p></li>
+</ol>
+<p id="p-1938">Question: which of these is the defining characteristic of a Bernoulli Trial?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-143" id="answer-143"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-143"><div class="answer solution-like"><p id="p-1939">Statement (d)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_bernoulli-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_bernoulli-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_bernoulli-3"><article class="exercise exercise-like"><p id="p-1940">Suppose that you are told that in a Bernoulli trial, the probability of a success is \(0.17\text{.}\)</p>
+<p id="p-1941">Question: what is \(q\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-144" id="answer-144"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-144"><div class="answer solution-like"><p id="p-1942">\(0.83\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_binomial_binomial"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Binomial Process</span>
+</h3>
+<a href="sec_binomial.html#sec_binomial_binomial" class="permalink">¶</a><p id="p-1943">There are many situations in which we wish to repeat a string of identical Bernoulli processes and determine the number of times that we were successful.</p>
+<ul class="disc">
+<li id="li-781"><p id="p-1944">You take a 20 question multiple choice exam in which each question has 4 possible answers, only one of which is correct.</p></li>
+<li id="li-782"><p id="p-1945">You survey 100 individuals from a large population asking them if they own a truck.</p></li>
+<li id="li-783"><p id="p-1946">You examine a sample of 50 widgets taken from a production batch and determine how many of them are defective.</p></li>
+</ul>
+<p data-braille="continuation">What do each of these examples have in common? They are all examples of a <dfn class="terminology">binomial process</dfn> resulting in a <dfn class="terminology">binomial random variable</dfn>.</p>
+<article class="definition definition-like" id="def_binomial-process"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.21</span><span class="period">.</span>
+</h6>
+<p id="p-1947">A <dfn class="terminology">binomial process</dfn> is a random process with the following four characteristics.</p>
+<ol class="decimal">
+<li id="li-784"><p id="p-1948">The process consists of a fixed number of Bernoulli trials, referred to as \(n\text{.}\)</p></li>
+<li id="li-785"><p id="p-1949">Each trial has the same probability of a success, called \(p\text{.}\)</p></li>
+<li id="li-786"><p id="p-1950">The Bernoulli trials are all <a class="xref" data-knowl="./knowl/def_independent.html" title="Definition 2.4.4">independent</a> of each other.</p></li>
+<li id="li-787"><p id="p-1951">The result variable is the number of trials which result in successes.</p></li>
+</ol></article><p id="p-1952">If a random variable is the result variable for a binomial process, then it too has a special name.</p>
+<article class="definition definition-like" id="def_binomial"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.22</span><span class="period">.</span>
+</h6>
+<p id="p-1953">A <dfn class="terminology">binomial random variable</dfn> is a random variable representing the number of successes in a binomial process. Such a variable is said to have a <dfn class="terminology">binomial distribution</dfn>.</p></article><p id="p-1954">Let's take a look at each of the examples above to verify that they are indeed binomial processes and identify the binomial random variable that goes with each process.</p>
+<article class="example example-like" id="examp_binomial_is-binomial-1"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_is-binomial-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.23</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying a Binomial Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_is-binomial-1"><article class="example example-like"><p id="p-1955">You take a 20 question multiple choice exam in which each question has 4 possible answers, only one of which is correct. You randomly answer each question and define a random variable \(X\) to be the number of correctly answered questions. Is \(X\) a binomial random variable?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-126" id="solution-126"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-126"><div class="solution solution-like">
+<p id="p-1956">To verify that this is a binomial process, we go through the four characteristics mentioned above.</p>
+<ol class="decimal">
+<li id="li-788"><p id="p-1957">There are 20 questions and answering each question is a Bernoulli trial since we are either right (success) or wrong (failure).</p></li>
+<li id="li-789"><p id="p-1958">Since we are guessing, the probability of getting a question right is \(p=\frac{1}{4}\) and the probability of getting question wrong is \(q = \frac{3}{4}\text{.}\)</p></li>
+<li id="li-790"><p id="p-1959">How we answer one question does not affect how we answer the next question (remember, we are guessing) so the trials are independent.</p></li>
+<li id="li-791"><p id="p-1960">Finally, the variable \(X\) represents the number of questions we get right—that is the number of successes in our 20 trials.</p></li>
+</ol>
+<p data-braille="continuation">This is a binomial process and \(X\) is a binomial random variable.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_binomial_is-binomial-2"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_is-binomial-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.24</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Another Binomial Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_is-binomial-2"><article class="example example-like"><p id="p-1961">You survey 100 individuals from a large population asking them if they own a truck. You define a random variable \(Y\) to be the number of individuals who own a truck.  Is \(Y\) a binomial random variable?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-127" id="solution-127"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-127"><div class="solution solution-like">
+<p id="p-1962">We again verify the four characteristics of a binomial process.</p>
+<ol class="decimal">
+<li id="li-792"><p id="p-1963">There are 100 individuals who are asked if they own are truck. They will either answer “yes” or “no”, so this is a binomial process with \(n = 100\) trials.</p></li>
+<li id="li-793"><p id="p-1964">We do not know what the probability of a success is, but since the population is large, it is safe to assume that \(p\) will not change as we ask each person (see below).</p></li>
+<li id="li-794"><p id="p-1965">How one person answers is not affected by how another person answers the question. Therefore the trials are independent.</p></li>
+<li id="li-795"><p id="p-1966">Again, the random variable \(Y\) is the number of successes (people who had a truck).</p></li>
+</ol>
+<p data-braille="continuation">Therefore this is a binomial process and \(Y\) is a binomial random variable.</p>
+</div></div>
+</div></article></div>
+<p id="p-1967">Before we look at our next example, consider the answer to question 2 above.  Why did we say that it is safe to assume that the probability will not change? How can the sample size effect how much a probability changes? Consider the following.</p>
+<article class="example example-like" id="examp_binomial_not-binomial"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_not-binomial"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.25</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying a Distribution that is Not Binomial.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_not-binomial"><article class="example example-like"><p id="p-1968">An urn contains 20 marbles: 10 blue and 10 red. You draw 5 marbles without replacement noting how many red marbles are drawn. Is this a binomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-128" id="solution-128"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-128"><div class="solution solution-like">
+<p id="p-1969">Let's review the four questions again.</p>
+<ol class="decimal">
+<li id="li-796"><p id="p-1970">We are repeating the act of drawing a marble a fixed number of times (\(n = 5\)).</p></li>
+<li id="li-797"><p id="p-1971">There are only two options, red or blue, and since we are counting the number of red marbles drawn, we will count drawing a red marble as a success.  On the first draw, the probability of a success is \(\frac{10}{20}\) since there are 10 red marbles.</p></li>
+<li id="li-798"><p id="p-1972">However, the trials are <em class="emphasis">not independent</em> and the probabilities change. To see this, note that on the second draw the probability of a success is either \(\frac{9}{19}\text{,}\) if we drew a red on the first draw, or \(\frac{10}{19}\text{,}\) if we drew a blue marble on the first draw. So the probabilities change and the new probabilities depend on what happened on the previous draw.</p></li>
+<li id="li-799"><p id="p-1973">Our random variable is the number of successes (red marbles).</p></li>
+</ol>
+<p data-braille="continuation">Because the probabilities change between trials and depend on what happend on previous trials, this process does not meet criteria 2 or 3.  It is therefore not a binomial process.</p>
+</div></div>
+</div></article></div>
+<p id="p-1974">The above example was not a binomial process because of the small population from which we are drawing our sample. In <a class="xref" data-knowl="./knowl/examp_binomial_is-binomial-2.html" title="Example 3.2.24: Identifying Another Binomial Distribution">Example 3.2.24</a>  the population was assumed to be large. Suppose that there were 10,000 people in the population and that 5,000 of them own trucks. When we pick our first individual for the sample, the probability they will own a truck is \(\frac{5000}{10000} = 0.5\text{.}\) If our first pick owned a truck, the probability the second individual will also own a truck is now \(\frac{4999}{9999} = 0.499995\text{.}\) While this is not \(0.5\text{,}\) it is extremely close. Because the population is so large, the probabilities did not change by very much at all. In fact, as we pick our 100 individuals, the probability of getting a person with a truck will stay very close to \(0.5\) no matter which people we select.</p>
+<p id="p-1975">How do we tell how large a population needs to be in order to assume that as we draw individuals for our sample we do not change the probabilities? The following rule is a good way to determine this.</p>
+<article class="principle theorem-like" id="def_five-percent-rule"><h6 class="heading">
+<span class="type">Principle</span><span class="space"> </span><span class="codenumber">3.2.26</span><span class="period">.</span><span class="space"> </span><span class="title">The 5% Condition.</span>
+</h6>
+<p id="p-1976">If in repeating a Bernoulli trial \(n\) times we choose individuals from a population of size \(N\) without replacement, we can assume that the trials are independent and the probability \(p\) does not change as long as \(n\) is less than 5% of \(N\text{.}\) That is, as long as \(\frac{n}{N} \lt 0.05\text{.}\)</p></article><p id="p-1977">In <a class="xref" data-knowl="./knowl/examp_binomial_not-binomial.html" title="Example 3.2.25: Identifying a Distribution that is Not Binomial">Example 3.2.25</a> we selected 5 marbles from 20. This gives \(\frac{5}{20} = 0.25\text{,}\) which means we are sampling 25% of the population. This is far too big to assume this is a binomial process.</p>
+<article class="example example-like" id="examp_binomial_five-percent"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_five-percent"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.27</span><span class="period">.</span><span class="space"> </span><span class="title">Applying the 5% Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_five-percent"><article class="example example-like"><p id="p-1978">You examine a sample of 50 widgets taken from a production batch and determine how many of them are defective. How many widgets must be in the batch in order to claim that this is a binomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-129" id="solution-129"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-129"><div class="solution solution-like">
+<p id="p-1979">The batch must contain at least \(N\) widgets so that 50 is less than 5% of \(N\text{.}\)  We find \(N\) by solving the inequality</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{50}{N} \lt 0.05 \quad \Rightarrow \quad 50 \lt 0.05N \quad \Rightarrow \quad N \gt 1000\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we do not have more than 1000 widgets to select from, then the trials of selecting individual widgets without replacement will not be independent and this will not be a binomial process.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_binomial_binomial-1"><video id="video-104" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.28<span class="period">.</span></span><span class="space"> </span>Binomial Processes I</figcaption></figure><figure class="figure figure-like" id="video_binomial_binomial-2"><video id="video-105" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.29<span class="period">.</span></span><span class="space"> </span>Binomial Processes II</figcaption></figure><article class="exercise exercise-like" id="ckpt_binomial_binomial-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_binomial-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.30</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_binomial-1"><article class="exercise exercise-like"><p id="p-1980">An urn contains 12 marbles: 6 red, 4 white, and 2 blue. You draw 4 marbles without replacement and note the number of blue marbles drawn.</p>
+<p id="p-1981">Question: which, if any, characteristics of a binomial process does this experiment have?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-145" id="answer-145"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-145"><div class="answer solution-like"><p id="p-1982">It has a fixed number of Bernoulli trials and the random variable is the number of successes.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_binomial-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_binomial-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.31</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_binomial-2"><article class="exercise exercise-like"><p id="p-1983">A 60% free-throw shooter decides to practice by shooting free-throws until he has made 3 in a row. A random variable \(Y\) is defined to be the number of free-throw attempts that he makes.</p>
+<p id="p-1984">Question: which, if any, characteristics of a binomial process does this experiment have?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-146" id="answer-146"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-146"><div class="answer solution-like"><p id="p-1985">The probability of a success is fixed and the trials are independet of each other.</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_binomial-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_binomial-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.32</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_binomial-3"><article class="exercise exercise-like"><p id="p-1986">A statistics student wishes to conduct a survey of fellow students at her university. She decides to contact 65 randomly selected students, ask them if they have taken a mathematics class and let a random variable \(X\) represent the number who have taken a mathematics class.</p>
+<p id="p-1987">Question: how large must the student body be for this study to be a binomial process?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-147" id="answer-147"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-147"><div class="answer solution-like"><p id="p-1988">1300</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_binomial_formula"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.4</span> <span class="title">Binomial Probability Formula</span>
+</h3>
+<a href="sec_binomial.html#sec_binomial_formula" class="permalink">¶</a><p id="p-1989">Once we have identified a binomial random variable, we want to be able to quickly compute probabilities for that variable. The key to doing that is the general <a class="xref" data-knowl="./knowl/thm_probability-rule_general-multiplication.html" title="Theorem 2.4.26: General Multiplication Rule">multiplication rule</a>. Because one of the assumptions is that the Bernoulli trials are independent, we can use this multiplication rule to compute the probability of a given string of outcomes. Consider the following example.</p>
+<article class="example example-like" id="examp_binomial_derive"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_derive"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.33</span><span class="period">.</span><span class="space"> </span><span class="title">Deriving a Formula for Binomial Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_derive"><article class="example example-like"><p id="p-1990">A coin is weighted so that the probability of getting a heads is twice that of getting a tails. The coin is tossed four times, and the random variable \(X\) is defined to be the number of heads. Find \(P(X=1)\) and \(P(X=2)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-130" id="solution-130"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-130"><div class="solution solution-like">
+<p id="p-1991">Notice that each flip is a Bernoulli trial with \(p = \frac{2}{3}\) and \(q = \frac{1}{3}\) when we consider getting a heads to be a success. We repeat this trial four times, and each time \(p\) and \(q\) remain unchanged. Because each flip is independent and \(X\) is the number of successes (heads), \(X\) is a binomial random variable.</p>
+<ul id="p-1992" class="disc">
+<li id="li-800">
+<h6 class="heading"><span class="title">Finding \(P(X=1)\).</span></h6>
+<p id="p-1993">Since we want \(X=1\) head, we compute the probability to be</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{2}{3}\times\frac{1}{3}\times\frac{1}{3}\times\frac{1}{3} = \left(\frac{2}{3}\right)^1\left(\frac{1}{3}\right)^3\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The problem with this is that it only counts the probability of HTTT. We could also get THTT, TTHT, and TTTH. In fact, a little counting shows that there are \(C(4,1)\) ways to pick the one toss out of 4 that will be heads. So the total probability is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(4,1)\left(\frac{2}{3}\right)^1\left(\frac{1}{3}\right)^3 = \frac{8}{81} \approx 0.0988\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-801">
+<h6 class="heading"><span class="title">Finding \(P(X=2)\).</span></h6>
+<p id="p-1994">This analysis is very similar except that we get a heads twice and a tails twice and we have to choose 2 of 4 four flips that will be our tails. This results in the probability:</p>
+<div class="displaymath">
+\begin{equation*}
+C(4,2)\left(\frac{2}{3}\right)^2\left(\frac{1}{3}\right)^2 = \frac{24}{81} \approx 0.2963\text{.}
+\end{equation*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<p id="p-1995">Hopefully you see that there is a pattern to determining the probability of a certain value of \(X\text{.}\) We first choose which of the \(n\) trials are going to be our successes. Then we multiply that by \(p\) for each success and by \(q\) for each failure. This results in the following formula.</p>
+<article class="theorem theorem-like" id="thm_binomial-probability"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.34</span><span class="period">.</span><span class="space"> </span><span class="title">Binomial Probability Formula.</span>
+</h6>
+<p id="p-1996">If a \(X\) is the number of successes in a binomial process of n trials where \(p\) is the probability of a success and \(q = 1 - p\) the probability of a failure, then</p>
+<div class="displaymath">
+\begin{equation*}
+P(X=x) = C(n,x)p^xq^{n-x}\text{.}
+\end{equation*}
+</div></article><p id="p-1997">Let's put this formula into use with a few more examples.</p>
+<article class="example example-like" id="examp_binomial_forumla"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_forumla"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.35</span><span class="period">.</span><span class="space"> </span><span class="title">Using the Binomial Formula.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_forumla"><article class="example example-like"><p id="p-1998">A scientist has determined that 40% of plants in a certain field are infected with a disease. You randomly select 10 plants from this large field. Find the probability that:</p>
+<ol class="lower-alpha">
+<li id="li-802"><p id="p-1999">none of the plants are infected</p></li>
+<li id="li-803"><p id="p-2000">half of the plants are infected</p></li>
+<li id="li-804"><p id="p-2001">all of the plants are infected.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-131" id="solution-131"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-131"><div class="solution solution-like">
+<p id="p-2002">First note that \(p = 0.40\text{,}\) \(q = 0.60\text{,}\) and \(n = 10\) in this binomial process. Let the random variable \(Y\) equal the number of plants that are infected in the 10 that we select. Then, the probabilities (rounded to four decimal places) are:</p>
+<ol class="lower-alpha">
+<li id="li-805"><div class="displaymath" id="p-2003">
+\begin{equation*}
+P(Y=0) = C(10,0)(0.40)^0(0.60)^{10} = 1(1)(0.0060) = 0.0060
+\end{equation*}
+</div></li>
+<li id="li-806"><div class="displaymath" id="p-2004">
+\begin{equation*}
+P(Y=5) = C(10,5)(0.40)^5(0.60)^5 = 252(0.0102)(0.0778) \approx 0.2007
+\end{equation*}
+</div></li>
+<li id="li-807"><div class="displaymath" id="p-2005">
+\begin{equation*}
+P(Y=10) = C(10,10)(0.40)^{10}(0.60)^0 = 1(0.0001)(1) = 0.0001
+\end{equation*}
+</div></li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2006">Note that there is a pattern in this formula. \(C(n,x)\) is always a combination where we choose from the total number of trials the \(x\) that are to be successful. Next we raise \(p\) to the \(x\) power and \(q\) to the \(n-x\) power. But note that \(p + q\) is always one. In the above example, \(0.40 + 0.60 = 1\text{.}\) Also, note that the exponents of \(p\) and \(q\) add up to \(n\text{,}\) the total number of trials. These patters can be good ways to check your work and make sure you didn't miss anything.</p>
+<figure class="figure figure-like" id="video_binomial_formula-1"><video id="video-106" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.36<span class="period">.</span></span><span class="space"> </span>Binomial Probability Formula I</figcaption></figure><figure class="figure figure-like" id="video_binomial_formula-2"><video id="video-107" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.37<span class="period">.</span></span><span class="space"> </span>Binomial Probability Formula II</figcaption></figure><article class="exercise exercise-like" id="ckpt_binomial_formula-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_formula-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.38</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_formula-1"><article class="exercise exercise-like"><p id="p-2007">A binomial random variable \(X\) measures the number of successes in \(n=10\) trials in which the probability of a success is \(p=0.40\text{.}\)</p>
+<p id="p-2008">Question: what is \(P(X=3)\text{?}\) Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-148" id="answer-148"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-148"><div class="answer solution-like"><p id="p-2009">0.2150</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_formula-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_formula-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.39</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_formula-2"><article class="exercise exercise-like"><p id="p-2010">A McDonald's worker has determined that when asked the question “would you like fries with that?” 72% of customers will say yes. In a given day, the worker serves 20 customers, asking each one of them “would you like fries with that?” Let the random variable \(Y\) be the number who answered yes.</p>
+<p id="p-2011">Question: what is \(P(Y=15)\text{?}\) Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-149" id="answer-149"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-149"><div class="answer solution-like"><p id="p-2012">0.1933</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_formula-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_formula-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.40</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_formula-3"><article class="exercise exercise-like"><p id="p-2013">According to a recent study, 32.2% of adult Americans are obese. You randomly select 16 Americans and determine if they are obese.</p>
+<p id="p-2014">Question: what is the probability exactly 2 of the 16 selected Americans are obese?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-150" id="answer-150"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-150"><div class="answer solution-like"><p id="p-2015">0.0540</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_binomial-at-least-most"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.5</span> <span class="title">At Least and At Most</span>
+</h3>
+<a href="sec_binomial.html#sec_binomial-at-least-most" class="permalink">¶</a><p id="p-2016">The binomial probability formula from the last page tells us the probability that \(X\) will be exactly equal to \(x\text{.}\) When we say \(P(X=3)\text{,}\) for example, this gives the probability that \(X\) will equal 3—not more than 3, not less than 3, but exactly 3. It is important to keep that in mind because there are many examples in which we really want at least or at most some number of successes. Consider the following.</p>
+<article class="example example-like" id="examp_binomial_at-most"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_at-most"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.41</span><span class="period">.</span><span class="space"> </span><span class="title">Computing “At Most” Probabilities.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_at-most"><article class="example example-like"><p id="p-2017">Only 4% of widgets produced at a certain manufacturing plant are defective. In a quality control sample of 20 widgets, what is the probability that at most 2 of them will be defective?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-132" id="solution-132"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-132"><div class="solution solution-like">
+<p id="p-2018">Note that this is a binomial process with \(n=20\) trials, assuming that the number of widgets produced is large. If we let a success mean getting a defective widget, then \(p = 0.04\) and \(q = 0.96\text{.}\) Let the random variable \(X\) be the number of defective widgets in our sample of 20 widgets.</p>
+<p id="p-2019">We wish to find the probably that \(X\) is less than or equal to 2. This means that \(X\) can be 0, 1, or 2. We use the binomial probability formula to compute \(P(X=0)\text{,}\) \(P(X=1)\text{,}\) and \(P(X=2)\text{.}\) These are mutually exclusive events (we can&amp;t have exactly one defective widget and exactly two defective widgets at the same time), so we then use the addition rule to get our final probability. The computation is shown below.</p>
+<div class="displaymath">
+\begin{align*}
+P(X\leq 2) \amp = P(X=0) + P(X=1) + P(X=2)\\
+\amp = C(20,0)(0.04)^0(0.96)^{20} + C(20,1)(0.04)^1(0.96)^{19} + C(20,2)(0.04)^2 (0.96)^{18}\\
+\amp \approx 1(1)(0.4420) + 20(0.04)(0.4604) + 190(0.0016)(0.4796)\\
+\amp \approx 0.4420 + 0.3683 + 0.1458\\
+\amp = 0.9561\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-2020">Since “at most” includes the 2, we had to add together the probabilities of 0, 1, or 2 defective widgets. Be sure that you don't forget the possibility that there are 0 successes, or in this case 0 defective widgets! What if the question above had asked for the probability of at least 2 defective widgets? We could follow the same procedure, but the values of \(X\) that are at least 2 include \(2\text{,}\) \(3\text{,}\) \(4\text{,}\) \(\dots\text{,}\) \(20\text{.}\) That is 18 different probabilities to compute! Luckily, there is a short-cut. You can always use the <a class="xref" data-knowl="./knowl/def_probability-rule_complement.html" title="Theorem 2.3.29">complement rule</a> to ease in a computation such as this. The following example shows how this works.</p>
+<article class="example example-like" id="examp_binomial_at-least-complement"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_at-least-complement"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.42</span><span class="period">.</span><span class="space"> </span><span class="title">Computing “At Least” Probabilities With the Compliment Rule.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_at-least-complement"><article class="example example-like"><p id="p-2021">A biologist claims that at least 30% of fish in a certain large lake have been contaminated. To test his theory, he randomly samples 10 fish and determines the number that are contaminated. If only 20% of fish are actually contaminated, what is the probability that the biologist will mistakenly confirm his claim?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-133" id="solution-133"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-133"><div class="solution solution-like">
+<p id="p-2022">First note that this is a binomial process with \(n=10\) fish. The true proportion of contaminated fish is \(p = 0.20\text{,}\) so \(q = 0.80\text{.}\) We wish to know the probability that the biologist finds at least 30% of his 10 fish contaminated. That means, we want the probability that \(X\) is at least 3.</p>
+<p id="p-2023">We could compute this directly by finding \(P(X=3)\text{,}\) \(P(X=4)\text{,}\) \(P(X=5)\text{,}\) \(P(X=6)\text{,}\) \(P(X=7)\text{,}\) \(P(X=8)\text{,}\) \(P(X=9)\text{,}\) and \(P(X=10)\text{.}\) However, this is a lot of work! The complement of “at least 3” is “less than 3”. That would mean \(X\) could be 0, 1, or 2. This includes only three probabilities to compute, which is a lot less work.  So we will use the complement rule as follows.</p>
+<div class="displaymath">
+\begin{align*}
+P(X\geq 3) \amp = 1 - P(X \lt 3)\\
+\amp = 1 - ( P(X=0) + P(X=1) + P(X=2) )\\
+\amp = 1 - ( C(10,0)(0.2)^0(0.8)^{10}+ C(10,1)(0.2)^1(0.8)^9+ C(10,2) (0.2)^2(0.8)^8)\\
+\amp\approx 1 - ( 1(1)(0.1074) + 10(0.2)(0.1342) + 45(0.04)(0.1678) )\\
+\amp\approx 1 - ( 0.1074 + 0.2684 + 0.3020 )\\
+\amp= 1 - 0.6778\\
+\amp= 0.3222\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_binomial_at-least-most-1"><video id="video-108" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.43<span class="period">.</span></span><span class="space"> </span>Binomial Probability Ranges I</figcaption></figure><figure class="figure figure-like" id="video_binomial_at-least-most-2"><video id="video-109" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-10.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.44<span class="period">.</span></span><span class="space"> </span>Binomial Probability Ranges II</figcaption></figure><article class="exercise exercise-like" id="ckpt_binomial_at-least-most-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_at-least-most-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.45</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_at-least-most-1"><article class="exercise exercise-like"><p id="p-2024">A coin is weighted so that the probability of a heads is \(\frac{5}{7}\text{.}\) You flip the coin 10 times.</p>
+<p id="p-2025">Question: what is the probability that you get at least one tails? Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-151" id="answer-151"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-151"><div class="answer solution-like"><p id="p-2026">0.9654</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_at-least-most-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_at-least-most-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.46</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_at-least-most-2"><article class="exercise exercise-like"><p id="p-2027">A binomial random variable \(X\) counts the number of successes in \(n=7\) trials in which the probability of a success is \(p=0.63\text{.}\)</p>
+<p id="p-2028">Question: what is \(P(X &gt; 5)\text{?}\) Round your answer to four decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-152" id="answer-152"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-152"><div class="answer solution-like"><p id="p-2029">0.2013</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_at-least-most-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_at-least-most-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.47</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_at-least-most-3"><article class="exercise exercise-like"><p id="p-2030">A fair die is rolled 8 times and the number of times that it shows a number greater than 4 is counted.</p>
+<p id="p-2031">Question: find the probability that it shows a number greater than 4 at most once.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-153" id="answer-153"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-153"><div class="answer solution-like"><p id="p-2032">0.1951</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_binomial_mean-stdev"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.6</span> <span class="title">Mean and Standard Deviation</span>
+</h3>
+<a href="sec_binomial.html#sec_binomial_mean-stdev" class="permalink">¶</a><p id="p-2033">Our last task in this lesson is to determine the mean and standard deviation of a binomial random variable. We could certainly use the general technique of finding these by constructing a probability distribution. This method is shown in the following example.</p>
+<article class="example example-like" id="examp_binomial_direct-mean"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_direct-mean"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.48</span><span class="period">.</span><span class="space"> </span><span class="title">Computing the Mean for a Binomial Distribution.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_direct-mean"><article class="example example-like"><p id="p-2034">A basketball player is a 70% free-throw shooter, meaning that the probability he will make a given shot is 0.70. Suppose that this player takes 10 free-throws in a certain game. If we assume that these free-throws are independent Bernoulli processes, how many of the 10 shots should the basketball player expect to make?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-134" id="solution-134"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-134"><div class="solution solution-like">
+<p id="p-2035">The number of shots made, we will call it \(X\text{,}\) is a binomial random variable with \(n = 10\text{,}\) and \(p = 0.70\text{.}\) To find the expected value of \(X\)—the expected number of shots the player will make, we use the probability distribution method shown below.</p>
+<figure class="table figure-like" id="table_examp_binomial_direct-mean"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r2 l0 t0 lines">\(P(X=x)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(x\times P(X=x)\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(0\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,0)(0.7)^0(0.3)^{10} \approx 0.0000\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.0000\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,1)(0.7)^1(0.3)^9 \approx 0.0001\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.0001\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,2)(0.7)^2(0.3)^8 \approx 0.0014\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.0029\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,3)(0.7)^3(0.3)^7 \approx 0.0090\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.0270\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,4)(0.7)^4(0.3)^6 \approx 0.0368\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.1470\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,5)(0.7)^5(0.3)^5 \approx 0.1029\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.5146\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,6)(0.7)^6(0.3)^4 \approx 0.2001\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(1.2007\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(7\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,7)(0.7)^7(0.3)^3 \approx 0.2668\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(1.8678\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,8)(0.7)^8(0.3)^2 \approx 0.2335\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(1.8678\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(9\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,9)(0.7)^9(0.3)^1 \approx 0.1211\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(1.0895\)</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">\(10\)</td>
+<td class="c m b0 r2 l0 t0 lines">\(C(10,10)(0.7)^{10}(0.3)^0 \approx 0.0282\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(0.2825\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.49<span class="period">.</span></span><span class="space"> </span>Computing the Mean</figcaption></figure><p id="p-2036">Summing the final column, we get \(E(X) = 7\text{.}\) So the mean of this binomial random variable is 7 and we expect the player to make 7 out of 10 shots.</p>
+</div></div>
+</div></article></div>
+<p id="p-2037">But wait a minute. Couldn't you have guessed that using intuition? A 70% free-throw shooter should make 70% of the 10 shots, which is 7 shots. It turns out that there are extremely simple formulas for finding both the mean and the standard deviation of a normal distribution. They are stated below.</p>
+<article class="theorem theorem-like" id="tmp_binomial-mean-stdev"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.50</span><span class="period">.</span><span class="space"> </span><span class="title">Mean and Standard Deviation of a Binomial Random Variable.</span>
+</h6>
+<p id="p-2038">If \(X\) is a binomial random variable for a binomial process involving \(n\) trials in which the probability of a success in each trial is \(p\text{,}\) then the mean and standard deviation of \(X\) are:</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Mean: } \mu = n \times p \qquad \text{Standard Deviation: } \sigma = \sqrt{n\times p\times q}
+\end{equation*}
+</div></article><p id="p-2039">We now apply these formulas to another example, similar to the one above.</p>
+<article class="example example-like" id="examp_binomial_comput-mean-stdev"><a data-knowl="" class="id-ref original" data-refid="hk-examp_binomial_comput-mean-stdev"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.51</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Mean and Standard Deviation of a Binomial Random Variable.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_binomial_comput-mean-stdev"><article class="example example-like"><p id="p-2040">The same basketball player from <a class="xref" data-knowl="./knowl/examp_binomial_direct-mean.html" title="Example 3.2.48: Computing the Mean for a Binomial Distribution">Example 3.2.48</a> takes 350 free-throws during the course of the season.</p>
+<ol class="lower-alpha">
+<li id="li-808"><p id="p-2041">How many of those free-throws do you expect him to make?</p></li>
+<li id="li-809"><p id="p-2042">Would it be unusual for him to make 300 or more shots?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-135" id="solution-135"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-135"><div class="solution solution-like"><ol id="p-2043" class="lower-alpha">
+<li id="li-810">
+<p id="p-2044">To determine the number of shots we expect, we compute the mean of the random variable.</p>
+<div class="displaymath">
+\begin{equation*}
+\mu = n\times p = (350)(0.70) = 245\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-811">
+<p id="p-2045">Recall that in <a href="sec_relative-standing.html#sec_relative-standing_z-score" class="internal" title="Subsection 1.4.3: z-Scores and the Emperical Rule">Subsection 1.4.3</a> we used <a class="xref" data-knowl="./knowl/def_z-score.html" title="Definition 1.4.13">z-scores</a> to decide if a particular value of a variable was unusual. If that value had a z-score bigger than 3 or less than -3, then it is more than 3 standard deviations away from the mean and should be considered unusual. The formula for a z-score, using the formula above for standard deviation, is:</p>
+<div class="displaymath">
+\begin{equation*}
+z = \frac{x - \mu}{\sigma} = \frac{300 - 245}{\sqrt{350(0.7)(0.3)}} \approx \frac{55}{8.5732} \approx 6.42\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">So yes, making 300 or more shots would definitely be unusual. If this happens, we might suspect that he has raised his free-throw percentage above the 70% we were given.</p>
+</li>
+</ol></div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_binomial_mean-stdev-1"><video id="video-110" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-11.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.52<span class="period">.</span></span><span class="space"> </span>Mean and Standard Deviation I</figcaption></figure><figure class="figure figure-like" id="video_binomial_mean-stdev-2"><video id="video-111" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-12.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.53<span class="period">.</span></span><span class="space"> </span>Mean and Standard Deviation II</figcaption></figure><article class="exercise exercise-like" id="ckpt_binomial_mean-stdev-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_mean-stdev-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.54</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_mean-stdev-1"><article class="exercise exercise-like"><p id="p-2046">Forty-eight percent of registered voters in a certain county support a new property tax. You decide to randomly select 250 registered voters and ask them if they support a new property tax.</p>
+<p id="p-2047">Question: how many would you expect to say that yes, they support the tax?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-154" id="answer-154"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-154"><div class="answer solution-like"><p id="p-2048">120</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_mean-stdev-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_mean-stdev-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.55</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_mean-stdev-2"><article class="exercise exercise-like"><p id="p-2049">A coin is weighted so that the probability of a heads is \(\frac{1}{4}\text{.}\) You repeatedly flip the coin 200 times and let \(X\) be the number of heads observed. Assume that \(X\) has a mound-shaped distribution.</p>
+<p id="p-2050">Question: sixty-eight percent of the time the number of heads will be in a range from some minimum to some maximum number. What is the minimum number in this range? Round your answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-155" id="answer-155"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-155"><div class="answer solution-like"><p id="p-2051">43.9</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_binomial_mean-stdev-3"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_binomial_mean-stdev-3"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.56</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_binomial_mean-stdev-3"><article class="exercise exercise-like"><p id="p-2052">An 80 question multiple choice test has five possible answers on each question, only one of which is correct. You decide to take the test by randomly selecting an answer on each question. A random variable \(Y\) is defined to be your final score on the test—that is, the number you answered correctly.</p>
+<p id="p-2053">Question: what is the standard deviation of \(Y\text{?}\) Round your answer to one decimal place.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-156" id="answer-156"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-156"><div class="answer solution-like"><p id="p-2054">3.56</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

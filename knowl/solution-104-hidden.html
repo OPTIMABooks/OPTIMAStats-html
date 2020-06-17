@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:46-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Our first step is to find the marginal distributions for this contingency table. With those added, the table becomes:</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Experimental Drug</td>
+<td class="c m b2 r3 l0 t0 lines">Tylenol</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Total</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Headach Persists</td>
+<td class="c m b0 r2 l0 t0 lines">12</td>
+<td class="c m b0 r3 l0 t0 lines">40</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">52</td>
+</tr>
+<tr>
+<td class="l m b3 r2 l0 t0 lines">Headache Gone</td>
+<td class="c m b3 r2 l0 t0 lines">53</td>
+<td class="c m b3 r3 l0 t0 lines">33</td>
+<td class="c m b3 r0 l0 t0 lines" data-braille="last-cell">86</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">Total</td>
+<td class="c m b0 r2 l0 t0 lines">65</td>
+<td class="c m b0 r3 l0 t0 lines">73</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">138</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.18<span class="period">.</span></span><span class="space"> </span>Study Results with Marginal Distributions</figcaption></figure><p>Using this table, we compute the following probabilities.</p>
+<ol class="lower-alpha">
+<li><p>\(P(\text{H. Gone}) = \frac{86}{138} \approx 0.6232\) since 86 of the 138 peoples' headaches were gone after 15 minutes.</p></li>
+<li>
+<p>To find \(P(\text{H. Gone}\,|\,\text{Tylenol})\text{,}\) we use the conditional probability formula.</p>
+<div class="displaymath">
+\begin{equation*}
+P(\text{H. Gone}\,|\,\text{Tylenol}) = \frac{P(\text{H. Gone}\,\cap\,\text{Tylenol})}{P(\text{Tylenol})} = \frac{\frac{33}{138}}{\frac{73}{138}} = \frac{33}{73} \approx 0.4521\text{.}
+\end{equation*}
+</div>
+</li>
+<li><p>Since the probability of the headache being gone changed when we were told the person took Tylenol, these two events are not independent—they are dependent.</p></li>
+</ol>
+<p>Note: When we have a contingency table, there is a short-cut to finding conditional probability. Since we are told in (b) that the person took Tylenol, we restrict ourselves to the Tylenol column. Then, the probability that their headache is gone is simply \(\frac{33}{73} \approx 0.4521\text{,}\) as above.</p>
+</div></body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:25:23-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.4.30.1</span><span class="period">.</span>
+</h6>
+<p>Checking our criteria for approximating yields</p>
+<div class="displaymath">
+\begin{equation*}
+n\times p = 12000(.322) = 3864 \quad \text{ and } \quad n\times q = 12000(0.678) = 8136\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since both of these are greater than \(5\text{,}\) we may approximate this probability using a normal distribution.</p>
+<p>That normal distribution will have a mean and standard deviation of</p>
+<div class="displaymath">
+\begin{align*}
+\mu \amp = 12000(0.322) = 3864\\
+\sigma \amp = \sqrt{12000(0.322)(0.678)} = 51.1839\text{.}
+\end{align*}
+</div>
+<p>We note that “no more than 3750” means we want \(X\) to be less than or equal to 3750.  So we draw the picture shown below to help us correctly apply the continuity correction, this time zooming in on the left tail since 3750 is less than the mean of 3864.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image_approximating_examp_computation-no-more-than.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.31<span class="period">.</span></span><span class="space"> </span>Continuity Correction</figcaption></figure><p>This gives us the following probability computation</p>
+<div class="displaymath">
+\begin{align*}
+P(X \leq 3750) \amp = P(Y \lt 3750.5)\\
+\amp = P\left(\frac{Y-\mu}{\sigma} \lt \frac{3750.5-3864}{51.1839}\right)\\
+\amp = P(Z \lt -2.22)\\
+\amp = 0.0132\text{.}
+\end{align*}
+</div>
+<p>Therefore, the probability of no more than \(3750\) obese individuals is approximately \(0.0132\text{.}\)</p>
+</div>
+<span class="incontext"><a href="sec_approximating.html#solution-151">in-context</a></span>
+</body>
+</html>

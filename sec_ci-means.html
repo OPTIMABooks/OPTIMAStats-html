@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:22:47-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Confidence Intervals for a Mean</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_ci-intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_estimation.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ci-proportions.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_ci-intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_estimation.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ci-proportions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means" class="active">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec_ci-means"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Confidence Intervals for a Mean</span>
+</h2>
+<a href="sec_ci-means.html" class="permalink">¶</a><section class="introduction" id="sec_ci-means_intro"><h6 class="heading">Estimating a Mean.<span></span>
+</h6>
+<p id="p-2641">We have now seen the basics of constructing a confidence interval. To review, these steps are:</p>
+<ol class="decimal">
+<li id="li-1004"><p id="p-2642">find a point estimate,</p></li>
+<li id="li-1005"><p id="p-2643">find the margin of error, and</p></li>
+<li id="li-1006"><p id="p-2644">add the margin of error to and subtract it from the point estimate.</p></li>
+</ol>
+<p id="p-2645">In this section we will learn how to complete these steps when the parameter we are estimating is the mean, \(\mu\text{,}\) of a single population which is either normal or from which we've taken a large enough sample that we can apply the <a class="xref" data-knowl="./knowl/thm_central-limit.html" title="Theorem 3.5.11: Central Limit Theorem">Central Limit Theorem</a>. As we work through this process, we will give formulas for the point estimate, standard error, and finally the margin of error that are used to construct such a confidence interval. We will also remind you of the assumptions which must be made in order to use a normal distribution and these formulas.</p>
+<p id="p-2646">The margin of error computation involves a critical value. Since we will be using a normal distribution in most of our computations, we should look the value of \(z_{\alpha/2}\) up in the table every time we need it. However, if we know the critical values for some of the more common confidence levels, that will save us some time. In <a href="ref_critical-values.html" class="internal" title="Section A.1: Common Critical Values">Appendix A.1</a> you can find a quick reference table that can be useful for finding the more common critical values.</p></section><article class="objectives goal-like" id="sec_ci-means_obj"><h6 class="heading"><span class="type">Objectives</span></h6>
+<div class="introduction" id="introduction-38"><p id="p-2647">After finishing this section you should be able to</p></div>
+<ul class="disc">
+<li id="li-1007">
+<p id="p-2648">describe the following terms:</p>
+<ul class="circle">
+<li id="li-1008"><p id="p-2649">Confidence Interval for a Mean</p></li>
+<li id="li-1009"><p id="p-2650">Margin of Error for a Mean</p></li>
+<li id="li-1010"><p id="p-2651">point estimator for a mean</p></li>
+<li id="li-1011"><p id="p-2652">Sample Size when Estimating a Mean</p></li>
+</ul>
+</li>
+<li id="li-1012">
+<p id="p-2653">accomplish the following tasks:</p>
+<ul class="circle">
+<li id="li-1013"><p id="p-2654">Identify the best point estimate for a population mean</p></li>
+<li id="li-1014"><p id="p-2655">Find the margin of error for a confidence interval for a mean</p></li>
+<li id="li-1015"><p id="p-2656">Construct a confidence interval for a population mean</p></li>
+<li id="li-1016"><p id="p-2657">Understand and list the assumptions that must be made to construct this confidence interval</p></li>
+<li id="li-1017"><p id="p-2658">Compute the minimum sample size necessary for a given margin of error</p></li>
+</ul>
+</li>
+</ul></article><section class="subsection" id="sec_ci-means_point"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Point Estimate</span>
+</h3>
+<a href="sec_ci-means.html#sec_ci-means_point" class="permalink">¶</a><p id="p-2659">Since the goal of this section is to understand how to estimate a population mean, it makes sense to start by asking what the best point estimate is for a mean. That is, if we draw a random sample from a population, and we want to compute one number from that sample that best approximates the mean of the population, what number should we use?</p>
+<article class="example example-like" id="examp_ci-means_point"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-means_point"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Computing a Point Estimate.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-means_point"><article class="example example-like"><p id="p-2660">In order to estimate the mean weight of a widget, a manufacturing facility randomly selects 10 widgets and finds the following weights.</p>
+<div class="displaymath">
+\begin{equation*}
+\lbrace 10, 13, 12, 9, 10, 14, 10, 12, 11, 9 \rbrace
+\end{equation*}
+</div>
+<p data-braille="continuation">What one number should they use to best approximate the mean weight of a widget?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-169" id="solution-169"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-169"><div class="solution solution-like">
+<p id="p-2661">This is not a trick question. The answer is very straight forward if you think back to <a href="sec_center-spread.html" class="internal" title="Section 1.3: Describing Data Numerically: Measures of Center and Spread">Section 1.3</a>. The best point estimate for a population mean is the mean of the sample. In this case, they should use:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{10+13+12+9+10+14+10+12+11+9}{10} = 11\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-2662">The results of this example are summarized below.</p>
+<article class="theorem theorem-like" id="thm_point-estimate-mean"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Point Estimator for a Mean.</span>
+</h6>
+<p id="p-2663">The best point estimator for a mean is the sample mean, \(\overline{x}\text{.}\)</p></article><p id="p-2664">While this may seem obvious, there is some background knowledge that is important. In <a href="sec_sampling.html" class="internal" title="Section 3.5: Sampling Distributions and the Central Limit Theorem">Section 3.5</a> we saw that as long as the population was normal, or the sample size was at least 30, then the distribution of sample means, \(\overline{X}\text{,}\) will be approximately normal and have as its mean \(\mu_{\overline{x}}\) the population mean \(\mu\text{.}\) At this point, we don't need to know that the sample means have a normal distribution, although that will be important shortly. What is more important is that</p>
+<div class="displaymath">
+\begin{equation*}
+\mu_{\overline{x}} = \mu\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In other words, if we take the average of the sample means \(\overline{x}\) for all possible samples of a set size, that will equal the population mean. So \(\overline{x}\) is an <a class="xref" data-knowl="./knowl/def_unbiased-estimator.html" title="Definition 4.1.4">unbiased estimator</a> for \(\mu\text{.}\)</p>
+<p id="p-2665">Note that this does not by any means guarantee that \(\overline{x} = \mu\text{.}\) Our sample mean will probably not equal the actual population mean. But it should be consistently close. And if we were to take many different samples, the average of all of their means should be extremely close to the population mean which we are trying to estimate.</p>
+<figure class="figure figure-like" id="video_ci-means_point-1"><video id="video-151" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span>Point Estimates for a Mean I</figcaption></figure><figure class="figure figure-like" id="video_ci-means_point-2"><video id="video-152" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.4<span class="period">.</span></span><span class="space"> </span>Point Estimates for a Mean II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-means_point-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_point-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_point-1"><article class="exercise exercise-like"><p id="p-2666">To estimate the mean chewing speed of a rabbit, which you believe to be normally distributed, you take a sample of 5 rabbits and find that their chewing speeds are: 3, 4.2, 2.5, 3.3, and 2.7 bites per second.</p>
+<p id="p-2667">Question: what one value should you use as a point estimate for \(\mu\text{,}\) the mean chewing speed of rabbits? Round your answer to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-212" id="answer-212"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-212"><div class="answer solution-like"><p id="p-2668">3.14</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-means_point-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_point-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_point-2"><article class="exercise exercise-like"><p id="p-2669">In order to estimate the average number of fumbles in an NFL football game, you watch three different games on Sunday and find that there are 3, 5, and 4 fumbles in those games.</p>
+<p id="p-2670">Question: what one number should be used as a point estimate for the mean number of fumbles in an NFL game?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-213" id="answer-213"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-213"><div class="answer solution-like"><p id="p-2671">4</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-means_margin-error"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Margin of Error</span>
+</h3>
+<a href="sec_ci-means.html#sec_ci-means_margin-error" class="permalink">¶</a><p id="p-2672">Now that we know the best point estimator for a population mean is the sample mean, we have the first piece of our confidence interval. But we need to know how much error we should expect when using this approximation. That is, we need to know how to compute the margin of error. Remember that in general,</p>
+<div class="displaymath">
+\begin{equation*}
+\text{ ME } = z_{\alpha/2} \times \text{ SE }
+\end{equation*}
+</div>
+<p data-braille="continuation">SE, where the standard error is the standard deviation in the sampling distribution. From <a href="sec_sampling.html" class="internal" title="Section 3.5: Sampling Distributions and the Central Limit Theorem">Section 3.5</a>, we know that if the distribution of \(\overline{x}\) is normal, then its standard deviation is \(\frac{\sigma}{\sqrt{n}}\text{.}\) This yields the following.</p>
+<article class="theorem theorem-like" id="tmp_margin-error-mean"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Margin of Error for a Mean.</span>
+</h6>
+<p id="p-2673">When approximating a single population mean \(\mu\) with a sample mean \(\overline x\text{,}\) the margin of error is:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2} \times \left(\frac{\sigma}{\sqrt{n}}\right)\text{.}
+\end{equation*}
+</div></article><p id="p-2674">There are several things to note about this margin of error computation.</p>
+<ul class="disc">
+<li id="li-1018"><p id="p-2675">The distribution of the sample means must be normal. That means either the original population must have a normal distribution or we must have a sample size of at least 30 so that we can apply the central limit theorem.</p></li>
+<li id="li-1019"><p id="p-2676">We must know the value of \(\sigma\text{,}\) the population standard deviation. If we are trying to estimate the population mean, it seems unreasonable that we would already know \(\sigma\text{.}\) However, as long as our sample size is at least 30, we can use the sample standard deviation s as an approximation for \(\sigma\text{.}\)</p></li>
+</ul>
+<p data-braille="continuation">With these notes in mind, let's look at several examples.</p>
+<article class="example example-like" id="examp_ci-means_margin-error-95"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-means_margin-error-95"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Margin of Error for a 95% Confidence Interval.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-means_margin-error-95"><article class="example example-like"><p id="p-2677">In order to estimate the average number of Skittles in a snack-sized bag, you collect a sample of 50 bags and find that the average of your sample is \(\overline{x} = 14.3\) candies with a standard deviation of \(s = 1.65\) candies. What do you estimate the average number of candies is in the population of all snack-sized Skittles bags, and what is the 95% margin of error for this estimate?1</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-170" id="solution-170"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-170"><div class="solution solution-like">
+<p id="p-2678">The best point estimate for \(\mu\) is \(\overline{x}\text{.}\) We therefore estimate that there are 14.3 candies in each bag. How good is this estimate? Recalling that the critical value from a normal distribution at the 95% confidence level is \(z_{\alpha/2} = \pm 1.96\text{,}\) we get the following margin of error.</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2} \times \left(\frac{\sigma}{\sqrt{n}}\right) = \pm 1.96\left(\frac{1.65}{\sqrt{50}}\right) \approx \pm 0.457
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore the margin of error in our estimate is \(\pm 0.45\) candies.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="examp_ci-means_margin-error-99"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-means_margin-error-99"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Margin of Error for a 99% Confidence Interval.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-means_margin-error-99"><article class="example example-like"><p id="p-2679">A biologist wishes to estimate the average length of a certain type of fish in a secluded lake. She knows that the length of this species of fish is normally distributed with a standard deviation of \(\sigma = 2.7\) inches. After collecting a sample of 8 randomly selected fish, she finds that the sample mean is \(\overline{x} = 14.1\) inches. She therefore claims that the population of fish in this lake has an average length of 14.1 inches. If we wish to be 99% confident, what is the margin of error in her estimation?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-171" id="solution-171"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-171"><div class="solution solution-like">
+<p id="p-2680">Using the formula for the margin of error with \(\alpha = 0.01\text{,}\) so that \(z_{\alpha/2} = 2.575\text{,}\) we get:</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) = \pm 2.575\left(\frac{2.7}{\sqrt{8}}\right) \approx \pm 2.458\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, the estimated length of 14.1 inches has a margin of error of \(\pm 2.458\) inches.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-means_margin-error-1"><video id="video-153" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.10<span class="period">.</span></span><span class="space"> </span>Margin of Error I</figcaption></figure><figure class="figure figure-like" id="video_ci-means_margin-error-2"><video id="video-154" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.11<span class="period">.</span></span><span class="space"> </span>Margin of Error I</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-means_margin-error-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_margin-error-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_margin-error-1"><article class="exercise exercise-like"><p id="p-2681">In order to estimate the mean length of walrus tusks, a sample of 35 tusks are measured and their mean is found to be \(\overline{x} = 29.5\) inches with a standard deviation of \(s = 3.6\) inches. The sample mean 29.5 is used as a point estimate for the population mean \(\mu\text{.}\)</p>
+<p id="p-2682">Question: what is the margin of error at the 95% confidence level for this point estimate? Round your answer to three decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-214" id="answer-214"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-214"><div class="answer solution-like"><p id="p-2683">\(\pm 1.193\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-means_margin-error-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_margin-error-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_margin-error-2"><article class="exercise exercise-like"><p id="p-2684">Scores on a certain standardized test are normally distributed with a standard deviation of \(\sigma = 121.4\) points. To estimate the mean score on the test, a sample of 100 scores is collected. The average of these 100 scores is found to be 1351.5.</p>
+<p id="p-2685">Question: if we use \(\overline{x} = 1351.5\) as a point estimate for \(\mu\text{,}\) what is the margin of error at the 99% confidence level? Round your answer to three decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-215" id="answer-215"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-215"><div class="answer solution-like"><p id="p-2686">31.261</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-means_interval"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">Confidence Interval</span>
+</h3>
+<a href="sec_ci-means.html#sec_ci-means_interval" class="permalink">¶</a><p id="p-2687">By simply adding and subtracting the margin of error to the point estimate, we can construct our confidence interval. For a mean, this is done as follows.</p>
+<article class="theorem theorem-like" id="thm_ci-mean"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Confidence Interval for a Mean.</span>
+</h6>
+<p id="p-2688">The \((1-\alpha)100\%\) confidence interval for a single population mean \(\mu\) is given by:</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} \pm z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right)\text{.}
+\end{equation*}
+</div></article><p id="p-2689">Consider the following examples.</p>
+<article class="example example-like" id="examp_ci-means_interval"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-means_interval"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.15</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing Confidence Intervals for a Mean.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-means_interval"><article class="example example-like"><p id="p-2690">To estimate the average weight of a Taco Bell bean burrito, you collect a sample of 40 bean burritos. You find that the sample mean is \(\overline{x} = 7.4\) oz with a standard deviation of \(s = 1.42\) oz. Construct the following.</p>
+<ol class="lower-alpha">
+<li id="li-1020"><p id="p-2691">A 95% confidence interval for the mean weight of a Taco Bell bean burrito</p></li>
+<li id="li-1021"><p id="p-2692">A 99% confidence interval for the mean weight of a Taco Bell bean burrito</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-172" id="solution-172"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-172"><div class="solution solution-like">
+<p id="p-2693">The process with be almost identical for these to intervals.  Only the critical values used will differ.</p>
+<ol class="lower-alpha">
+<li id="li-1022">
+<p id="p-2694">For the 95% interval, we use \(z_{\alpha/2} = \pm 1.96\) and get</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} \pm z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) = 7.4 \pm 1.96\left(\frac{1.42}{\sqrt{40}}\right) = 7.4 \pm 0.440\text{.}
+\end{equation*}
+</div>
+<p id="p-2695">Therefore, the 95% confidence interval for \(\mu\text{,}\) the mean weight of a Taco Bell bean burrito, is:</p>
+<div class="displaymath">
+\begin{equation*}
+6.960 \lt \mu \lt 7.840\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-1023">
+<p id="p-2696">Now for a 99% confidence interval, the only thing we change is the value of \(z_{\alpha/2}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} \pm z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) = 7.4 \pm 2.58\left(\frac{1.42}{\sqrt{40}}\right) = 7.4 \pm 0.579\text{.}
+\end{equation*}
+</div>
+<p id="p-2697">Therefore, the 99% confidence interval for \(\mu\text{,}\) the mean weight of a Taco Bell bean burrito, is:</p>
+<div class="displaymath">
+\begin{equation*}
+6.821 \lt \mu \lt 7.979\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-2698">In the above example, note what happened when we increased our confidence level. If we only want to be 95% confident that our confidence interval will contain the true mean weight of a burrito, we get a smaller interval than if we want to be 99% confident. Whenever we increase the confidence level, this will also increase the width of our confidence intervals. At the extremes, we can be 0% confident, in which case our interval is just the point estimate \(\overline{x}\text{.}\) We can also be 100% confident, in which case our confidence interval extends infinitely in both directions. Neither of these is practical, so we settle for “statistically significant” confidence levels such as 95% and 99%.</p>
+<p id="p-2699">We can also construct upper or lower confidence bound. These one-sided confidence intervals work in much the same way as the two-tailed confidence interval above, except that we use \(z_\alpha\) instead of \(z_{\alpha/2}\) for our critical value.</p>
+<article class="example example-like" id="examp_ci-means_one-sided"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-means_one-sided"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing a One-Sided Confidence Interval.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-means_one-sided"><article class="example example-like"><p id="p-2700">You wish to place an upper bounds on the average waiting time in line at McDonald's. To do this, you take a random sample of 70 different waiting times for customers at McDonald's. You find that the average waiting time in the sample is \(\overline{x} = 3.4\) minutes with a standard deviation of \(s = 1.97\) minutes. With 99% confidence, what is the largest that the average waiting time could be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-173" id="solution-173"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-173"><div class="solution solution-like">
+<p id="p-2701">In this setting, we really don't care how short the waiting time is. People are, after all, happier if they get through line more quickly. Instead, we want to place an upper bound on the waiting time. We want to be able to say that the average waiting time is “no more than” a certain amount.</p>
+<p id="p-2702">To do this, we use the formula for a 99% upper confidence bound.</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} + z_\alpha\times \left(\frac{\sigma}{\sqrt{n}}\right) = 3.4 + 2.33\left(\frac{1.97}{\sqrt{70}}\right) = 3.948
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, the upper confidence bound for the average waiting time at the 99% confidence level is 3.948 minutes.</p>
+</div></div>
+</div></article></div>
+<figure class="figure figure-like" id="video_ci-means_interval-1"><video id="video-155" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.17<span class="period">.</span></span><span class="space"> </span>Confidence Intervals</figcaption></figure><figure class="figure figure-like" id="video_ci-means_interval-2"><video id="video-156" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.18<span class="period">.</span></span><span class="space"> </span>Confidence Intervals</figcaption></figure><figure class="figure figure-like" id="video_ci-means_interval-3"><video id="video-157" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-07.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.19<span class="period">.</span></span><span class="space"> </span>Confidence Intervals</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-means_interval-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_interval-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.20</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_interval-1"><article class="exercise exercise-like"><p id="p-2703">A band wishes to estimate the average number of fans at their concerts using a 98% confidence interval. They count fans at a sample of 35 different concerts and find that the sample mean is \(\overline{x} = 83.4\) fans with a standard deviation of \(s = 17.85\) fans.</p>
+<p id="p-2704">Question: What is the confidence interval for the true mean number of fans at a concert? Round your confidence bounds to two decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-216" id="answer-216"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-216"><div class="answer solution-like"><p id="p-2705">\(76.37 \lt \mu \lt 90.43\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-means_interval-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_interval-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_interval-2"><article class="exercise exercise-like"><p id="p-2706">The mean weight of a fully loaded hay truck follows a normal distribution with standard deviation \(\sigma = 29.4\) pounds. To estimate this mean weight, 47 different hay trucks are weighted and the sample mean for these trucks is found to be \(\overline{x} = 4973.2\) pounds. You wish to construct a 95% confidence interval.</p>
+<p id="p-2707">Question: what is this interval, with the bounds rounded to two decimal places?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-217" id="answer-217"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-217"><div class="answer solution-like"><p id="p-2708">\(4964.79 \lt \mu \lt 4981.61\)</p></div></div>
+</div></article></div></section><section class="subsection" id="sec_ci-means_sample-size"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.4</span> <span class="title">Sample Size</span>
+</h3>
+<a href="sec_ci-means.html#sec_ci-means_sample-size" class="permalink">¶</a><p id="p-2709">In many instances we may want to design our sample to get a particular width for our confidence interval. That is, we decide ahead of time what we want the margin of error to be, and then we figure out how big our sample needs to be to get us that margin of error. To do this, we need to work with the formula for the margin of error. Suppose we want our margin of error to be no more than some upper bound \(E\text{.}\) That is,</p>
+<div class="displaymath">
+\begin{equation*}
+z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) \leq E\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">To solve this inequality for \(n\text{,}\) the sample size, we start by squaring both sides. This gives:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{(z_{\alpha/2})^2\sigma^2}{n} \leq E^2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then multiplying both sides by \(n\) and dividing by \(E^2\) gives us the final inequality:</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(z_{\alpha/2})^2\sigma^2}{E^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Again, we don't usually know the value of \(\sigma\) before we take a sample. To get around this, we can either use a value of \(\sigma\) from some previous study, or we can <a class="xref" data-knowl="./knowl/def_stddev-estimate.html" title="Principle 1.3.47">estimate the standard deviation</a>.</p>
+<article class="theorem theorem-like" id="thm_sample-size-single-mean"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.22</span><span class="period">.</span><span class="space"> </span><span class="title">Sample Size when Estimating a Mean.</span>
+</h6>
+<p id="p-2710">To get a maximum margin of error of \(E\text{,}\) at the \((1-\alpha)\) confidence level, we must take a sample of size \(n\) where:</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(z_{\alpha/2})^2\sigma^2}{E^2}\text{.}
+\end{equation*}
+</div></article><p id="p-2711">To see this in action, consider the following example.</p>
+<article class="example example-like" id="examp_ci-means_sample-size"><a data-knowl="" class="id-ref original" data-refid="hk-examp_ci-means_sample-size"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.23</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the Sample Size for a Given Margin of Error.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-examp_ci-means_sample-size"><article class="example example-like"><p id="p-2712">You wish to construct a 95% confidence interval for the mean height of a population of rose bushes. You want your margin of error to be no more than \(\pm 6\) inches. If you know that the maximum height obtained by a rose bush is 73 inches, and the minimum is 8 inches, how many rose bushes should you include in your sample?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-174" id="solution-174"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-174"><div class="solution solution-like">
+<p id="p-2713">Since we are told the range of rose bush heights, we will use the approximation</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma \approx \frac{73 - 8}{4} = \frac{65}{4} = 16.25
+\end{equation*}
+</div>
+<p data-braille="continuation">for the standard deviation. Plugging this, together with the critical value \(z_{\alpha/2} = 1.96\text{,}\) into the inequality, we get:</p>
+<div class="displaymath">
+\begin{equation*}
+n \geq \frac{(1.96)^2(16.25)^2}{(6)^2} \approx 28.18\text{.}
+\end{equation*}
+</div>
+<p id="p-2714">Since we can not sample a fraction of a rose bush, we round up to get \(n = 29\text{.}\) Note that we should always round up, even though the decimal is not \(0.5\) or greater. If we were to round down, we would get a margin of error that is larger than the \(\pm 6\) that was specified.</p>
+</div></div>
+</div></article></div>
+<p id="p-2715">In the above example, it would probably be a good idea to use \(n = 30\) as the sample size, since then we can apply the central limit theorem and treat this as a normal distribution. We can always use a larger sample that this formula indicates. That will only lead to better results.</p>
+<figure class="figure figure-like" id="video_ci-means_sample-size-1"><video id="video-158" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-08.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.24<span class="period">.</span></span><span class="space"> </span>Sample Size I</figcaption></figure><figure class="figure figure-like" id="video_ci-means_sample-size-2"><video id="video-159" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-09.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.25<span class="period">.</span></span><span class="space"> </span>Sample Size II</figcaption></figure><article class="exercise exercise-like" id="ckpt_ci-means_sample-size-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_sample-size-1"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_sample-size-1"><article class="exercise exercise-like"><p id="p-2716">You wish to estimate the mean length of a certain breed of caterpillar using a 98% confidence interval. A previous study has shown that these caterpillars have a normally distributed length with standard deviation \(\sigma = 14\) mm.</p>
+<p id="p-2717">Question: what is the smallest sample size you can use to get a margin of error of less than 1 mm?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-218" id="answer-218"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-218"><div class="answer solution-like"><p id="p-2718">1065</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="ckpt_ci-means_sample-size-2"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_ci-means_sample-size-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.27</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_ci-means_sample-size-2"><article class="exercise exercise-like"><p id="p-2719">You wish to estimate the average number of cars your local Walmart parking lot at noon on a weekday using a 95% confidence interval. You decide to assume that the number of cars has a normal distribution, and estimate \(\sigma\) using the minimum and maximum number of cars that you have observed, which were 194 and 82 respectively.</p>
+<p id="p-2720">Question: how many days must you observe in order to get a margin of error of less than 5 cars?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-219" id="answer-219"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-219"><div class="answer solution-like"><p id="p-2721">121</p></div></div>
+</div></article></div></section></section></div></main>
+</div>
+</body>
+</html>

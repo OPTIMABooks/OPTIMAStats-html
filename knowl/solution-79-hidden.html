@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-16T18:24:28-07:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Let's say that your friends names are: Alice, Bob, Candace, and David. If you try to count this using a permutation, you get:</p>
+<div class="displaymath">
+\begin{equation*}
+P(4,2) = 4\times 3 = 12\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Unfortunately, this is not the correct answer. Consider the actual list of possible choices that this produces.</p>
+<figure class="table figure-like"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">AB</td>
+<td class="l m b0 r0 l0 t0 lines">AC</td>
+<td class="l m b0 r0 l0 t0 lines">AD</td>
+<td class="l m b0 r0 l0 t0 lines">BA</td>
+<td class="l m b0 r0 l0 t0 lines">BC</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">BD</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">CA</td>
+<td class="l m b0 r0 l0 t0 lines">CB</td>
+<td class="l m b0 r0 l0 t0 lines">CD</td>
+<td class="l m b0 r0 l0 t0 lines">DA</td>
+<td class="l m b0 r0 l0 t0 lines">DB</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">DC</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.61<span class="period">.</span></span><span class="space"> </span>Possible Selections</figcaption></figure><p>Notice that each pair appears twice. For example, AB and BA are counted separately. This is because in a permutation, the order in which we hand out the tickets makes a difference. But really, we don't care who got the first ticket—we just want to know who is going. Since there are two of each possible pairs, the actual number of ways to pick the two friends to go with us is:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{P(4,2)}{P(2,2)} = \frac{12}{2} = 6\text{.}
+\end{equation*}
+</div>
+</div></body>
+</html>
