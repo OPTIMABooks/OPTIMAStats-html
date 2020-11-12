@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-11-11T19:18:56-08:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chi-Squared Distribution</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">OPTIMA Statistics</span></a></h1>
+<p class="byline">Jonathan Duncan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="table_student-t.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="apx_tables.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="index-1.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="table_student-t.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="apx_tables.html" title="Up">Up</a><a class="next-button button toolbar-item" href="index-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1"><span class="codenumber">I</span> <span class="title">Descriptive Statistics and Probability</span></a></li>
+<li class="link">
+<a href="chap_descriptive.html" data-scroll="chap_descriptive"><span class="codenumber">1</span> <span class="title">Collecting and Describing Data</span></a><ul>
+<li><a href="sec_data.html" data-scroll="sec_data">Understanding Data</a></li>
+<li><a href="sec_graphs.html" data-scroll="sec_graphs">Describing Data Graphically</a></li>
+<li><a href="sec_center-spread.html" data-scroll="sec_center-spread">Describing Data Numerically: Measures of Center and Spread</a></li>
+<li><a href="sec_relative-standing.html" data-scroll="sec_relative-standing">Describing Data Numerically: Measures of Relative Standing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_probability.html" data-scroll="chap_probability"><span class="codenumber">2</span> <span class="title">Understanding Randomness and Probability</span></a><ul>
+<li><a href="sec_simulation.html" data-scroll="sec_simulation">Randomness and Simulation</a></li>
+<li><a href="sec_counting.html" data-scroll="sec_counting">Basic Counting Rules</a></li>
+<li><a href="sec_probability.html" data-scroll="sec_probability">Probability and Probability Rules</a></li>
+<li><a href="sec_conditional.html" data-scroll="sec_conditional">Conditional Probability and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_distributions.html" data-scroll="chap_distributions"><span class="codenumber">3</span> <span class="title">Exploring Probability Distributions</span></a><ul>
+<li><a href="sec_random-vars.html" data-scroll="sec_random-vars">Random Variables and Discrete Probability distributions</a></li>
+<li><a href="sec_binomial.html" data-scroll="sec_binomial">Families of Discrete Distributions: Uniform and Binomial</a></li>
+<li><a href="sec_normal.html" data-scroll="sec_normal">The Normal Distribution</a></li>
+<li><a href="sec_approximating.html" data-scroll="sec_approximating">Normal Approximation to the Binomial Distribution</a></li>
+<li><a href="sec_sampling.html" data-scroll="sec_sampling">Sampling Distributions and the Central Limit Theorem</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-2.html" data-scroll="part-2"><span class="codenumber">II</span> <span class="title">Inferential Statistics</span></a></li>
+<li class="link">
+<a href="chap_estimation.html" data-scroll="chap_estimation"><span class="codenumber">4</span> <span class="title">Estimating Means and Proportions</span></a><ul>
+<li><a href="sec_ci-intro.html" data-scroll="sec_ci-intro">Introduction to Estimation and Confidence intervals</a></li>
+<li><a href="sec_ci-means.html" data-scroll="sec_ci-means">Confidence Intervals for a Mean</a></li>
+<li><a href="sec_ci-proportions.html" data-scroll="sec_ci-proportions">Confidence Intervals for a Proportion</a></li>
+<li><a href="sec_ci-differences.html" data-scroll="sec_ci-differences">Confidence Intervals for the Difference Between Means or Proportions</a></li>
+<li><a href="sec_ci-small-samples.html" data-scroll="sec_ci-small-samples">Confidence Intervals for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_testing.html" data-scroll="chap_testing"><span class="codenumber">5</span> <span class="title">Testing Hypotheses for Means and Proportions</span></a><ul>
+<li><a href="sec_ht-intro.html" data-scroll="sec_ht-intro">Introduction to Hypothesis Testing</a></li>
+<li><a href="sec_ht-means.html" data-scroll="sec_ht-means">Hypothesis Tests for a Mean</a></li>
+<li><a href="sec_ht-proportions.html" data-scroll="sec_ht-proportions">Hypothesis Tests for a Proportion</a></li>
+<li><a href="sec_ht-differences.html" data-scroll="sec_ht-differences">Hypothesis Tests for Differences Between Means and Proportions</a></li>
+<li><a href="sec_ht-small-samples.html" data-scroll="sec_ht-small-samples">Hypothesis Tests for Means Using Small Samples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_other-tests.html" data-scroll="chap_other-tests"><span class="codenumber">6</span> <span class="title">Other Tests of Significance</span></a><ul>
+<li><a href="sec_anova.html" data-scroll="sec_anova">Analysis of Variance</a></li>
+<li><a href="sec_goodness-of-fit.html" data-scroll="sec_goodness-of-fit">Goodness-of-Fit Tests</a></li>
+<li><a href="sec_contingency.html" data-scroll="sec_contingency">Tests of Independence and Homogeneity</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link">
+<a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link">
+<a href="apx_tables.html" data-scroll="apx_tables"><span class="codenumber">B</span> <span class="title">Distribution Tables</span></a><ul>
+<li><a href="table_normal.html" data-scroll="table_normal">Standard Normal Distribution</a></li>
+<li><a href="table_student-t.html" data-scroll="table_student-t">Student's t Distribution</a></li>
+<li><a href="table_chi-squared.html" data-scroll="table_chi-squared" class="active">Chi-Squared Distribution</a></li>
+</ul>
+</li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="table_chi-squared"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">B.3</span> <span class="title">Chi-Squared Distribution</span>
+</h2>
+<a href="table_chi-squared.html" class="permalink">¶</a><figure class="figure figure-like" id="fig_table_chi-squared"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/image_table_chi-squared.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.3.1<span class="period">.</span></span><span class="space"> </span>\(\chi^2\) Distribution Probabilities</figcaption></figure><figure class="table figure-like" id="table_table_chi-squared"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">\(df\)</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">\(\chi^2_{0.99}\)</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">\(\chi^2_{0.95}\)</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">\(\chi^2_{0.90}\)</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">\(\chi^2_{0.10}\)</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">\(\chi^2_{0.05}\)</td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\chi^2_{0.01}\)</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.000</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.004</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.016</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.706</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">3.841</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">6.635</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.000</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.103</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.211</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">4.605</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">5.991</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">9.210</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.115</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.352</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.584</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">6.251</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.815</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">11.345</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.297</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.711</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">1.064</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.779</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">9.488</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">13.277</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(5\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.554</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">1.145</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">1.610</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">9.236</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">11.070</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">15.086</td>
+</tr>
+<tr>
+<td class="r m b1 r2 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell" colspan="13"></td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">0.872</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">1.635</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.204</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">10.645</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">12.592</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">16.812</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(7\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">1.239</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.167</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.833</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">12.017</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">14.067</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">18.475</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">1.646</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.733</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">3.490</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">13.362</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">15.507</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">20.090</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(9\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.088</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">3.325</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">4.168</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">14.684</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">16.919</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">21.666</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(10\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">2.558</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">3.940</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">4.865</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">15.987</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">18.307</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">23.209</td>
+</tr>
+<tr>
+<td class="r m b1 r2 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell" colspan="13"></td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(11\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">3.053</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">4.575</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">5.578</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">17.275</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">19.675</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">24.725</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(12\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">3.571</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">5.226</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">6.304</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">18.549</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">21.026</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">26.217</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(13\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">4.107</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">5.892</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.042</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">19.812</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">22.362</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">27.688</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(14\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">4.660</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">6.571</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.790</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">21.064</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">23.685</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">29.141</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(15\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">5.229</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.261</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">8.547</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">22.307</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">24.996</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">30.578</td>
+</tr>
+<tr>
+<td class="r m b1 r2 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell" colspan="13"></td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(16\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">5.812</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.962</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">9.312</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">23.542</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">26.296</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">32.000</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(17\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">6.408</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">8.672</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">10.085</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">24.769</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">27.587</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">33.409</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(18\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.015</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">9.390</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">10.865</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">25.989</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">28.869</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">34.805</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(19\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">7.633</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">10.117</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">11.651</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">27.204</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">30.144</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">36.191</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(20\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">8.260</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">10.851</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">12.443</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">28.412</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">31.410</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">37.566</td>
+</tr>
+<tr>
+<td class="r m b1 r2 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell" colspan="13"></td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(25\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">11.524</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">14.611</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">16.473</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">34.382</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">37.652</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">44.314</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(30\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">14.953</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">18.493</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">20.599</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">40.256</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">43.773</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">50.892</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(35\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">18.509</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">22.465</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">24.797</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">46.059</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">49.802</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">57.342</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(40\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">22.164</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">26.509</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">29.051</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">51.805</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">55.758</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">63.691</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(45\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">25.901</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">30.612</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">33.350</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">57.505</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">61.656</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">69.957</td>
+</tr>
+<tr>
+<td class="r m b1 r2 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell" colspan="13"></td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(50\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">29.707</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">34.764</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">37.689</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">63.167</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">67.505</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">76.154</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(60\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">37.485</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">43.188</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">46.459</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">74.397</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">79.082</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">88.379</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(70\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">45.442</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">51.739</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">55.329</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">85.527</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">90.531</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">100.425</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(80\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">53.540</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">60.391</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">64.278</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">96.578</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">101.879</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">112.329</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(90\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">61.754</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">69.126</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">73.291</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">107.565</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">113.145</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">124.116</td>
+</tr>
+<tr>
+<td class="r m b1 r2 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell" colspan="13"></td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0 lines">\(100\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">70.065</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">77.929</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">82.358</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">118.498</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines">124.342</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="r m b0 r0 l0 t0 lines" data-braille="last-cell">135.807</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.3.2<span class="period">.</span></span><span class="space"> </span>\(\chi^2\) Distribution Probabilities</figcaption></figure></section></div></main>
+</div>
+</body>
+</html>
