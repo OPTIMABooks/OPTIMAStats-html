@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-15T22:06:52-07:00    *-->
+<!--*    on 2021-06-22T11:36:14-07:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -61,7 +61,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title">OpenIntro Statistics</span></a></h1>
+<h1 class="heading"><a href="book-1.html"><span class="title">OPTIMA Statistics</span></a></h1>
 <p class="byline">Jonathan Duncan</p>
 </div>
 </div></div>
@@ -138,6 +138,13 @@ MathJax.Hub.Config({
 <li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link">
 <a href="apx_reference.html" data-scroll="apx_reference"><span class="codenumber">A</span> <span class="title">Reference</span></a><ul><li><a href="ref_critical-values.html" data-scroll="ref_critical-values">Common Critical Values</a></li></ul>
+</li>
+<li class="link">
+<a href="apx_tables.html" data-scroll="apx_tables"><span class="codenumber">B</span> <span class="title">Distribution Tables</span></a><ul>
+<li><a href="table_normal.html" data-scroll="table_normal">Standard Normal Distribution</a></li>
+<li><a href="table_student-t.html" data-scroll="table_student-t">Student's t Distribution</a></li>
+<li><a href="table_chi-squared.html" data-scroll="table_chi-squared">Chi-Squared Distribution</a></li>
+</ul>
 </li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -274,7 +281,7 @@ H_A\amp:\ \text{at least one group of plants has a different mean height}
 <p data-braille="continuation">Notice that the null hypothesis says that all three means are equal.  The opposite of that is not \(\mu_A \not= \mu_B \not=\mu_C\text{,}\) which says none of the means are equal.  If the mean height for fertilizaer A and B were the same, but C was different, the null hypothesis would still be false.  So we usually just state in words that “at least one of the means is different” instead of trying to write out our alternative hypothesis symbolically.</p>
 </div></div>
 </div></article></div>
-<figure class="figure figure-like" id="video_anova_hypotheses-1"><video id="video-237" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.7<span class="period">.</span></span><span class="space"> </span>ANOVA Hypotheses I</figcaption></figure><figure class="figure figure-like" id="video_anova_hypotheses-2"><video id="video-238" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span>ANOVA Hypotheses II</figcaption></figure><article class="exercise exercise-like" id="ckpt_anova_hypotheses-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_anova_hypotheses-1"><h6 class="heading">
+<figure class="figure figure-like" id="video_anova_hypotheses-1"><video id="video-237" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-01.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.7<span class="period">.</span></span><span class="space"> </span>ANOVA Hypotheses I</figcaption></figure><figure class="figure figure-like" id="video_anova_hypotheses-2"><video id="video-238" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-02.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span>ANOVA Hypotheses II</figcaption></figure><article class="exercise exercise-like" id="ckpt_anova_hypotheses-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_anova_hypotheses-1"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.1.9</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_anova_hypotheses-1"><article class="exercise exercise-like"><p id="p-3626">Suppose that the ANOVA null hypothesis for a certain test is:</p>
 <div class="displaymath">
@@ -433,7 +440,7 @@ H_0:\ \mu_1 = \mu_2 = \mu_3 = \mu_4
 </li>
 <li id="li-1294">
 <h6 class="heading"><span class="title">Sum of the Squares.</span></h6>
-<p id="p-3659">We are told that SST = 9 and TSS = 47.  Since we know that SST + SSE = SST, we can solve:</p>
+<p id="p-3659">We are told that SST = 9 and TSS = 47.  Since we know that SST + SSE = TSS, we can solve:</p>
 <div class="displaymath">
 \begin{equation*}
 9 + \text{SSE} = 47 \Rightarrow \text{SSE} = 47 - 9 = 39
@@ -494,7 +501,7 @@ F_\text{test} = \text{MST} / \text{MSE} = 4 / 4.3333 \approx 0.923
 </div></div>
 </div></article></div>
 <p id="p-3664">As we have stated, the \(F_\text{test}\) statistic measures how much of the variation within our samples can be attributed to difference between the treatments. The larger the value of this test statistic, the more variation there is between the populations, and the less likely it is that the means are all the same.  In order to make decisions based on this test statistic, we will need to know what distribution it comes from.</p>
-<figure class="figure figure-like" id="video_anova_table-1"><video id="video-239" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.19<span class="period">.</span></span><span class="space"> </span>ANOVA Tables I</figcaption></figure><figure class="figure figure-like" id="video_anova_table-2"><video id="video-240" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.20<span class="period">.</span></span><span class="space"> </span>ANOVA Tables II</figcaption></figure><article class="exercise exercise-like" id="ckpt_anova_tables-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_anova_tables-1"><h6 class="heading">
+<figure class="figure figure-like" id="video_anova_table-1"><video id="video-239" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-03.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.19<span class="period">.</span></span><span class="space"> </span>ANOVA Tables I</figcaption></figure><figure class="figure figure-like" id="video_anova_table-2"><video id="video-240" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-04.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.20<span class="period">.</span></span><span class="space"> </span>ANOVA Tables II</figcaption></figure><article class="exercise exercise-like" id="ckpt_anova_tables-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_anova_tables-1"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.1.21</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_anova_tables-1"><article class="exercise exercise-like"><p id="p-3665">Consider the following ANOVA table.</p>
 <figure class="table figure-like" id="table_ckpt_anova_tables-1"><table>
@@ -672,7 +679,7 @@ F_\text{test} = \text{MST} / \text{MSE} = 4 / 4.3333 \approx 0.923
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.35<span class="period">.</span></span><span class="space"> </span>Rejection Region in f-Distribution</figcaption></figure><p id="p-3701">To reject the null hypothesis we would need our test statistic to be further into the right tail than 4.256. But \(0.923 \lt 4.256\text{,}\) so we must fail to reject the null hypothesis. There is no evidence that these fertilizers produce tomato plants with different average heights.</p>
 </div></div>
 </div></article></div>
-<figure class="figure figure-like" id="video_anova_test-1"><video id="video-241" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.36<span class="period">.</span></span><span class="space"> </span>ANOVA Test I</figcaption></figure><figure class="figure figure-like" id="video_anova_test-2"><video id="video-242" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.37<span class="period">.</span></span><span class="space"> </span>ANOVA Test II</figcaption></figure><article class="exercise exercise-like" id="ckpt_anova_test-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_anova_test-1"><h6 class="heading">
+<figure class="figure figure-like" id="video_anova_test-1"><video id="video-241" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-05.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.36<span class="period">.</span></span><span class="space"> </span>ANOVA Test I</figcaption></figure><figure class="figure figure-like" id="video_anova_test-2"><video id="video-242" width="600" height="337" style="object-fit: fill;" controls=""><source src="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-06.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.37<span class="period">.</span></span><span class="space"> </span>ANOVA Test II</figcaption></figure><article class="exercise exercise-like" id="ckpt_anova_test-1"><a data-knowl="" class="id-ref original" data-refid="hk-ckpt_anova_test-1"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.1.38</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ckpt_anova_test-1"><article class="exercise exercise-like"><p id="p-3702">Consider the following ANOVA table.</p>
 <figure class="table figure-like" id="table_anova-ckpt_test-1"><table>
